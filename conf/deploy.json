@@ -1,0 +1,24 @@
+{
+  "defaultStacks": ["flexible"],
+  "packages": {
+    "flex-content-migrator": {
+      "type": "autoscaling",
+      "data": {
+        "port": 9000,
+        "bucket": "flex-content-migrator-dist",
+        "publicReadAcl": false
+      }
+    }
+  },
+  "recipes": {
+    "default": {
+      "depends": ["uploadArtifacts", "deploy"]
+    },
+    "deploy": {
+      "actionsBeforeApp": ["flex-content-migrator.deploy"]
+    },
+    "uploadArtifacts": {
+      "actionsBeforeApp": ["flex-content-migrator.uploadArtifacts"]
+    }
+  }
+}

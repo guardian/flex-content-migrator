@@ -1,0 +1,179 @@
+{
+  "draftVideo": {
+    "cdnIdentifier": "1305059493",
+    "durationMinutes": 2,
+    "durationSeconds": 54,
+    "originalWidth": 480,
+    "originalHeight": 360,
+    "source": "guardian.co.uk",
+    "blockVideoAds": false,
+    "ukOnly": false,
+    "embeddable": false,
+    "videoEncodings": [
+      {
+        "videoFormat": "video/x-flv",
+        "videoFileUrl": "http://cdn.theguardian.tv/bc/281851582/281851582_1304985917_17ca9f4c7ea59f8b3e1d8b7fb6d2dd78246f414b.flv",
+        "sizeInBytes": 9372029,
+        "id": 34647
+      }
+    ],
+    "explicit": false,
+    "syndicateEncodings": false,
+    "creationAndLastModifiedDetail": {
+      "createdOn": "2015-06-29T11:09:25.712+01:00",
+      "modifiedOn": "2015-06-29T11:09:25.712+01:00"
+    },
+    "factboxes": [],
+    "platformPictures": [],
+    "editedSlug": "food-and-drink",
+    "publishOnCom": false,
+    "storyBundleId": "8587259",
+    "tags": [
+      8958,
+      4,
+      33407,
+      26906
+    ],
+    "editorial": true,
+    "publicationDate": "2007-11-12T00:00:00.000Z",
+    "webPublicationDateTime": "2007-11-12T12:57:12.000Z",
+    "updateWebPublicationDateTimeOnLaunch": false,
+    "relatedEditorialOff": false,
+    "pages": [
+      {
+        "id": 282535,
+        "readyToLive": false,
+        "badgesOff": false,
+        "linkText": "River Cottage: Gone Fishing - Devilled brown crab",
+        "isExternalRss": false,
+        "isBlockAds": false,
+        "defaultTrailPictureImgId": 331232903,
+        "cmsPath": {
+          "path": "/Guardian/lifeandhealth/video/2007/nov/12/foodanddrink"
+        },
+        "seciton": 196,
+        "createdBy": "Jack Arnott",
+        "lastModifiedBy": "Stephen Abbott",
+        "createdOn": "2007-11-12T09:43:48.000Z",
+        "modifiedOn": "2007-11-13T12:57:01.000Z",
+        "lastLiveTime": "2015-06-29T09:11:33.000+01:00",
+        "webPublicationTime": "2007-11-12T12:57:12.000Z",
+        "launchableTemplate": {
+          "displayName": "Video",
+          "staticName": "Video",
+          "location": "templates/common/video",
+          "stylesheetName": "video-2012",
+          "pageTypes": [
+            "VIDEO"
+          ],
+          "templateCode": 20,
+          "shownInTemplateDropDown": true,
+          "coreContentAreaName": {
+            "name": "video"
+          },
+          "id": 692
+        }
+      }
+    ],
+    "trailblock": {},
+    "pluckCommentable": false,
+    "pluckPremoderated": false,
+    "synchronisedWithPluck": false,
+    "externalReferences": [],
+    "expired": false,
+    "automateLinking": false,
+    "sensitive": false,
+    "closingDateForCommenting": "2007-11-15T09:43:56.000Z",
+    "blockAds": false,
+    "headline": "River Cottage: Gone Fishing - Devilled brown crab",
+    "standfirst": "This video is taken from the new River Cottage TV series, River Cottage: Gone Fishing, and the recipe is adapted from one featured in the new River Cottage Fish Book, published November 19 by Bloomsbury. Guardian users can pre-order a discounted, signed copy of the book, and free access to the online Catch and Cook course (saving £25 in total) by going to <a href=\"http://rivercottage.net/guardian\">rivercottage.net/guardian</a>. Don't miss the delicious River Cottage shellfish recipes, free in the Guardian on Saturday",
+    "productionOffice": "UK",
+    "id": 331232924
+  },
+  "liveVideo": {
+    "cdnIdentifier": "1305059493",
+    "durationMinutes": 2,
+    "durationSeconds": 54,
+    "originalWidth": 480,
+    "originalHeight": 360,
+    "source": "guardian.co.uk",
+    "blockVideoAds": false,
+    "ukOnly": false,
+    "embeddable": false,
+    "videoEncodings": [
+      {
+        "videoFormat": "video/x-flv",
+        "videoFileUrl": "http://cdn.theguardian.tv/bc/281851582/281851582_1304985917_17ca9f4c7ea59f8b3e1d8b7fb6d2dd78246f414b.flv",
+        "sizeInBytes": 9372029,
+        "id": 34647
+      }
+    ],
+    "explicit": false,
+    "syndicateEncodings": false,
+    "lastLiveTime": "2015-06-29T09:11:33.000+01:00",
+    "factboxes": [],
+    "platformPictures": [],
+    "tags": [
+      8958,
+      4,
+      33407,
+      26906
+    ],
+    "editorial": true,
+    "publicationDate": "2007-11-12T00:00:00.000Z",
+    "webPublicationDateTime": "2007-11-12T12:57:12.000Z",
+    "updateWebPublicationDateTimeOnLaunch": false,
+    "relatedEditorialOff": false,
+    "pages": [
+      {
+        "id": 282535,
+        "readyToLive": false,
+        "badgesOff": false,
+        "linkText": "River Cottage: Gone Fishing - Devilled brown crab",
+        "isExternalRss": false,
+        "isBlockAds": false,
+        "defaultTrailPictureImgId": 331232903,
+        "cmsPath": {
+          "path": "/Guardian/lifeandhealth/video/2007/nov/12/foodanddrink"
+        },
+        "seciton": 196,
+        "createdBy": "Jack Arnott",
+        "lastModifiedBy": "Stephen Abbott",
+        "createdOn": "2007-11-12T09:43:48.000Z",
+        "modifiedOn": "2007-11-13T12:57:01.000Z",
+        "lastLiveTime": "2015-06-29T09:11:33.000+01:00",
+        "webPublicationTime": "2007-11-12T12:57:12.000Z",
+        "launchableTemplate": {
+          "displayName": "Video",
+          "staticName": "Video",
+          "location": "templates/common/video",
+          "stylesheetName": "video-2012",
+          "pageTypes": [
+            "VIDEO"
+          ],
+          "templateCode": 20,
+          "shownInTemplateDropDown": true,
+          "coreContentAreaName": {
+            "name": "video"
+          },
+          "id": 692
+        }
+      }
+    ],
+    "trailblock": {},
+    "pluckCommentable": false,
+    "pluckPremoderated": false,
+    "synchronisedWithPluck": false,
+    "externalReferences": [],
+    "expired": false,
+    "automateLinking": false,
+    "sensitive": false,
+    "closingDateForCommenting": "2007-11-15T09:43:56.000Z",
+    "blockAds": false,
+    "headline": "River Cottage: Gone Fishing - Devilled brown crab",
+    "standfirst": "This video is taken from the new River Cottage TV series, River Cottage: Gone Fishing, and the recipe is adapted from one featured in the new River Cottage Fish Book, published November 19 by Bloomsbury. Guardian users can pre-order a discounted, signed copy of the book, and free access to the online Catch and Cook course (saving £25 in total) by going to <a href=\"http://rivercottage.net/guardian\">rivercottage.net/guardian</a>. Don't miss the delicious River Cottage shellfish recipes, free in the Guardian on Saturday",
+    "productionOffice": "UK",
+    "standout": false,
+    "id": 331232924
+  }
+}

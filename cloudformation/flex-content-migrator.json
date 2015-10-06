@@ -1,0 +1,500 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "Flex Content Migrator Service",
+  "Parameters": {
+    "GuardianIP": {
+      "Description": "Ip range for the office",
+      "Type": "String",
+      "Default": "77.91.248.0/21"
+    },
+    "GuardianIPAusSyndey": {
+      "Description": "Ip range for the Aus Sydney office",
+      "Type": "String",
+      "Default": "220.244.211.246/32"
+    },
+    "GuardianIPAusSyndeyDR": {
+      "Description": "DR Ip range for the Aus Sydney office",
+      "Type": "String",
+      "Default": "125.253.8.140/32"
+    },
+    "GuardianIPAusMel": {
+      "Description": "Ip range for the Aus Melbourne office",
+      "Type": "String",
+      "Default": "203.58.15.0/24"
+    },
+    "GuardianIPAusCan": {
+      "Description": "Ip range for the Aus Canberra office",
+      "Type": "String",
+      "Default": "119.15.97.142/32"
+    },
+    "Stage": {
+      "Description": "Environment name",
+      "Type": "String",
+      "AllowedValues": [
+        "CODE",
+        "RELEASE",
+        "PROD"
+      ],
+      "Default": "PROD"
+    },
+    "VpcId": {
+      "Description": "ID of the VPC onto which to launch the application eg. vpc-1234abcd",
+      "Type": "AWS::EC2::VPC::Id",
+      "Default": "vpc-381fa95d"
+    },
+    "PublicVpcSubnets": {
+      "Description": "Subnets to use in VPC for public internet-facing ELB eg. subnet-abcd1234",
+      "Type": "List<AWS::EC2::Subnet::Id>",
+      "Default": "subnet-c3620fa6,subnet-2b37bd5c,subnet-3667c86f"
+    },
+    "PrivateVpcSubnets": {
+      "Description": "Subnets to use in VPC for private EC2 instances eg. subnet-abcd1234",
+      "Type": "List<AWS::EC2::Subnet::Id>",
+      "Default": "subnet-c2620fa7,subnet-2a37bd5d,subnet-2967c870"
+    },
+    "SSLCertificateARN": {
+      "Description": "The ARN of the SSL certificate to use in the ELB",
+      "Type": "String"
+    },
+    "KeyName":{
+      "Description":"The EC2 Key Pair to allow SSH access to the instance",
+      "Type":"String",
+      "Default":"composer-team"
+    }
+  },
+  "Resources": {
+    "FlexContentMigratorInstanceProfile": {
+      "Type": "AWS::IAM::InstanceProfile",
+      "Properties": {
+        "Path": "/",
+        "Roles": [
+          {
+            "Ref": "FlexContentMigratorRole"
+          }
+        ]
+      }
+    },
+    "FlexContentMigratorRole": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": [
+                  "ec2.amazonaws.com"
+                ]
+              },
+              "Action": [
+                "sts:AssumeRole"
+              ]
+            }
+          ]
+        },
+        "Path": "/",
+        "Policies": [
+          {
+            "PolicyName": "dist",
+            "PolicyDocument": {
+              "Statement": [
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "s3:GetObject"
+                  ],
+                  "Resource": [
+                    "arn:aws:s3:::flex-content-migrator-dist/*"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "PolicyName": "tag",
+            "PolicyDocument": {
+              "Statement": [
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "EC2:Describe*"
+                  ],
+                  "Resource": ["*"]
+                }
+              ]
+            }
+          },
+          {
+            "PolicyName": "cloudwatch",
+            "PolicyDocument": {
+              "Statement": [
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "cloudwatch:*"
+                  ],
+                  "Resource": ["*"]
+                }
+              ]
+            }
+          }
+        ]
+
+      }
+    },
+    "SSHSecurityGroup": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Allow SSH access from the office",
+        "VpcId": { "Ref": "VpcId" },
+        "SecurityGroupIngress": [
+          {
+            "IpProtocol": "tcp",
+            "FromPort": "22",
+            "ToPort": "22",
+            "CidrIp": "0.0.0.0/0"
+          }
+        ]
+      }
+    },
+    "PublicLoadBalancerSecurityGroup": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Flex content migrator application load balancer for office access",
+        "VpcId": { "Ref": "VpcId" },
+        "SecurityGroupIngress": [
+          { "IpProtocol": "tcp", "FromPort": "443", "ToPort": "443", "CidrIp": {"Ref":  "GuardianIP"}},
+          { "IpProtocol": "tcp", "FromPort": "80", "ToPort": "80", "CidrIp": {"Ref":    "GuardianIP"}},
+          { "IpProtocol": "tcp", "FromPort": "443", "ToPort": "443", "CidrIp": {"Ref":  "GuardianIPAusSyndey"}},
+          { "IpProtocol": "tcp", "FromPort": "80", "ToPort": "80", "CidrIp": {"Ref":    "GuardianIPAusSyndey"}},
+          { "IpProtocol": "tcp", "FromPort": "443", "ToPort": "443", "CidrIp": {"Ref":  "GuardianIPAusSyndeyDR"}},
+          { "IpProtocol": "tcp", "FromPort": "80", "ToPort": "80", "CidrIp": {"Ref":    "GuardianIPAusSyndeyDR"}},
+          { "IpProtocol": "tcp", "FromPort": "443", "ToPort": "443", "CidrIp": {"Ref":  "GuardianIPAusMel"}},
+          { "IpProtocol": "tcp", "FromPort": "80", "ToPort": "80", "CidrIp": {"Ref":    "GuardianIPAusMel"}},
+          { "IpProtocol": "tcp", "FromPort": "443", "ToPort": "443", "CidrIp": {"Ref":  "GuardianIPAusCan"}},
+          { "IpProtocol": "tcp", "FromPort": "80", "ToPort": "80", "CidrIp": {"Ref":    "GuardianIPAusCan"}}
+        ]
+      }
+    },
+    "VPNLoadBalancerSecurityGroup": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Flex content migrator application load balancer for datacenter / VPN acccess",
+        "VpcId": { "Ref": "VpcId" },
+        "SecurityGroupIngress": [
+          { "IpProtocol": "tcp", "FromPort": "80", "ToPort": "80", "CidrIp": "10.235.51.0/24" },
+          { "IpProtocol": "tcp", "FromPort": "80", "ToPort": "80", "CidrIp": "10.236.51.0/24" },
+          { "IpProtocol": "tcp", "FromPort": "80", "ToPort": "80", "CidrIp": "10.235.22.0/24" }
+        ]
+      }
+    },
+    "AppServerSecurityGroup": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Application servers",
+        "VpcId": { "Ref": "VpcId" },
+        "SecurityGroupIngress": [
+          {
+            "IpProtocol": "tcp",
+            "FromPort": 9000,
+            "ToPort": 9000,
+            "CidrIp": {"Ref": "GuardianIP"}
+          },
+          {
+            "IpProtocol": "tcp",
+            "FromPort": 9000,
+            "ToPort": 9000,
+            "SourceSecurityGroupId": { "Ref": "PublicLoadBalancerSecurityGroup" }
+          },
+          {
+            "IpProtocol": "tcp",
+            "FromPort": 9000,
+            "ToPort": 9000,
+            "SourceSecurityGroupId": { "Ref": "VPNLoadBalancerSecurityGroup" }
+          }
+        ]
+      }
+    },
+    "FlexContentMigratorPublicLoadBalancer": {
+      "Type": "AWS::ElasticLoadBalancing::LoadBalancer",
+      "Properties": {
+        "CrossZone": true,
+        "Subnets": { "Ref": "PublicVpcSubnets" },
+        "SecurityGroups": [
+          {
+            "Fn::GetAtt": [
+              "PublicLoadBalancerSecurityGroup",
+              "GroupId"
+            ]
+          }
+        ],
+        "Listeners": [
+          {
+            "LoadBalancerPort": "80",
+            "InstancePort": "9000",
+            "Protocol": "HTTP"
+          },
+          {
+            "LoadBalancerPort": "443",
+            "InstancePort": "9000",
+            "Protocol": "HTTPS",
+            "SSLCertificateId": { "Ref": "SSLCertificateARN"}
+          }
+        ],
+        "HealthCheck": {
+          "Target": "HTTP:9000/management/healthcheck",
+          "HealthyThreshold": "2",
+          "UnhealthyThreshold": "2",
+          "Interval": "10",
+          "Timeout": "5"
+        },
+        "Tags": [
+          { "Key": "Stage", "Value": {"Ref": "Stage"}},
+          { "Key": "Stack", "Value": "flexible"},
+          { "Key": "App",   "Value": "flex-content-migrator"},
+          {
+            "Key": "Name",
+            "Value": {
+              "Fn::Join": [
+                "-",
+                [
+                  "flex-content-migrator", {"Ref": "Stage"}
+                ]
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "FlexContentMigratorVPNLoadBalancer": {
+      "Type": "AWS::ElasticLoadBalancing::LoadBalancer",
+      "Properties": {
+        "CrossZone": true,
+        "Subnets": { "Ref": "PrivateVpcSubnets" },
+        "SecurityGroups": [
+          {
+            "Fn::GetAtt": [
+              "VPNLoadBalancerSecurityGroup",
+              "GroupId"
+            ]
+          }
+        ],
+        "Listeners": [
+          {
+            "LoadBalancerPort": "80",
+            "InstancePort": "9000",
+            "Protocol": "HTTP"
+          }
+        ],
+        "HealthCheck": {
+          "Target": "HTTP:9000/management/healthcheck",
+          "HealthyThreshold": "2",
+          "UnhealthyThreshold": "2",
+          "Interval": "10",
+          "Timeout": "5"
+        },
+        "Scheme" : "internal",
+        "Tags": [
+          { "Key": "Stage", "Value": {"Ref": "Stage"}},
+          { "Key": "Stack", "Value": "flexible"},
+          { "Key": "App",   "Value": "flex-content-migrator"},
+          {
+            "Key": "Name",
+            "Value": {
+              "Fn::Join": [
+                "-",
+                [
+                  "flex-content-migrator", {"Ref": "Stage"}
+                ]
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "FlexContentMigratorAutoscalingGroup": {
+      "Type": "AWS::AutoScaling::AutoScalingGroup",
+      "Properties": {
+        "AvailabilityZones": { "Fn::GetAZs": "" },
+        "VPCZoneIdentifier": { "Ref": "PrivateVpcSubnets" },
+        "LaunchConfigurationName": {
+          "Ref": "FlexContentMigratorLaunchConfig"
+        },
+        "MinSize": "2",
+        "MaxSize": "4",
+        "DesiredCapacity": "2",
+        "Cooldown": "180",
+        "HealthCheckType": "ELB",
+        "HealthCheckGracePeriod": 300,
+        "LoadBalancerNames": [
+          {
+            "Ref": "FlexContentMigratorPublicLoadBalancer"
+          },
+          {
+            "Ref": "FlexContentMigratorVPNLoadBalancer"
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Stage",
+            "Value": {
+              "Ref": "Stage"
+            },
+            "PropagateAtLaunch": "true"
+          },
+          {
+            "Key": "Stack",
+            "Value": "flexible",
+            "PropagateAtLaunch": "true"
+          },
+          {
+            "Key": "App",
+            "Value": "flex-content-migrator",
+            "PropagateAtLaunch": "true"
+          },
+          {
+            "Key": "Name",
+            "Value": {
+              "Fn::Join": [
+                "-",
+                [
+                  "flex-content-migrator",
+                  {
+                    "Ref": "Stage"
+                  }
+                ]
+              ]
+            },
+            "PropagateAtLaunch": "true"
+          }
+        ]
+      }
+    },
+    "FlexContentMigratorLaunchConfig": {
+      "Type": "AWS::AutoScaling::LaunchConfiguration",
+      "Metadata": {
+        "AWS::CloudFormation::Authentication": {
+          "distributionAuthentication": {
+            "type": "S3",
+            "roleName": {
+              "Ref": "FlexContentMigratorRole"
+            },
+            "buckets": [
+              "flex-content-migrator-dist"
+            ]
+          }
+        },
+        "AWS::CloudFormation::Init": {
+          "config": {
+            "users": {
+              "flex-content-migrator": {
+                "homeDir": "/home/flex-content-migrator"
+              }
+            },
+            "files": {
+              "/etc/init/flex-content-migrator.conf": {
+                "source": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "https://s3-eu-west-1.amazonaws.com/flex-content-migrator-dist/flexible/",
+                      {
+                        "Ref": "Stage"
+                      },
+                      "/flex-content-migrator/flex-content-migrator.conf"
+                    ]
+                  ]
+                },
+                "authentication": "distributionAuthentication"
+              },
+              "/home/flex-content-migrator/flex-content-migrator.zip": {
+                "source": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "https://s3-eu-west-1.amazonaws.com/flex-content-migrator-dist/flexible/",
+                      {
+                        "Ref": "Stage"
+                      },
+                      "/flex-content-migrator/flex-content-migrator.zip"
+                    ]
+                  ]
+                },
+                "authentication": "distributionAuthentication"
+              }
+            }
+          }
+        }
+      },
+      "Properties": {
+        "KeyName":{ "Ref":"KeyName" },
+        "ImageId": "ami-fe4c0889",
+        "InstanceType": "t2.small",
+        "SecurityGroups": [
+          {
+            "Ref": "AppServerSecurityGroup"
+          },
+          {
+            "Ref": "SSHSecurityGroup"
+          }
+        ],
+        "IamInstanceProfile": {
+          "Ref": "FlexContentMigratorInstanceProfile"
+        },
+        "UserData": {
+          "Fn::Base64": {
+            "Fn::Join": [
+              "",
+              [
+                "#!/bin/bash -ev\n",
+
+                "cfn-init -s ",
+                {
+                  "Ref": "AWS::StackId"
+                },
+                " -r FlexContentMigratorLaunchConfig ",
+                "  --region ",
+                {
+                  "Ref": "AWS::Region"
+                },
+                " || error_exit 'Failed to run cfn-init'\n",
+                "/opt/features/gnm-dns/install.sh\n",
+                "unzip -d /home/flex-content-migrator /home/flex-content-migrator/flex-content-migrator.zip \n",
+                "mkdir /home/flex-content-migrator/logs\n",
+                "chown -R flex-content-migrator /home/flex-content-migrator\n",
+                "chgrp -R flex-content-migrator /home/flex-content-migrator\n",
+
+                "stage=$(echo ", { "Ref": "Stage" }, "| tr '[:upper:]' '[:lower:]')\n",
+                "sed -i \\\n",
+                "    -e 's,@STAGE@,'$stage',g' \\\n",
+                "    /etc/init/flex-content-migrator.conf\n",
+
+                "start flex-content-migrator\n"
+              ]
+            ]
+          }
+        }
+      }
+    }
+  },
+  "Outputs": {
+    "FlexContentMigratorPublicLoadBalancerDNS": {
+      "Description": "Public Load balancer DNS",
+      "Value": {
+        "Fn::GetAtt": [
+          "FlexContentMigratorPublicLoadBalancer",
+          "DNSName"
+        ]
+      }
+    },
+    "FlexContentMigratorVPNLoadBalancerDNS": {
+      "Description": "VPN Load balancer DNS",
+      "Value": {
+        "Fn::GetAtt": [
+          "FlexContentMigratorVPNLoadBalancer",
+          "DNSName"
+        ]
+      }
+    }
+  }
+}

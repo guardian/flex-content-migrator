@@ -1,0 +1,383 @@
+{
+  "draftVideo": {
+    "cdnIdentifier": "cdn-id-1235",
+    "durationMinutes": 1,
+    "durationSeconds": 27,
+    "originalWidth": 480,
+    "originalHeight": 360,
+    "source": "Reuters",
+    "blockVideoAds": false,
+    "ukOnly": false,
+    "embeddable": false,
+    "stillImageUrl": "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2015/4/7/1428366874154/Dutch-hostage-Mali-001.jpg",
+    "thumbnailImageUrl": "http://static.guim.co.uk/sys-images/Guardian/Pix/audio/video/2013/1/23/1358942306387/Guardian-Video-Holding-Im-003.jpg",
+    "videoEncodings": [
+      {
+        "videoFormat": "video/mp4",
+        "videoFileUrl": "http://cdn.theguardian.tv/mainwebsite/2015/04/07/150407dutchhostagefree_FromGAus-16x9.mp4",
+        "sizeInBytes": 3132675,
+        "width": "640",
+        "height": "360",
+        "durationMinutes": "1",
+        "durationSeconds": "26",
+        "id": 221231
+      },
+      {
+        "videoFormat": "video/webm",
+        "videoFileUrl": "http://cdn.theguardian.tv/webM/2015/04/07/150407dutchhostagefree_FromGAus.webm",
+        "sizeInBytes": 4041252,
+        "width": "1024",
+        "height": "576",
+        "durationMinutes": "0",
+        "durationSeconds": "0",
+        "id": 221236
+      },
+      {
+        "videoFormat": "video/3gp:large",
+        "videoFileUrl": "http://cdn.theguardian.tv/3gp/large/2015/04/07/150407dutchhostagefree_FromGAus_3gpLg16x9.3gp",
+        "sizeInBytes": 6043963,
+        "width": "1024",
+        "height": "576",
+        "durationMinutes": "1",
+        "durationSeconds": "26",
+        "id": 221237
+      },
+      {
+        "videoFormat": "video/3gp:small",
+        "videoFileUrl": "http://cdn.theguardian.tv/3gp/small/2015/04/07/150407dutchhostagefree_FromGAus_3gpSml16x9.3gp",
+        "sizeInBytes": 3124777,
+        "width": "512",
+        "height": "288",
+        "durationMinutes": "1",
+        "durationSeconds": "26",
+        "id": 221238
+      },
+      {
+        "videoFormat": "video/m3u8",
+        "videoFileUrl": "http://cdn.theguardian.tv/HLS/2015/04/07/150407dutchhostagefree_FromGAus/150407dutchhostagefree_FromGAus.m3u8",
+        "durationMinutes": "1",
+        "durationSeconds": "26",
+        "id": 221239
+      }
+    ],
+    "explicit": false,
+    "syndicateEncodings": true,
+    "creationAndLastModifiedDetail": {
+      "createdOn": "2015-06-11T10:09:21.016+01:00",
+      "modifiedOn": "2015-06-11T10:09:21.016+01:00"
+    },
+    "factboxes": [],
+    "platformPictures": [
+      {
+        "caption": "The French army releases video of former Dutch hostage Sjaak Rijke after they freed him from an al Qaeda-linked group in Mali Photograph: Reuters",
+        "altText": "Dutch-hostage-Mali",
+        "image": {
+          "$type": "image",
+          "id": 456255167,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2015/4/7/1428366894486/Dutch-hostage-Mali-013.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "The French army releases video of former Dutch hostage Sjaak Rijke after they freed him from an al Qaeda-linked group in Mali Photograph: Reuters",
+          "source": "Reuters",
+          "altText": "Dutch-hostage-Mali",
+          "width": 140,
+          "height": 84,
+          "uploadDate": "2015-04-07T01:34:54.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "id": 456255225
+      },
+      {
+        "caption": "The French army releases video of former Dutch hostage Sjaak Rijke after they freed him from an al Qaeda-linked group in Mali Photograph: Reuters",
+        "altText": "Dutch-hostage-Mali",
+        "image": {
+          "$type": "image",
+          "id": 456255155,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2015/4/7/1428366874154/Dutch-hostage-Mali-001.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "The French army releases video of former Dutch hostage Sjaak Rijke after they freed him from an al Qaeda-linked group in Mali Photograph: Reuters",
+          "source": "Reuters",
+          "altText": "Dutch-hostage-Mali",
+          "width": 640,
+          "height": 360,
+          "uploadDate": "2015-04-07T01:34:34.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "id": 456255232
+      }
+    ],
+    "editedSlug": "dutch-hostage-mali-sjaak-rijke-video",
+    "publishOnCom": false,
+    "notes": "USAGE TERMS: [value not present]. Automatically created from FCS asset 822972 at 01:47:48 on 07/04/2015",
+    "storyBundleId": "10267004",
+    "tags": [
+      33465,
+      8931,
+      9234,
+      22641,
+      20427,
+      42460,
+      26906,
+      4
+    ],
+    "editorial": true,
+    "publicationDate": "2015-04-07T00:00:00.000+01:00",
+    "webPublicationDateTime": "2015-04-07T03:09:15.000+01:00",
+    "updateWebPublicationDateTimeOnLaunch": false,
+    "relatedEditorialOff": false,
+    "pages": [
+      {
+        "id": 2270797,
+        "readyToLive": false,
+        "badgesOff": false,
+        "trailText": "\u003cp\u003eThe 54-year-old train conductor Sjaak Rijke looks relieved after French commandos stumbled upon him during a raid on Al-Qaida-linked militants in Mali\u003c/p\u003e",
+        "linkText": "Dutch al-Qaida hostage enjoys a meal after three-year Mali ordeal – video",
+        "isExternalRss": false,
+        "isBlockAds": false,
+        "cmsPath": {
+          "path": "/Guardian/world/video/2015/apr/07/dutch-hostage-mali-sjaak-rijke-video"
+        },
+        "largeTrailPictureImgId" : 45678,
+        "defaultTrailPictureImgId" : 12345,
+        "createdBy": "tomtest",
+        "lastModifiedBy": "tomtest",
+        "createdOn": "2015-06-12T14:26:52.727+01:00",
+        "modifiedOn": "2015-06-12T14:26:52.727+01:00",
+        "seciton": 342,
+        "lastLiveTime": "2015-04-07T03:09:15.000+01:00",
+        "webPublicationTime": "2015-04-07T03:09:15.000+01:00",
+        "launchableTemplate": {
+          "displayName": "Video",
+          "staticName": "Video",
+          "location": "templates/common/video",
+          "stylesheetName": "video-2012",
+          "pageTypes": [
+            "VIDEO"
+          ],
+          "templateCode": 20,
+          "shownInTemplateDropDown": true,
+          "coreContentAreaName": {
+            "name": "video"
+          },
+          "id": 692
+        }
+      }
+    ],
+    "pluckCommentable": false,
+    "pluckPremoderated": false,
+    "synchronisedWithPluck": false,
+    "externalReferences": [],
+    "scheduledExpiryDate": "2007-11-27T00:00:00.000Z",
+    "expired": false,
+    "automateLinking": false,
+    "sensitive": false,
+    "closingDateForCommenting": "2015-04-10T03:09:15.000+01:00",
+    "blockAds": false,
+    "headline": "Dutch al-Qaida hostage enjoys a meal after three-year Mali ordeal – video",
+    "strap": "TOM TEST VIDEO",
+    "standfirst": "After more than three years of being held captive by an al-Qaida-linked group in Mali, Dutch hostage Sjaak Rijke is freed by French commandos who found him by surprise on Monday. The French army released a video showing the 54-year-old train conductor, who was kidnapped in Timbuktu in November 2011, having a meal after his rescue",
+    "byline": "Simon Chilvers, Jess Cartner-Morley, Andy Gallagher, Josh Strauss and Phil Maynard",
+    "productionOffice": "AUS",
+    "standout": false,
+    "syndicationAggregate": false,
+    "subscriptionDatabases": false,
+    "developerCommunity": false,
+    "id": 456255195
+  },
+  "liveVideo": {
+    "cdnIdentifier": "cdn-id-1235",
+    "durationMinutes": 0,
+    "durationSeconds": 27,
+    "originalWidth": 480,
+    "originalHeight": 360,
+    "source": "Reuters",
+    "blockVideoAds": false,
+    "ukOnly": false,
+    "embeddable": false,
+    "stillImageUrl": "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2015/4/7/1428366874154/Dutch-hostage-Mali-001.jpg",
+    "thumbnailImageUrl": "http://static.guim.co.uk/sys-images/Guardian/Pix/audio/video/2013/1/23/1358942306387/Guardian-Video-Holding-Im-003.jpg",
+    "videoEncodings": [
+      {
+        "videoFormat": "video/mp4",
+        "videoFileUrl": "http://cdn.theguardian.tv/mainwebsite/2015/04/07/150407dutchhostagefree_FromGAus-16x9.mp4",
+        "sizeInBytes": 3132675,
+        "id": 221231
+      },
+      {
+        "videoFormat": "video/webm",
+        "videoFileUrl": "http://cdn.theguardian.tv/webM/2015/04/07/150407dutchhostagefree_FromGAus.webm",
+        "sizeInBytes": 4041252,
+        "id": 221236
+      },
+      {
+        "videoFormat": "video/3gp:large",
+        "videoFileUrl": "http://cdn.theguardian.tv/3gp/large/2015/04/07/150407dutchhostagefree_FromGAus_3gpLg16x9.3gp",
+        "sizeInBytes": 6043963,
+        "id": 221237
+      },
+      {
+        "videoFormat": "video/3gp:small",
+        "videoFileUrl": "http://cdn.theguardian.tv/3gp/small/2015/04/07/150407dutchhostagefree_FromGAus_3gpSml16x9.3gp",
+        "sizeInBytes": 3124777,
+        "id": 221238
+      },
+      {
+        "videoFormat": "video/m3u8",
+        "videoFileUrl": "http://cdn.theguardian.tv/HLS/2015/04/07/150407dutchhostagefree_FromGAus/150407dutchhostagefree_FromGAus.m3u8",
+        "id": 221239
+      }
+    ],
+    "explicit": false,
+    "syndicateEncodings": true,
+    "lastLiveTime": "2015-04-07T03:09:15.000+01:00",
+    "factboxes": [],
+    "platformPictures": [
+      {
+        "caption": "The French army releases video of former Dutch hostage Sjaak Rijke after they freed him from an al Qaeda-linked group in Mali Photograph: Reuters",
+        "altText": "Dutch-hostage-Mali",
+        "image": {
+          "$type": "image",
+          "id": 456255167,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2015/4/7/1428366894486/Dutch-hostage-Mali-013.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "The French army releases video of former Dutch hostage Sjaak Rijke after they freed him from an al Qaeda-linked group in Mali Photograph: Reuters",
+          "source": "Reuters",
+          "altText": "Dutch-hostage-Mali",
+          "width": 140,
+          "height": 84,
+          "uploadDate": "2015-04-07T01:34:54.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "Reuters",
+        "id": 456255225
+      },
+      {
+        "caption": "The French army releases video of former Dutch hostage Sjaak Rijke after they freed him from an al Qaeda-linked group in Mali Photograph: Reuters",
+        "altText": "Dutch-hostage-Mali",
+        "image": {
+          "$type": "image",
+          "id": 456255155,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2015/4/7/1428366874154/Dutch-hostage-Mali-001.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "The French army releases video of former Dutch hostage Sjaak Rijke after they freed him from an al Qaeda-linked group in Mali Photograph: Reuters",
+          "source": "Reuters",
+          "altText": "Dutch-hostage-Mali",
+          "width": 640,
+          "height": 360,
+          "uploadDate": "2015-04-07T01:34:34.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "Reuters",
+        "id": 456255232
+      }
+    ],
+    "tags": [
+      33465,
+      8931,
+      9234,
+      22641,
+      20427,
+      42460,
+      26906,
+      4
+    ],
+    "editorial": true,
+    "publicationDate": "2015-04-07T00:00:00.000+01:00",
+    "webPublicationDateTime": "2015-04-07T03:09:15.000+01:00",
+    "updateWebPublicationDateTimeOnLaunch": false,
+    "relatedEditorialOff": false,
+    "pages": [
+      {
+        "id": 2270797,
+        "readyToLive": false,
+        "badgesOff": false,
+        "trailText": "\u003cp\u003eThe 54-year-old train conductor Sjaak Rijke looks relieved after French commandos stumbled upon him during a raid on Al-Qaida-linked militants in Mali\u003c/p\u003e",
+        "linkText": "Dutch al-Qaida hostage enjoys a meal after three-year Mali ordeal – video",
+        "isExternalRss": false,
+        "isBlockAds": false,
+        "cmsPath": {
+          "path": "/Guardian/world/video/2015/apr/07/dutch-hostage-mali-sjaak-rijke-video"
+        },
+        "largeTrailPictureImgId" : 45678,
+        "defaultTrailPictureImgId" : 12345,
+        "createdBy": "tomtest",
+        "lastModifiedBy": "tomtest",
+        "createdOn": "2015-06-12T14:26:52.727+01:00",
+        "modifiedOn": "2015-06-12T14:26:52.727+01:00",
+        "seciton": 342,
+        "lastLiveTime": "2015-04-07T03:09:15.000+01:00",
+        "webPublicationTime": "2015-04-07T03:09:15.000+01:00",
+        "launchableTemplate": {
+          "displayName": "Video",
+          "staticName": "Video",
+          "location": "templates/common/video",
+          "stylesheetName": "video-2012",
+          "pageTypes": [
+            "VIDEO"
+          ],
+          "templateCode": 20,
+          "shownInTemplateDropDown": true,
+          "coreContentAreaName": {
+            "name": "video"
+          },
+          "id": 692
+        }
+      }
+    ],
+    "pluckCommentable": false,
+    "pluckPremoderated": false,
+    "synchronisedWithPluck": false,
+    "externalReferences": [],
+    "scheduledExpiryDate": "2007-11-27T00:00:00.000Z",
+    "expired": false,
+    "automateLinking": false,
+    "sensitive": false,
+    "closingDateForCommenting": "2015-04-10T03:09:15.000+01:00",
+    "blockAds": false,
+    "headline": "Dutch al-Qaida hostage enjoys a meal after three-year Mali ordeal – video",
+    "strap": "TOM TEST VIDEO",
+    "standfirst": "After more than three years of being held captive by an al-Qaida-linked group in Mali, Dutch hostage Sjaak Rijke is freed by French commandos who found him by surprise on Monday. The French army released a video showing the 54-year-old train conductor, who was kidnapped in Timbuktu in November 2011, having a meal after his rescue",
+    "byline": "Simon Chilvers, Jess Cartner-Morley, Andy Gallagher, Josh Strauss and Phil Maynard",
+    "productionOffice": "AUS",
+    "standout": false,
+    "syndicationAggregate": false,
+    "subscriptionDatabases": false,
+    "developerCommunity": false,
+    "id": 456255195
+  }
+}
