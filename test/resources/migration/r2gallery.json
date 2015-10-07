@@ -485,6 +485,13 @@
     "headline": "Red Mosque reopens",
     "standfirst": "A suspected suicide bomber today killed 11 people and injured scores more following renewed violence at Islamabad\u0027s Red Mosque.\r\nSeven police officers were among those killed when the blast tore though a hotel about a quarter of a mile from the mosque, where religious students clashed earlier in the day with security forces.",
     "productionOffice": "UK",
+    "syndicationAggregate": false,
+    "subscriptionDatabases": false,
+    "developerCommunity": true,
+    "scheduledExpiryDate": "2014-01-28T00:00:00.000Z",
+    "expired": true,
+    "commercialExpiryDate": "2015-10-01T00:00:00.000+01:00",
+    "expiredCommercial": true,
     "id": 330288569
   },
   "live": {
@@ -864,6 +871,13 @@
     "headline": "Red Mosque reopens",
     "standfirst": "A suspected suicide bomber today killed 11 people and injured scores more following renewed violence at Islamabad\u0027s Red Mosque.\r\nSeven police officers were among those killed when the blast tore though a hotel about a quarter of a mile from the mosque, where religious students clashed earlier in the day with security forces.",
     "productionOffice": "UK",
+    "syndicationAggregate": false,
+    "subscriptionDatabases": false,
+    "developerCommunity": true,
+    "scheduledExpiryDate": "2014-01-28T00:00:00.000Z",
+    "expired": true,
+    "commercialExpiryDate": "2015-10-01T00:00:00.000+01:00",
+    "expiredCommercial": true,
     "id": 330288569
   }
 }

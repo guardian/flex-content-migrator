@@ -92,6 +92,30 @@ class R2ToFlexConversionSpec extends Specification  {
       (additionalPictures.tail.tail.head \ "@image-id").text.toString must equalTo("330288566")
       ((additionalPictures.tail.tail.head \ "caption").text.toString ) must startWith("July 27 2007: Pakistani religious students shout")
     }
+    "parse rights correctly" in {
+      val syndicationAggregate  = (parsedGalleryJson.xml \ "rights" \ "@syndicationAggregate").headOption.map(_.text.toString.toBoolean)
+      val subscriptionDatabases = (parsedGalleryJson.xml \ "rights" \ "@subscriptionDatabases").headOption.map(_.text.toString.toBoolean)
+      val developerCommunity    = (parsedGalleryJson.xml \ "rights" \ "@developerCommunity").headOption.map(_.text.toString.toBoolean)
+      syndicationAggregate must equalTo(Some(false))
+      subscriptionDatabases must equalTo(Some(false))
+      developerCommunity must equalTo(Some(true))
+    }
+    "parse rights expiry correctly" in {
+      val isExpired = (parsedGalleryJson.xml \ "expiry" \ "rights" \ "@expired").headOption.map(_.text.toString)
+      val expiredAt = (parsedGalleryJson.xml \ "expiry" \ "rights" \ "@expiredAt").headOption.map(_.text.toString)
+      val scheduledExpiry = (parsedGalleryJson.xml \ "expiry" \ "rights" \ "@scheduledExpiry").headOption.map(_.text.toString)
+      isExpired must equalTo(Some("true"))
+      expiredAt must equalTo(Some("201401280000"))
+      scheduledExpiry must equalTo(None)
+    }
+    "parse commercial expiry correctly" in {
+      val isExpired = (parsedGalleryJson.xml \ "expiry" \ "commercial" \ "@expired").headOption.map(_.text.toString)
+      val expiredAt = (parsedGalleryJson.xml \ "expiry" \ "commercial" \ "@expiredAt").headOption.map(_.text.toString)
+      val scheduledExpiry = (parsedGalleryJson.xml \ "expiry" \ "commercial" \ "@scheduledExpiry").headOption.map(_.text.toString)
+      isExpired must equalTo(Some("true"))
+      expiredAt must equalTo(Some("201510010000"))
+      scheduledExpiry must equalTo(None)
+    }
   }
 
 

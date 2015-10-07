@@ -25,7 +25,7 @@ object PlayArtifact extends Plugin {
       dist.value -> s"packages/${magentaPackageName.value}/${dist.value.getName}",
 
       // Cloud Formation template
-      baseDirectory.value / "cfn" / s"${name.value}.json" -> s"packages/cloud-formation/${name.value}.json",
+      baseDirectory.value / "cloudformation" / s"${name.value}.json" -> s"packages/cloud-formation/${name.value}.json",
 
       // and the riff raff deploy instructions
       baseDirectory.value / "conf" / "deploy.json" -> "deploy.json"
