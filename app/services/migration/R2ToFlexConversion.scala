@@ -108,7 +108,7 @@ abstract class R2ToFlexContentConversion(jsonMap : Map[String, Any], parseLiveDa
   protected val dateTimeFormatterXml = new SimpleDateFormat("yyyyMMddHHmm");
 
 
-  protected def expiry = getAsString("scheduledExpiryDate").
+  protected def scheduledExpiry = getAsString("scheduledExpiryDate").
     map( s => javax.xml.bind.DatatypeConverter.parseDateTime(s).getTime).
     map(dateFormatterXml.format _ )
 
@@ -143,6 +143,34 @@ abstract class R2ToFlexContentConversion(jsonMap : Map[String, Any], parseLiveDa
   protected def subscriptionDatabasesFn = getAsString("subscriptionDatabases")
   protected def developerCommunityFn = getAsString("developerCommunity")
 
+  type ExpiryInfo = (Option[Boolean], Option[String], Option[String])
+  protected def getRightsExpiry : Option[ExpiryInfo] = {
+    val isExpired = getAsString("expired").map(_.toBoolean)
+    val scheduledExpiry = getAsString("scheduledExpiryDate").map( s => javax.xml.bind.DatatypeConverter.parseDateTime(s).getTime)
+
+    isExpired match {
+      case Some(true) => Some((Some(true), scheduledExpiry.map(dateTimeFormatterXml.format _), None))
+      case _ => {
+        //not expired but it might be scheduled to expire
+        scheduledExpiry match {
+          case Some(schedule) =>{
+            Some((Some(false), None, Some(dateTimeFormatterXml.format(schedule))))
+          }
+          case _ => None //not expired and not scheduled to expire
+        }
+      }
+    }
+  }
+
+  protected def getCommercialExpiry : Option[ExpiryInfo] = {
+    val isExpired = getAsString("expiredCommercial").map(_.toBoolean)
+    val expiredAt = getAsString("commercialExpiryDate").map(javax.xml.bind.DatatypeConverter.parseDateTime(_).getTime ).map(dateTimeFormatterXml.format _)
+    //commercial expiry just happens, it is not scheduled, so it is either expired (with a date) or nothing
+    isExpired match {
+      case Some(true) => Some((Some(true), expiredAt, None))
+      case _ => None
+    }
+  }
 
 }
 
@@ -169,9 +197,10 @@ class R2ToFlexGalleryConversion(jsonMap : Map[String, Any], parseLiveData : Bool
     }}
   }
 
+
   override lazy val xml = {
     <gallery story-bundle={storyBundleId orNull} cms-path={cmsPath orNull} notes={notes orNull} slug-word={slug orNull}
-           explicit={explicit orNull} expiry-date={expiry orNull}
+           explicit={explicit orNull} expiry-date={scheduledExpiry orNull}
            created-date={createdDate orNull} created-user={createdBy orNull} modified-date={modifiedDate orNull}
            web-publication-date={webPublicationDate orNull}>
 
@@ -199,6 +228,21 @@ class R2ToFlexGalleryConversion(jsonMap : Map[String, Any], parseLiveData : Bool
       </pictures>
       }
       <rights syndicationAggregate={syndicationAggregateFn orNull} subscriptionDatabases={subscriptionDatabasesFn orNull} developerCommunity={developerCommunityFn orNull} />
+      //expiry of rights and commercial expiry processing
+      {
+        val rightsExpiry = getRightsExpiry
+        val commercialExpiry = getCommercialExpiry
+        if(rightsExpiry.isDefined || commercialExpiry.isDefined){
+          <expiry>
+            {rightsExpiry.map(info => <rights expired={info._1.getOrElse(false).toString}
+                                              expiredAt={info._2 orNull}
+                                              scheduledExpiry={info._3 orNull}/>)         orNull}
+            {commercialExpiry.map(info => <commercial expired={info._1.getOrElse(false).toString}
+                                                      expiredAt={info._2 orNull}
+                                                      scheduledExpiry={info._3 orNull}/>) orNull}
+          </expiry>
+        }
+      }
     </gallery>
   }
 }
@@ -250,7 +294,7 @@ class R2ToFlexVideoConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
 
   override lazy val xml = {
     <video story-bundle={storyBundleId orNull} cms-path={cmsPath orNull} notes={notes orNull} slug-word={slug orNull}
-           uk-only={ukOnly orNull} explicit={explicit orNull} expiry-date={expiry orNull}
+           uk-only={ukOnly orNull} explicit={explicit orNull} expiry-date={scheduledExpiry orNull}
            created-date={createdDate orNull} created-user={createdBy orNull} modified-date={modifiedDate orNull}
            web-publication-date={webPublicationDate orNull}>
 
