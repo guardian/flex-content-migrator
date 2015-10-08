@@ -31,3 +31,19 @@ local: `curl -X POST "http://localhost:9100/migrate/gallery?batchNumber=${batchN
 code:   --TODO: dns for code env
 
 
+### To Migrate Cartoons Into Flex
+
+####Single
+
+local: `curl -X POST "http://localhost:9100/migrate/cartoon/${cartoonId}"`
+
+code: --TODO: dns for code env
+
+####Batch
+
+local: `curl -X POST "http://localhost:9100/migrate/cartoon?batchNumber=${batchNumber}&batchSize=${batchSize}"`
+
+code:   --TODO: dns for code env
+
+
+

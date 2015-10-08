@@ -363,6 +363,13 @@ object R2ToFlexGalleryConversion{
   }
 }
 
+object R2ToFlexCartoonConversion{
+
+  def jsonMap(json : String) : Map[String, Any] = ???
+
+  def parseLiveData(json : Map[String, Any]) = ???
+  def parseDraftData(json : Map[String, Any]) = ???
+}
 
 
 object R2ToFlexVideoConversion{
