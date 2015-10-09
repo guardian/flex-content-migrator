@@ -84,13 +84,35 @@ class R2ToFlexConversionSpec extends Specification  {
     }
     "parse pictures correctly" in {
       val additionalPictures = parsedGalleryJson.xml \ "pictures" \ "picture"
-      additionalPictures.size must equalTo(8)
-      (additionalPictures.head \ "@image-id").text.toString must equalTo("330288634")
-      ((additionalPictures.head \ "caption").text.toString ) must startWith("July 27 2007: Hundreds of religious students")
-      (additionalPictures.tail.head \ "@image-id").text.toString must equalTo("330288643")
-      ((additionalPictures.tail.head \ "caption").text.toString ) must startWith("July 27 2007: Pakistani religious students watch")
-      (additionalPictures.tail.tail.head \ "@image-id").text.toString must equalTo("330288566")
-      ((additionalPictures.tail.tail.head \ "caption").text.toString ) must startWith("July 27 2007: Pakistani religious students shout")
+      additionalPictures.size must equalTo(16) //8 pictures and 8 thumbnails
+
+      //first picture and thumbnail
+      {
+        val thePic = additionalPictures.head
+        val theThumb = additionalPictures.tail.head
+
+        (thePic \ "@image-id").text.toString must equalTo("330288634")
+        (thePic\ "@media-id").text.toString must equalTo("gu-image-330288636")  //note: draft picture Id
+        ((thePic \ "caption").text.toString ) must startWith("July 27 2007: Hundreds of religious students occupy the Red Mosque")
+
+        (theThumb \ "@image-id").text.toString must equalTo("330288635")
+        (theThumb\ "@media-id").text.toString must equalTo("gu-image-330288636")
+        ((theThumb \ "caption").text.toString ) must startWith("July 27 2007: Hundreds of religious students occupy the Red Mosque")
+      }
+
+      //second picture and thumbnail
+      {
+        val thePic = additionalPictures.tail.tail.head
+        val theThumb = additionalPictures.tail.tail.tail.head
+
+        (thePic \ "@image-id").text.toString must equalTo("330288643")
+        (thePic\ "@media-id").text.toString must equalTo("gu-image-330288645")
+        ((thePic \ "caption").text.toString ) must startWith("July 27 2007: Pakistani religious students watch")
+
+        (theThumb \ "@image-id").text.toString must equalTo("330288644")
+        (theThumb\ "@media-id").text.toString must equalTo("gu-image-330288645")
+        ((theThumb \ "caption").text.toString ) must startWith("July 27 2007: Pakistani religious students watch")
+      }
     }
     "parse rights correctly" in {
       val syndicationAggregate  = (parsedGalleryJson.xml \ "rights" \ "@syndicationAggregate").headOption.map(_.text.toString.toBoolean)
