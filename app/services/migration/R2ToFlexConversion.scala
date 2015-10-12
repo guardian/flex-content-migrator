@@ -1,6 +1,7 @@
 package services.migration
 
 import java.text.SimpleDateFormat
+import java.util.{TimeZone, Calendar, Date}
 import com.lambdaworks.jacks.JacksMapper
 import play.Logger
 
@@ -16,7 +17,26 @@ object R2CMSPathCleaner{
 
 }
 
+object R2DateConversion{
+
+  val dateTimeFormatterXml = gmtDateFormatter("yyyyMMddHHmm")
+
+  private def gmtDateFormatter(pattern : String) = {
+    val sdf = new SimpleDateFormat(pattern);
+    sdf.setTimeZone(TimeZone.getTimeZone("GMT"))
+    sdf
+  }
+
+  def jsonToXmlDateTime(jsonDate : String) = {
+    val jsonTime: Date = javax.xml.bind.DatatypeConverter.parseDateTime(jsonDate).getTime
+    dateTimeFormatterXml.format (jsonTime)
+  }
+
+}
+
 abstract class R2ToFlexContentConversion(jsonMap : Map[String, Any], parseLiveData : Boolean = false) {
+
+  import R2DateConversion._
 
   assert(jsonMap != null)
 
@@ -104,25 +124,22 @@ abstract class R2ToFlexContentConversion(jsonMap : Map[String, Any], parseLiveDa
     getAsMaps("pages", liveOrDraft).flatMap(p => getAsString("createdBy", p.head))
 
 
-  protected val dateFormatterXml = new SimpleDateFormat("yyyyMMdd");
-  protected val dateTimeFormatterXml = new SimpleDateFormat("yyyyMMddHHmm");
 
 
-  protected def scheduledExpiry = getAsString("scheduledExpiryDate").
-    map( s => javax.xml.bind.DatatypeConverter.parseDateTime(s).getTime).
-    map(dateFormatterXml.format _ )
+  protected def scheduledExpiry =
+    getAsString("scheduledExpiryDate").map(jsonToXmlDateTime _ )
 
   protected def createdDate =
     getAsMaps("pages", liveOrDraft).flatMap(p => getAsString("createdOn", p.head)).
-      map( s => javax.xml.bind.DatatypeConverter.parseDateTime(s).getTime).map(dateTimeFormatterXml.format _ )
+      map(jsonToXmlDateTime _ )
 
   protected def modifiedDate =
     getAsMaps("pages", liveOrDraft).flatMap(p => getAsString("modifiedOn", p.head)).
-      map( s => javax.xml.bind.DatatypeConverter.parseDateTime(s).getTime).map(dateTimeFormatterXml.format _ )
+      map(jsonToXmlDateTime _ )
 
   protected def webPublicationDate =
     getAsMaps("pages", liveOrDraft).flatMap(p => getAsString("webPublicationTime", p.head)).
-      map( s => javax.xml.bind.DatatypeConverter.parseDateTime(s).getTime).map(dateTimeFormatterXml.format _ )
+      map(jsonToXmlDateTime _ )
 
   lazy val xmlCmsPath = cmsPath
 
@@ -263,7 +280,7 @@ class R2ToFlexGalleryConversion(jsonMap : Map[String, Any], parseLiveData : Bool
       </pictures>
       }
       <rights syndicationAggregate={syndicationAggregateFn orNull} subscriptionDatabases={subscriptionDatabasesFn orNull} developerCommunity={developerCommunityFn orNull} />
-      //expiry of rights and commercial expiry processing
+
       {
         val rightsExpiry = getRightsExpiry
         val commercialExpiry = getCommercialExpiry
