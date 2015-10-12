@@ -43,11 +43,11 @@ class R2ToFlexConversionSpec extends Specification  {
     }
     "parse web publication time correctly" in {
       val webPubTime = parsedGalleryJson.xml \ "@web-publication-date"
-      webPubTime.text.toString must equalTo("200707271752")
+      webPubTime.text.toString must equalTo("200707271652")
     }
     "parse created-date correctly" in {
       val createdDate = parsedGalleryJson.xml \ "@created-date"
-      createdDate.text.toString must equalTo("200707271546")
+      createdDate.text.toString must equalTo("200707271446")
     }
     "parse modified-date correctly" in {
       val createdDate = parsedGalleryJson.xml \ "@modified-date"
