@@ -117,8 +117,14 @@ abstract class R2ToFlexContentConversion(jsonMap : Map[String, Any], parseLiveDa
   protected def trailPictureId =
     getAsMaps("pages", liveOrDraft).flatMap(p => getAsString("defaultTrailPictureImgId", p.head))
 
+  protected def trailPictureMediaId =
+    getAsMaps("pages", liveOrDraft).flatMap(p => getAsString("defaultTrailPictureMediaId", p.head))
+
   protected def largeTrailPictureId =
     getAsMaps("pages", liveOrDraft).flatMap(p => getAsString("largeTrailPictureImgId", p.head))
+
+  protected def largeTrailPictureMediaId =
+    getAsMaps("pages", liveOrDraft).flatMap(p => getAsString("largeTrailPictureMediaId", p.head))
 
   protected def createdBy =
     getAsMaps("pages", liveOrDraft).flatMap(p => getAsString("createdBy", p.head))
@@ -262,8 +268,8 @@ class R2ToFlexGalleryConversion(jsonMap : Map[String, Any], parseLiveData : Bool
       {linktext.map(l =>      <linktext>{l}</linktext>) orNull}
       {trailtext.map(t =>     <trail>{t}</trail>) orNull}
       {thumbnailImageUrl.map(iu =>  <thumbnail-image-url>{iu}</thumbnail-image-url>) orNull}
-      {trailPictureId.map(tp =>     <trail-picture image-id={tp} />) orNull}
-      {largeTrailPictureId.map(ltp =>     <large-trail-picture image-id={ltp} />) orNull}
+      {trailPictureId.map(tp =>     <trail-picture image-id={tp} media-id={trailPictureMediaId orNull} />) orNull}
+      {largeTrailPictureId.map(ltp =>     <large-trail-picture image-id={ltp} media-id={largeTrailPictureMediaId orNull} />) orNull}
       {if(!associatedPictures.isEmpty)
       <pictures>
         {associatedPictures.map{pic => {
