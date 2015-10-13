@@ -84,7 +84,11 @@ protected[migration] class R2IntegrationAPIClient {
     }
   }
 
-  protected[migration] def getBatchOfGalleryIds(batchSize : Int, batchNumber : Int) : Future[List[Int]] = ???
+  protected[migration] def getBatchOfGalleryIds(batchSize : Int, batchNumber : Int) : Future[List[Int]] = {
+    WS.url(requestGalleriesToMigrate(batchSize, batchNumber)).get().map{response =>
+      (response.json \ "elementsOnCurrentPage").as[List[Int]]
+    }
+  }
   
   private def isResponseAuthoritative(response : WSResponse) : Boolean = {
     val json = response.body
@@ -126,6 +130,9 @@ protected[migration] class R2IntegrationAPIClient {
   private def requestVideosToMigrate(size : Int, offset : Int) =
     s"${VideosToMigrateUrl}?${pageSize(size)}&${pageNumber(offset)}"
 
+  private def requestGalleriesToMigrate(size : Int, offset : Int) =
+    s"${GalleriesToMigrateUrl}?${pageSize(size)}&${pageNumber(offset)}"
+  
   private def requestContentMigrated(r2VideoIdInt : Int, composerIdSt : String) =
     s"${ContentMigratedUrl}?${r2VideoId(r2VideoIdInt)}&${composerId(composerIdSt)}"
 
