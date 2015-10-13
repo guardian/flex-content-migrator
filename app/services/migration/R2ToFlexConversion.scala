@@ -1,6 +1,7 @@
 package services.migration
 
 import java.text.SimpleDateFormat
+import java.util.{TimeZone, Calendar, Date}
 import com.lambdaworks.jacks.JacksMapper
 import play.Logger
 
@@ -16,7 +17,26 @@ object R2CMSPathCleaner{
 
 }
 
+object R2DateConversion{
+
+  val dateTimeFormatterXml = gmtDateFormatter("yyyyMMddHHmm")
+
+  private def gmtDateFormatter(pattern : String) = {
+    val sdf = new SimpleDateFormat(pattern);
+    sdf.setTimeZone(TimeZone.getTimeZone("GMT"))
+    sdf
+  }
+
+  def jsonToXmlDateTime(jsonDate : String) = {
+    val jsonTime: Date = javax.xml.bind.DatatypeConverter.parseDateTime(jsonDate).getTime
+    dateTimeFormatterXml.format (jsonTime)
+  }
+
+}
+
 abstract class R2ToFlexContentConversion(jsonMap : Map[String, Any], parseLiveData : Boolean = false) {
+
+  import R2DateConversion._
 
   assert(jsonMap != null)
 
@@ -97,37 +117,40 @@ abstract class R2ToFlexContentConversion(jsonMap : Map[String, Any], parseLiveDa
   protected def trailPictureId =
     getAsMaps("pages", liveOrDraft).flatMap(p => getAsString("defaultTrailPictureImgId", p.head))
 
+  protected def trailPictureMediaId =
+    getAsMaps("pages", liveOrDraft).flatMap(p => getAsString("defaultTrailPictureMediaId", p.head))
+
   protected def largeTrailPictureId =
     getAsMaps("pages", liveOrDraft).flatMap(p => getAsString("largeTrailPictureImgId", p.head))
+
+  protected def largeTrailPictureMediaId =
+    getAsMaps("pages", liveOrDraft).flatMap(p => getAsString("largeTrailPictureMediaId", p.head))
 
   protected def createdBy =
     getAsMaps("pages", liveOrDraft).flatMap(p => getAsString("createdBy", p.head))
 
 
-  protected val dateFormatterXml = new SimpleDateFormat("yyyyMMdd");
-  protected val dateTimeFormatterXml = new SimpleDateFormat("yyyyMMddHHmm");
 
 
-  protected def scheduledExpiry = getAsString("scheduledExpiryDate").
-    map( s => javax.xml.bind.DatatypeConverter.parseDateTime(s).getTime).
-    map(dateFormatterXml.format _ )
+  protected def scheduledExpiry =
+    getAsString("scheduledExpiryDate").map(jsonToXmlDateTime _ )
 
   protected def createdDate =
     getAsMaps("pages", liveOrDraft).flatMap(p => getAsString("createdOn", p.head)).
-      map( s => javax.xml.bind.DatatypeConverter.parseDateTime(s).getTime).map(dateTimeFormatterXml.format _ )
+      map(jsonToXmlDateTime _ )
 
   protected def modifiedDate =
     getAsMaps("pages", liveOrDraft).flatMap(p => getAsString("modifiedOn", p.head)).
-      map( s => javax.xml.bind.DatatypeConverter.parseDateTime(s).getTime).map(dateTimeFormatterXml.format _ )
+      map(jsonToXmlDateTime _ )
 
   protected def webPublicationDate =
     getAsMaps("pages", liveOrDraft).flatMap(p => getAsString("webPublicationTime", p.head)).
-      map( s => javax.xml.bind.DatatypeConverter.parseDateTime(s).getTime).map(dateTimeFormatterXml.format _ )
+      map(jsonToXmlDateTime _ )
 
   lazy val xmlCmsPath = cmsPath
 
 
-  protected def additionalPictures : List[Map[String,String]] = {
+  protected def associatedPictures : List[Map[String,String]] = {
     val platformPictures: List[Map[String, Any]] = getAsMaps("platformPictures", liveOrDraft).getOrElse(Nil)
     platformPictures.map{pic => {
       val id: Option[String] = getAsMap("image", pic).flatMap(_.get("id")).map(_.toString)
@@ -185,15 +208,46 @@ class R2ToFlexGalleryConversion(jsonMap : Map[String, Any], parseLiveData : Bool
 
   override lazy val draft = getFacetFromMap("draft")
 
-  override protected def additionalPictures : List[Map[String,String]] = {
+  override protected def associatedPictures : List[Map[String,String]] = {
     val platformPictures: List[Map[String, Any]] = getAsMaps("pictures", liveOrDraft).getOrElse(Nil)
-    platformPictures.map{pic => {
-      val id: Option[String] = getAsMap("image", pic).flatMap(_.get("id")).map(_.toString)
-      val caption : Option[String] = getAsMap("image", pic).flatMap(_.get("caption")).map(_.toString)
-      if(id.isDefined){
-        Map("id" -> id.get)  ++ caption.map(caption => Map("caption" -> caption)).getOrElse(Map())
-      }
-      else Map[String,String]()
+    platformPictures.flatMap{pic => {
+      val id        = getAsMap("image", pic).flatMap(_.get("id")).map(_.toString) //image id
+      val mediaId   = getAsString("id", pic).map("gu-image-" + _) //picture ID is the media Id
+      val thumbId   = getAsMap("thumbnailImage", pic).flatMap(_.get("id")).map(_.toString) //thumbnail image id
+
+      val mainImageMap =
+        id.map(id => {
+            def getFromPictureOrImage(field : String) = getAsString(field) match {
+                case None => getAsMap("image", pic).flatMap(_.get(field)).map(_.toString)
+                case Some(x) => Some(x)
+            }
+
+            Map("id" -> id, "mediaId" -> mediaId.get)  ++
+            {   getFromPictureOrImage("caption").map(caption => ("caption" -> caption)) ++
+                getFromPictureOrImage("altText").map(altText => ("altText" -> altText)) ++
+                getFromPictureOrImage("source").map(source => ("source" -> source)) ++
+                getFromPictureOrImage("photographer").map(photographer => ("photographer" -> photographer)) ++
+                getFromPictureOrImage("comments").map(comments => ("comments" -> comments))
+            }.toMap[String,String]
+        }).toList
+
+      val thumbImageMap =
+        thumbId.map(id => {
+          def getFromPictureOrThumb(field: String) = getAsString(field) match {
+            case None => getAsMap("image", pic).flatMap(_.get(field)).map(_.toString)
+            case Some(x) => Some(x)
+          }
+
+          Map("id" -> id, "mediaId" -> mediaId.get) ++
+          {   getFromPictureOrThumb("caption").map(caption => ("caption" -> caption)) ++
+              getFromPictureOrThumb("altText").map(altText => ("altText" -> altText)) ++
+              getFromPictureOrThumb("source").map(source => ("source" -> source)) ++
+              getFromPictureOrThumb("photographer").map(photographer => ("photographer" -> photographer)) ++
+              getFromPictureOrThumb("comments").map(comments => ("comments" -> comments))
+          }.toMap[String, String]
+        }).toList
+
+      mainImageMap ++ thumbImageMap
     }}
   }
 
@@ -214,21 +268,25 @@ class R2ToFlexGalleryConversion(jsonMap : Map[String, Any], parseLiveData : Bool
       {linktext.map(l =>      <linktext>{l}</linktext>) orNull}
       {trailtext.map(t =>     <trail>{t}</trail>) orNull}
       {thumbnailImageUrl.map(iu =>  <thumbnail-image-url>{iu}</thumbnail-image-url>) orNull}
-      {trailPictureId.map(tp =>     <trail-picture image-id={tp} />) orNull}
-      {largeTrailPictureId.map(ltp =>     <large-trail-picture image-id={ltp} />) orNull}
-      {if(!additionalPictures.isEmpty)
+      {trailPictureId.map(tp =>     <trail-picture image-id={tp} media-id={trailPictureMediaId orNull} />) orNull}
+      {largeTrailPictureId.map(ltp =>     <large-trail-picture image-id={ltp} media-id={largeTrailPictureMediaId orNull} />) orNull}
+      {if(!associatedPictures.isEmpty)
       <pictures>
-        {additionalPictures.map{pic => {
+        {associatedPictures.map{pic => {
         pic.get("id").map{pid =>
-          <picture image-id={pid}>
-            {pic.get("caption").map{caption => <caption>{caption}</caption>} orNull}
+          <picture image-id={pid} media-id={pic("mediaId")}>
+            {pic.get("caption").map{v => <caption>{v}</caption>} orNull}
+            {pic.get("altText").map{v => <altText>{v}</altText>} orNull}
+            {pic.get("source").map{v => <source>{v}</source>} orNull}
+            {pic.get("photographer").map{v => <photographer>{v}</photographer>} orNull}
+            {pic.get("comments").map{v => <comments>{v}</comments>} orNull}
           </picture>} orNull
-      }}
+        }}
         }
       </pictures>
       }
       <rights syndicationAggregate={syndicationAggregateFn orNull} subscriptionDatabases={subscriptionDatabasesFn orNull} developerCommunity={developerCommunityFn orNull} />
-      //expiry of rights and commercial expiry processing
+
       {
         val rightsExpiry = getRightsExpiry
         val commercialExpiry = getCommercialExpiry
@@ -381,9 +439,9 @@ class R2ToFlexVideoConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
       {embeddable.map(e =>          <embeddable>{e}</embeddable>) orNull}
       {trailPictureId.map(tp =>     <trail-picture image-id={tp} />) orNull}
       {largeTrailPictureId.map(ltp =>     <large-trail-picture image-id={ltp} />) orNull}
-      {if(!additionalPictures.isEmpty)
+      {if(!associatedPictures.isEmpty)
         <pictures>
-          {additionalPictures.map{pic => {
+          {associatedPictures.map{pic => {
             pic.get("id").map{pid =>
               <picture image-id={pid}>
                 {pic.get("caption").map{caption => <caption>{caption}</caption>} orNull}

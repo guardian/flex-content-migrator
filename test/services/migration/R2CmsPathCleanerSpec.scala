@@ -1,9 +1,6 @@
 package services.migration
 
-import R2CMSPathCleaner._
-
 import org.specs2.mutable.Specification
-
 
 class R2CMSPathCleanerSpec extends Specification  {
 

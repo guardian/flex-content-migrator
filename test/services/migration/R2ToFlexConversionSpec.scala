@@ -43,11 +43,11 @@ class R2ToFlexConversionSpec extends Specification  {
     }
     "parse web publication time correctly" in {
       val webPubTime = parsedGalleryJson.xml \ "@web-publication-date"
-      webPubTime.text.toString must equalTo("200707271752")
+      webPubTime.text.toString must equalTo("200707271652")
     }
     "parse created-date correctly" in {
       val createdDate = parsedGalleryJson.xml \ "@created-date"
-      createdDate.text.toString must equalTo("200707271546")
+      createdDate.text.toString must equalTo("200707271446")
     }
     "parse modified-date correctly" in {
       val createdDate = parsedGalleryJson.xml \ "@modified-date"
@@ -79,18 +79,43 @@ class R2ToFlexConversionSpec extends Specification  {
       trailtext must contain("A suspected suicide bomber killed 11 people and injured scores more following renewed violence at Islamabad's Red Mosque")
     }
     "parse trail picture correctly" in {
-      val trailPicture = parsedGalleryJson.xml \ "trail-picture"
-      trailPicture.toString must equalTo("<trail-picture image-id=\"332443868\"/>")
+      val draftTrailPicture = parsedGalleryJson.xml \ "trail-picture"
+      draftTrailPicture.toString must equalTo("<trail-picture image-id=\"332443868\" media-id=\"gu-image-1234\"/>")
+
+      val liveTrailPictureMissingMediaId = R2ToFlexGalleryConversion.parseLiveData(r2Json()).xml \ "trail-picture"
+      liveTrailPictureMissingMediaId.toString must equalTo("<trail-picture image-id=\"332443868\"/>")
     }
     "parse pictures correctly" in {
       val additionalPictures = parsedGalleryJson.xml \ "pictures" \ "picture"
-      additionalPictures.size must equalTo(8)
-      (additionalPictures.head \ "@image-id").text.toString must equalTo("330288634")
-      ((additionalPictures.head \ "caption").text.toString ) must startWith("July 27 2007: Hundreds of religious students")
-      (additionalPictures.tail.head \ "@image-id").text.toString must equalTo("330288643")
-      ((additionalPictures.tail.head \ "caption").text.toString ) must startWith("July 27 2007: Pakistani religious students watch")
-      (additionalPictures.tail.tail.head \ "@image-id").text.toString must equalTo("330288566")
-      ((additionalPictures.tail.tail.head \ "caption").text.toString ) must startWith("July 27 2007: Pakistani religious students shout")
+      additionalPictures.size must equalTo(16) //8 pictures and 8 thumbnails
+
+      //first picture and thumbnail
+      {
+        val thePic = additionalPictures.head
+        val theThumb = additionalPictures.tail.head
+
+        (thePic \ "@image-id").text.toString must equalTo("330288634")
+        (thePic\ "@media-id").text.toString must equalTo("gu-image-330288636")  //note: draft picture Id
+        ((thePic \ "caption").text.toString ) must startWith("July 27 2007: Hundreds of religious students occupy the Red Mosque")
+
+        (theThumb \ "@image-id").text.toString must equalTo("330288635")
+        (theThumb\ "@media-id").text.toString must equalTo("gu-image-330288636")
+        ((theThumb \ "caption").text.toString ) must startWith("July 27 2007: Hundreds of religious students occupy the Red Mosque")
+      }
+
+      //second picture and thumbnail
+      {
+        val thePic = additionalPictures.tail.tail.head
+        val theThumb = additionalPictures.tail.tail.tail.head
+
+        (thePic \ "@image-id").text.toString must equalTo("330288643")
+        (thePic\ "@media-id").text.toString must equalTo("gu-image-330288645")
+        ((thePic \ "caption").text.toString ) must startWith("July 27 2007: Pakistani religious students watch")
+
+        (theThumb \ "@image-id").text.toString must equalTo("330288644")
+        (theThumb\ "@media-id").text.toString must equalTo("gu-image-330288645")
+        ((theThumb \ "caption").text.toString ) must startWith("July 27 2007: Pakistani religious students watch")
+      }
     }
     "parse rights correctly" in {
       val syndicationAggregate  = (parsedGalleryJson.xml \ "rights" \ "@syndicationAggregate").headOption.map(_.text.toString.toBoolean)

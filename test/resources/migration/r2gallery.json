@@ -446,6 +446,7 @@
         "isExternalRss": false,
         "isBlockAds": false,
         "defaultTrailPictureImgId": 332443868,
+        "defaultTrailPictureMediaId": "gu-image-1234",
         "cmsPath": {
           "path": "/Guardian/news/gallery/2007/jul/27/internationalnews1"
         },
@@ -478,7 +479,6 @@
     "pluckPremoderated": false,
     "synchronisedWithPluck": false,
     "externalReferences": [],
-    "expired": false,
     "automateLinking": false,
     "sensitive": false,
     "blockAds": false,
@@ -490,7 +490,7 @@
     "developerCommunity": true,
     "scheduledExpiryDate": "2014-01-28T00:00:00.000Z",
     "expired": true,
-    "commercialExpiryDate": "2015-10-01T00:00:00.000+01:00",
+    "commercialExpiryDate": "2015-10-01T00:00:00.000Z",
     "expiredCommercial": true,
     "id": 330288569
   },
@@ -832,6 +832,7 @@
         "linkText": "Red Mosque reopens",
         "isExternalRss": false,
         "isBlockAds": false,
+        "defaultTrailPictureImgId": 332443868,
         "cmsPath": {
           "path": "/Guardian/news/gallery/2007/jul/27/internationalnews1"
         },
@@ -876,7 +877,7 @@
     "developerCommunity": true,
     "scheduledExpiryDate": "2014-01-28T00:00:00.000Z",
     "expired": true,
-    "commercialExpiryDate": "2015-10-01T00:00:00.000+01:00",
+    "commercialExpiryDate": "2015-10-01T00:00:00.000Z",
     "expiredCommercial": true,
     "id": 330288569
   }
