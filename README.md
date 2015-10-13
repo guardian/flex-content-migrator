@@ -22,12 +22,12 @@ This project takes the code from the first of these and modifies / adds to it to
 
 local: `curl -X POST "http://localhost:9100/migrate/gallery/${galleryId}"`
 
-code: --TODO: dns for code env
+code: `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/gallery/${galleryId}"`
 
 ####Batch
 
 local: `curl -X POST "http://localhost:9100/migrate/gallery?batchNumber=${batchNumber}&batchSize=${batchSize}"`
 
-code:   --TODO: dns for code env
+code:   `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/gallery?batchNumber=${batchNumber}&batchSize=${batchSize}"`
 
 
