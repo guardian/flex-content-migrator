@@ -446,6 +446,7 @@
         "isExternalRss": false,
         "isBlockAds": false,
         "defaultTrailPictureImgId": 332443868,
+        "defaultTrailPictureMediaId": "gu-image-1234",
         "cmsPath": {
           "path": "/Guardian/news/gallery/2007/jul/27/internationalnews1"
         },

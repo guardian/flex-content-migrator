@@ -80,7 +80,7 @@ class R2ToFlexConversionSpec extends Specification  {
     }
     "parse trail picture correctly" in {
       val trailPicture = parsedGalleryJson.xml \ "trail-picture"
-      trailPicture.toString must equalTo("<trail-picture image-id=\"332443868\"/>")
+      trailPicture.toString must equalTo("<trail-picture image-id=\"332443868\" media-id=\"gu-image-1234\"/>")
     }
     "parse pictures correctly" in {
       val additionalPictures = parsedGalleryJson.xml \ "pictures" \ "picture"
