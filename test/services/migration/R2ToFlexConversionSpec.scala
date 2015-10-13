@@ -79,8 +79,11 @@ class R2ToFlexConversionSpec extends Specification  {
       trailtext must contain("A suspected suicide bomber killed 11 people and injured scores more following renewed violence at Islamabad's Red Mosque")
     }
     "parse trail picture correctly" in {
-      val trailPicture = parsedGalleryJson.xml \ "trail-picture"
-      trailPicture.toString must equalTo("<trail-picture image-id=\"332443868\" media-id=\"gu-image-1234\"/>")
+      val draftTrailPicture = parsedGalleryJson.xml \ "trail-picture"
+      draftTrailPicture.toString must equalTo("<trail-picture image-id=\"332443868\" media-id=\"gu-image-1234\"/>")
+
+      val liveTrailPictureMissingMediaId = R2ToFlexGalleryConversion.parseLiveData(r2Json()).xml \ "trail-picture"
+      liveTrailPictureMissingMediaId.toString must equalTo("<trail-picture image-id=\"332443868\"/>")
     }
     "parse pictures correctly" in {
       val additionalPictures = parsedGalleryJson.xml \ "pictures" \ "picture"
