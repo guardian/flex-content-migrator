@@ -19,12 +19,10 @@ object R2CMSPathCleaner{
 
 object R2DateConversion{
 
-  val dateTimeFormatterXml = gmtDateFormatter("yyyyMMddHHmm")
+  def dateTimeFormatterXml = gmtDateFormatter("yyyyMMddHHmm")
 
   private def gmtDateFormatter(pattern : String) = {
-    val sdf = new SimpleDateFormat(pattern);
-    sdf.setTimeZone(TimeZone.getTimeZone("GMT"))
-    sdf
+    new SimpleDateFormat(pattern);
   }
 
   def jsonToXmlDateTime(jsonDate : String) = {

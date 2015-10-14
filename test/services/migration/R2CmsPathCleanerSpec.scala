@@ -2,7 +2,7 @@ package services.migration
 
 import org.specs2.mutable.Specification
 
-class R2CMSPathCleanerSpec extends Specification  {
+class R2CmsPathCleanerSpec extends Specification  {
 
   "R2CMSPathCleaner" should {
     "remove '/Guardian' prefix from R2 CMS path" in {
