@@ -35,7 +35,7 @@ class R2ToFlexConversionSpec extends Specification  {
     }
     "parse story bundle ID correctly" in {
       val storyBundleId =  parsedGalleryJson.xml \ "@story-bundle"
-      storyBundleId.text.toString must equalTo("49195")       //TODO: using pageID: this needs some thought
+      storyBundleId.text.toString must equalTo("32233")
     }
     "parse cms path correctly" in {
       val cmsPath = parsedGalleryJson.xml \ "@cms-path"
