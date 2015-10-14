@@ -1,0 +1,300 @@
+{
+  "draft": {
+    "altText": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform.",
+    "mainPicture": {
+      "caption": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform during his weekly general audience in the Paul VI Hall, 3 February 2010",
+      "altText": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform.",
+      "image": {
+        "$type": "image",
+        "id": 360443494,
+        "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/15/1268673104662/Vatican-Pope-Benedict-XVI-002.jpg",
+        "mimeType": "image/jpeg",
+        "caption": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform during his weekly general audience in the Paul VI Hall, 3 February 2010",
+        "source": "Reuters",
+        "altText": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform.",
+        "photographer": "Osservatore Romano",
+        "width": 780,
+        "height": 601,
+        "uploadDate": "2010-03-15T17:11:44.000Z",
+        "group": {
+          "$type": "image_group",
+          "name": "pictures",
+          "legacySection": {
+            "$type": "legacy_section",
+            "name": "Pix",
+            "displayName": "Pix",
+            "siteName": "Guardian"
+          }
+        }
+      },
+      "credit": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform during his weekly general audience in the Paul VI Hall, 3 February 2010",
+      "id": 29847
+    },
+    "largePicture": {
+      "caption": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform during his weekly general audience in the Paul VI Hall, 3 February 2010",
+      "altText": "Vatican: Pope Benedict XVI watches members of Italy’s American Circus perform.",
+      "image": {
+        "$type": "image",
+        "id": 360443495,
+        "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/15/1268673105788/Vatican-Pope-Benedict-XVI-003.jpg",
+        "mimeType": "image/jpeg",
+        "caption": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform during his weekly general audience in the Paul VI Hall, 3 February 2010",
+        "source": "Reuters",
+        "altText": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform.",
+        "photographer": "Osservatore Romano",
+        "width": 1024,
+        "height": 690,
+        "uploadDate": "2010-03-15T17:11:45.000Z",
+        "group": {
+          "$type": "image_group",
+          "name": "pictures",
+          "legacySection": {
+            "$type": "legacy_section",
+            "name": "Pix",
+            "displayName": "Pix",
+            "siteName": "Guardian"
+          }
+        }
+      },
+      "credit": "Osservatore Romano/Reuters",
+      "id": 361106497
+    },
+    "source": "Reuters",
+    "creationAndLastModifiedDetail": {
+      "createdOn": "2015-10-14T10:56:41.472+01:00",
+      "modifiedOn": "2015-10-14T10:56:41.472+01:00"
+    },
+    "factboxes": [
+      {
+        "facts": [
+          {
+            "value": "The photographer has not forgotten the extraordinary interior of the building to add to the overall unreality of the scene.\u003cbr /\u003e",
+            "name": "Pro tip",
+            "fromTemplate": true,
+            "id": 108917
+          }
+        ]
+      }
+    ],
+    "platformPictures": [],
+    "editedSlug": "pope-benedict-xvi-italy",
+    "publishOnCom": false,
+    "tags": [
+      29660,
+      9318,
+      30697,
+      33818,
+      9234,
+      10815,
+      10529,
+      2,
+      4,
+      48041,
+      16600,
+      55510,
+      36985
+    ],
+    "editorial": true,
+    "publicationDate": "2010-02-04T00:00:00.000Z",
+    "webPublicationDateTime": "2010-02-04T00:00:00.000Z",
+    "updateWebPublicationDateTimeOnLaunch": false,
+    "relatedEditorialOff": false,
+    "pages": [
+      {
+        "id": 1372093,
+        "readyToLive": false,
+        "badgesOff": false,
+        "trailText": "\u003cp\u003ePhotographs from the Guardian\u0027s Eyewitness series\u003c/p\u003e",
+        "linkText": "Eyewitness: Balancing act at the Vatican",
+        "isExternalRss": false,
+        "isBlockAds": false,
+        "defaultTrailPictureMediaId": "gu-image-361106498",
+        "defaultTrailPictureImgId": 360443493,
+        "largeTrailPictureMediaId": "gu-image-361106498",
+        "largeTrailPictureImgId": 360443493,
+        "cmsPath": {
+          "path": "/Guardian/world/picture/2010/feb/04/pope-benedict-xvi-italy"
+        },
+        "seciton": 342,
+        "createdBy": "Jo Blason",
+        "lastModifiedBy": "Liane Katz",
+        "createdOn": "2010-03-15T17:14:25.000Z",
+        "modifiedOn": "2010-04-03T03:17:36.000+01:00",
+        "lastLiveTime": "2010-04-03T03:17:37.000+01:00",
+        "webPublicationTime": "2010-02-04T00:00:00.000Z",
+        "launchableTemplate": {
+          "displayName": "Eyewitness",
+          "staticName": "Eyewitness",
+          "location": "templates/common/eyewitness",
+          "stylesheetName": "content-wide",
+          "pageTypes": [
+            "CARTOON"
+          ],
+          "templateCode": 288,
+          "shownInTemplateDropDown": true,
+          "coreContentAreaName": {
+            "name": "cartoon"
+          },
+          "id": 39644
+        }
+      }
+    ],
+    "pluckCommentable": false,
+    "pluckPremoderated": false,
+    "synchronisedWithPluck": false,
+    "externalReferences": [],
+    "expired": false,
+    "automateLinking": false,
+    "sensitive": false,
+    "blockAds": false,
+    "headline": "Eyewitness: Balancing act at the Vatican",
+    "standfirst": "Photographs from the Guardian\u0027s Eyewitness series",
+    "id": 360443642
+  },
+  "live": {
+    "altText": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform.",
+    "mainPicture": {
+      "caption": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform during his weekly general audience in the Paul VI Hall, 3 February 2010",
+      "altText": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform.",
+      "image": {
+        "$type": "image",
+        "id": 360443494,
+        "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/15/1268673104662/Vatican-Pope-Benedict-XVI-002.jpg",
+        "mimeType": "image/jpeg",
+        "caption": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform during his weekly general audience in the Paul VI Hall, 3 February 2010",
+        "source": "Reuters",
+        "altText": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform.",
+        "photographer": "Osservatore Romano",
+        "width": 780,
+        "height": 601,
+        "uploadDate": "2010-03-15T17:11:44.000Z",
+        "group": {
+          "$type": "image_group",
+          "name": "pictures",
+          "legacySection": {
+            "$type": "legacy_section",
+            "name": "Pix",
+            "displayName": "Pix",
+            "siteName": "Guardian"
+          }
+        }
+      },
+      "credit": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform during his weekly general audience in the Paul VI Hall, 3 February 2010",
+      "id": 29847
+    },
+    "largePicture": {
+      "caption": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform during his weekly general audience in the Paul VI Hall, 3 February 2010",
+      "altText": "Vatican: Pope Benedict XVI watches members of Italy’s American Circus perform.",
+      "image": {
+        "$type": "image",
+        "id": 360443495,
+        "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/15/1268673105788/Vatican-Pope-Benedict-XVI-003.jpg",
+        "mimeType": "image/jpeg",
+        "caption": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform during his weekly general audience in the Paul VI Hall, 3 February 2010",
+        "source": "Reuters",
+        "altText": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform.",
+        "photographer": "Osservatore Romano",
+        "width": 1024,
+        "height": 690,
+        "uploadDate": "2010-03-15T17:11:45.000Z",
+        "group": {
+          "$type": "image_group",
+          "name": "pictures",
+          "legacySection": {
+            "$type": "legacy_section",
+            "name": "Pix",
+            "displayName": "Pix",
+            "siteName": "Guardian"
+          }
+        }
+      },
+      "credit": "Osservatore Romano/Reuters",
+      "id": 361106497
+    },
+    "source": "Reuters",
+    "lastLiveTime": "2010-04-03T03:17:37.000+01:00",
+    "factboxes": [
+      {
+        "facts": [
+          {
+            "value": "The photographer has not forgotten the extraordinary interior of the building to add to the overall unreality of the scene.\u003cbr /\u003e"
+          }
+        ]
+      }
+    ],
+    "platformPictures": [],
+    "tags": [
+      29660,
+      9318,
+      30697,
+      33818,
+      9234,
+      10815,
+      10529,
+      2,
+      4,
+      48041,
+      16600,
+      55510,
+      36985
+    ],
+    "editorial": true,
+    "publicationDate": "2010-02-04T00:00:00.000Z",
+    "webPublicationDateTime": "2010-02-04T00:00:00.000Z",
+    "updateWebPublicationDateTimeOnLaunch": false,
+    "relatedEditorialOff": false,
+    "pages": [
+      {
+        "id": 1372093,
+        "readyToLive": false,
+        "badgesOff": false,
+        "trailText": "\u003cp\u003ePhotographs from the Guardian\u0027s Eyewitness series\u003c/p\u003e",
+        "linkText": "Eyewitness: Balancing act at the Vatican",
+        "isExternalRss": false,
+        "isBlockAds": false,
+        "defaultTrailPictureMediaId": "gu-image-361106498",
+        "defaultTrailPictureImgId": 360443493,
+        "largeTrailPictureMediaId": "gu-image-361106498",
+        "largeTrailPictureImgId": 360443493,
+        "cmsPath": {
+          "path": "/Guardian/world/picture/2010/feb/04/pope-benedict-xvi-italy"
+        },
+        "seciton": 342,
+        "createdBy": "Jo Blason",
+        "lastModifiedBy": "Liane Katz",
+        "createdOn": "2010-03-15T17:14:25.000Z",
+        "modifiedOn": "2010-04-03T03:17:36.000+01:00",
+        "lastLiveTime": "2010-04-03T03:17:37.000+01:00",
+        "webPublicationTime": "2010-02-04T00:00:00.000Z",
+        "launchableTemplate": {
+          "displayName": "Eyewitness",
+          "staticName": "Eyewitness",
+          "location": "templates/common/eyewitness",
+          "stylesheetName": "content-wide",
+          "pageTypes": [
+            "CARTOON"
+          ],
+          "templateCode": 288,
+          "shownInTemplateDropDown": true,
+          "coreContentAreaName": {
+            "name": "cartoon"
+          },
+          "id": 39644
+        }
+      }
+    ],
+    "pluckCommentable": false,
+    "pluckPremoderated": false,
+    "synchronisedWithPluck": false,
+    "externalReferences": [],
+    "expired": false,
+    "automateLinking": false,
+    "sensitive": false,
+    "closingDateForCommenting": "2010-03-20T16:30:15.000Z",
+    "blockAds": false,
+    "headline": "Eyewitness: Balancing act at the Vatican",
+    "standfirst": "Photographs from the Guardian\u0027s Eyewitness series",
+    "productionOffice": "UK",
+    "id": 360443642
+  }
+}

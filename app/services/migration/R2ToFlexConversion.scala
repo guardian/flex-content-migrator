@@ -208,8 +208,9 @@ class R2ToFlexGalleryConversion(jsonMap : Map[String, Any], parseLiveData : Bool
 
   override lazy val draft = getFacetFromMap("draft")
 
+  val platformPictures: List[Map[String, Any]] = getAsMaps("pictures", liveOrDraft).getOrElse(Nil)
+
   override protected def associatedPictures : List[Map[String,String]] = {
-    val platformPictures: List[Map[String, Any]] = getAsMaps("pictures", liveOrDraft).getOrElse(Nil)
     platformPictures.flatMap{pic => {
       val id        = getAsMap("image", pic).flatMap(_.get("id")).map(_.toString) //image id
       val mediaId   = getAsString("id", pic).map("gu-image-" + _) //picture ID is the media Id
@@ -310,6 +311,10 @@ class R2ToFlexCartoonConversion(jsonMap : Map[String, Any], parseLiveData : Bool
 
   import scala.language.postfixOps
 
+  override val platformPictures: List[Map[String, Any]] =
+    getAsMaps("mainPicture", liveOrDraft).getOrElse(Nil) ++
+    getAsMaps("largePicture", liveOrDraft).getOrElse(Nil)
+
   <picture story-bundle={storyBundleId orNull} cms-path={cmsPath orNull} notes={notes orNull} slug-word={slug orNull}
            explicit={explicit orNull} expiry-date={scheduledExpiry orNull}
            created-date={createdDate orNull} created-user={createdBy orNull} modified-date={modifiedDate orNull}
@@ -325,13 +330,13 @@ class R2ToFlexCartoonConversion(jsonMap : Map[String, Any], parseLiveData : Bool
     {linktext.map(l =>      <linktext>{l}</linktext>) orNull}
     {trailtext.map(t =>     <trail>{t}</trail>) orNull}
     {thumbnailImageUrl.map(iu =>  <thumbnail-image-url>{iu}</thumbnail-image-url>) orNull}
-    {trailPictureId.map(tp =>     <trail-picture image-id={tp} />) orNull}
-    {largeTrailPictureId.map(ltp =>     <large-trail-picture image-id={ltp} />) orNull}
-    {if(!additionalPictures.isEmpty)
+    {trailPictureId.map(tp =>     <trail-picture image-id={tp} media-id={trailPictureMediaId orNull} />) orNull}
+    {largeTrailPictureId.map(ltp =>   <large-trail-picture image-id={ltp} media-id={largeTrailPictureMediaId orNull} />) orNull}
+    {if(!associatedPictures.isEmpty)
     <pictures>
-      {additionalPictures.map{pic => {
+      {associatedPictures.map{pic => {
       pic.get("id").map{pid =>
-        <picture image-id={pid}>
+        <picture image-id={pid} media-id={pic("mediaId")}>
           {pic.get("caption").map{caption => <caption>{caption}</caption>} orNull}
         </picture>} orNull
     }}
