@@ -200,6 +200,10 @@ class R2ToFlexGalleryConversion(jsonMap : Map[String, Any], parseLiveData : Bool
 
   import scala.language.postfixOps
 
+  protected override def storyBundleId = {
+    getAsString("displayStoryPackage", live)
+  }
+
   private def explicit = getAsString("explicit").map(_.toBoolean).map(_.toString)
 
   override lazy val live = getFacetFromMap("live")
