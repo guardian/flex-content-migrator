@@ -9,7 +9,7 @@
         "id": 360443494,
         "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/15/1268673104662/Vatican-Pope-Benedict-XVI-002.jpg",
         "mimeType": "image/jpeg",
-        "caption": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform during his weekly general audience in the Paul VI Hall, 3 February 2010",
+        "caption": "not used",
         "source": "Reuters",
         "altText": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform.",
         "photographer": "Osservatore Romano",
@@ -38,7 +38,7 @@
         "id": 360443495,
         "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/15/1268673105788/Vatican-Pope-Benedict-XVI-003.jpg",
         "mimeType": "image/jpeg",
-        "caption": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform during his weekly general audience in the Paul VI Hall, 3 February 2010",
+        "caption": "not used",
         "source": "Reuters",
         "altText": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform.",
         "photographer": "Osservatore Romano",
@@ -149,7 +149,8 @@
     "blockAds": false,
     "headline": "Eyewitness: Balancing act at the Vatican",
     "standfirst": "Photographs from the Guardian\u0027s Eyewitness series",
-    "id": 360443642
+    "id": 360443642,
+    "displayStoryPackage": 32233
   },
   "live": {
     "altText": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform.",
@@ -161,7 +162,7 @@
         "id": 360443494,
         "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/15/1268673104662/Vatican-Pope-Benedict-XVI-002.jpg",
         "mimeType": "image/jpeg",
-        "caption": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform during his weekly general audience in the Paul VI Hall, 3 February 2010",
+        "caption": "Not used",
         "source": "Reuters",
         "altText": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform.",
         "photographer": "Osservatore Romano",
@@ -190,7 +191,7 @@
         "id": 360443495,
         "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/15/1268673105788/Vatican-Pope-Benedict-XVI-003.jpg",
         "mimeType": "image/jpeg",
-        "caption": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform during his weekly general audience in the Paul VI Hall, 3 February 2010",
+        "caption": "Not used",
         "source": "Reuters",
         "altText": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform.",
         "photographer": "Osservatore Romano",
@@ -295,6 +296,7 @@
     "headline": "Eyewitness: Balancing act at the Vatican",
     "standfirst": "Photographs from the Guardian\u0027s Eyewitness series",
     "productionOffice": "UK",
-    "id": 360443642
+    "id": 360443642,
+    "displayStoryPackage": 32233
   }
 }
