@@ -1,7 +1,5 @@
 package services.migration
 
-import java.text.SimpleDateFormat
-import java.util.{TimeZone, Calendar, Date}
 import com.lambdaworks.jacks.JacksMapper
 import play.Logger
 
@@ -17,24 +15,8 @@ object R2CMSPathCleaner{
 
 }
 
-object R2DateConversion{
-
-  def dateTimeFormatterXml = gmtDateFormatter("yyyyMMddHHmm")
-
-  private def gmtDateFormatter(pattern : String) = {
-    new SimpleDateFormat(pattern);
-  }
-
-  def jsonToXmlDateTime(jsonDate : String) = {
-    val jsonTime: Date = javax.xml.bind.DatatypeConverter.parseDateTime(jsonDate).getTime
-    dateTimeFormatterXml.format (jsonTime)
-  }
-
-}
 
 abstract class R2ToFlexContentConversion(jsonMap : Map[String, Any], parseLiveData : Boolean = false) {
-
-  import R2DateConversion._
 
   assert(jsonMap != null)
 
@@ -131,19 +113,16 @@ abstract class R2ToFlexContentConversion(jsonMap : Map[String, Any], parseLiveDa
 
 
   protected def scheduledExpiry =
-    getAsString("scheduledExpiryDate").map(jsonToXmlDateTime _ )
+    getAsString("scheduledExpiryDate")
 
   protected def createdDate =
-    getAsMaps("pages", liveOrDraft).flatMap(p => getAsString("createdOn", p.head)).
-      map(jsonToXmlDateTime _ )
+    getAsMaps("pages", liveOrDraft).flatMap(p => getAsString("createdOn", p.head))
 
   protected def modifiedDate =
-    getAsMaps("pages", liveOrDraft).flatMap(p => getAsString("modifiedOn", p.head)).
-      map(jsonToXmlDateTime _ )
+    getAsMaps("pages", liveOrDraft).flatMap(p => getAsString("modifiedOn", p.head))
 
   protected def webPublicationDate =
-    getAsMaps("pages", liveOrDraft).flatMap(p => getAsString("webPublicationTime", p.head)).
-      map(jsonToXmlDateTime _ )
+    getAsMaps("pages", liveOrDraft).flatMap(p => getAsString("webPublicationTime", p.head))
 
   lazy val xmlCmsPath = cmsPath
 
@@ -167,15 +146,15 @@ abstract class R2ToFlexContentConversion(jsonMap : Map[String, Any], parseLiveDa
   type ExpiryInfo = (Option[Boolean], Option[String], Option[String])
   protected def getRightsExpiry : Option[ExpiryInfo] = {
     val isExpired = getAsString("expired").map(_.toBoolean)
-    val scheduledExpiry = getAsString("scheduledExpiryDate").map( s => javax.xml.bind.DatatypeConverter.parseDateTime(s).getTime)
+    val scheduledExpiry = getAsString("scheduledExpiryDate")
 
     isExpired match {
-      case Some(true) => Some((Some(true), scheduledExpiry.map(dateTimeFormatterXml.format _), None))
+      case Some(true) => Some((Some(true), scheduledExpiry.map(_.toString), None))
       case _ => {
         //not expired but it might be scheduled to expire
         scheduledExpiry match {
           case Some(schedule) =>{
-            Some((Some(false), None, Some(dateTimeFormatterXml.format(schedule))))
+            Some((Some(false), None, Some(schedule.toString)))
           }
           case _ => None //not expired and not scheduled to expire
         }
@@ -185,7 +164,7 @@ abstract class R2ToFlexContentConversion(jsonMap : Map[String, Any], parseLiveDa
 
   protected def getCommercialExpiry : Option[ExpiryInfo] = {
     val isExpired = getAsString("expiredCommercial").map(_.toBoolean)
-    val expiredAt = getAsString("commercialExpiryDate").map(javax.xml.bind.DatatypeConverter.parseDateTime(_).getTime ).map(dateTimeFormatterXml.format _)
+    val expiredAt = getAsString("commercialExpiryDate")
     //commercial expiry just happens, it is not scheduled, so it is either expired (with a date) or nothing
     isExpired match {
       case Some(true) => Some((Some(true), expiredAt, None))
