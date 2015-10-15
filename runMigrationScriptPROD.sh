@@ -33,7 +33,7 @@ echo "Results in $OUTPUT_PATH"
 
 
 #Analyse the files to see if any had failures
-EXPECTED_BATCH_RESULT="Batch Success Videos = $BATCH_SIZE, Failed Videos = 0"
+EXPECTED_BATCH_RESULT="Batch Success Galleries = $BATCH_SIZE, Failed Galleries = 0"
 echo ""
 echo "Problem batches..."
 

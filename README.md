@@ -28,7 +28,7 @@ code: `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/g
 
 local: `curl -X POST "http://localhost:9100/migrate/gallery?batchNumber=${batchNumber}&batchSize=${batchSize}"`
 
-code:   `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/gallery?batchNumber=${batchNumber}&batchSize=${batchSize}"`
+code: `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/gallery?batchNumber=${batchNumber}&batchSize=${batchSize}"`
 
 
 ### To Migrate Cartoons Into Flex
@@ -37,13 +37,13 @@ code:   `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate
 
 local: `curl -X POST "http://localhost:9100/migrate/cartoon/${cartoonId}"`
 
-code: --TODO: dns for code env
+code: `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/cartoon/${cartoonId}"`
 
 ####Batch
 
 local: `curl -X POST "http://localhost:9100/migrate/cartoon?batchNumber=${batchNumber}&batchSize=${batchSize}"`
 
-code:   --TODO: dns for code env
+code:   `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/cartoon?batchNumber=${batchNumber}&batchSize=${batchSize}"`
 
 
 
