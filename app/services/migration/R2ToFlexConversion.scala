@@ -19,12 +19,10 @@ object R2CMSPathCleaner{
 
 object R2DateConversion{
 
-  val dateTimeFormatterXml = gmtDateFormatter("yyyyMMddHHmm")
+  def dateTimeFormatterXml = gmtDateFormatter("yyyyMMddHHmm")
 
   private def gmtDateFormatter(pattern : String) = {
-    val sdf = new SimpleDateFormat(pattern);
-    sdf.setTimeZone(TimeZone.getTimeZone("GMT"))
-    sdf
+    new SimpleDateFormat(pattern);
   }
 
   def jsonToXmlDateTime(jsonDate : String) = {
@@ -203,6 +201,8 @@ class R2ToFlexGalleryConversion(jsonMap : Map[String, Any], parseLiveData : Bool
   import scala.language.postfixOps
 
   protected def explicit = getAsString("explicit").map(_.toBoolean).map(_.toString)
+  protected override def storyBundleId = {
+    getAsString("displayStoryPackage", live)
 
   override lazy val live = getFacetFromMap("live")
 

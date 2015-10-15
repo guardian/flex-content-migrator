@@ -35,7 +35,7 @@ class R2ToFlexConversionSpec extends Specification  {
     }
     "parse story bundle ID correctly" in {
       val storyBundleId =  parsedGalleryJson.xml \ "@story-bundle"
-      storyBundleId.text.toString must equalTo("49195")       //TODO: using pageID: this needs some thought
+      storyBundleId.text.toString must equalTo("32233")
     }
     "parse cms path correctly" in {
       val cmsPath = parsedGalleryJson.xml \ "@cms-path"
@@ -43,11 +43,11 @@ class R2ToFlexConversionSpec extends Specification  {
     }
     "parse web publication time correctly" in {
       val webPubTime = parsedGalleryJson.xml \ "@web-publication-date"
-      webPubTime.text.toString must equalTo("200707271652")
+      webPubTime.text.toString must equalTo("200707271752")
     }
     "parse created-date correctly" in {
       val createdDate = parsedGalleryJson.xml \ "@created-date"
-      createdDate.text.toString must equalTo("200707271446")
+      createdDate.text.toString must equalTo("200707271546")
     }
     "parse modified-date correctly" in {
       val createdDate = parsedGalleryJson.xml \ "@modified-date"
@@ -138,7 +138,7 @@ class R2ToFlexConversionSpec extends Specification  {
       val expiredAt = (parsedGalleryJson.xml \ "expiry" \ "commercial" \ "@expiredAt").headOption.map(_.text.toString)
       val scheduledExpiry = (parsedGalleryJson.xml \ "expiry" \ "commercial" \ "@scheduledExpiry").headOption.map(_.text.toString)
       isExpired must equalTo(Some("true"))
-      expiredAt must equalTo(Some("201510010000"))
+      expiredAt must equalTo(Some("201510010100"))
       scheduledExpiry must equalTo(None)
     }
   }
