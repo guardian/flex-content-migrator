@@ -43,15 +43,15 @@ class R2ToFlexConversionSpec extends Specification  {
     }
     "parse web publication time correctly" in {
       val webPubTime = parsedGalleryJson.xml \ "@web-publication-date"
-      webPubTime.text.toString must equalTo("200707271752")
+      webPubTime.text.toString must equalTo("2007-07-27T17:52:21.000+01:00")
     }
     "parse created-date correctly" in {
       val createdDate = parsedGalleryJson.xml \ "@created-date"
-      createdDate.text.toString must equalTo("200707271546")
+      createdDate.text.toString must equalTo("2007-07-27T15:46:23.000+01:00")
     }
     "parse modified-date correctly" in {
       val createdDate = parsedGalleryJson.xml \ "@modified-date"
-      createdDate.text.toString must equalTo("200802081640")
+      createdDate.text.toString must equalTo("2008-02-08T16:40:11.000Z")
     }
     "parse created-user correctly" in {
       val expiry = parsedGalleryJson.xml \ "@created-user"
@@ -130,7 +130,7 @@ class R2ToFlexConversionSpec extends Specification  {
       val expiredAt = (parsedGalleryJson.xml \ "expiry" \ "rights" \ "@expiredAt").headOption.map(_.text.toString)
       val scheduledExpiry = (parsedGalleryJson.xml \ "expiry" \ "rights" \ "@scheduledExpiry").headOption.map(_.text.toString)
       isExpired must equalTo(Some("true"))
-      expiredAt must equalTo(Some("201401280000"))
+      expiredAt must equalTo(Some("2014-01-28T00:00:00.000Z"))
       scheduledExpiry must equalTo(None)
     }
     "parse commercial expiry correctly" in {
@@ -138,7 +138,7 @@ class R2ToFlexConversionSpec extends Specification  {
       val expiredAt = (parsedGalleryJson.xml \ "expiry" \ "commercial" \ "@expiredAt").headOption.map(_.text.toString)
       val scheduledExpiry = (parsedGalleryJson.xml \ "expiry" \ "commercial" \ "@scheduledExpiry").headOption.map(_.text.toString)
       isExpired must equalTo(Some("true"))
-      expiredAt must equalTo(Some("201510010100"))
+      expiredAt must equalTo(Some("2015-10-01T00:00:00.000Z"))
       scheduledExpiry must equalTo(None)
     }
   }
