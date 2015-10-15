@@ -23,11 +23,17 @@ protected[migration] class R2IntegrationAPIClient {
   private def GalleriesToMigrateUrl =
     R2BaseUrl + "/tools/newspaperintegration/migration/galleries-to-migrate"
 
+  private def CartoonsToMigrateUrl =
+    R2BaseUrl + "/tools/newspaperintegration/migration/cartoons-to-migrate"
+
   private def GetVideoInJsonUrl(id : Int) =
     R2BaseUrl + s"/tools/newspaperintegration/videomigration/getVideoInJson/${id}"
 
   private def GetGalleryInJsonUrl(id : Int) =
     R2BaseUrl + s"/tools/newspaperintegration/migration/gallery/${id}"
+
+  private def GetCartoonInJsonUrl(id : Int) =
+    R2BaseUrl + s"/tools/newspaperintegration/migration/cartoon/${id}"
 
   private def ContentMigratedUrl =
     R2BaseUrl + "/tools/newspaperintegration/migration/migratecontent"
@@ -40,6 +46,9 @@ protected[migration] class R2IntegrationAPIClient {
 
   private def getGalleryInJson(id : Int) =
     WS.url(GetGalleryInJsonUrl(id)).get()
+
+  private def getCartoonInJson(id : Int) =
+    WS.url(GetCartoonInJsonUrl(id)).get()
 
 
   private def migrateContentInR2(r2ContentId : Int, composerId : String) = {
@@ -70,6 +79,18 @@ protected[migration] class R2IntegrationAPIClient {
   }
   }
 }
+
+
+  protected[migration] def migrateCartoonInR2(r2CartoonId : Int, composerId : String) = {
+    migrateContentInR2(r2CartoonId, composerId).map{ result => {
+      if(result._1){
+        import Metrics._
+        CartoonsMigratedInR2.increment
+      }
+      result
+    }
+    }
+  }
   
   protected[migration] def migrateVideoInR2(r2VideoId : Int, composerId : String) = {
     migrateContentInR2(r2VideoId, composerId).map{ result => {
@@ -86,6 +107,12 @@ protected[migration] class R2IntegrationAPIClient {
 
   protected[migration] def getBatchOfGalleryIds(batchSize : Int, batchNumber : Int) : Future[List[Int]] = {
     WS.url(requestGalleriesToMigrate(batchSize, batchNumber)).get().map{response =>
+      (response.json \ "elementsOnCurrentPage").as[List[Int]]
+    }
+  }
+
+  protected[migration] def getBatchOfCartoonIds(batchSize : Int, batchNumber : Int) : Future[List[Int]] = {
+    WS.url(requestCartoonsToMigrate(batchSize, batchNumber)).get().map{response =>
       (response.json \ "elementsOnCurrentPage").as[List[Int]]
     }
   }
@@ -119,6 +146,13 @@ protected[migration] class R2IntegrationAPIClient {
     })
   }
 
+  protected[migration] def loadCartoonById(id : Int) : Future[SourceContent] = {
+    getCartoonInJson(id).map(response => {
+      Logger.debug(s"Loaded cartoon ${id} from R2")
+      new SourceContent(id, response.body)
+    })
+  }
+
   private def pageSize(size : Int) = s"pageSize=${size}"
 
   private def pageNumber(offset : Int) = s"pageNumber=${offset}"
@@ -132,7 +166,10 @@ protected[migration] class R2IntegrationAPIClient {
 
   private def requestGalleriesToMigrate(size : Int, offset : Int) =
     s"${GalleriesToMigrateUrl}?${pageSize(size)}&${pageNumber(offset)}"
-  
+
+  private def requestCartoonsToMigrate(size : Int, offset : Int) =
+    s"${CartoonsToMigrateUrl}?${pageSize(size)}&${pageNumber(offset)}"
+
   private def requestContentMigrated(r2VideoIdInt : Int, composerIdSt : String) =
     s"${ContentMigratedUrl}?${r2VideoId(r2VideoIdInt)}&${composerId(composerIdSt)}"
 

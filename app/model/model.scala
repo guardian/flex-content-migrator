@@ -1,7 +1,7 @@
 package model
 
 import play.api.libs.ws.WSResponse
-import services.migration.{R2ToFlexGalleryConversion, R2ToFlexContentConversion, R2ToFlexVideoConversion}
+import services.migration.{R2ToFlexCartoonConversion, R2ToFlexGalleryConversion, R2ToFlexContentConversion, R2ToFlexVideoConversion}
 
 
 case class SourceContent(val id : Int, json : String)
@@ -26,6 +26,12 @@ case class TransformedGallery(override val sourceContent : SourceContent) extend
   override val json = R2ToFlexGalleryConversion.jsonMap(sourceContent.json)
   override val liveData = R2ToFlexGalleryConversion.parseLiveData(json)
   override val draftData = R2ToFlexGalleryConversion.parseDraftData(json)
+}
+
+case class TransformedCartoon(override val sourceContent : SourceContent) extends TransformedContent(sourceContent){
+  override val json = R2ToFlexCartoonConversion.jsonMap(sourceContent.json)
+  override val liveData = R2ToFlexCartoonConversion.parseLiveData(json)
+  override val draftData = R2ToFlexCartoonConversion.parseDraftData(json)
 }
 
 case class ContentInFlex(id : Int, response : WSResponse){

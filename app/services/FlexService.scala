@@ -57,6 +57,19 @@ object FlexGalleryMigrationServiceImpl  extends FlexContentMigrationService{
   }
 }
 
+object FlexCartoonMigrationServiceImpl  extends FlexContentMigrationService{
+  override lazy val ConnectivityCheckUrl = FlexImportBaseUrl + "/contentmigration/picture/index";
+  private def MigrateCartoonUrl = FlexImportBaseUrl + "/contentmigration/picture"
+
+  override def migrateContentXml(xmlFile: File): Future[WSResponse] = {
+    flexThrottlerFt[WSResponse] {
+      withCountIncr(Metrics.CartoonsMigratedInFlex) {
+        makeAsyncCall(MigrateCartoonUrl, (xmlFile, "fileData"), Map())
+      }
+    }
+  }
+}
+
 
 object FlexVideoIntegrationServiceImpl  extends FlexVideoIntegrationService
                                         with FlexContentMigrationService{

@@ -9,6 +9,10 @@ GET         /check/gallery                 controllers.migration.GalleryMigratio
 POST        /migrate/gallery               controllers.migration.GalleryMigrationApi.migrateBatch(batchSize: Option[Int] ?=None, batchNumber : Option[Int] ?=None)
 POST        /migrate/gallery/:gallery_id   controllers.migration.GalleryMigrationApi.migratedGallery(gallery_id : Int)
 
+GET         /check/cartoon                 controllers.migration.CartoonMigrationApi.checkFlexConnection
+POST        /migrate/cartoon               controllers.migration.CartoonMigrationApi.migrateBatch(batchSize: Option[Int] ?=None, batchNumber : Option[Int] ?=None)
+POST        /migrate/cartoon/:cartoon_id   controllers.migration.CartoonMigrationApi.migratedGallery(cartoon_id : Int)
+
 
 GET         /management/healthcheck        controllers.Application.healthcheck
 # Map static resources from the /public folder to the /assets URL path

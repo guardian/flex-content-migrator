@@ -15,10 +15,14 @@ object Metrics {
 
   val GalleriesMigratedInFlex = new CountMetric("galleriesMigratedInFlex")
   val GalleriesMigratedInR2 = new CountMetric("galleriesMigratedInR2")
+  val CartoonsMigratedInFlex = new CountMetric("cartoonsMigratedInFlex")
+  val CartoonsMigratedInR2 = new CountMetric("cartoonsMigratedInR2")
 
   val all = List(
     GalleriesMigratedInFlex,
-    GalleriesMigratedInR2
+    GalleriesMigratedInR2,
+    CartoonsMigratedInFlex,
+    CartoonsMigratedInR2
   )
 
   private val reporter = new CloudWatchReporter(all)
