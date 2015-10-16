@@ -139,9 +139,18 @@ abstract class R2ToFlexContentConversion(jsonMap : Map[String, Any], parseLiveDa
     }}
   }
 
-  protected def syndicationAggregateFn = getAsString("syndicationAggregate")
-  protected def subscriptionDatabasesFn = getAsString("subscriptionDatabases")
-  protected def developerCommunityFn = getAsString("developerCommunity")
+  private def mapRights(rightValue : Option[String]) = {
+    //historical videos can have null values in the DB - CAPI api-indexer will default to 'true', migrated content should
+    //keep the same behaviour
+    rightValue match {
+      case None => Some("true")
+      case Some(x) => Some(x)
+    }
+  }
+
+  protected def syndicationAggregateFn = mapRights(getAsString("syndicationAggregate"))
+  protected def subscriptionDatabasesFn = mapRights(getAsString("subscriptionDatabases"))
+  protected def developerCommunityFn = mapRights(getAsString("developerCommunity"))
 
   type ExpiryInfo = (Option[Boolean], Option[String], Option[String])
   protected def getRightsExpiry : Option[ExpiryInfo] = {

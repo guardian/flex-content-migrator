@@ -13,6 +13,7 @@ class R2ToFlexConversionSpec extends Specification  {
       R2ToFlexGalleryConversion.jsonMap(fileAsString)
     }
 
+
     lazy val parsedGalleryJson = R2ToFlexGalleryConversion.parseDraftData(r2Json())
 
     "accept R2 json" in {
@@ -122,6 +123,15 @@ class R2ToFlexConversionSpec extends Specification  {
       val developerCommunity    = (parsedGalleryJson.xml \ "rights" \ "@developerCommunity").headOption.map(_.text.toString.toBoolean)
       syndicationAggregate must equalTo(Some(false))
       subscriptionDatabases must equalTo(Some(false))
+      developerCommunity must equalTo(Some(true))
+    }
+    "parse rights correctly when not present" in {
+      val parsedGalleryJson = R2ToFlexGalleryConversion.parseDraftData(r2Json("/migration/r2Gallery2.json"))
+      val syndicationAggregate  = (parsedGalleryJson.xml \ "rights" \ "@syndicationAggregate").headOption.map(_.text.toString.toBoolean)
+      val subscriptionDatabases = (parsedGalleryJson.xml \ "rights" \ "@subscriptionDatabases").headOption.map(_.text.toString.toBoolean)
+      val developerCommunity    = (parsedGalleryJson.xml \ "rights" \ "@developerCommunity").headOption.map(_.text.toString.toBoolean)
+      syndicationAggregate must equalTo(Some(true))
+      subscriptionDatabases must equalTo(Some(true))
       developerCommunity must equalTo(Some(true))
     }
     "parse rights expiry correctly" in {
@@ -250,9 +260,9 @@ class R2ToFlexConversionSpec extends Specification  {
       val syndicationAggregate  = (parsedCartoonJson.xml \ "rights" \ "@syndicationAggregate").headOption.map(_.text.toString.toBoolean)
       val subscriptionDatabases = (parsedCartoonJson.xml \ "rights" \ "@subscriptionDatabases").headOption.map(_.text.toString.toBoolean)
       val developerCommunity    = (parsedCartoonJson.xml \ "rights" \ "@developerCommunity").headOption.map(_.text.toString.toBoolean)
-      syndicationAggregate must equalTo(None)
-      subscriptionDatabases must equalTo(None)
-      developerCommunity must equalTo(None)
+      syndicationAggregate must equalTo(Some(true))
+      subscriptionDatabases must equalTo(Some(true))
+      developerCommunity must equalTo(Some(true))
     }
     "parse rights expiry correctly" in {
       val isExpired = (parsedCartoonJson.xml \ "expiry" \ "rights" \ "@expired").headOption.map(_.text.toString)
