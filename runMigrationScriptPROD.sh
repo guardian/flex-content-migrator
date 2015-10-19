@@ -8,10 +8,10 @@ read -p "Press [Enter] key to start PROD migration..."
 
 
 BATCH_SIZE=5
-NUMBER_OF_BATCHES=200
+NUMBER_OF_BATCHES=1000
 
 
-URL="$PREFIX?batchSize=$BATCH_SIZE&batchNumber=2"
+URL="$PREFIX?batchSize=$BATCH_SIZE&batchNumber=4"
 echo "Migrating content to $URL"
 
 TIMESTAMP="$(date +"%s")"
@@ -28,7 +28,7 @@ echo "Results in $OUTPUT_PATH"
             BATCH_RESULTS=$OUTPUT_PATH/batch$i.txt
             curl -X POST $URL > $BATCH_RESULTS
             echo "results for batch $i in $BATCH_RESULTS"
-            sleep 1
+            sleep 2
         done    
 
 

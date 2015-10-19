@@ -17,12 +17,18 @@ object Metrics {
   val GalleriesMigratedInR2 = new CountMetric("galleriesMigratedInR2")
   val CartoonsMigratedInFlex = new CountMetric("cartoonsMigratedInFlex")
   val CartoonsMigratedInR2 = new CountMetric("cartoonsMigratedInR2")
+  val QuizzesMigratedInR2 = new CountMetric("quizzesMigratedInR2")
+  val QuizzesMigratedInFlex = new CountMetric("quizzesMigratedInFlex")
+  val QuizzesMigratedInQuizBuilder = new CountMetric("quizzesMigratedInQuizBuilder")
 
   val all = List(
     GalleriesMigratedInFlex,
     GalleriesMigratedInR2,
     CartoonsMigratedInFlex,
-    CartoonsMigratedInR2
+    CartoonsMigratedInR2,
+    QuizzesMigratedInR2,
+    QuizzesMigratedInFlex,
+    QuizzesMigratedInQuizBuilder
   )
 
   private val reporter = new CloudWatchReporter(all)
