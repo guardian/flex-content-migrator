@@ -11,7 +11,7 @@ BATCH_SIZE=5
 NUMBER_OF_BATCHES=200
 
 
-URL="$PREFIX?batchSize=$BATCH_SIZE&batchNumber=2"
+URL="$PREFIX?batchSize=$BATCH_SIZE&batchNumber=4"
 echo "Migrating content to $URL"
 
 TIMESTAMP="$(date +"%s")"
