@@ -215,27 +215,14 @@ class R2ToFlexGalleryConversion(jsonMap : Map[String, Any], parseLiveData : Bool
             Map("id" -> id, "mediaId" -> mediaId.get)  ++
             {   getFromPictureOrImage("caption").map(caption => ("caption" -> caption)) ++
                 getFromPictureOrImage("altText").map(altText => ("altText" -> altText)) ++
-                getFromPictureOrImage("source").map(source => ("source" -> source)) ++
-                getFromPictureOrImage("photographer").map(photographer => ("photographer" -> photographer)) ++
-                getFromPictureOrImage("comments").map(comments => ("comments" -> comments)) ++
-                getFromPictureOrImage("credit").map(comments => ("credit" -> comments))
+                getFromPictureOrImage("credit").map(comments => ("credit" -> comments)) ++
+                getFromPictureOrImage("creditPrefix").map(comments => ("creditPrefix" -> comments))
             }.toMap[String,String]
         }).toList
 
       val thumbImageMap =
         thumbId.map(id => {
-          def getFromPictureOrThumb(field: String) = getAsString(field) match {
-            case None => getAsMap("image", pic).flatMap(_.get(field)).map(_.toString)
-            case Some(x) => Some(x)
-          }
-
-          Map("id" -> id, "mediaId" -> mediaId.get) ++
-          {   getFromPictureOrThumb("caption").map(caption => ("caption" -> caption)) ++
-              getFromPictureOrThumb("altText").map(altText => ("altText" -> altText)) ++
-              getFromPictureOrThumb("source").map(source => ("source" -> source)) ++
-              getFromPictureOrThumb("photographer").map(photographer => ("photographer" -> photographer)) ++
-              getFromPictureOrThumb("comments").map(comments => ("comments" -> comments))
-          }.toMap[String, String]
+          Map("id" -> id, "mediaId" -> mediaId.get)
         }).toList
 
       mainImageMap ++ thumbImageMap
@@ -268,10 +255,8 @@ class R2ToFlexGalleryConversion(jsonMap : Map[String, Any], parseLiveData : Bool
           <picture image-id={pid} media-id={pic("mediaId")}>
             {pic.get("caption").map{v => <caption>{v}</caption>} orNull}
             {pic.get("altText").map{v => <altText>{v}</altText>} orNull}
-            {pic.get("source").map{v => <source>{v}</source>} orNull}
-            {pic.get("photographer").map{v => <photographer>{v}</photographer>} orNull}
-            {pic.get("comments").map{v => <comments>{v}</comments>} orNull}
             {pic.get("credit").map{v => <credit>{v}</credit>} orNull}
+            {pic.get("creditPrefix").map{v => <creditPrefix>{v}</creditPrefix>} orNull}
           </picture>} orNull
         }}
         }
@@ -343,10 +328,8 @@ class R2ToFlexCartoonConversion(jsonMap : Map[String, Any], parseLiveData : Bool
             <picture image-id={pid} media-id={pic("mediaId")}>
               {pic.get("caption").map{v => <caption>{v}</caption>} orNull}
               {pic.get("altText").map{v => <altText>{v}</altText>} orNull}
-              {pic.get("source").map{v => <source>{v}</source>} orNull}
-              {pic.get("photographer").map{v => <photographer>{v}</photographer>} orNull}
-              {pic.get("comments").map{v => <comments>{v}</comments>} orNull}
               {pic.get("credit").map{v => <credit>{v}</credit>} orNull}
+              {pic.get("creditPrefix").map{v => <creditPrefix>{v}</creditPrefix>} orNull}
             </picture>
           }orNull
         }

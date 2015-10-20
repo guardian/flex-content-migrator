@@ -100,7 +100,6 @@ class R2ToFlexConversionSpec extends Specification  {
 
         (theThumb \ "@image-id").text.toString must equalTo("330288635")
         (theThumb\ "@media-id").text.toString must equalTo("gu-image-330288636")
-        ((theThumb \ "caption").text.toString ) must startWith("July 27 2007: Hundreds of religious students occupy the Red Mosque")
       }
 
       //second picture and thumbnail
@@ -114,7 +113,6 @@ class R2ToFlexConversionSpec extends Specification  {
 
         (theThumb \ "@image-id").text.toString must equalTo("330288644")
         (theThumb\ "@media-id").text.toString must equalTo("gu-image-330288645")
-        ((theThumb \ "caption").text.toString ) must startWith("July 27 2007: Pakistani religious students watch")
       }
     }
     "parse pictures correctly in r2Gallery3" in {
