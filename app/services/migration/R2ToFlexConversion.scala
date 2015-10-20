@@ -217,7 +217,8 @@ class R2ToFlexGalleryConversion(jsonMap : Map[String, Any], parseLiveData : Bool
                 getFromPictureOrImage("altText").map(altText => ("altText" -> altText)) ++
                 getFromPictureOrImage("source").map(source => ("source" -> source)) ++
                 getFromPictureOrImage("photographer").map(photographer => ("photographer" -> photographer)) ++
-                getFromPictureOrImage("comments").map(comments => ("comments" -> comments))
+                getFromPictureOrImage("comments").map(comments => ("comments" -> comments)) ++
+                getFromPictureOrImage("credit").map(comments => ("credit" -> comments))
             }.toMap[String,String]
         }).toList
 
@@ -270,6 +271,7 @@ class R2ToFlexGalleryConversion(jsonMap : Map[String, Any], parseLiveData : Bool
             {pic.get("source").map{v => <source>{v}</source>} orNull}
             {pic.get("photographer").map{v => <photographer>{v}</photographer>} orNull}
             {pic.get("comments").map{v => <comments>{v}</comments>} orNull}
+            {pic.get("credit").map{v => <credit>{v}</credit>} orNull}
           </picture>} orNull
         }}
         }
@@ -339,7 +341,12 @@ class R2ToFlexCartoonConversion(jsonMap : Map[String, Any], parseLiveData : Bool
           {associatedPictures.map { pic => {
           pic.get("id").map { pid =>
             <picture image-id={pid} media-id={pic("mediaId")}>
-              {pic.get("caption").map { caption => <caption>{caption}</caption>} orNull}
+              {pic.get("caption").map{v => <caption>{v}</caption>} orNull}
+              {pic.get("altText").map{v => <altText>{v}</altText>} orNull}
+              {pic.get("source").map{v => <source>{v}</source>} orNull}
+              {pic.get("photographer").map{v => <photographer>{v}</photographer>} orNull}
+              {pic.get("comments").map{v => <comments>{v}</comments>} orNull}
+              {pic.get("credit").map{v => <credit>{v}</credit>} orNull}
             </picture>
           }orNull
         }
