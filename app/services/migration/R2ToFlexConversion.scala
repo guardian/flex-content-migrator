@@ -127,6 +127,9 @@ abstract class R2ToFlexContentConversion(jsonMap : Map[String, Any], parseLiveDa
   lazy val xmlCmsPath = cmsPath
 
 
+  protected def pageNumber = getAsString("pageNumber")
+
+
   protected def associatedPictures : List[Map[String,String]] = {
     val platformPictures: List[Map[String, Any]] = getAsMaps("platformPictures", liveOrDraft).getOrElse(Nil)
     platformPictures.map{pic => {
@@ -305,7 +308,7 @@ class R2ToFlexCartoonConversion(jsonMap : Map[String, Any], parseLiveData : Bool
     <picture story-bundle={storyBundleId orNull} cms-path={cmsPath orNull} notes={notes orNull} slug-word={slug orNull}
              explicit={explicit orNull} expiry-date={scheduledExpiry orNull}
              created-date={createdDate orNull} created-user={createdBy orNull} modified-date={modifiedDate orNull}
-             web-publication-date={webPublicationDate orNull}>
+             web-publication-date={webPublicationDate orNull} on-page={pageNumber orNull}>
 
       <tags>
         {for (tag <- tags) yield <tag id={tag}/>}
