@@ -294,6 +294,10 @@ class R2ToFlexConversionSpec extends Specification  {
       isExpired must equalTo(None)
       scheduledExpiry must equalTo(None)
     }
+    "parse page number correctly" in {
+      val pageNumber = (parsedCartoonJson.xml \ "@on-page").headOption.map(_.text.toString)
+      pageNumber must equalTo(Some("26"))
+    }
   }
 
 }
