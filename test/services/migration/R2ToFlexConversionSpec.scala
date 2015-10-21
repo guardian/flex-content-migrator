@@ -100,7 +100,6 @@ class R2ToFlexConversionSpec extends Specification  {
 
         (theThumb \ "@image-id").text.toString must equalTo("330288635")
         (theThumb\ "@media-id").text.toString must equalTo("gu-image-330288636")
-        ((theThumb \ "caption").text.toString ) must startWith("July 27 2007: Hundreds of religious students occupy the Red Mosque")
       }
 
       //second picture and thumbnail
@@ -114,8 +113,25 @@ class R2ToFlexConversionSpec extends Specification  {
 
         (theThumb \ "@image-id").text.toString must equalTo("330288644")
         (theThumb\ "@media-id").text.toString must equalTo("gu-image-330288645")
-        ((theThumb \ "caption").text.toString ) must startWith("July 27 2007: Pakistani religious students watch")
       }
+    }
+    "parse pictures correctly in r2Gallery3" in {
+      val parsedGalleryJson = R2ToFlexGalleryConversion.parseDraftData(r2Json("/migration/r2Gallery3.json"))
+      val additionalPictures = parsedGalleryJson.xml \ "pictures" \ "picture"
+      additionalPictures.size must equalTo(26)
+
+      //first picture
+      {
+        val thePic = additionalPictures.head
+        val theThumb = additionalPictures.tail.head
+
+        (thePic \ "@image-id").text.toString must equalTo("352503297")
+        (thePic\ "@media-id").text.toString must equalTo("gu-image-352504012")
+        ((thePic \ "caption").text.toString ) must startWith("Possible <a href=")
+        ((thePic \ "credit").text.toString ) must startWith("NASA")
+        ((thePic \ "altText").text.toString ) must startWith("NASA's Mars Reconnaissance Orbiter images")
+      }
+
     }
     "parse rights correctly" in {
       val syndicationAggregate  = (parsedGalleryJson.xml \ "rights" \ "@syndicationAggregate").headOption.map(_.text.toString.toBoolean)
