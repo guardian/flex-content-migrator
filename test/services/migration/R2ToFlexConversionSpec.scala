@@ -264,11 +264,14 @@ class R2ToFlexConversionSpec extends Specification  {
 
         (thePicMain \ "@image-id").text.toString must equalTo("360443494")
         (thePicMain\ "@media-id").text.toString must equalTo("gu-image-29847")
-        ((thePicMain \ "caption").text.toString ) must startWith("Vatican: Pope Benedict XVI watches")
+        ((thePicMain \ "caption").text.toString ) must startWith("cap2") //take from the picture as none on the page
+        ((thePicMain \ "credit").text.toString ) must equalTo("credit2") //take from the page
+        ((thePicMain \ "altText").text.toString ) must equalTo("alt1") //take from the page
+        ((thePicMain \ "creditPrefix").text.toString ) must equalTo("Illustration:") //this is hard coded
 
         (thePicLarge \ "@image-id").text.toString must equalTo("360443495")
         (thePicLarge\ "@media-id").text.toString must equalTo("gu-image-29847") //should share the same media id as the main picture
-        ((thePicLarge \ "caption").text.toString ) must startWith("Vatican: Pope Benedict XVI watches")
+        ((thePicLarge \ "caption").text.toString ) must startWith("cap2")
       }
 
     }

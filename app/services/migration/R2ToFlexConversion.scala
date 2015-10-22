@@ -210,16 +210,21 @@ class R2ToFlexGalleryConversion(jsonMap : Map[String, Any], parseLiveData : Bool
 
       val mainImageMap =
         id.map(id => {
-            def getFromPictureOrImage(field : String) = getAsString(field, pic) match {
-                case None => getAsMap("image", pic).flatMap(_.get(field)).map(_.toString)
-                case Some(x) => Some(x)
-            }
+            def getFromRootOrPictureOrImage(field : String) =
+              getAsString(field) match {
+                case Some(x) => Some(x) //root
+                case None =>
+                  getAsString (field, pic) match {
+                    case Some (x) => Some (x)   //picture
+                    case None => getAsMap ("image", pic).flatMap (_.get (field) ).map (_.toString)  //image
+                  }
+              }
 
             Map("id" -> id, "mediaId" -> mediaId.get)  ++
-            {   getFromPictureOrImage("caption").map(caption => ("caption" -> caption)) ++
-                getFromPictureOrImage("altText").map(altText => ("altText" -> altText)) ++
-                getFromPictureOrImage("credit").map(comments => ("credit" -> comments)) ++
-                getFromPictureOrImage("creditPrefix").map(comments => ("creditPrefix" -> comments))
+            {   getFromRootOrPictureOrImage("caption").map(caption => ("caption" -> caption)) ++
+                getFromRootOrPictureOrImage("altText").map(altText => ("altText" -> altText)) ++
+                getFromRootOrPictureOrImage("credit").map(comments => ("credit" -> comments)) ++
+                getFromRootOrPictureOrImage("creditPrefix").map(comments => ("creditPrefix" -> comments))
             }.toMap[String,String]
         }).toList
 
@@ -332,7 +337,7 @@ class R2ToFlexCartoonConversion(jsonMap : Map[String, Any], parseLiveData : Bool
               {pic.get("caption").map{v => <caption>{v}</caption>} orNull}
               {pic.get("altText").map{v => <altText>{v}</altText>} orNull}
               {pic.get("credit").map{v => <credit>{v}</credit>} orNull}
-              {pic.get("creditPrefix").map{v => <creditPrefix>{v}</creditPrefix>} orNull}
+              <creditPrefix>Illustration:</creditPrefix>
             </picture>
           }orNull
         }

@@ -1,17 +1,17 @@
 {
   "draft": {
-    "altText": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform.",
+    "altText": "alt1",
     "mainPicture": {
-      "caption": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform during his weekly general audience in the Paul VI Hall, 3 February 2010",
-      "altText": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform.",
+      "caption": "cap2",
+      "altText": "alt2",
       "image": {
         "$type": "image",
         "id": 360443494,
         "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/15/1268673104662/Vatican-Pope-Benedict-XVI-002.jpg",
         "mimeType": "image/jpeg",
-        "caption": "not used",
-        "source": "Reuters",
-        "altText": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform.",
+        "caption": "cap3",
+        "source": "source3",
+        "altText": "alt3",
         "photographer": "Osservatore Romano",
         "width": 780,
         "height": 601,
@@ -27,20 +27,20 @@
           }
         }
       },
-      "credit": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform during his weekly general audience in the Paul VI Hall, 3 February 2010",
+      "credit": "credit2",
       "id": 29847
     },
     "largePicture": {
-      "caption": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform during his weekly general audience in the Paul VI Hall, 3 February 2010",
-      "altText": "Vatican: Pope Benedict XVI watches members of Italy’s American Circus perform.",
+      "caption": "cap2",
+      "altText": "alt2",
       "image": {
         "$type": "image",
         "id": 360443495,
         "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/15/1268673105788/Vatican-Pope-Benedict-XVI-003.jpg",
         "mimeType": "image/jpeg",
-        "caption": "not used",
-        "source": "Reuters",
-        "altText": "Vatican: Pope Benedict XVI watches members of Italy?s American Circus perform.",
+        "caption": "cap3",
+        "source": "source3",
+        "altText": "alt3",
         "photographer": "Osservatore Romano",
         "width": 1024,
         "height": 690,
@@ -56,10 +56,10 @@
           }
         }
       },
-      "credit": "Osservatore Romano/Reuters",
+      "credit": "credit2",
       "id": 361106497
     },
-    "source": "Reuters",
+    "source": "source1",
     "creationAndLastModifiedDetail": {
       "createdOn": "2015-10-14T10:56:41.472+01:00",
       "modifiedOn": "2015-10-14T10:56:41.472+01:00"
