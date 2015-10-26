@@ -337,6 +337,7 @@ class R2ToFlexCartoonConversion(jsonMap : Map[String, Any], parseLiveData : Bool
               {pic.get("caption").map{v => <caption>{v}</caption>} orNull}
               {pic.get("altText").map{v => <altText>{v}</altText>} orNull}
               {pic.get("credit").map{v => <credit>{v}</credit>} orNull}
+              <displayCredit>true</displayCredit>
               <creditPrefix>Illustration:</creditPrefix>
             </picture>
           }orNull
