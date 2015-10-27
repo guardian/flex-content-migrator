@@ -268,10 +268,12 @@ class R2ToFlexConversionSpec extends Specification  {
         ((thePicMain \ "credit").text.toString ) must equalTo("credit2") //take from the page
         ((thePicMain \ "altText").text.toString ) must equalTo("alt1") //take from the page
         ((thePicMain \ "creditPrefix").text.toString ) must equalTo("Illustration:") //this is hard coded
+        ((thePicMain \ "displayCredit").text.toString ) must equalTo("true") //this is hard coded
 
         (thePicLarge \ "@image-id").text.toString must equalTo("360443495")
         (thePicLarge\ "@media-id").text.toString must equalTo("gu-image-29847") //should share the same media id as the main picture
         ((thePicLarge \ "caption").text.toString ) must startWith("cap2")
+        ((thePicLarge \ "displayCredit").text.toString ) must equalTo("true") //this is hard coded
       }
 
     }
