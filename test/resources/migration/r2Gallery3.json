@@ -1,0 +1,1540 @@
+{
+  "draft": {
+    "pictures": [
+      {
+        "caption": "Possible <a href=\"http://hirise.lpl.arizona.edu/ESP_014100_1600\">inverted meanders</a> in a filled channel west of the Ladon Valles river valley",
+        "altText": "NASA's Mars Reconnaissance Orbiter images",
+        "image": {
+          "$type": "image",
+          "id": 352503297,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2009/9/3/1252004485138/NASAs-Mars-Reconnaissance-006.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Image of the planet Mars, showing possible inverted meanders in a filled channel west of Ladon Valles",
+          "source": "guardian.co.uk",
+          "altText": "NASA's Mars Reconnaissance Orbiter images",
+          "width": 489,
+          "height": 390,
+          "uploadDate": "2009-09-03T20:01:25.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {},
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 352504012
+      },
+      {
+        "caption": "A <a href=\"http://hirise.lpl.arizona.edu/ESP_011610_0935\">sawtooth pattern</a> in carbon dioxide ice",
+        "altText": " NASA's Mars Reconnaissance Orbiter images",
+        "image": {
+          "$type": "image",
+          "id": 352503295,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2009/9/3/1252004483602/NASAs-Mars-Reconnaissance-004.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "The sawtooth pattern in carbon dioxide ice",
+          "source": "guardian.co.uk",
+          "altText": " NASA's Mars Reconnaissance Orbiter images",
+          "width": 515,
+          "height": 390,
+          "uploadDate": "2009-09-03T20:01:23.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {},
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 352504018
+      },
+      {
+        "caption": "The south pole 'residual cap'",
+        "altText": "NASA's Mars Reconnaissance Orbiter images",
+        "image": {
+          "$type": "image",
+          "id": 352503294,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2009/9/3/1252004482849/NASAs-Mars-Reconnaissance-003.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "The south pole residual cap",
+          "source": "guardian.co.uk",
+          "altText": "NASA's Mars Reconnaissance Orbiter images",
+          "width": 630,
+          "height": 369,
+          "uploadDate": "2009-09-03T20:01:22.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 352504019,
+          "url": "http://static.guimcode.co.uk/Guardian/science/gallery/2009/sep/03/mars/NASAs-Mars-Reconnaissance-003-1707-thumb.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "The south pole residual cap",
+          "source": "NASA",
+          "altText": "NASA's Mars Reconnaissance Orbiter images",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2009-09-03T20:18:51.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 352504020
+      },
+      {
+        "caption": "Gullies at the edge of Hale crater",
+        "altText": "NASA's Mars Reconnaissance Orbiter images",
+        "image": {
+          "$type": "image",
+          "id": 352503292,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2009/9/3/1252004482035/NASAs-Mars-Reconnaissance-002.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Gullies at the edge of Hale crater",
+          "source": "guardian.co.uk",
+          "altText": "NASA's Mars Reconnaissance Orbiter images",
+          "width": 502,
+          "height": 390,
+          "uploadDate": "2009-09-03T20:01:22.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 352504021,
+          "url": "http://static.guimcode.co.uk/Guardian/science/gallery/2009/sep/03/mars/NASAs-Mars-Reconnaissance-002-1767-thumb.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Gullies at the edge of Hale crater",
+          "source": "Reuters",
+          "altText": "NASA's Mars Reconnaissance Orbiter images",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2009-09-03T20:18:51.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 352504022
+      },
+      {
+        "caption": "Possible blocky deposit in Melas Chasma",
+        "altText": "NASA's Mars Reconnaissance Orbiter images",
+        "image": {
+          "$type": "image",
+          "id": 352503298,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2009/9/3/1252004485931/NASAs-Mars-Reconnaissance-007.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Possible blocky deposit in Melas Chasma",
+          "source": "guardian.co.uk",
+          "altText": "NASA's Mars Reconnaissance Orbiter images",
+          "width": 534,
+          "height": 390,
+          "uploadDate": "2009-09-03T20:01:25.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 352504013,
+          "url": "http://static.guimcode.co.uk/Guardian/science/gallery/2009/sep/03/mars/NASAs-Mars-Reconnaissance-007-1500-thumb.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Possible blocky deposit in Melas Chasma",
+          "source": "NASA",
+          "altText": "NASA's Mars Reconnaissance Orbiter images",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2009-09-03T20:18:51.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 352504014
+      },
+      {
+        "caption": "The Ulysses Fossae",
+        "altText": "NASA's Mars Reconnaissance Orbiter images",
+        "image": {
+          "$type": "image",
+          "id": 352503296,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2009/9/3/1252004484350/NASAs-Mars-Reconnaissance-005.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "An image of Mars showing the Ulysses Fossae",
+          "source": "guardian.co.uk",
+          "altText": "NASA's Mars Reconnaissance Orbiter images",
+          "width": 504,
+          "height": 390,
+          "uploadDate": "2009-09-03T20:01:24.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 352504015,
+          "url": "http://static.guimcode.co.uk/Guardian/science/gallery/2009/sep/03/mars/NASAs-Mars-Reconnaissance-005-1569-thumb.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "An image of Mars showing the Ulysses Fossae",
+          "source": "NASA",
+          "altText": "NASA's Mars Reconnaissance Orbiter images",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2009-09-03T20:18:51.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 352504016
+      },
+      {
+        "caption": "Possible Evaporites near Fan in Coprates region",
+        "altText": "NASA's Mars Reconnaissance Orbiter images",
+        "image": {
+          "$type": "image",
+          "id": 352503291,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2009/9/3/1252004481230/NASAs-Mars-Reconnaissance-001.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Possible Evaporites near Fan in Coprates region",
+          "source": "guardian.co.uk",
+          "altText": "NASA's Mars Reconnaissance Orbiter images",
+          "width": 600,
+          "height": 390,
+          "uploadDate": "2009-09-03T20:01:21.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 352504023,
+          "url": "http://static.guimcode.co.uk/Guardian/science/gallery/2009/sep/03/mars/NASAs-Mars-Reconnaissance-001-1854-thumb.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Possible Evaporites near Fan in Coprates region",
+          "source": "Reuters",
+          "altText": "NASA's Mars Reconnaissance Orbiter images",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2009-09-03T20:18:51.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 352504024
+      },
+      {
+        "caption": "Ice deposits detected in Deuteronilus Mensae",
+        "altText": "Mars: Deuteronilus Mensae",
+        "image": {
+          "$type": "image",
+          "id": 360645698,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269016320128/Deuteronilus-Mensae-001.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "This map of a region known as Deuteronilus Mensae, in the northern hemisphere, shows locations of the detected ice deposits in blue. The yellow lines indicate ground tracks of the radar observations from multiple orbits of the spacecraft",
+          "source": "guardian.co.uk",
+          "altText": "Mars: Deuteronilus Mensae",
+          "width": 596,
+          "height": 390,
+          "uploadDate": "2010-03-19T16:32:00.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 360647465,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269016320128/Deuteronilus-Mensae-001-thumb-8701.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "This map of a region known as Deuteronilus Mensae, in the northern hemisphere, shows locations of the detected ice deposits in blue. The yellow lines indicate ground tracks of the radar observations from multiple orbits of the spacecraft",
+          "source": "NASA",
+          "altText": "Mars: Deuteronilus Mensae",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2010-03-19T16:53:18.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 360647466
+      },
+      {
+        "caption": "Layers of rock exposed near the centre of Gale Crater",
+        "altText": "Mars: Gale Crater",
+        "image": {
+          "$type": "image",
+          "id": 360647391,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017527558/Gale-Crater-007.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Layers of rock exposed in the lower portion of a tall mound near the center of Gale Crater on Mars exhibit variations in layer thickness and range between dark and light tones. The crater's mound of layered material is over 4 kilometers (2.4 miles) high, making it more than twice as thick as the stack of rocks exposed in the Grand Canyon on Earth. Gale Crater is approximately 152 kilometers (94 miles) in diameter.\rThis view of layering in the mound's lower formation covers an area about 950 meters (3,100 feet) wide",
+          "source": "guardian.co.uk",
+          "altText": "Mars: Gale Crater",
+          "width": 285,
+          "height": 500,
+          "uploadDate": "2010-03-19T16:52:07.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 360648191,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017527558/Gale-Crater-007-thumb-3870.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Layers of rock exposed in the lower portion of a tall mound near the center of Gale Crater on Mars exhibit variations in layer thickness and range between dark and light tones. The crater's mound of layered material is over 4 kilometers (2.4 miles) high, making it more than twice as thick as the stack of rocks exposed in the Grand Canyon on Earth. Gale Crater is approximately 152 kilometers (94 miles) in diameter.\rThis view of layering in the mound's lower formation covers an area about 950 meters (3,100 feet) wide",
+          "source": "NASA",
+          "altText": "Mars: Gale Crater",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2010-03-19T17:05:54.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 360648192
+      },
+      {
+        "caption": "Bright layered deposits on a plateau near Juventae Chasma ",
+        "altText": "Mars: Juventae Chasma in the Valles Marineris ",
+        "image": {
+          "$type": "image",
+          "id": 360647145,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017326752/Juventae-Chasma-in-the-Va-005.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "This view shows color variations in bright layered deposits on a plateau near Juventae Chasma in the Valles Marineris region of Mars. A brown mantle covers portions of the bright deposits. The view covers an area about 1.2 kilometers (three-fourths of a mile) across.",
+          "source": "guardian.co.uk",
+          "altText": "Mars: Juventae Chasma in the Valles Marineris ",
+          "width": 312,
+          "height": 500,
+          "uploadDate": "2010-03-19T16:48:46.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 360648220,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017326752/Juventae-Chasma-in-the-Va-005-thumb-6551.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "This view shows color variations in bright layered deposits on a plateau near Juventae Chasma in the Valles Marineris region of Mars. A brown mantle covers portions of the bright deposits. The view covers an area about 1.2 kilometers (three-fourths of a mile) across.",
+          "source": "NASA",
+          "altText": "Mars: Juventae Chasma in the Valles Marineris ",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2010-03-19T17:06:56.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 360648221
+      },
+      {
+        "caption": "Synthesised, oblique view of the wall terraces of Mojave Crater",
+        "altText": "Mars: Mojave Crater in the Xanthe Terra region",
+        "image": {
+          "$type": "image",
+          "id": 360647276,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017412231/Mojave-Crater-in-the-Xant-006.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "A digital terrain model generated from a stereo pair of images provides this synthesized, oblique view of a portion of the wall terraces of Mojave Crater in the Xanthe Terra region of Mars. This view shows the ponding of material backed up behind massive wall-terrace blocks of bedrock. Hundreds of impact craters on Mars have similarly ponded features with pitted surfaces. These \"pitted ponds\" are thought to result when material melted by the crater-causing impacts is captured behind the wall terraces",
+          "source": "guardian.co.uk",
+          "altText": "Mars: Mojave Crater in the Xanthe Terra region",
+          "width": 430,
+          "height": 390,
+          "uploadDate": "2010-03-19T16:50:12.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 360648317,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017412231/Mojave-Crater-in-the-Xant-006-thumb-8207.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "A digital terrain model generated from a stereo pair of images provides this synthesized, oblique view of a portion of the wall terraces of Mojave Crater in the Xanthe Terra region of Mars. This view shows the ponding of material backed up behind massive wall-terrace blocks of bedrock. Hundreds of impact craters on Mars have similarly ponded features with pitted surfaces. These \"pitted ponds\" are thought to result when material melted by the crater-causing impacts is captured behind the wall terraces",
+          "source": "NASA",
+          "altText": "Mars: Mojave Crater in the Xanthe Terra region",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2010-03-19T17:07:28.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 360648318
+      },
+      {
+        "caption": "Dunes of sandy materials trapped on the floors of a crater in Noachis Terra",
+        "altText": "Mars: Noachis Terra,",
+        "image": {
+          "$type": "image",
+          "id": 360647124,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017289252/Noachis-Terra-004.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Dunes of sand-sized materials have been trapped on the floors of many Martian craters. This is one example, from a crater in Noachis Terra, west of the giant Hellas impact basin",
+          "source": "guardian.co.uk",
+          "altText": "Mars: Noachis Terra,",
+          "width": 527,
+          "height": 390,
+          "uploadDate": "2010-03-19T16:48:09.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 360648367,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017289252/Noachis-Terra-004-thumb-8237.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Dunes of sand-sized materials have been trapped on the floors of many Martian craters. This is one example, from a crater in Noachis Terra, west of the giant Hellas impact basin",
+          "source": "NASA",
+          "altText": "Mars: Noachis Terra,",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2010-03-19T17:08:08.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 360648368
+      },
+      {
+        "caption": "Layers in the lower portion of two neighbouring buttes within Noctis Labyrinthus ",
+        "altText": "Mars: Noctis Labyrinthus",
+        "image": {
+          "$type": "image",
+          "id": 360647035,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017204066/Noctis-Labyrinthus-003.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Layers in the lower portion of two neighboring buttes within the Noctis Labyrinthus formation. Dune fields blanket the ground in the upper left of the image and a portion of the ground between the buttes. Exposures of brighter and darker materials are also visible in the portion of that area not covered by the dunes",
+          "source": "guardian.co.uk",
+          "altText": "Mars: Noctis Labyrinthus",
+          "width": 250,
+          "height": 500,
+          "uploadDate": "2010-03-19T16:46:44.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 360648391,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017204066/Noctis-Labyrinthus-003-thumb-6302.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Layers in the lower portion of two neighboring buttes within the Noctis Labyrinthus formation. Dune fields blanket the ground in the upper left of the image and a portion of the ground between the buttes. Exposures of brighter and darker materials are also visible in the portion of that area not covered by the dunes",
+          "source": "NASA",
+          "altText": "Mars: Noctis Labyrinthus",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2010-03-19T17:08:56.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 360648392
+      },
+      {
+        "caption": "Spider-like features carved in the south polar region by vaporising dry ice \r\n",
+        "altText": "Mars: Spider-shaped features known as araneiform",
+        "image": {
+          "$type": "image",
+          "id": 360647034,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017202495/Spider-shaped-features-kn-002.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Spider-shaped features known as araneiform in the south polar region of Mars are carved by vaporizing dry ice in a dynamic seasonal process\r",
+          "source": "guardian.co.uk",
+          "altText": "Mars: Spider-shaped features known as araneiform",
+          "width": 521,
+          "height": 390,
+          "uploadDate": "2010-03-19T16:46:42.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 360648460,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017202495/Spider-shaped-features-kn-002-thumb-6542.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Spider-shaped features known as araneiform in the south polar region of Mars are carved by vaporizing dry ice in a dynamic seasonal process\r",
+          "source": "NASA",
+          "altText": "Mars: Spider-shaped features known as araneiform",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2010-03-19T17:09:46.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 360648461
+      }
+    ],
+    "creationAndLastModifiedDetail": {
+      "createdOn": "2015-10-20T13:03:00.189+01:00",
+      "modifiedOn": "2015-10-20T13:03:00.189+01:00"
+    },
+    "factboxes": [],
+    "platformPictures": [],
+    "editedSlug": "mars-images-space-exploration",
+    "publishOnCom": false,
+    "tags": [
+      23704,
+      35222,
+      35462,
+      9444,
+      26904,
+      4
+    ],
+    "editorial": true,
+    "publicationDate": "2010-03-21T00:00:00.000Z",
+    "webPublicationDateTime": "2010-03-21T22:15:00.000Z",
+    "updateWebPublicationDateTimeOnLaunch": true,
+    "relatedEditorialOff": false,
+    "pages": [
+      {
+        "id": 1271563,
+        "readyToLive": false,
+        "badgesOff": false,
+        "trailText": "<p>Breathtaking new images from Nasa's Mars Reconnaissance Orbiter, taken as part of its ongoing study of the planet</p>",
+        "linkText": "In pictures: Breathtaking new images from the Mars Reconnaissance Orbiter ",
+        "isExternalRss": false,
+        "isBlockAds": false,
+        "defaultTrailPictureMediaId": "gu-image-360652881",
+        "defaultTrailPictureImgId": 352503286,
+        "largeTrailPictureMediaId": "gu-image-360652881",
+        "largeTrailPictureImgId": 352503286,
+        "cmsPath": {
+          "path": "/Guardian/science/gallery/2009/sep/03/mars-images-space-exploration"
+        },
+        "seciton": 206,
+        "createdBy": "Bridget Coaker",
+        "lastModifiedBy": "James Kingsland",
+        "createdOn": "2009-09-03T20:16:25.000+01:00",
+        "modifiedOn": "2010-03-19T18:22:42.000Z",
+        "lastLiveTime": "2010-03-21T22:15:00.000Z",
+        "webPublicationTime": "2010-03-21T22:15:00.000Z",
+        "launchableTemplate": {
+          "displayName": "Gallery",
+          "staticName": "Gallery",
+          "location": "templates/common/gallery",
+          "stylesheetName": "gallery-grid",
+          "pageTypes": [
+            "GALLERY"
+          ],
+          "templateCode": 23,
+          "shownInTemplateDropDown": true,
+          "coreContentAreaName": {
+            "name": "gallery"
+          },
+          "id": 83
+        }
+      }
+    ],
+    "trailblock": {},
+    "pluckCommentable": false,
+    "pluckPremoderated": false,
+    "synchronisedWithPluck": false,
+    "externalReferences": [],
+    "expired": false,
+    "automateLinking": false,
+    "sensitive": false,
+    "closingDateForCommenting": "2009-09-06T21:07:52.000+01:00",
+    "blockAds": false,
+    "headline": "Mars: Dunes, gullies and craters",
+    "standfirst": "The camera on Nasa's <a href=\"http://marsprogram.jpl.nasa.gov/mro/\">Mars Reconnaissance Orbiter</a> has recorded new images taken from April to early August 2009 as part of its ongoing study of the planet, which began in 2006",
+    "id": 352503997
+  },
+  "live": {
+    "pictures": [
+      {
+        "caption": "Possible <a href=\"http://hirise.lpl.arizona.edu/ESP_014100_1600\">inverted meanders</a> in a filled channel west of the Ladon Valles river valley",
+        "altText": "NASA's Mars Reconnaissance Orbiter images",
+        "image": {
+          "$type": "image",
+          "id": 352503297,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2009/9/3/1252004485138/NASAs-Mars-Reconnaissance-006.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Image of the planet Mars, showing possible inverted meanders in a filled channel west of Ladon Valles",
+          "source": "guardian.co.uk",
+          "altText": "NASA's Mars Reconnaissance Orbiter images",
+          "width": 489,
+          "height": 390,
+          "uploadDate": "2009-09-03T20:01:25.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 352504011,
+          "url": "http://static.guimcode.co.uk/Guardian/science/gallery/2009/sep/03/mars/NASAs-Mars-Reconnaissance-006-1297-thumb.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Image of the planet Mars, showing possible inverted meanders in a filled channel west of Ladon Valles",
+          "source": "NASA",
+          "altText": "NASA's Mars Reconnaissance Orbiter images",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2009-09-03T20:18:51.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 352504012
+      },
+      {
+        "caption": "A <a href=\"http://hirise.lpl.arizona.edu/ESP_011610_0935\">sawtooth pattern</a> in carbon dioxide ice",
+        "altText": " NASA's Mars Reconnaissance Orbiter images",
+        "image": {
+          "$type": "image",
+          "id": 352503295,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2009/9/3/1252004483602/NASAs-Mars-Reconnaissance-004.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "The sawtooth pattern in carbon dioxide ice",
+          "source": "guardian.co.uk",
+          "altText": " NASA's Mars Reconnaissance Orbiter images",
+          "width": 515,
+          "height": 390,
+          "uploadDate": "2009-09-03T20:01:23.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 352504017,
+          "url": "http://static.guimcode.co.uk/Guardian/science/gallery/2009/sep/03/mars/NASAs-Mars-Reconnaissance-004-1645-thumb.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "The sawtooth pattern in carbon dioxide ice",
+          "source": "NASA",
+          "altText": " NASA's Mars Reconnaissance Orbiter images",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2009-09-03T20:18:51.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 352504018
+      },
+      {
+        "caption": "The south pole 'residual cap'",
+        "altText": "NASA's Mars Reconnaissance Orbiter images",
+        "image": {
+          "$type": "image",
+          "id": 352503294,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2009/9/3/1252004482849/NASAs-Mars-Reconnaissance-003.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "The south pole residual cap",
+          "source": "guardian.co.uk",
+          "altText": "NASA's Mars Reconnaissance Orbiter images",
+          "width": 630,
+          "height": 369,
+          "uploadDate": "2009-09-03T20:01:22.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 352504019,
+          "url": "http://static.guimcode.co.uk/Guardian/science/gallery/2009/sep/03/mars/NASAs-Mars-Reconnaissance-003-1707-thumb.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "The south pole residual cap",
+          "source": "NASA",
+          "altText": "NASA's Mars Reconnaissance Orbiter images",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2009-09-03T20:18:51.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 352504020
+      },
+      {
+        "caption": "Gullies at the edge of Hale crater",
+        "altText": "NASA's Mars Reconnaissance Orbiter images",
+        "image": {
+          "$type": "image",
+          "id": 352503292,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2009/9/3/1252004482035/NASAs-Mars-Reconnaissance-002.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Gullies at the edge of Hale crater",
+          "source": "guardian.co.uk",
+          "altText": "NASA's Mars Reconnaissance Orbiter images",
+          "width": 502,
+          "height": 390,
+          "uploadDate": "2009-09-03T20:01:22.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 352504021,
+          "url": "http://static.guimcode.co.uk/Guardian/science/gallery/2009/sep/03/mars/NASAs-Mars-Reconnaissance-002-1767-thumb.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Gullies at the edge of Hale crater",
+          "source": "Reuters",
+          "altText": "NASA's Mars Reconnaissance Orbiter images",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2009-09-03T20:18:51.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 352504022
+      },
+      {
+        "caption": "Possible blocky deposit in Melas Chasma",
+        "altText": "NASA's Mars Reconnaissance Orbiter images",
+        "image": {
+          "$type": "image",
+          "id": 352503298,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2009/9/3/1252004485931/NASAs-Mars-Reconnaissance-007.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Possible blocky deposit in Melas Chasma",
+          "source": "guardian.co.uk",
+          "altText": "NASA's Mars Reconnaissance Orbiter images",
+          "width": 534,
+          "height": 390,
+          "uploadDate": "2009-09-03T20:01:25.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 352504013,
+          "url": "http://static.guimcode.co.uk/Guardian/science/gallery/2009/sep/03/mars/NASAs-Mars-Reconnaissance-007-1500-thumb.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Possible blocky deposit in Melas Chasma",
+          "source": "NASA",
+          "altText": "NASA's Mars Reconnaissance Orbiter images",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2009-09-03T20:18:51.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 352504014
+      },
+      {
+        "caption": "The Ulysses Fossae",
+        "altText": "NASA's Mars Reconnaissance Orbiter images",
+        "image": {
+          "$type": "image",
+          "id": 352503296,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2009/9/3/1252004484350/NASAs-Mars-Reconnaissance-005.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "An image of Mars showing the Ulysses Fossae",
+          "source": "guardian.co.uk",
+          "altText": "NASA's Mars Reconnaissance Orbiter images",
+          "width": 504,
+          "height": 390,
+          "uploadDate": "2009-09-03T20:01:24.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 352504015,
+          "url": "http://static.guimcode.co.uk/Guardian/science/gallery/2009/sep/03/mars/NASAs-Mars-Reconnaissance-005-1569-thumb.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "An image of Mars showing the Ulysses Fossae",
+          "source": "NASA",
+          "altText": "NASA's Mars Reconnaissance Orbiter images",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2009-09-03T20:18:51.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 352504016
+      },
+      {
+        "caption": "Possible Evaporites near Fan in Coprates region",
+        "altText": "NASA's Mars Reconnaissance Orbiter images",
+        "image": {
+          "$type": "image",
+          "id": 352503291,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2009/9/3/1252004481230/NASAs-Mars-Reconnaissance-001.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Possible Evaporites near Fan in Coprates region",
+          "source": "guardian.co.uk",
+          "altText": "NASA's Mars Reconnaissance Orbiter images",
+          "width": 600,
+          "height": 390,
+          "uploadDate": "2009-09-03T20:01:21.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 352504023,
+          "url": "http://static.guimcode.co.uk/Guardian/science/gallery/2009/sep/03/mars/NASAs-Mars-Reconnaissance-001-1854-thumb.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Possible Evaporites near Fan in Coprates region",
+          "source": "Reuters",
+          "altText": "NASA's Mars Reconnaissance Orbiter images",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2009-09-03T20:18:51.000+01:00",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 352504024
+      },
+      {
+        "caption": "Ice deposits detected in Deuteronilus Mensae",
+        "altText": "Mars: Deuteronilus Mensae",
+        "image": {
+          "$type": "image",
+          "id": 360645698,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269016320128/Deuteronilus-Mensae-001.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "This map of a region known as Deuteronilus Mensae, in the northern hemisphere, shows locations of the detected ice deposits in blue. The yellow lines indicate ground tracks of the radar observations from multiple orbits of the spacecraft",
+          "source": "guardian.co.uk",
+          "altText": "Mars: Deuteronilus Mensae",
+          "width": 596,
+          "height": 390,
+          "uploadDate": "2010-03-19T16:32:00.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 360647465,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269016320128/Deuteronilus-Mensae-001-thumb-8701.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "This map of a region known as Deuteronilus Mensae, in the northern hemisphere, shows locations of the detected ice deposits in blue. The yellow lines indicate ground tracks of the radar observations from multiple orbits of the spacecraft",
+          "source": "NASA",
+          "altText": "Mars: Deuteronilus Mensae",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2010-03-19T16:53:18.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 360647466
+      },
+      {
+        "caption": "Layers of rock exposed near the centre of Gale Crater",
+        "altText": "Mars: Gale Crater",
+        "image": {
+          "$type": "image",
+          "id": 360647391,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017527558/Gale-Crater-007.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Layers of rock exposed in the lower portion of a tall mound near the center of Gale Crater on Mars exhibit variations in layer thickness and range between dark and light tones. The crater's mound of layered material is over 4 kilometers (2.4 miles) high, making it more than twice as thick as the stack of rocks exposed in the Grand Canyon on Earth. Gale Crater is approximately 152 kilometers (94 miles) in diameter.\rThis view of layering in the mound's lower formation covers an area about 950 meters (3,100 feet) wide",
+          "source": "guardian.co.uk",
+          "altText": "Mars: Gale Crater",
+          "width": 285,
+          "height": 500,
+          "uploadDate": "2010-03-19T16:52:07.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 360648191,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017527558/Gale-Crater-007-thumb-3870.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Layers of rock exposed in the lower portion of a tall mound near the center of Gale Crater on Mars exhibit variations in layer thickness and range between dark and light tones. The crater's mound of layered material is over 4 kilometers (2.4 miles) high, making it more than twice as thick as the stack of rocks exposed in the Grand Canyon on Earth. Gale Crater is approximately 152 kilometers (94 miles) in diameter.\rThis view of layering in the mound's lower formation covers an area about 950 meters (3,100 feet) wide",
+          "source": "NASA",
+          "altText": "Mars: Gale Crater",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2010-03-19T17:05:54.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 360648192
+      },
+      {
+        "caption": "Bright layered deposits on a plateau near Juventae Chasma ",
+        "altText": "Mars: Juventae Chasma in the Valles Marineris ",
+        "image": {
+          "$type": "image",
+          "id": 360647145,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017326752/Juventae-Chasma-in-the-Va-005.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "This view shows color variations in bright layered deposits on a plateau near Juventae Chasma in the Valles Marineris region of Mars. A brown mantle covers portions of the bright deposits. The view covers an area about 1.2 kilometers (three-fourths of a mile) across.",
+          "source": "guardian.co.uk",
+          "altText": "Mars: Juventae Chasma in the Valles Marineris ",
+          "width": 312,
+          "height": 500,
+          "uploadDate": "2010-03-19T16:48:46.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 360648220,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017326752/Juventae-Chasma-in-the-Va-005-thumb-6551.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "This view shows color variations in bright layered deposits on a plateau near Juventae Chasma in the Valles Marineris region of Mars. A brown mantle covers portions of the bright deposits. The view covers an area about 1.2 kilometers (three-fourths of a mile) across.",
+          "source": "NASA",
+          "altText": "Mars: Juventae Chasma in the Valles Marineris ",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2010-03-19T17:06:56.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 360648221
+      },
+      {
+        "caption": "Synthesised, oblique view of the wall terraces of Mojave Crater",
+        "altText": "Mars: Mojave Crater in the Xanthe Terra region",
+        "image": {
+          "$type": "image",
+          "id": 360647276,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017412231/Mojave-Crater-in-the-Xant-006.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "A digital terrain model generated from a stereo pair of images provides this synthesized, oblique view of a portion of the wall terraces of Mojave Crater in the Xanthe Terra region of Mars. This view shows the ponding of material backed up behind massive wall-terrace blocks of bedrock. Hundreds of impact craters on Mars have similarly ponded features with pitted surfaces. These \"pitted ponds\" are thought to result when material melted by the crater-causing impacts is captured behind the wall terraces",
+          "source": "guardian.co.uk",
+          "altText": "Mars: Mojave Crater in the Xanthe Terra region",
+          "width": 430,
+          "height": 390,
+          "uploadDate": "2010-03-19T16:50:12.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 360648317,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017412231/Mojave-Crater-in-the-Xant-006-thumb-8207.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "A digital terrain model generated from a stereo pair of images provides this synthesized, oblique view of a portion of the wall terraces of Mojave Crater in the Xanthe Terra region of Mars. This view shows the ponding of material backed up behind massive wall-terrace blocks of bedrock. Hundreds of impact craters on Mars have similarly ponded features with pitted surfaces. These \"pitted ponds\" are thought to result when material melted by the crater-causing impacts is captured behind the wall terraces",
+          "source": "NASA",
+          "altText": "Mars: Mojave Crater in the Xanthe Terra region",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2010-03-19T17:07:28.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 360648318
+      },
+      {
+        "caption": "Dunes of sandy materials trapped on the floors of a crater in Noachis Terra",
+        "altText": "Mars: Noachis Terra,",
+        "image": {
+          "$type": "image",
+          "id": 360647124,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017289252/Noachis-Terra-004.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Dunes of sand-sized materials have been trapped on the floors of many Martian craters. This is one example, from a crater in Noachis Terra, west of the giant Hellas impact basin",
+          "source": "guardian.co.uk",
+          "altText": "Mars: Noachis Terra,",
+          "width": 527,
+          "height": 390,
+          "uploadDate": "2010-03-19T16:48:09.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 360648367,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017289252/Noachis-Terra-004-thumb-8237.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Dunes of sand-sized materials have been trapped on the floors of many Martian craters. This is one example, from a crater in Noachis Terra, west of the giant Hellas impact basin",
+          "source": "NASA",
+          "altText": "Mars: Noachis Terra,",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2010-03-19T17:08:08.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 360648368
+      },
+      {
+        "caption": "Layers in the lower portion of two neighbouring buttes within Noctis Labyrinthus ",
+        "altText": "Mars: Noctis Labyrinthus",
+        "image": {
+          "$type": "image",
+          "id": 360647035,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017204066/Noctis-Labyrinthus-003.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Layers in the lower portion of two neighboring buttes within the Noctis Labyrinthus formation. Dune fields blanket the ground in the upper left of the image and a portion of the ground between the buttes. Exposures of brighter and darker materials are also visible in the portion of that area not covered by the dunes",
+          "source": "guardian.co.uk",
+          "altText": "Mars: Noctis Labyrinthus",
+          "width": 250,
+          "height": 500,
+          "uploadDate": "2010-03-19T16:46:44.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 360648391,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017204066/Noctis-Labyrinthus-003-thumb-6302.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Layers in the lower portion of two neighboring buttes within the Noctis Labyrinthus formation. Dune fields blanket the ground in the upper left of the image and a portion of the ground between the buttes. Exposures of brighter and darker materials are also visible in the portion of that area not covered by the dunes",
+          "source": "NASA",
+          "altText": "Mars: Noctis Labyrinthus",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2010-03-19T17:08:56.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 360648392
+      },
+      {
+        "caption": "Spider-like features carved in the south polar region by vaporising dry ice \r\n",
+        "altText": "Mars: Spider-shaped features known as araneiform",
+        "image": {
+          "$type": "image",
+          "id": 360647034,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017202495/Spider-shaped-features-kn-002.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Spider-shaped features known as araneiform in the south polar region of Mars are carved by vaporizing dry ice in a dynamic seasonal process\r",
+          "source": "guardian.co.uk",
+          "altText": "Mars: Spider-shaped features known as araneiform",
+          "width": 521,
+          "height": 390,
+          "uploadDate": "2010-03-19T16:46:42.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "pictures",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "thumbnailImage": {
+          "$type": "image",
+          "id": 360648460,
+          "url": "http://static.guimcode.co.uk/sys-images/Guardian/Pix/pictures/2010/3/19/1269017202495/Spider-shaped-features-kn-002-thumb-6542.jpg",
+          "mimeType": "image/jpeg",
+          "caption": "Spider-shaped features known as araneiform in the south polar region of Mars are carved by vaporizing dry ice in a dynamic seasonal process\r",
+          "source": "NASA",
+          "altText": "Mars: Spider-shaped features known as araneiform",
+          "width": 68,
+          "height": 68,
+          "uploadDate": "2010-03-19T17:09:46.000Z",
+          "group": {
+            "$type": "image_group",
+            "name": "Gallery Images",
+            "legacySection": {
+              "$type": "legacy_section",
+              "name": "Pix",
+              "displayName": "Pix",
+              "siteName": "Guardian"
+            }
+          }
+        },
+        "credit": "NASA",
+        "creditPrefix": "Photograph:",
+        "id": 360648461
+      }
+    ],
+    "lastLiveTime": "2010-03-21T22:15:00.000Z",
+    "factboxes": [],
+    "platformPictures": [],
+    "tags": [
+      23704,
+      35222,
+      35462,
+      9444,
+      26904,
+      4
+    ],
+    "editorial": true,
+    "publicationDate": "2010-03-21T00:00:00.000Z",
+    "webPublicationDateTime": "2010-03-21T22:15:00.000Z",
+    "updateWebPublicationDateTimeOnLaunch": true,
+    "relatedEditorialOff": false,
+    "pages": [
+      {
+        "id": 1271563,
+        "readyToLive": false,
+        "badgesOff": false,
+        "trailText": "<p>Breathtaking new images from Nasa's Mars Reconnaissance Orbiter, taken as part of its ongoing study of the planet</p>",
+        "linkText": "In pictures: Breathtaking new images from the Mars Reconnaissance Orbiter ",
+        "isExternalRss": false,
+        "isBlockAds": false,
+        "defaultTrailPictureMediaId": "gu-image-360652881",
+        "defaultTrailPictureImgId": 352503286,
+        "largeTrailPictureMediaId": "gu-image-360652881",
+        "largeTrailPictureImgId": 352503286,
+        "cmsPath": {
+          "path": "/Guardian/science/gallery/2009/sep/03/mars-images-space-exploration"
+        },
+        "seciton": 206,
+        "createdBy": "Bridget Coaker",
+        "lastModifiedBy": "James Kingsland",
+        "createdOn": "2009-09-03T20:16:25.000+01:00",
+        "modifiedOn": "2010-03-19T18:22:42.000Z",
+        "lastLiveTime": "2010-03-21T22:15:00.000Z",
+        "webPublicationTime": "2010-03-21T22:15:00.000Z",
+        "launchableTemplate": {
+          "displayName": "Gallery",
+          "staticName": "Gallery",
+          "location": "templates/common/gallery",
+          "stylesheetName": "gallery-grid",
+          "pageTypes": [
+            "GALLERY"
+          ],
+          "templateCode": 23,
+          "shownInTemplateDropDown": true,
+          "coreContentAreaName": {
+            "name": "gallery"
+          },
+          "id": 83
+        }
+      }
+    ],
+    "trailblock": {},
+    "pluckCommentable": false,
+    "pluckPremoderated": false,
+    "synchronisedWithPluck": false,
+    "externalReferences": [],
+    "expired": false,
+    "automateLinking": false,
+    "sensitive": false,
+    "closingDateForCommenting": "2009-09-06T21:07:52.000+01:00",
+    "blockAds": false,
+    "headline": "Mars: Dunes, gullies and craters",
+    "standfirst": "The camera on Nasa's <a href=\"http://marsprogram.jpl.nasa.gov/mro/\">Mars Reconnaissance Orbiter</a> has recorded new images taken from April to early August 2009 as part of its ongoing study of the planet, which began in 2006",
+    "productionOffice": "UK",
+    "id": 352503997
+  }
+}

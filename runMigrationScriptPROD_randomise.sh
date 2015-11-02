@@ -8,7 +8,7 @@ read -p "Press [Enter] key to start PROD migration..."
 
 
 BATCH_SIZE=5
-NUMBER_OF_BATCHES=1000
+NUMBER_OF_BATCHES=2000
 
 
 URL="$PREFIX?batchSize=$BATCH_SIZE&batchNumber=5"
@@ -24,11 +24,14 @@ echo "Results in $OUTPUT_PATH"
 
  for i in `seq 1 $NUMBER_OF_BATCHES`;
         do
-            echo migrating batch $i with $BATCH_SIZE videos
+	    RANDOM_NUMBER=$(( ( RANDOM % 1000 )  + 1 ))
+	    URL="$PREFIX?batchSize=$BATCH_SIZE&batchNumber=$RANDOM_NUMBER"
+          
+		echo migrating batch $i with $BATCH_SIZE videos
             BATCH_RESULTS=$OUTPUT_PATH/batch$i.txt
             curl -X POST $URL > $BATCH_RESULTS
             echo "results for batch $i in $BATCH_RESULTS"
-            sleep 2
+            sleep 1
         done    
 
 
