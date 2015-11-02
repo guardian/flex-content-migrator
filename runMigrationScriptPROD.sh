@@ -2,7 +2,7 @@
 echo off
 
 #PROD
-PREFIX="http://flexcontentmigrator.gutools.co.uk/migrate/gallery"
+PREFIX="http://flexcontentmigrator.gutools.co.uk/migrate/cartoon"
 
 read -p "Press [Enter] key to start PROD migration..."
 
