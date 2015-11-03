@@ -1,0 +1,731 @@
+{
+  "draft": {
+    "picture": {},
+    "quizType": "RIGHT_WRONG_ANSWERS",
+    "answersCompulsory": false,
+    "displayPublicationDate": true,
+    "showAnswerPage": true,
+    "questions": [
+      {
+        "questionText": "Before embarking on Shine a Light, Martin Scorsese famously directed the made-for-TV Bob Dylan documentary, No Direction Home. Which other \"rockumentary\" featuring the venerable Mr Zimmerman has he directed?",
+        "picture": {},
+        "answers": [
+          {
+            "answerText": "King of Comedy",
+            "correct": false,
+            "id": 771
+          },
+          {
+            "answerText": "The Last Waltz",
+            "correct": true,
+            "id": 772
+          },
+          {
+            "answerText": "New York, New York",
+            "correct": false,
+            "id": 773
+          },
+          {
+            "answerText": "After Hours",
+            "correct": false,
+            "id": 774
+          }
+        ],
+        "id": 321
+      },
+      {
+        "questionText": "Still on a Dylanesque topic, which hirsute American poet can be seen skulking behind the singer on the classic Subterranean Homesick Blues section of 1967's Don't Look Back?",
+        "answers": [
+          {
+            "answerText": "Allen Ginsberg",
+            "correct": true,
+            "id": 775
+          },
+          {
+            "answerText": "Robert Lowell",
+            "correct": false,
+            "id": 776
+          },
+          {
+            "answerText": "William Burroughs",
+            "correct": false,
+            "id": 777
+          },
+          {
+            "answerText": "Ezra Pound",
+            "correct": false,
+            "id": 778
+          }
+        ],
+        "id": 322
+      },
+      {
+        "questionText": "The acclaimed Dig! contrasts the success of the Dandy Warhols with the self-destructive antics of rival outfit the Brian Jonestown Massacre. Which of the following unfortunate events does NOT befall BJM frontman Anton Newcombe during the course of the film?",
+        "answers": [
+          {
+            "answerText": "He sets fire to the studio after tossing a lit reefer into the rubbish bin",
+            "correct": true,
+            "id": 779
+          },
+          {
+            "answerText": "He attacks his fellow musicians during a crucial record industry showcase",
+            "correct": false,
+            "id": 780
+          },
+          {
+            "answerText": "He gets busted for drug possession during a tour of the south",
+            "correct": false,
+            "id": 781
+          },
+          {
+            "answerText": "He kicks a fan in the head during a comeback gig",
+            "correct": false,
+            "id": 782
+          }
+        ],
+        "id": 323
+      },
+      {
+        "questionText": "In the 1984 \"mockumentary\" This Is Spinal Tap, Nigel Tufnel (Christopher Guest) explains his latest composition: \"I'm really influenced by Mozart and Bach and it's sort of in-between those.\" What is the song's title?",
+        "answers": [
+          {
+            "answerText": "Big Bottoms",
+            "correct": false,
+            "id": 783
+          },
+          {
+            "answerText": "Cosi fan Tooty-fruity",
+            "correct": false,
+            "id": 784
+          },
+          {
+            "answerText": "St Nigel's Passion",
+            "correct": false,
+            "id": 785
+          },
+          {
+            "answerText": "Lick My Love Pump",
+            "correct": true,
+            "id": 786
+          }
+        ],
+        "id": 324
+      },
+      {
+        "questionText": "Touring with Spinal Tap, Michael McKean, Harry Shearer and Christopher Guest opened for themselves as \"the Folksmen\" and were frequently booed off stage. The Folksmen were later immortalised in which major motion picture?",
+        "answers": [
+          {
+            "answerText": "Waiting for Guffman",
+            "correct": false,
+            "id": 787
+          },
+          {
+            "answerText": "The Folk Implosion",
+            "correct": false,
+            "id": 788
+          },
+          {
+            "answerText": "A Mighty Wind",
+            "correct": true,
+            "id": 789
+          },
+          {
+            "answerText": "Best in Show",
+            "correct": false,
+            "id": 790
+          }
+        ],
+        "id": 325
+      },
+      {
+        "questionText": "Punk's elder statesmen the Ramones have collectively and individually been the subject of numerous documentaries over the years. Which is the most recent?",
+        "answers": [
+          {
+            "answerText": "End of the Century: The Story of the Ramones",
+            "correct": false,
+            "id": 791
+          },
+          {
+            "answerText": "The Ramones: Raw",
+            "correct": false,
+            "id": 792
+          },
+          {
+            "answerText": "Joey Ramone: Don't Worry About Me",
+            "correct": false,
+            "id": 793
+          },
+          {
+            "answerText": "Too Tough to Die: A Johnny Ramone Tribute",
+            "correct": true,
+            "id": 794
+          }
+        ],
+        "id": 326
+      },
+      {
+        "questionText": "Martin Scorsese already has two other rock documentaries in the pipeline. The subjects of these two films are ...",
+        "answers": [
+          {
+            "answerText": "George Harrison and Bob Marley",
+            "correct": true,
+            "id": 795
+          },
+          {
+            "answerText": "Marvin Gaye and Brian Wilson",
+            "correct": false,
+            "id": 796
+          },
+          {
+            "answerText": "Andy Williams and Ricky Martin",
+            "correct": false,
+            "id": 797
+          },
+          {
+            "answerText": "Jerry Lee Lewis and Jimi Hendrix",
+            "correct": false,
+            "id": 798
+          }
+        ],
+        "id": 327
+      },
+      {
+        "questionText": "The 2006 Beastie Boys concert documentary is entitled Awesome: I Fuckin' Shot That! Who fuckin' shot it?",
+        "answers": [
+          {
+            "answerText": "A fan who won a competition asking for amateur film-makers to shoot the movie",
+            "correct": false,
+            "id": 799
+          },
+          {
+            "answerText": "Beastie Boys frontman Mike D (aka Michael Diamond) from the stage while he performed",
+            "correct": false,
+            "id": 800
+          },
+          {
+            "answerText": "Johnny Knoxville",
+            "correct": false,
+            "id": 801
+          },
+          {
+            "answerText": "50 members of the audience who were given hand-held cameras before the show",
+            "correct": true,
+            "id": 802
+          }
+        ],
+        "id": 328
+      },
+      {
+        "questionText": "Julien Temple's Glastonbury movie celebrates which anniversary of the famous festival?",
+        "picture": {},
+        "answers": [
+          {
+            "answerText": "15th",
+            "correct": false,
+            "id": 803
+          },
+          {
+            "answerText": "25th",
+            "correct": false,
+            "id": 804
+          },
+          {
+            "answerText": "75th",
+            "correct": false,
+            "id": 805
+          },
+          {
+            "answerText": "30th",
+            "correct": true,
+            "id": 806
+          }
+        ],
+        "id": 329
+      },
+      {
+        "questionText": "Why might the Rolling Stones documentary Cocksucker Blues be the greatest music documentary you've never seen?",
+        "answers": [
+          {
+            "answerText": "Because the film was withdrawn by its director, Robert Frank, following the death of a fan at the band's infamous Altamont concert",
+            "correct": false,
+            "id": 807
+          },
+          {
+            "answerText": "Because the film was suppressed by outgoing FBI director J Edgar Hoover and the ban remains in effect to this day",
+            "correct": false,
+            "id": 808
+          },
+          {
+            "answerText": "Because the negative was burnt by Keith Richard, allegedly in the belief that the nitrate fumes would provide 'a wild natural high'",
+            "correct": false,
+            "id": 809
+          },
+          {
+            "answerText": "Because the Stones were reportedly so enraged by the film's depiction of them that they successfully sued to prevent its release",
+            "correct": true,
+            "id": 810
+          }
+        ],
+        "id": 330
+      }
+    ],
+    "bands": [
+      {
+        "bandValue": 10,
+        "bandText": "Number one\r\nShine on, you crazy diamond.",
+        "id": 247
+      },
+      {
+        "bandValue": 7,
+        "bandText": "Air guitarist\r\nMore power to your right (or left) arm.",
+        "id": 248
+      },
+      {
+        "bandValue": 3,
+        "bandText": "Has been\r\nYou're so over. Only you don't know how over you are.",
+        "id": 249
+      }
+    ],
+    "maxAnswers": 4,
+    "creationAndLastModifiedDetail": {
+      "createdOn": "2015-11-03T09:48:07.729Z",
+      "modifiedOn": "2015-11-03T09:48:07.729Z"
+    },
+    "factboxes": [],
+    "platformPictures": [],
+    "editedSlug": "rockumentaries",
+    "publishOnCom": false,
+    "tags": [
+      8804,
+      22609,
+      26910,
+      4
+    ],
+    "editorial": true,
+    "publicationDate": "2008-04-12T00:00:00.000+01:00",
+    "webPublicationDateTime": "2008-04-12T12:23:00.000+01:00",
+    "updateWebPublicationDateTimeOnLaunch": false,
+    "relatedEditorialOff": false,
+    "pages": [
+      {
+        "id": 996748,
+        "readyToLive": false,
+        "badgesOff": false,
+        "trailText": "As Martin Scorsese's Shine a Light swaggers arthritically into cinemas, test your RQ (rock quotient)",
+        "linkText": "Quiz: Rockumentaries",
+        "isExternalRss": false,
+        "isBlockAds": false,
+        "defaultTrailPictureMediaId": "gu-image-335558971",
+        "defaultTrailPictureImgId": 329948829,
+        "largeTrailPictureMediaId": "gu-image-335558971",
+        "largeTrailPictureImgId": 329948829,
+        "cmsPath": {
+          "path": "/Guardian/uk/quiz/2008/apr/12/rockumentaries"
+        },
+        "seciton": 188,
+        "createdBy": "Uploader",
+        "lastModifiedBy": "Chris Wiegand",
+        "createdOn": "2008-07-07T12:23:18.000+01:00",
+        "modifiedOn": "2008-07-08T16:40:37.000+01:00",
+        "lastLiveTime": "2008-07-08T16:40:44.000+01:00",
+        "webPublicationTime": "2008-04-12T12:23:00.000+01:00",
+        "launchableTemplate": {
+          "displayName": "Content 6-2-4",
+          "staticName": "Content 6-2-4",
+          "location": "templates/common/content",
+          "stylesheetName": "grid/content",
+          "pageTypes": [
+            "STANDALONE_TABLE",
+            "COMPETITION",
+            "AUDIO",
+            "POLL",
+            "CARTOON",
+            "QUIZ",
+            "FEED_ARTICLE",
+            "ARTICLE"
+          ],
+          "templateCode": 290,
+          "shownInTemplateDropDown": true,
+          "coreContentAreaName": {
+            "name": "${componentName}"
+          },
+          "id": 43002
+        }
+      }
+    ],
+    "pluckCommentable": false,
+    "pluckPremoderated": false,
+    "synchronisedWithPluck": false,
+    "externalReferences": [],
+    "expired": false,
+    "automateLinking": false,
+    "sensitive": false,
+    "closingDateForCommenting": "2008-07-15T16:40:00.000+01:00",
+    "blockAds": false,
+    "headline": "Quiz: Rockumentaries",
+    "standfirst": "Long before the three-minute pop video was a gleam in some commercial director's eye, there was the feature-length rockumentary. As Martin Scorsese's Shine a Light swaggers arthritically into cinemas, test your RQ (rock quotient) and see if you're a superstar or just a dessicated old has-been. With big lips",
+    "id": 335526960
+  },
+  "live": {
+    "picture": {},
+    "quizType": "RIGHT_WRONG_ANSWERS",
+    "answersCompulsory": false,
+    "displayPublicationDate": true,
+    "showAnswerPage": true,
+    "questions": [
+      {
+        "questionText": "Before embarking on Shine a Light, Martin Scorsese famously directed the made-for-TV Bob Dylan documentary, No Direction Home. Which other \"rockumentary\" featuring the venerable Mr Zimmerman has he directed?",
+        "picture": {},
+        "answers": [
+          {
+            "answerText": "King of Comedy",
+            "correct": false,
+            "id": 771
+          },
+          {
+            "answerText": "The Last Waltz",
+            "correct": true,
+            "id": 772
+          },
+          {
+            "answerText": "New York, New York",
+            "correct": false,
+            "id": 773
+          },
+          {
+            "answerText": "After Hours",
+            "correct": false,
+            "id": 774
+          }
+        ],
+        "id": 321
+      },
+      {
+        "questionText": "Still on a Dylanesque topic, which hirsute American poet can be seen skulking behind the singer on the classic Subterranean Homesick Blues section of 1967's Don't Look Back?",
+        "answers": [
+          {
+            "answerText": "Allen Ginsberg",
+            "correct": true,
+            "id": 775
+          },
+          {
+            "answerText": "Robert Lowell",
+            "correct": false,
+            "id": 776
+          },
+          {
+            "answerText": "William Burroughs",
+            "correct": false,
+            "id": 777
+          },
+          {
+            "answerText": "Ezra Pound",
+            "correct": false,
+            "id": 778
+          }
+        ],
+        "id": 322
+      },
+      {
+        "questionText": "The acclaimed Dig! contrasts the success of the Dandy Warhols with the self-destructive antics of rival outfit the Brian Jonestown Massacre. Which of the following unfortunate events does NOT befall BJM frontman Anton Newcombe during the course of the film?",
+        "answers": [
+          {
+            "answerText": "He sets fire to the studio after tossing a lit reefer into the rubbish bin",
+            "correct": true,
+            "id": 779
+          },
+          {
+            "answerText": "He attacks his fellow musicians during a crucial record industry showcase",
+            "correct": false,
+            "id": 780
+          },
+          {
+            "answerText": "He gets busted for drug possession during a tour of the south",
+            "correct": false,
+            "id": 781
+          },
+          {
+            "answerText": "He kicks a fan in the head during a comeback gig",
+            "correct": false,
+            "id": 782
+          }
+        ],
+        "id": 323
+      },
+      {
+        "questionText": "In the 1984 \"mockumentary\" This Is Spinal Tap, Nigel Tufnel (Christopher Guest) explains his latest composition: \"I'm really influenced by Mozart and Bach and it's sort of in-between those.\" What is the song's title?",
+        "answers": [
+          {
+            "answerText": "Big Bottoms",
+            "correct": false,
+            "id": 783
+          },
+          {
+            "answerText": "Cosi fan Tooty-fruity",
+            "correct": false,
+            "id": 784
+          },
+          {
+            "answerText": "St Nigel's Passion",
+            "correct": false,
+            "id": 785
+          },
+          {
+            "answerText": "Lick My Love Pump",
+            "correct": true,
+            "id": 786
+          }
+        ],
+        "id": 324
+      },
+      {
+        "questionText": "Touring with Spinal Tap, Michael McKean, Harry Shearer and Christopher Guest opened for themselves as \"the Folksmen\" and were frequently booed off stage. The Folksmen were later immortalised in which major motion picture?",
+        "answers": [
+          {
+            "answerText": "Waiting for Guffman",
+            "correct": false,
+            "id": 787
+          },
+          {
+            "answerText": "The Folk Implosion",
+            "correct": false,
+            "id": 788
+          },
+          {
+            "answerText": "A Mighty Wind",
+            "correct": true,
+            "id": 789
+          },
+          {
+            "answerText": "Best in Show",
+            "correct": false,
+            "id": 790
+          }
+        ],
+        "id": 325
+      },
+      {
+        "questionText": "Punk's elder statesmen the Ramones have collectively and individually been the subject of numerous documentaries over the years. Which is the most recent?",
+        "answers": [
+          {
+            "answerText": "End of the Century: The Story of the Ramones",
+            "correct": false,
+            "id": 791
+          },
+          {
+            "answerText": "The Ramones: Raw",
+            "correct": false,
+            "id": 792
+          },
+          {
+            "answerText": "Joey Ramone: Don't Worry About Me",
+            "correct": false,
+            "id": 793
+          },
+          {
+            "answerText": "Too Tough to Die: A Johnny Ramone Tribute",
+            "correct": true,
+            "id": 794
+          }
+        ],
+        "id": 326
+      },
+      {
+        "questionText": "Martin Scorsese already has two other rock documentaries in the pipeline. The subjects of these two films are ...",
+        "answers": [
+          {
+            "answerText": "George Harrison and Bob Marley",
+            "correct": true,
+            "id": 795
+          },
+          {
+            "answerText": "Marvin Gaye and Brian Wilson",
+            "correct": false,
+            "id": 796
+          },
+          {
+            "answerText": "Andy Williams and Ricky Martin",
+            "correct": false,
+            "id": 797
+          },
+          {
+            "answerText": "Jerry Lee Lewis and Jimi Hendrix",
+            "correct": false,
+            "id": 798
+          }
+        ],
+        "id": 327
+      },
+      {
+        "questionText": "The 2006 Beastie Boys concert documentary is entitled Awesome: I Fuckin' Shot That! Who fuckin' shot it?",
+        "answers": [
+          {
+            "answerText": "A fan who won a competition asking for amateur film-makers to shoot the movie",
+            "correct": false,
+            "id": 799
+          },
+          {
+            "answerText": "Beastie Boys frontman Mike D (aka Michael Diamond) from the stage while he performed",
+            "correct": false,
+            "id": 800
+          },
+          {
+            "answerText": "Johnny Knoxville",
+            "correct": false,
+            "id": 801
+          },
+          {
+            "answerText": "50 members of the audience who were given hand-held cameras before the show",
+            "correct": true,
+            "id": 802
+          }
+        ],
+        "id": 328
+      },
+      {
+        "questionText": "Julien Temple's Glastonbury movie celebrates which anniversary of the famous festival?",
+        "picture": {},
+        "answers": [
+          {
+            "answerText": "15th",
+            "correct": false,
+            "id": 803
+          },
+          {
+            "answerText": "25th",
+            "correct": false,
+            "id": 804
+          },
+          {
+            "answerText": "75th",
+            "correct": false,
+            "id": 805
+          },
+          {
+            "answerText": "30th",
+            "correct": true,
+            "id": 806
+          }
+        ],
+        "id": 329
+      },
+      {
+        "questionText": "Why might the Rolling Stones documentary Cocksucker Blues be the greatest music documentary you've never seen?",
+        "answers": [
+          {
+            "answerText": "Because the film was withdrawn by its director, Robert Frank, following the death of a fan at the band's infamous Altamont concert",
+            "correct": false,
+            "id": 807
+          },
+          {
+            "answerText": "Because the film was suppressed by outgoing FBI director J Edgar Hoover and the ban remains in effect to this day",
+            "correct": false,
+            "id": 808
+          },
+          {
+            "answerText": "Because the negative was burnt by Keith Richard, allegedly in the belief that the nitrate fumes would provide 'a wild natural high'",
+            "correct": false,
+            "id": 809
+          },
+          {
+            "answerText": "Because the Stones were reportedly so enraged by the film's depiction of them that they successfully sued to prevent its release",
+            "correct": true,
+            "id": 810
+          }
+        ],
+        "id": 330
+      }
+    ],
+    "bands": [
+      {
+        "bandValue": 10,
+        "bandText": "Number one\r\nShine on, you crazy diamond.",
+        "id": 247
+      },
+      {
+        "bandValue": 7,
+        "bandText": "Air guitarist\r\nMore power to your right (or left) arm.",
+        "id": 248
+      },
+      {
+        "bandValue": 3,
+        "bandText": "Has been\r\nYou're so over. Only you don't know how over you are.",
+        "id": 249
+      }
+    ],
+    "lastLiveTime": "2008-07-08T16:40:44.000+01:00",
+    "factboxes": [],
+    "platformPictures": [],
+    "tags": [
+      8804,
+      22609,
+      26910,
+      4
+    ],
+    "editorial": true,
+    "publicationDate": "2008-04-12T00:00:00.000+01:00",
+    "webPublicationDateTime": "2008-04-12T12:23:00.000+01:00",
+    "updateWebPublicationDateTimeOnLaunch": false,
+    "relatedEditorialOff": false,
+    "pages": [
+      {
+        "id": 996748,
+        "readyToLive": false,
+        "badgesOff": false,
+        "trailText": "As Martin Scorsese's Shine a Light swaggers arthritically into cinemas, test your RQ (rock quotient)",
+        "linkText": "Quiz: Rockumentaries",
+        "isExternalRss": false,
+        "isBlockAds": false,
+        "defaultTrailPictureMediaId": "gu-image-335558971",
+        "defaultTrailPictureImgId": 329948829,
+        "largeTrailPictureMediaId": "gu-image-335558971",
+        "largeTrailPictureImgId": 329948829,
+        "cmsPath": {
+          "path": "/Guardian/uk/quiz/2008/apr/12/rockumentaries"
+        },
+        "seciton": 188,
+        "createdBy": "Uploader",
+        "lastModifiedBy": "Chris Wiegand",
+        "createdOn": "2008-07-07T12:23:18.000+01:00",
+        "modifiedOn": "2008-07-08T16:40:37.000+01:00",
+        "lastLiveTime": "2008-07-08T16:40:44.000+01:00",
+        "webPublicationTime": "2008-04-12T12:23:00.000+01:00",
+        "launchableTemplate": {
+          "displayName": "Content 6-2-4",
+          "staticName": "Content 6-2-4",
+          "location": "templates/common/content",
+          "stylesheetName": "grid/content",
+          "pageTypes": [
+            "STANDALONE_TABLE",
+            "COMPETITION",
+            "AUDIO",
+            "POLL",
+            "CARTOON",
+            "QUIZ",
+            "FEED_ARTICLE",
+            "ARTICLE"
+          ],
+          "templateCode": 290,
+          "shownInTemplateDropDown": true,
+          "coreContentAreaName": {
+            "name": "${componentName}"
+          },
+          "id": 43002
+        }
+      }
+    ],
+    "pluckCommentable": false,
+    "pluckPremoderated": false,
+    "synchronisedWithPluck": false,
+    "externalReferences": [],
+    "expired": false,
+    "automateLinking": false,
+    "sensitive": false,
+    "closingDateForCommenting": "2008-07-15T16:40:00.000+01:00",
+    "blockAds": false,
+    "headline": "Quiz: Rockumentaries",
+    "standfirst": "Long before the three-minute pop video was a gleam in some commercial director's eye, there was the feature-length rockumentary. As Martin Scorsese's Shine a Light swaggers arthritically into cinemas, test your RQ (rock quotient) and see if you're a superstar or just a dessicated old has-been. With big lips",
+    "productionOffice": "UK",
+    "id": 335526960
+  }
+}
