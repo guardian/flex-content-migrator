@@ -71,6 +71,22 @@ object FlexCartoonMigrationServiceImpl  extends FlexContentMigrationService{
 }
 
 
+
+object FlexQuizMigrationServiceImpl  extends FlexContentMigrationService{
+  override lazy val ConnectivityCheckUrl = FlexImportBaseUrl + "/contentmigration/article/index";
+  private def MigrateQuizInArticleUrl = FlexImportBaseUrl + "/contentmigration/article"
+
+  override def migrateContentXml(xmlFile: File): Future[WSResponse] = {
+    flexThrottlerFt[WSResponse] {
+      withCountIncr(Metrics.QuizzesMigratedInFlex) {
+        makeAsyncCall(MigrateQuizInArticleUrl, (xmlFile, "fileData"), Map())
+      }
+    }
+  }
+}
+
+
+
 object FlexVideoIntegrationServiceImpl  extends FlexVideoIntegrationService
                                         with FlexContentMigrationService{
 
