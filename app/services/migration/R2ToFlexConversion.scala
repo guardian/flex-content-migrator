@@ -301,7 +301,7 @@ class R2ToFlexCartoonConversion(jsonMap : Map[String, Any], parseLiveData : Bool
       val mainPictureId = mainPicture.flatMap(_.get("id"))
       mainPictureId match{
         case Some(mainPictureIdVal) => Some(largePictureMap + ("id" -> mainPictureIdVal)) //large picture should share same id as main picture
-        case None => throw new IllegalStateException("main picture ID is missing")
+        case None => Some(largePictureMap)
       }
     }
     case None => None
