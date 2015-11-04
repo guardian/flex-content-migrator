@@ -39,8 +39,8 @@ class GalleryMigrationApi(migrator : Migrator, reporter : MigrationReport, flex 
   }
   }
 
-  def migratedGallery(galleryId : Int) =  Action.async{ block => {
-    Logger.debug(s"migratedGallery ${galleryId}")
+  def migrateGallery(galleryId : Int) =  Action.async{ block => {
+    Logger.debug(s"migrateGallery ${galleryId}")
     withMigrationPermission{ () =>
       migrator.migrateIndividualContent(galleryId).map(reportSingleGallery(_))
     }

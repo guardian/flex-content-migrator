@@ -46,4 +46,19 @@ local: `curl -X POST "http://localhost:9100/migrate/cartoon?batchNumber=${batchN
 code:   `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/cartoon?batchNumber=${batchNumber}&batchSize=${batchSize}"`
 
 
+### To Migrate Quizzes Into Flex
+
+####Single
+
+local: `curl -X POST "http://localhost:9100/migrate/quiz/${quizId}"`
+
+code: `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/quiz/${quizId}"`
+
+####Batch
+
+local: `curl -X POST "http://localhost:9100/migrate/quiz?batchNumber=${batchNumber}&batchSize=${batchSize}"`
+
+code:   `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/quiz?batchNumber=${batchNumber}&batchSize=${batchSize}"`
+
+
 

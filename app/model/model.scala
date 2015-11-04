@@ -1,6 +1,7 @@
 package model
 
 import play.api.libs.ws.WSResponse
+import services.migration.r2ToFlexConversion.services.migration.r2ToFlexConversion.R2ToFlexQuizConversion
 import services.migration.r2ToFlexConversion.{R2ToFlexVideoConversion, R2ToFlexCartoonConversion, R2ToFlexGalleryConversion, R2ToFlexContentConversion}
 
 
@@ -13,25 +14,32 @@ case class MigrationBatch(sourceContent : Seq[SourceContent]){
 abstract class TransformedContent(val sourceContent : SourceContent){
   val json :  Map[String, Any]
   val liveData : R2ToFlexContentConversion
-  val draftData : R2ToFlexContentConversion
+  //val draftData : R2ToFlexContentConversion
 }
 
 case class TransformedVideo(override val sourceContent : SourceContent) extends TransformedContent(sourceContent){
   override val json = R2ToFlexVideoConversion.jsonMap(sourceContent.json)
   override val liveData = R2ToFlexVideoConversion.parseLiveData(json)
-  override val draftData = R2ToFlexVideoConversion.parseDraftData(json)
+  //override val draftData = R2ToFlexVideoConversion.parseDraftData(json)
 }
 
 case class TransformedGallery(override val sourceContent : SourceContent) extends TransformedContent(sourceContent){
   override val json = R2ToFlexGalleryConversion.jsonMap(sourceContent.json)
   override val liveData = R2ToFlexGalleryConversion.parseLiveData(json)
-  override val draftData = R2ToFlexGalleryConversion.parseDraftData(json)
+  //override val draftData = R2ToFlexGalleryConversion.parseDraftData(json)
 }
 
 case class TransformedCartoon(override val sourceContent : SourceContent) extends TransformedContent(sourceContent){
   override val json = R2ToFlexCartoonConversion.jsonMap(sourceContent.json)
   override val liveData = R2ToFlexCartoonConversion.parseLiveData(json)
-  override val draftData = R2ToFlexCartoonConversion.parseDraftData(json)
+  //override val draftData = R2ToFlexCartoonConversion.parseDraftData(json)
+}
+
+
+case class TransformedQuiz(override val sourceContent : SourceContent) extends TransformedContent(sourceContent){
+  override val json = R2ToFlexQuizConversion.jsonMap(sourceContent.json)
+  override val liveData = R2ToFlexQuizConversion.parseLiveData(json)
+  //override val draftData = R2ToFlexQuizConversion.parseDraftData(json)
 }
 
 case class ContentInFlex(id : Int, response : WSResponse){

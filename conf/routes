@@ -7,11 +7,15 @@ GET         /version                       controllers.Application.version
 
 GET         /check/gallery                 controllers.migration.GalleryMigrationApi.checkFlexConnection
 POST        /migrate/gallery               controllers.migration.GalleryMigrationApi.migrateBatch(batchSize: Option[Int] ?=None, batchNumber : Option[Int] ?=None)
-POST        /migrate/gallery/:gallery_id   controllers.migration.GalleryMigrationApi.migratedGallery(gallery_id : Int)
+POST        /migrate/gallery/:gallery_id   controllers.migration.GalleryMigrationApi.migrateGallery(gallery_id : Int)
 
 GET         /check/cartoon                 controllers.migration.CartoonMigrationApi.checkFlexConnection
 POST        /migrate/cartoon               controllers.migration.CartoonMigrationApi.migrateBatch(batchSize: Option[Int] ?=None, batchNumber : Option[Int] ?=None)
-POST        /migrate/cartoon/:cartoon_id   controllers.migration.CartoonMigrationApi.migratedGallery(cartoon_id : Int)
+POST        /migrate/cartoon/:cartoon_id   controllers.migration.CartoonMigrationApi.migrateCartoon(cartoon_id : Int)
+
+GET         /check/quiz                     controllers.migration.QuizMigrationApi.checkFlexConnection
+POST        /migrate/quiz                   controllers.migration.QuizMigrationApi.migrateBatch(batchSize: Option[Int] ?=None, batchNumber : Option[Int] ?=None)
+POST        /migrate/quiz/:quiz_id          controllers.migration.QuizMigrationApi.migrateQuiz(quiz_id : Int)
 
 
 GET         /management/healthcheck        controllers.Application.healthcheck
