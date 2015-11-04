@@ -7,8 +7,9 @@ import org.joda.time.DateTime
 import org.specs2.mock.Mockito
 import org.specs2.mutable.Specification
 import play.api.test.{Helpers, WithApplication}
+import services.RealEndpointTest
 
-class QuizImporterServiceSpec extends Specification with Mockito {
+class QuizImporterServiceSpec extends Specification with Mockito with RealEndpointTest {
 
   implicit val timeout = Timeout(30, SECONDS)
 
@@ -28,8 +29,8 @@ class QuizImporterServiceSpec extends Specification with Mockito {
   "QuizImporterService" should {
     "allow you to import a quiz" in new WithApplication{
       val quizImporter = new QuizImporterService
-      val importedId = Helpers.await[Object](quizImporter.importQuiz(quiz))
-      importedId.toString must equalTo("1")
+      val importedId = Helpers.await[Option[String]](quizImporter.importQuiz(quiz))
+      importedId.isDefined must equalTo(true)
     }
   }
 

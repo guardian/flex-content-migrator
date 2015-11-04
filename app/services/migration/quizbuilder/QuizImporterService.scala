@@ -15,11 +15,19 @@ class QuizImporterService extends AsyncCallerWithMultipartData{
   lazy val ImportUrl = QuizImportBaseUrl + "/quizzes/import"
 
 
-  def importQuiz(quiz : Quiz): Future[Object] = {
+  def importQuiz(quiz : Quiz): Future[Option[String]] = {
     import play.api.Play.current
     import scala.concurrent.ExecutionContext.Implicits.global
     WS.url(ImportUrl).post(quiz.getJson).map{response =>
-      response.body //TODO
+      val statusCode = (response.json \ "statusCode").as[Int]
+      val statusText = (response.json \ "statusText").as[String]
+      val id = (response.json \ "id").as[String]
+      val wasSuccess = statusCode == 200 && statusText == "Success"
+      if(wasSuccess) Some(id)
+      else{
+        //TODO: log
+        None
+      }
     }
   }
 
