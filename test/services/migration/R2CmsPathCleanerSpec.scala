@@ -1,6 +1,7 @@
 package services.migration
 
 import org.specs2.mutable.Specification
+import services.migration.r2ToFlexConversion.R2CMSPathCleaner
 
 class R2CmsPathCleanerSpec extends Specification  {
 

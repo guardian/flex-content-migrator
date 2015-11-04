@@ -1,5 +1,6 @@
 package services.migration.quizbuilder
 
+import play.Logger
 import play.api.Play
 import play.api.libs.ws.WS
 import services.AsyncCallerWithMultipartData
@@ -25,7 +26,7 @@ class QuizImporterService extends AsyncCallerWithMultipartData{
       val wasSuccess = statusCode == 200 && statusText == "Success"
       if(wasSuccess) Some(id)
       else{
-        //TODO: log
+        Logger.debug(s"Failed to create content atom for R2 quiz ${quiz.r2QuizId}: ${statusCode} ${statusText}")
         None
       }
     }

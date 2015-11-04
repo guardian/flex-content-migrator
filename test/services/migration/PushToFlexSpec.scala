@@ -9,6 +9,7 @@ import model.{ContentInFlex, SourceContent, MigratedContent, TransformedVideo}
 import org.specs2.mock.Mockito
 import org.specs2.mutable.Specification
 import play.api.test.{WithApplication, Helpers}
+import services.migration.r2ToFlexConversion.R2ToFlexVideoConversion
 import services.{FlexContentMigrationService, FlexVideoIntegrationService}
 import utils.{TempFileProcessor, TempFileProcessorImpl}
 import scala.xml.Elem

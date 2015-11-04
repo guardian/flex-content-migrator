@@ -23,7 +23,7 @@ class QuizImporterServiceSpec extends Specification with Mockito with RealEndpoi
     val resultGroup1 = new QuizResultGroup("clever", 50)
     val resultGroup2 = new QuizResultGroup("thick", 0)
 
-    new Quiz("some quiz", DateTime.now, "Tom", DateTime.now, "me", question1 :: question2 :: Nil, resultGroup1 :: resultGroup2 :: Nil)
+    new Quiz(123, "some quiz", DateTime.now, "Tom", DateTime.now, "me", question1 :: question2 :: Nil, resultGroup1 :: resultGroup2 :: Nil)
   }
 
   "QuizImporterService" should {

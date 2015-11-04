@@ -45,7 +45,7 @@ case class QuizResultGroup(title : String, minScore : Int, share : Option[String
   }
 }
 
-case class Quiz(title : String, createdAt : DateTime, createdBy : String, updatedAt : DateTime, updatedBy: String, questions : List[QuizQuestion], resultGroups : List[QuizResultGroup]) extends JsonModel{
+case class Quiz(r2QuizId : Int, title : String, createdAt : DateTime, createdBy : String, updatedAt : DateTime, updatedBy: String, questions : List[QuizQuestion], resultGroups : List[QuizResultGroup]) extends JsonModel{
 
   lazy val QuizSecret = Play.current.configuration.getString("quizbuilder.secret").get;
 
