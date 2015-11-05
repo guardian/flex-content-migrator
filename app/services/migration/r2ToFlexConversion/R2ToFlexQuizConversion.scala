@@ -18,13 +18,13 @@ object R2ToFlexQuizConversion {
     JacksMapper.readValue[Map[String, Any]](json)
   }
 
-  def parseLiveData(json : Map[String, Any]) = {
-    val parsed = new R2ToFlexCartoonConversion(json, true)
+  def parseLiveData(json : Map[String, Any],  quizImporterService : QuizImporterService) = {
+    val parsed = new R2ToFlexQuizConversion(json, true, quizImporterService)
     Logger.debug(s"Produced live cartoon content XML:\n" + parsed.xml.toString())
     parsed
   }
-  def parseDraftData(json : Map[String, Any]) = {
-    val parsed = new R2ToFlexCartoonConversion(json, false)
+  def parseDraftData(json : Map[String, Any],  quizImporterService : QuizImporterService) = {
+    val parsed = new R2ToFlexQuizConversion(json, false, quizImporterService)
     Logger.debug(s"Produced draft cartoon content XML:\n" + parsed.xml.toString())
     parsed
   }
@@ -117,7 +117,7 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
       {trailPictureId.map(tp => <trail-picture image-id={tp} media-id={trailPictureMediaId orNull}/>) orNull}
       {largeTrailPictureId.map(ltp => <large-trail-picture image-id={ltp} media-id={largeTrailPictureMediaId orNull}/>) orNull}
       <content-atoms>
-          <content-atom id="123" required="true"></content-atom>
+        {for (atom <- contentAtoms) yield <content-atom id={atom._1} required={atom._2.toString}/>}
       </content-atoms>
       <rights syndicationAggregate={syndicationAggregateFn orNull} subscriptionDatabases={subscriptionDatabasesFn orNull} developerCommunity={developerCommunityFn orNull}/>
       //expiry of rights and commercial expiry processing

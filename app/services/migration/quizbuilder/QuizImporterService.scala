@@ -33,3 +33,5 @@ class QuizImporterService extends AsyncCallerWithMultipartData{
   }
 
 }
+
+object QuizImporterServiceImpl extends QuizImporterService
