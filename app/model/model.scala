@@ -1,8 +1,7 @@
 package model
 
 import play.api.libs.ws.WSResponse
-import services.migration.r2ToFlexConversion.services.migration.r2ToFlexConversion.R2ToFlexQuizConversion
-import services.migration.r2ToFlexConversion.{R2ToFlexVideoConversion, R2ToFlexCartoonConversion, R2ToFlexGalleryConversion, R2ToFlexContentConversion}
+import services.migration.r2ToFlexConversion.{R2ToFlexQuizConversion, R2ToFlexVideoConversion, R2ToFlexCartoonConversion, R2ToFlexGalleryConversion, R2ToFlexContentConversion}
 
 
 case class SourceContent(val id : Int, json : String)
