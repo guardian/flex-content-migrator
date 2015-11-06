@@ -15,20 +15,17 @@ protected[migration] class R2IntegrationAPIClient {
 
   private val R2BaseUrl = Play.current.configuration.getString("r2.baseurl").get;
 
-  private def VideosToMigrateUrl =
-    R2BaseUrl + "/tools/newspaperintegration/videomigration/videos-to-migrate"
-
   private def GalleriesToMigrateUrl =
     R2BaseUrl + "/tools/newspaperintegration/migration/galleries-to-migrate"
 
   private def CartoonsToMigrateUrl =
     R2BaseUrl + "/tools/newspaperintegration/migration/cartoons-to-migrate"
 
-  private def QuizezToMigrateUrl =
+  private def QuizzesToMigrateUrl =
     R2BaseUrl + "/tools/newspaperintegration/migration/quizzes-to-migrate"
 
-  private def GetVideoInJsonUrl(id : Int) =
-    R2BaseUrl + s"/tools/newspaperintegration/videomigration/getVideoInJson/${id}"
+  private def AudiosToMigrateUrl =
+    R2BaseUrl + "/tools/newspaperintegration/migration/audios-to-migrate"
 
   private def GetGalleryInJsonUrl(id : Int) =
     R2BaseUrl + s"/tools/newspaperintegration/migration/gallery/${id}"
@@ -39,14 +36,15 @@ protected[migration] class R2IntegrationAPIClient {
   private def GetQuizInJsonUrl(id : Int) =
     R2BaseUrl + s"/tools/newspaperintegration/migration/quiz/${id}"
 
+
+  private def GetAudioInJsonUrl(id : Int) =
+    R2BaseUrl + s"/tools/newspaperintegration/migration/audio/${id}"
+
   private def ContentMigratedUrl =
     R2BaseUrl + "/tools/newspaperintegration/migration/migratecontent"
 
   import play.api.libs.concurrent.Execution.Implicits._
 
-
-  private def getVideoInJson(id : Int) =
-    WS.url(GetVideoInJsonUrl(id)).get()
 
   private def getGalleryInJson(id : Int) =
     WS.url(GetGalleryInJsonUrl(id)).get()
@@ -56,6 +54,10 @@ protected[migration] class R2IntegrationAPIClient {
 
   private def getQuizInJson(id : Int) =
     WS.url(GetQuizInJsonUrl(id)).get()
+
+  private def getAudioInJson(id : Int) =
+    WS.url(GetAudioInJsonUrl(id)).get()
+
 
 
   private def migrateContentInR2(r2ContentId : Int, composerId : String) = {
@@ -109,19 +111,19 @@ protected[migration] class R2IntegrationAPIClient {
     }
     }
   }
-  
-  protected[migration] def migrateVideoInR2(r2VideoId : Int, composerId : String) = {
-    migrateContentInR2(r2VideoId, composerId).map{ result => {
-        result
-      }
-    }
-  }
 
-  protected[migration] def getBatchOfVideoIds(batchSize : Int, batchNumber : Int) : Future[List[Int]] = {
-    WS.url(requestVideosToMigrate(batchSize, batchNumber)).get().map{response =>
-      (response.json \ "elementsOnCurrentPage").as[List[Int]]
+  protected[migration] def migrateAudioInR2(r2AudioId : Int, composerId : String) = {
+    migrateContentInR2(r2AudioId, composerId).map{ result => {
+      if(result._1){
+        import Metrics._
+        AudiosMigratedInR2.increment
+      }
+      result
+    }
     }
   }
+  
+
 
   protected[migration] def getBatchOfGalleryIds(batchSize : Int, batchNumber : Int) : Future[List[Int]] = {
     WS.url(requestGalleriesToMigrate(batchSize, batchNumber)).get().map{response =>
@@ -140,6 +142,12 @@ protected[migration] class R2IntegrationAPIClient {
       (response.json \ "elementsOnCurrentPage").as[List[Int]]
     }
   }
+
+  protected[migration] def getBatchOfAudioIds(batchSize : Int, batchNumber : Int) : Future[List[Int]] = {
+    WS.url(requestAudiosToMigrate(batchSize, batchNumber)).get().map{response =>
+      (response.json \ "elementsOnCurrentPage").as[List[Int]]
+    }
+  }
   
   private def isResponseAuthoritative(response : WSResponse) : Boolean = {
     val json = response.body
@@ -152,16 +160,6 @@ protected[migration] class R2IntegrationAPIClient {
     }
   }
 
-  protected[migration] def isR2Video(id : Int) : Future[Boolean] = {
-    getVideoInJson(id).map{ isResponseAuthoritative(_)}
-  }
-
-  protected[migration] def loadVideoById(id : Int) : Future[SourceContent] = {
-     getVideoInJson(id).map(response => {
-        Logger.debug(s"Loaded video ${id} from R2")
-        new SourceContent(id, response.body)
-     })
-  }
 
   protected[migration] def loadGalleryById(id : Int) : Future[SourceContent] = {
     getGalleryInJson(id).map(response => {
@@ -184,16 +182,21 @@ protected[migration] class R2IntegrationAPIClient {
     })
   }
 
+  protected[migration] def loadAudioById(id : Int) : Future[SourceContent] = {
+    getAudioInJson(id).map(response => {
+      Logger.debug(s"Loaded audio ${id} from R2")
+      new SourceContent(id, response.body)
+    })
+  }
+
   private def pageSize(size : Int) = s"pageSize=${size}"
 
   private def pageNumber(offset : Int) = s"pageNumber=${offset}"
 
-  private def r2VideoId(id : Int) = s"r2ContentId=${id}"
+  private def r2ContentId(id : Int) = s"r2ContentId=${id}"
 
   private def composerId(id : String) = s"composerId=${id}"
 
-  private def requestVideosToMigrate(size : Int, offset : Int) =
-    s"${VideosToMigrateUrl}?${pageSize(size)}&${pageNumber(offset)}"
 
   private def requestGalleriesToMigrate(size : Int, offset : Int) =
     s"${GalleriesToMigrateUrl}?${pageSize(size)}&${pageNumber(offset)}"
@@ -202,10 +205,13 @@ protected[migration] class R2IntegrationAPIClient {
     s"${CartoonsToMigrateUrl}?${pageSize(size)}&${pageNumber(offset)}"
 
   private def requestQuizzesToMigrate(size : Int, offset : Int) =
-    s"${QuizezToMigrateUrl}?${pageSize(size)}&${pageNumber(offset)}"
+    s"${QuizzesToMigrateUrl}?${pageSize(size)}&${pageNumber(offset)}"
 
-  private def requestContentMigrated(r2VideoIdInt : Int, composerIdSt : String) =
-    s"${ContentMigratedUrl}?${r2VideoId(r2VideoIdInt)}&${composerId(composerIdSt)}"
+  private def requestAudiosToMigrate(size : Int, offset : Int) =
+    s"${AudiosToMigrateUrl}?${pageSize(size)}&${pageNumber(offset)}"
+
+  private def requestContentMigrated(r2ContentIdInt : Int, composerIdSt : String) =
+    s"${ContentMigratedUrl}?${r2ContentId(r2ContentIdInt)}&${composerId(composerIdSt)}"
 
 }
 

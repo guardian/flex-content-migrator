@@ -4,9 +4,9 @@ package services.migration
 import model._
 import play.Logger
 import services.migration.batch.AkkaBatchMigrator
-import services.migration.r2.{R2MigrationService, R2VideoMigratorService}
-import services.{FlexContentMigrationService, FlexVideoIntegrationServiceImpl}
-import utils.{TempFileProcessorImpl, TempFileProcessor}
+import services.migration.r2.R2MigrationService
+import services.FlexContentMigrationService
+import utils.TempFileProcessor
 import scala.concurrent.Future
 
 protected[migration] abstract class TransformR2ToFlex(){
