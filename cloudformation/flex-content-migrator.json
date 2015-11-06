@@ -60,6 +60,11 @@
       "Description":"The EC2 Key Pair to allow SSH access to the instance",
       "Type":"String",
       "Default":"composer-team"
+    },
+    "QuizBuilderImportSecret": {
+      "Description": "The importSecret for the ten-four quizbuilder",
+      "Type": "String",
+      "Default": "AWS_REPLACE_ME"
     }
   },
   "Resources": {
@@ -468,6 +473,10 @@
                 "sed -i \\\n",
                 "    -e 's,@STAGE@,'$stage',g' \\\n",
                 "    /etc/init/flex-content-migrator.conf\n",
+                "quizImportSecret=$(echo ", { "Ref": "QuizBuilderImportSecret" }, ")\n",
+                "sed -i \\\n",
+                "    -e 's,@quizbuilder.secret@,'$quizImportSecret',g' \\\n",
+                "    /home/flex-content-migrator/flex-content-migrator/conf/application.conf\n",
 
                 "start flex-content-migrator\n"
               ]
