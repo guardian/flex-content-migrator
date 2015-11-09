@@ -1,0 +1,154 @@
+{
+  "draft": {
+    "raw": false,
+    "contentBody": {
+      "bodyText": "<p><a href=\"http://travel.guardian.co.uk/activities/watersports/story/0,7447,768226,00.html\">Mexican waves</a></p><p>Mark Stratton launches our water special in a kayak  on the Gulf of California, relaxing on the white sands and enjoying a swim with the local whales and sea lions.</p><p><a href=\"http://travel.guardian.co.uk/activities/watersports/story/0,7447,768230,00.html\">Lock pickers</a></p><p>Claire Armitstead and family enjoy meandering  through sleepy Burgundy on a stretch of the Nivernais canal.</p><p><a href=\"http://travel.guardian.co.uk/activities/watersports/story/0,7447,768210,00.html\">Hello sailor</a></p><p>As Cowes Week gets underway, novice Alf Alderson  finds his sea legs at the UK Sailing Academy.</p><p><a href=\"http://travel.guardian.co.uk/activities/watersports/story/0,7447,768214,00.html\">Hidden depths</a></p><p>Felice Hardy floats a few holiday ideas for those who  fancy fishing, diving, rafting, or just simple relaxation.</p><p><a href=\"http://travel.guardian.co.uk/activities/watersports/story/0,7447,768284,00.html\">Take it on board</a></p><p>Tony Peisley chooses the 11 best trips for people who  think they wouldn't enjoy cruising.</p>",
+      "inBodyElements": [],
+      "bodyBlocks": [],
+      "closeAllTagsCleaner": {}
+    },
+    "picture": {},
+    "lockedOnOES": false,
+    "overridingOES": false,
+    "edition": 0,
+    "panels": [],
+    "creationAndLastModifiedDetail": {
+      "createdOn": "2015-11-09T13:18:45.964Z",
+      "modifiedOn": "2015-11-09T13:18:45.964Z"
+    },
+    "factboxes": [],
+    "platformPictures": [],
+    "editedSlug": "1",
+    "publishOnCom": false,
+    "tags": [
+      8785,
+      26903,
+      4
+    ],
+    "editorial": true,
+    "publicationDate": "2002-08-02T00:00:00.000+01:00",
+    "webPublicationDateTime": "2002-08-02T19:30:36.000+01:00",
+    "updateWebPublicationDateTimeOnLaunch": false,
+    "relatedEditorialOff": false,
+    "pages": [
+      {
+        "id": 11220,
+        "readyToLive": false,
+        "badgesOff": false,
+        "trailText": "<p>Water special</p>",
+        "linkText": "Whatever floats your boat",
+        "isExternalRss": false,
+        "isBlockAds": false,
+        "cmsPath": {
+          "path": "/Guardian/travel/2002/aug/02/1"
+        },
+        "seciton": 183,
+        "createdBy": "Migration",
+        "lastModifiedBy": "Sarah Crown",
+        "createdOn": "2002-08-02T16:54:35.000+01:00",
+        "modifiedOn": "2002-08-02T17:27:40.000+01:00",
+        "lastLiveTime": "2006-10-02T19:30:36.000+01:00",
+        "webPublicationTime": "2002-08-02T19:30:36.000+01:00",
+        "launchableTemplate": {
+          "displayName": "Article",
+          "staticName": "Article",
+          "location": "templates/common/article",
+          "stylesheetName": "article-top",
+          "pageTypes": [
+            "ARTICLE"
+          ],
+          "templateCode": 14,
+          "shownInTemplateDropDown": true,
+          "coreContentAreaName": {
+            "name": "article"
+          },
+          "id": 3
+        }
+      }
+    ],
+    "pluckCommentable": false,
+    "pluckPremoderated": false,
+    "synchronisedWithPluck": false,
+    "externalReferences": [],
+    "expired": false,
+    "automateLinking": false,
+    "sensitive": false,
+    "blockAds": false,
+    "headline": "Whatever floats your boat",
+    "standfirst": "Water special",
+    "id": 4474768
+  },
+  "live": {
+    "picture": {},
+    "contentBody": {
+      "bodyText": "<p><a href=\"http://travel.guardian.co.uk/activities/watersports/story/0,7447,768226,00.html\">Mexican waves</a></p><p>Mark Stratton launches our water special in a kayak  on the Gulf of California, relaxing on the white sands and enjoying a swim with the local whales and sea lions.</p><p><a href=\"http://travel.guardian.co.uk/activities/watersports/story/0,7447,768230,00.html\">Lock pickers</a></p><p>Claire Armitstead and family enjoy meandering  through sleepy Burgundy on a stretch of the Nivernais canal.</p><p><a href=\"http://travel.guardian.co.uk/activities/watersports/story/0,7447,768210,00.html\">Hello sailor</a></p><p>As Cowes Week gets underway, novice Alf Alderson  finds his sea legs at the UK Sailing Academy.</p><p><a href=\"http://travel.guardian.co.uk/activities/watersports/story/0,7447,768214,00.html\">Hidden depths</a></p><p>Felice Hardy floats a few holiday ideas for those who  fancy fishing, diving, rafting, or just simple relaxation.</p><p><a href=\"http://travel.guardian.co.uk/activities/watersports/story/0,7447,768284,00.html\">Take it on board</a></p><p>Tony Peisley chooses the 11 best trips for people who  think they wouldn't enjoy cruising.</p>",
+      "inBodyElements": [],
+      "bodyBlocks": [],
+      "closeAllTagsCleaner": {}
+    },
+    "lockedOnOES": false,
+    "overridingOES": false,
+    "panels": [],
+    "lastLiveTime": "2006-10-02T19:30:36.000+01:00",
+    "factboxes": [],
+    "platformPictures": [],
+    "tags": [
+      8785,
+      26903,
+      4
+    ],
+    "editorial": true,
+    "publicationDate": "2002-08-02T00:00:00.000+01:00",
+    "webPublicationDateTime": "2002-08-02T19:30:36.000+01:00",
+    "updateWebPublicationDateTimeOnLaunch": false,
+    "relatedEditorialOff": false,
+    "pages": [
+      {
+        "id": 11220,
+        "readyToLive": false,
+        "badgesOff": false,
+        "trailText": "<p>Water special</p>",
+        "linkText": "Whatever floats your boat",
+        "isExternalRss": false,
+        "isBlockAds": false,
+        "cmsPath": {
+          "path": "/Guardian/travel/2002/aug/02/1"
+        },
+        "seciton": 183,
+        "createdBy": "Migration",
+        "lastModifiedBy": "Sarah Crown",
+        "createdOn": "2002-08-02T16:54:35.000+01:00",
+        "modifiedOn": "2002-08-02T17:27:40.000+01:00",
+        "lastLiveTime": "2006-10-02T19:30:36.000+01:00",
+        "webPublicationTime": "2002-08-02T19:30:36.000+01:00",
+        "launchableTemplate": {
+          "displayName": "Article",
+          "staticName": "Article",
+          "location": "templates/common/article",
+          "stylesheetName": "article-top",
+          "pageTypes": [
+            "ARTICLE"
+          ],
+          "templateCode": 14,
+          "shownInTemplateDropDown": true,
+          "coreContentAreaName": {
+            "name": "article"
+          },
+          "id": 3
+        }
+      }
+    ],
+    "pluckCommentable": false,
+    "pluckPremoderated": false,
+    "synchronisedWithPluck": false,
+    "externalReferences": [],
+    "expired": false,
+    "automateLinking": false,
+    "sensitive": false,
+    "blockAds": false,
+    "headline": "Whatever floats your boat",
+    "standfirst": "Water special",
+    "productionOffice": "UK",
+    "id": 4474768
+  }
+}
