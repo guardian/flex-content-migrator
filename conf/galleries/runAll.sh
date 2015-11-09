@@ -1,8 +1,8 @@
 # cmd to run 
 # nohup ./runAll.sh >output.txt & 
 
-./galleries_to_clean_ab	> output.ab.txt
-sleep 120
+#./galleries_to_clean_ab	> output.ab.txt
+#sleep 120
 ./galleries_to_clean_ad	> output_ad.txt
 sleep 120
 ./galleries_to_clean_af	> output_af.txt
