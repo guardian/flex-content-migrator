@@ -1,0 +1,164 @@
+{
+  "draft": {
+    "audioFile": {},
+    "durationMinutes": 30,
+    "durationSeconds": 3,
+    "source": "guardian.co.uk",
+    "explicit": false,
+    "migrated": true,
+    "onWrongDomain": false,
+    "creationAndLastModifiedDetail": {
+      "createdOn": "2015-11-09T12:40:31.615Z",
+      "modifiedOn": "2015-11-09T12:40:31.615Z"
+    },
+    "factboxes": [],
+    "platformPictures": [],
+    "editedSlug": "comedy",
+    "publishOnCom": false,
+    "tags": [
+      22609,
+      20535,
+      26907,
+      4
+    ],
+    "editorial": true,
+    "publicationDate": "2007-04-30T00:00:00.000+01:00",
+    "webPublicationDateTime": "2007-04-30T11:35:00.000+01:00",
+    "updateWebPublicationDateTimeOnLaunch": false,
+    "relatedEditorialOff": false,
+    "pages": [
+      {
+        "id": 558760,
+        "readyToLive": false,
+        "badgesOff": false,
+        "trailText": "Lucy Porter and her team of comics answer questions on current events from the audience at the Soho Theatre in London",
+        "linkText": "Many Questions: 30.04.2007",
+        "isExternalRss": false,
+        "isBlockAds": false,
+        "cmsPath": {
+          "path": "/Guardian/arts/audio/2007/apr/30/comedy1096"
+        },
+        "seciton": 381,
+        "createdBy": "Migration-Audio-Podcast",
+        "lastModifiedBy": "Chris Wiegand",
+        "createdOn": "2008-01-18T12:45:15.000Z",
+        "modifiedOn": "2008-07-23T11:40:31.000+01:00",
+        "lastLiveTime": "2008-07-23T11:40:33.000+01:00",
+        "webPublicationTime": "2007-04-30T11:35:00.000+01:00",
+        "launchableTemplate": {
+          "displayName": "Content 6-2-4",
+          "staticName": "Content 6-2-4",
+          "location": "templates/common/content",
+          "stylesheetName": "grid/content",
+          "pageTypes": [
+            "CARTOON",
+            "STANDALONE_TABLE",
+            "POLL",
+            "COMPETITION",
+            "QUIZ",
+            "ARTICLE",
+            "FEED_ARTICLE",
+            "AUDIO"
+          ],
+          "templateCode": 290,
+          "shownInTemplateDropDown": true,
+          "coreContentAreaName": {
+            "name": "${componentName}"
+          },
+          "id": 43002
+        }
+      }
+    ],
+    "pluckCommentable": false,
+    "pluckPremoderated": false,
+    "synchronisedWithPluck": false,
+    "externalReferences": [],
+    "expired": false,
+    "automateLinking": false,
+    "sensitive": false,
+    "closingDateForCommenting": "2008-02-13T11:35:10.000Z",
+    "blockAds": false,
+    "headline": "Many Questions 1",
+    "standfirst": "Lucy Porter and her team of comics answer questions on current events from the audience at the Soho Theatre in London",
+    "id": 332124551
+  },
+  "live": {
+    "audioFile": {},
+    "durationMinutes": 30,
+    "durationSeconds": 3,
+    "source": "guardian.co.uk",
+    "explicit": false,
+    "migrated": true,
+    "onWrongDomain": false,
+    "lastLiveTime": "2008-07-23T11:40:33.000+01:00",
+    "factboxes": [],
+    "platformPictures": [],
+    "tags": [
+      22609,
+      20535,
+      26907,
+      4
+    ],
+    "editorial": true,
+    "publicationDate": "2007-04-30T00:00:00.000+01:00",
+    "webPublicationDateTime": "2007-04-30T11:35:00.000+01:00",
+    "updateWebPublicationDateTimeOnLaunch": false,
+    "relatedEditorialOff": false,
+    "pages": [
+      {
+        "id": 558760,
+        "readyToLive": false,
+        "badgesOff": false,
+        "trailText": "Lucy Porter and her team of comics answer questions on current events from the audience at the Soho Theatre in London",
+        "linkText": "Many Questions: 30.04.2007",
+        "isExternalRss": false,
+        "isBlockAds": false,
+        "cmsPath": {
+          "path": "/Guardian/arts/audio/2007/apr/30/comedy1096"
+        },
+        "seciton": 381,
+        "createdBy": "Migration-Audio-Podcast",
+        "lastModifiedBy": "Chris Wiegand",
+        "createdOn": "2008-01-18T12:45:15.000Z",
+        "modifiedOn": "2008-07-23T11:40:31.000+01:00",
+        "lastLiveTime": "2008-07-23T11:40:33.000+01:00",
+        "webPublicationTime": "2007-04-30T11:35:00.000+01:00",
+        "launchableTemplate": {
+          "displayName": "Content 6-2-4",
+          "staticName": "Content 6-2-4",
+          "location": "templates/common/content",
+          "stylesheetName": "grid/content",
+          "pageTypes": [
+            "CARTOON",
+            "STANDALONE_TABLE",
+            "POLL",
+            "COMPETITION",
+            "QUIZ",
+            "ARTICLE",
+            "FEED_ARTICLE",
+            "AUDIO"
+          ],
+          "templateCode": 290,
+          "shownInTemplateDropDown": true,
+          "coreContentAreaName": {
+            "name": "${componentName}"
+          },
+          "id": 43002
+        }
+      }
+    ],
+    "pluckCommentable": false,
+    "pluckPremoderated": false,
+    "synchronisedWithPluck": false,
+    "externalReferences": [],
+    "expired": false,
+    "automateLinking": false,
+    "sensitive": false,
+    "closingDateForCommenting": "2008-02-13T11:35:10.000Z",
+    "blockAds": false,
+    "headline": "Many Questions 1",
+    "standfirst": "Lucy Porter and her team of comics answer questions on current events from the audience at the Soho Theatre in London",
+    "productionOffice": "UK",
+    "id": 332124551
+  }
+}
