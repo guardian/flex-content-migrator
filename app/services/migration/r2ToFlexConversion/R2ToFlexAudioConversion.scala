@@ -27,32 +27,38 @@ class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
 
   import scala.language.postfixOps
 
+  override lazy val live = getFacetFromMap("live")
+
+  override lazy val draft = getFacetFromMap("draft")
+
   private def audioDuration : Option[(String, String)] = {
     for( mins <- getAs[Int]("durationMinutes"); secs <- getAs[Int]("durationSeconds"))
       yield (mins.toString, secs.toString)
   }
 
-  private def videoDimension : Option[(Option[String], Option[String])] = {
-    for( width <- getAs[Int]("originalWidth"); height <- getAs[Int]("originalHeight"))
-      yield (Some(width.toString), Some(height.toString))
-  }
 
   private def blockVideoAds : Option[String] =
-    getAsString("blockVideoAds").map(_.toLowerCase match {
+    getAsString("blockAds").map(_.toLowerCase match {
       case "true" =>  "yes"
       case _ =>       "no"
     })
 
   private def audioSource = getAsString("source")
 
+  private def getFormatFromFile(path : String) =
+    if(path.endsWith(".mp3")) "audio/mpeg3"
+    else throw new IllegalArgumentException(s"Unrecognised extension ${path}")
+
   private def encodings : List[Map[String, String]] = {
     val encodings: List[Map[String, Any]] = getAsMaps("audioFile", liveOrDraft).getOrElse(Nil)
-    encodings.map(_.map(entry => entry._1 -> entry._2.toString))
+    encodings.map(map => {  map.get("path").map("url" -> _) ++
+                            map.get("length").map("sizeInBytes" -> _) ++
+                            map.get("path").map(path => "format" -> getFormatFromFile(path.toString))
+                          }.toMap[String, String])
   }
 
   private def stillImageUrl = getAsString("stillImageUrl")
 
-  private def cdnId = getAsString("cdnIdentifier")
 
   private def embeddable = getAsString("embeddable").map(_.toBoolean)
 
@@ -63,9 +69,6 @@ class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
 
   private def explicit = getAsString("explicit").map(_.toBoolean).map(_.toString)
 
-  override lazy val live = getFacetFromMap("liveVideo")
-
-  override lazy val draft = getFacetFromMap("draftVideo")
 
   override lazy val xml = {
     <audio story-bundle={storyBundleId orNull} cms-path={cmsPath orNull} notes={notes orNull} slug-word={slug orNull}
@@ -87,12 +90,10 @@ class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
       {audioSource.map(as =>  <audio-source>{as}</audio-source>) orNull}
       {encodings.map{ enc => {
       <encoding>
-        {enc.get("videoFormat").map(f =>      <format>{f}</format>) orNull}
-        {enc.get("videoFileUrl").map(u =>     <video-file-url size-in-bytes={enc.get("sizeInBytes") orNull}>{u}</video-file-url>) orNull}
-        {enc.get("width").map(w =>            <width>{w}</width>) orNull}
-        {enc.get("height").map(h =>           <height>{h}</height>) orNull}
-        {enc.get("durationMinutes").map(m =>  <minutes>{m}</minutes>) orNull}
-        {enc.get("durationSeconds").map(s =>  <seconds>{s}</seconds>) orNull}
+        {enc.get("format").map(f =>      <format>{f}</format>) orNull}
+        {enc.get("url").map(u =>     <audio-file-url size-in-bytes={enc.get("sizeInBytes") orNull}>{u}</audio-file-url>) orNull}
+        {getAs[Int]("durationMinutes").map(m =>  <minutes>{m}</minutes>) orNull}
+        {getAs[Int]("durationSeconds").map(s =>  <seconds>{s}</seconds>) orNull}
       </encoding>
     }}
       }
