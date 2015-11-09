@@ -3,23 +3,23 @@ package controllers.migration
 import model._
 import play.api.Logger
 import play.api.mvc.{Action, Result, Controller}
-import services.{FlexQuizMigrationServiceImpl, FlexCartoonMigrationServiceImpl, FlexContentMigrationService}
-import services.migration.{QuizMigrator, CartoonMigrator, Migrator}
+import services.{FlexAudioMigrationServiceImpl, FlexContentMigrationService}
+import services.migration.{AudioMigrator, Migrator}
 
 import scala.concurrent.Future
 
 
-object QuizMigrationApi extends QuizMigrationApi(QuizMigrator, QuizMigrationTextReport, FlexQuizMigrationServiceImpl)
+object AudioMigrationApi extends AudioMigrationApi(AudioMigrator, AudioMigrationTextReport, FlexAudioMigrationServiceImpl)
 
-class QuizMigrationApi(migrator : Migrator, reporter : MigrationReport, flex : FlexContentMigrationService) extends Controller{
+class AudioMigrationApi(migrator : Migrator, reporter : MigrationReport, flex : FlexContentMigrationService) extends Controller{
 
   import play.api.libs.concurrent.Execution.Implicits.defaultContext
 
 
   private def withMigrationPermission(migration : () => Future[Result]) : Future[Result] = {
     import featureswitches.FlexR2FeatureSwitch._
-    if(!allowQuizMigrationToFlex){
-      val msg = "Attempt to migrate quiz to flex: this feature is forbidden"
+    if(!allowAudioMigrationToFlex){
+      val msg = "Attempt to migrate Audio to flex: this feature is forbidden"
       Logger.error(msg)
       Future{InternalServerError(msg)}
     }
@@ -39,16 +39,16 @@ class QuizMigrationApi(migrator : Migrator, reporter : MigrationReport, flex : F
   }
   }
 
-  def migrateQuiz(quizId : Int) =  Action.async{ block => {
-    Logger.debug(s"migrateQuiz ${quizId}")
+  def migrateAudio(audioId : Int) =  Action.async{ block => {
+    Logger.debug(s"migrateAudio ${audioId}")
     withMigrationPermission{ () =>
-      migrator.migrateIndividualContent(quizId).map(reportSingleQuiz(_))
+      migrator.migrateIndividualContent(audioId).map(reportSingleAudio(_))
     }
   }
   }
 
-  private def reportSingleQuiz(quiz : MigratedContent) = {
-    Ok(reporter.reportSingleContent(quiz))
+  private def reportSingleAudio(audio : MigratedContent) = {
+    Ok(reporter.reportSingleContent(audio))
   }
 
   private def reportMigratedBatch(batch : MigratedBatch) = {
@@ -57,7 +57,7 @@ class QuizMigrationApi(migrator : Migrator, reporter : MigrationReport, flex : F
 }
 
 
-object QuizMigrationTextReport extends MigrationReport{
+object AudioMigrationTextReport extends MigrationReport{
 
   private def getTruncatedReason(reason : String) ={
     val MaxLengthBody = 600
@@ -65,11 +65,11 @@ object QuizMigrationTextReport extends MigrationReport{
     else reason.substring(0, MaxLengthBody-1)
   }
 
-  private def reportFailure(migratedQuiz : MigrationFailedContent) =
-    s"""---Failed Quiz---
-        |Failed Quiz ID: ${migratedQuiz.id}
+  private def reportFailure(migratedAudio : MigrationFailedContent) =
+    s"""---Failed Audio---
+        |Failed Audio ID: ${migratedAudio.id}
         |Reason:
-        |${getTruncatedReason(migratedQuiz.reason)}
+        |${getTruncatedReason(migratedAudio.reason)}
         |
         |-----------------""".stripMargin
 
@@ -77,14 +77,14 @@ object QuizMigrationTextReport extends MigrationReport{
     migrated.map(migrated => s"${migrated.id} -> ${migrated.composerId}").mkString("\n")
 
 
-  def reportSingleContent(quiz : ContentMigrationResult) : String = {
+  def reportSingleContent(audio : ContentMigrationResult) : String = {
 
-    if(quiz.wasSuccess) {
-      val migratedQuiz = quiz.asInstanceOf[MigratedContent]
-      s"Quiz ${migratedQuiz.id} migrated successfully: ${migratedQuiz.composerId}"
+    if(audio.wasSuccess) {
+      val migratedAudio = audio.asInstanceOf[MigratedContent]
+      s"Audio ${migratedAudio.id} migrated successfully: ${migratedAudio.composerId}"
     }
     else {
-      val failed = quiz.asInstanceOf[MigrationFailedContent]
+      val failed = audio.asInstanceOf[MigrationFailedContent]
       reportFailure(failed)
     }
   }
@@ -93,6 +93,6 @@ object QuizMigrationTextReport extends MigrationReport{
     def batchFailureReport =
       s"Details:\n${reportSuccesses(batch.migrated)}\n\n${batch.failed.map(reportFailure(_) + "\n\n").mkString("\n")}"
     
-    s"Batch Success Quizzes = ${batch.migrated.size}, Failed Quizzes = ${batch.failed.size} \n${batchFailureReport}"
+    s"Batch Success Audios = ${batch.migrated.size}, Failed Audios = ${batch.failed.size} \n${batchFailureReport}"
   }
 }

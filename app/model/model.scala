@@ -2,7 +2,7 @@ package model
 
 import play.api.libs.ws.WSResponse
 import services.migration.quizbuilder.QuizImporterServiceImpl
-import services.migration.r2ToFlexConversion.{R2ToFlexQuizConversion, R2ToFlexVideoConversion, R2ToFlexCartoonConversion, R2ToFlexGalleryConversion, R2ToFlexContentConversion}
+import services.migration.r2ToFlexConversion._
 
 
 case class SourceContent(val id : Int, json : String)
@@ -35,6 +35,11 @@ case class TransformedCartoon(override val sourceContent : SourceContent) extend
 case class TransformedQuiz(override val sourceContent : SourceContent) extends TransformedContent(sourceContent){
   override val json = R2ToFlexQuizConversion.jsonMap(sourceContent.json)
   override val liveData = R2ToFlexQuizConversion.parseLiveData(json, QuizImporterServiceImpl) //NOTE: using live data for migration
+}
+
+case class TransformedAudio(override val sourceContent : SourceContent) extends TransformedContent(sourceContent){
+  override val json = R2ToFlexAudioConversion.jsonMap(sourceContent.json)
+  override val liveData = R2ToFlexAudioConversion.parseLiveData(json) //NOTE: using live data for migration
 }
 
 case class ContentInFlex(id : Int, response : WSResponse){

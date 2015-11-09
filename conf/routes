@@ -17,6 +17,10 @@ GET         /check/quiz                     controllers.migration.QuizMigrationA
 POST        /migrate/quiz                   controllers.migration.QuizMigrationApi.migrateBatch(batchSize: Option[Int] ?=None, batchNumber : Option[Int] ?=None)
 POST        /migrate/quiz/:quiz_id          controllers.migration.QuizMigrationApi.migrateQuiz(quiz_id : Int)
 
+GET         /check/audio                     controllers.migration.AudioMigrationApi.checkFlexConnection
+POST        /migrate/audio                   controllers.migration.AudioMigrationApi.migrateBatch(batchSize: Option[Int] ?=None, batchNumber : Option[Int] ?=None)
+POST        /migrate/audio/:audio_id         controllers.migration.AudioMigrationApi.migrateAudio(audio_id : Int)
+
 
 GET         /management/healthcheck        controllers.Application.healthcheck
 # Map static resources from the /public folder to the /assets URL path
