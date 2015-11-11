@@ -11,13 +11,13 @@ object R2ToFlexAudioConversion {
   }
 
   def parseLiveData(json : Map[String, Any]) = {
-    val parsed = new R2ToFlexVideoConversion(json, true)
+    val parsed = new R2ToFlexAudioConversion(json, true)
     Logger.debug(s"Produced live video content XML:\n" + parsed.xml.toString())
     parsed
   }
   def parseDraftData(json : Map[String, Any]) = {
-    val parsed = new R2ToFlexVideoConversion(json, false)
-    Logger.debug(s"Produced draft video content XML:\n" + parsed.xml.toString())
+    val parsed = new R2ToFlexAudioConversion(json, false)
+    Logger.debug(s"Produced draft audio content XML:\n" + parsed.xml.toString())
     parsed
   }
 }
@@ -46,15 +46,18 @@ class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
   private def audioSource = getAsString("source")
 
   private def getFormatFromFile(path : String) =
-    if(path.endsWith(".mp3")) "audio/mpeg3"
+    if(path.endsWith(".mp3")) "audio/mpeg"
     else throw new IllegalArgumentException(s"Unrecognised extension ${path}")
 
+
+  private def mapFilePath(path : String) = "http://static.guim.co.uk/" + path
+
   private def encodings : List[Map[String, String]] = {
-    val encodings: List[Map[String, Any]] = getAsMaps("audioFile", liveOrDraft).getOrElse(Nil)
-    encodings.map(map => {  map.get("path").map("url" -> _) ++
-                            map.get("length").map("sizeInBytes" -> _) ++
-                            map.get("path").map(path => "format" -> getFormatFromFile(path.toString))
-                          }.toMap[String, String])
+    val encodings = getAs[Map[String, Any]]("audioFile", liveOrDraft)
+    encodings.map(e => {    e.get("path").map(p => "url" -> mapFilePath(p.toString)) ++
+                            e.get("length").map("sizeInBytes" -> _.toString) ++
+                            e.get("path").map(p => "format" -> getFormatFromFile(p.toString))
+                          }.toMap).toList
   }
 
   private def stillImageUrl = getAsString("stillImageUrl")
@@ -68,6 +71,8 @@ class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
   private def syndicateEncodings = getAsString("syndicateEncodings").map(_.toBoolean)
 
   private def explicit = getAsString("explicit").map(_.toBoolean).map(_.toString)
+
+  private def showNotes = getAsString("showNotes")
 
 
   override lazy val xml = {
@@ -97,11 +102,12 @@ class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
       </encoding>
     }}
       }
+      {showNotes.map(notes => <show-notes>{notes}</show-notes>)}
       {stillImageUrl.map(iu =>      <still-image-url>{iu}</still-image-url>) orNull}
       {thumbnailImageUrl.map(iu =>  <thumbnail-image-url>{iu}</thumbnail-image-url>) orNull}
       {embeddable.map(e =>          <embeddable>{e}</embeddable>) orNull}
-      {trailPictureId.map(tp =>     <trail-picture image-id={tp} />) orNull}
-      {largeTrailPictureId.map(ltp =>     <large-trail-picture image-id={ltp} />) orNull}
+      {trailPictureId.map(tp =>     <trail-picture image-id={tp} media-id={trailPictureMediaId orNull} />) orNull}
+      {largeTrailPictureId.map(ltp =>     <large-trail-picture image-id={ltp} media-id={largeTrailPictureMediaId orNull} />) orNull}
       {if(!associatedPictures.isEmpty)
       <pictures>
         {associatedPictures.map{pic => {
@@ -113,7 +119,21 @@ class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
         }
       </pictures>
       }
-      {syndicateEncodings.map{se => <syndicate-encodings>{se}</syndicate-encodings>} orNull}
+      <rights syndicationAggregate={syndicationAggregateFn orNull} subscriptionDatabases={subscriptionDatabasesFn orNull} developerCommunity={developerCommunityFn orNull} />
+      {
+      val rightsExpiry = getRightsExpiry
+      val commercialExpiry = getCommercialExpiry
+      if(rightsExpiry.isDefined || commercialExpiry.isDefined){
+        <expiry>
+          {rightsExpiry.map(info => <rights expired={info._1.getOrElse(false).toString}
+                                            expiredAt={info._2 orNull}
+                                            scheduledExpiry={info._3 orNull}/>)         orNull}
+          {commercialExpiry.map(info => <commercial expired={info._1.getOrElse(false).toString}
+                                                    expiredAt={info._2 orNull}
+                                                    scheduledExpiry={info._3 orNull}/>) orNull}
+        </expiry>
+      }
+      }
     </audio>
   }
 }
