@@ -21,6 +21,10 @@ GET         /check/audio                     controllers.migration.AudioMigratio
 POST        /migrate/audio                   controllers.migration.AudioMigrationApi.migrateBatch(batchSize: Option[Int] ?=None, batchNumber : Option[Int] ?=None)
 POST        /migrate/audio/:audio_id         controllers.migration.AudioMigrationApi.migrateAudio(audio_id : Int)
 
+GET         /check/article                   controllers.migration.ArticleMigrationApi.checkFlexConnection
+POST        /migrate/article                 controllers.migration.ArticleMigrationApi.migrateBatch(batchSize: Option[Int] ?=None, batchNumber : Option[Int] ?=None)
+POST        /migrate/article/:article_id     controllers.migration.ArticleMigrationApi.migrateArticle(article_id : Int)
+
 
 GET         /management/healthcheck        controllers.Application.healthcheck
 # Map static resources from the /public folder to the /assets URL path

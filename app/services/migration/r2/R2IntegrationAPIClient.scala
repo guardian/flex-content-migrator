@@ -27,6 +27,9 @@ protected[migration] class R2IntegrationAPIClient {
   private def AudiosToMigrateUrl =
     R2BaseUrl + "/tools/newspaperintegration/migration/audios-to-migrate"
 
+  private def ArticlesToMigrateUrl =
+    R2BaseUrl + "/tools/newspaperintegration/migration/articles-to-migrate"
+
   private def GetGalleryInJsonUrl(id : Int) =
     R2BaseUrl + s"/tools/newspaperintegration/migration/gallery/${id}"
 
@@ -36,9 +39,11 @@ protected[migration] class R2IntegrationAPIClient {
   private def GetQuizInJsonUrl(id : Int) =
     R2BaseUrl + s"/tools/newspaperintegration/migration/quiz/${id}"
 
-
   private def GetAudioInJsonUrl(id : Int) =
     R2BaseUrl + s"/tools/newspaperintegration/migration/audio/${id}"
+
+  private def GetArticleInJsonUrl(id : Int) =
+    R2BaseUrl + s"/tools/newspaperintegration/migration/article/${id}"
 
   private def ContentMigratedUrl =
     R2BaseUrl + "/tools/newspaperintegration/migration/migratecontent"
@@ -58,6 +63,8 @@ protected[migration] class R2IntegrationAPIClient {
   private def getAudioInJson(id : Int) =
     WS.url(GetAudioInJsonUrl(id)).get()
 
+  private def getArticleInJson(id : Int) =
+    WS.url(GetArticleInJsonUrl(id)).get()
 
 
   private def migrateContentInR2(r2ContentId : Int, composerId : String) = {
@@ -122,6 +129,17 @@ protected[migration] class R2IntegrationAPIClient {
     }
     }
   }
+
+  protected[migration] def migrateArticleInR2(r2ArticleId : Int, composerId : String) = {
+    migrateContentInR2(r2ArticleId, composerId).map{ result => {
+      if(result._1){
+        import Metrics._
+        ArticlesMigratedInR2.increment
+      }
+      result
+    }
+    }
+  }
   
 
 
@@ -145,6 +163,13 @@ protected[migration] class R2IntegrationAPIClient {
 
   protected[migration] def getBatchOfAudioIds(batchSize : Int, batchNumber : Int) : Future[List[Int]] = {
     WS.url(requestAudiosToMigrate(batchSize, batchNumber)).get().map{response =>
+      (response.json \ "elementsOnCurrentPage").as[List[Int]]
+    }
+  }
+
+
+  protected[migration] def getBatchOfArticleIds(batchSize : Int, batchNumber : Int) : Future[List[Int]] = {
+    WS.url(requestArticlesToMigrate(batchSize, batchNumber)).get().map{response =>
       (response.json \ "elementsOnCurrentPage").as[List[Int]]
     }
   }
@@ -189,6 +214,13 @@ protected[migration] class R2IntegrationAPIClient {
     })
   }
 
+  protected[migration] def loadArticleById(id : Int) : Future[SourceContent] = {
+    getArticleInJson(id).map(response => {
+      Logger.debug(s"Loaded article ${id} from R2")
+      new SourceContent(id, response.body)
+    })
+  }
+
   private def pageSize(size : Int) = s"pageSize=${size}"
 
   private def pageNumber(offset : Int) = s"pageNumber=${offset}"
@@ -209,6 +241,9 @@ protected[migration] class R2IntegrationAPIClient {
 
   private def requestAudiosToMigrate(size : Int, offset : Int) =
     s"${AudiosToMigrateUrl}?${pageSize(size)}&${pageNumber(offset)}"
+
+  private def requestArticlesToMigrate(size : Int, offset : Int) =
+    s"${ArticlesToMigrateUrl}?${pageSize(size)}&${pageNumber(offset)}"
 
   private def requestContentMigrated(r2ContentIdInt : Int, composerIdSt : String) =
     s"${ContentMigratedUrl}?${r2ContentId(r2ContentIdInt)}&${composerId(composerIdSt)}"

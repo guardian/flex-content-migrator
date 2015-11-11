@@ -42,6 +42,12 @@ case class TransformedAudio(override val sourceContent : SourceContent) extends 
   override val liveData = R2ToFlexAudioConversion.parseLiveData(json) //NOTE: using live data for migration
 }
 
+
+case class TransformedArticle(override val sourceContent : SourceContent) extends TransformedContent(sourceContent){
+  override val json = R2ToFlexArticleConversion.jsonMap(sourceContent.json)
+  override val liveData = R2ToFlexArticleConversion.parseLiveData(json) //NOTE: using live data for migration
+}
+
 case class ContentInFlex(id : Int, response : WSResponse){
   val wasSuccess = {
     val bool = (response.body.contains("OK") && response.status == 200 && !response.body.contains("ERROR"))

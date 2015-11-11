@@ -20,12 +20,12 @@ object R2ToFlexQuizConversion {
 
   def parseLiveData(json : Map[String, Any],  quizImporterService : QuizImporterService) = {
     val parsed = new R2ToFlexQuizConversion(json, true, quizImporterService)
-    Logger.debug(s"Produced live cartoon content XML:\n" + parsed.xml.toString())
+    Logger.debug(s"Produced live quiz content XML:\n" + parsed.xml.toString())
     parsed
   }
   def parseDraftData(json : Map[String, Any],  quizImporterService : QuizImporterService) = {
     val parsed = new R2ToFlexQuizConversion(json, false, quizImporterService)
-    Logger.debug(s"Produced draft cartoon content XML:\n" + parsed.xml.toString())
+    Logger.debug(s"Produced draft quiz content XML:\n" + parsed.xml.toString())
     parsed
   }
 }

@@ -1,12 +1,9 @@
 package services.migration
 
 import model._
-import play.Logger
-import services.migration.batch.AkkaBatchMigrator
 import services.migration.r2._
-import services.{FlexGalleryMigrationServiceImpl, FlexContentMigrationService, FlexVideoIntegrationServiceImpl}
+import services.{FlexGalleryMigrationServiceImpl, FlexContentMigrationService}
 import utils.{TempFileProcessorImpl, TempFileProcessor}
-import scala.concurrent.Future
 
 
 protected[migration] class GalleryMigrationBehaviour( r2 : R2GalleryMigratorService,

@@ -1,13 +1,10 @@
 package services
 
-
-
 import java.io.File
 
 import play.Logger
 import play.api.Play
 import play.api.libs.ws.{WS, WSResponse}
-import services.FlexVideoIntegrationServiceImpl._
 import services.aws.{Metrics, CountMetric}
 import Metrics._
 import services.migration.ThrottleControl._
@@ -34,14 +31,6 @@ trait FlexContentMigrationService extends FlexAdminApiService{
   def migrateContentXml(xmlFile : File) : Future[WSResponse]
 }
 
-
-trait FlexVideoIntegrationService extends FlexAdminApiService{
-
-  def importVideoXml(xmlFile : File) : Future[WSResponse]
-  def addVideoEncoding(xmlFile : File) : Future[WSResponse]
-  def getVideoUrlForRedirect(code : String) : String
-
-}
 
 
 object FlexGalleryMigrationServiceImpl  extends FlexContentMigrationService{
@@ -71,7 +60,6 @@ object FlexCartoonMigrationServiceImpl  extends FlexContentMigrationService{
 }
 
 
-
 object FlexQuizMigrationServiceImpl  extends FlexContentMigrationService{
   override lazy val ConnectivityCheckUrl = FlexImportBaseUrl + "/contentmigration/article/index";
   private def MigrateQuizInArticleUrl = FlexImportBaseUrl + "/contentmigration/article"
@@ -98,38 +86,17 @@ object FlexAudioMigrationServiceImpl  extends FlexContentMigrationService{
   }
 }
 
+object FlexArticleMigrationServiceImpl  extends FlexContentMigrationService{
+  override lazy val ConnectivityCheckUrl = FlexImportBaseUrl + "/contentmigration/article/index";
+  private def MigrateArticleUrl = FlexImportBaseUrl + "/contentmigration/article"
 
-
-object FlexVideoIntegrationServiceImpl  extends FlexVideoIntegrationService
-                                        with FlexContentMigrationService{
-
-  private val ComposerBaseUrl = Play.current.configuration.getString("composer.baseurl").get;
-
-  private def ImportVideoUrl =  FlexImportBaseUrl + "/videointegration/video/import"
-  private def MigrateVideoUrl = FlexImportBaseUrl + "/videointegration/video/migrate"
-  private def AddEncodingUrl =  FlexImportBaseUrl + "/videointegration/video/add-encoding"
-  override lazy val ConnectivityCheckUrl = FlexImportBaseUrl + "/videointegration/index";
-
-
-
-  override def importVideoXml(xmlFile : File) = {
+  override def migrateContentXml(xmlFile: File): Future[WSResponse] = {
     flexThrottlerFt[WSResponse] {
-        makeAsyncCall(ImportVideoUrl, (xmlFile, "fileData"), Map())
+      withCountIncr(Metrics.ArticlesMigratedInFlex) {
+        makeAsyncCall(MigrateArticleUrl, (xmlFile, "fileData"), Map())
+      }
     }
   }
-
-  override def addVideoEncoding(xmlFile : File) = {
-    flexThrottlerFt[WSResponse] {
-        makeAsyncCall(AddEncodingUrl, (xmlFile, "fileData"), Map())
-    }
-  }
-
-  override def migrateContentXml(xmlFile : File) = {
-    flexThrottlerFt[WSResponse] {
-        makeAsyncCall(MigrateVideoUrl, (xmlFile, "fileData"), Map())
-    }
-  }
-
-  def getVideoUrlForRedirect(code : String) : String = s"${ComposerBaseUrl}/content/${code}"
-
 }
+
+

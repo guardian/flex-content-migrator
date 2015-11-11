@@ -12,7 +12,7 @@ object R2ToFlexAudioConversion {
 
   def parseLiveData(json : Map[String, Any]) = {
     val parsed = new R2ToFlexAudioConversion(json, true)
-    Logger.debug(s"Produced live video content XML:\n" + parsed.xml.toString())
+    Logger.debug(s"Produced live audio content XML:\n" + parsed.xml.toString())
     parsed
   }
   def parseDraftData(json : Map[String, Any]) = {
