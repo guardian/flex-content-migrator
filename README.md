@@ -61,4 +61,18 @@ local: `curl -X POST "http://localhost:9100/migrate/quiz?batchNumber=${batchNumb
 code:   `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/quiz?batchNumber=${batchNumber}&batchSize=${batchSize}"`
 
 
+### To Migrate Audios Into Flex
+
+####Single
+
+local: `curl -X POST "http://localhost:9100/migrate/audio/${audio}"`
+
+code: `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/audio/${audioId}"`
+
+####Batch
+
+local: `curl -X POST "http://localhost:9100/migrate/audio?batchNumber=${batchNumber}&batchSize=${batchSize}"`
+
+code:   `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/audio?batchNumber=${batchNumber}&batchSize=${batchSize}"`
+
 

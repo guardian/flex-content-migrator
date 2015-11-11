@@ -7,7 +7,7 @@ import model._
 import play.Logger
 import services.migration.batch.AkkaBatchMigratorMessages._
 import services.migration._
-import services.migration.r2.{R2MigrationService, R2VideoMigratorService}
+import services.migration.r2.R2MigrationService
 import scala.concurrent.Future
 import akka.util.Timeout
 import scala.concurrent.duration._

@@ -1,4 +1,4 @@
-# cms to run
+# cmd to run
 # nohup ./runAll.sh > output.txt &
 ./cartoons_to_clean_aa	> output.aa.txt
 sleep 120

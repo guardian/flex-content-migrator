@@ -1,7 +1,5 @@
 package services.migration.r2ToFlexConversion
 
-import com.lambdaworks.jacks.JacksMapper
-import play.Logger
 
 import scala.xml.Elem
 
