@@ -102,7 +102,7 @@ class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
       </encoding>
     }}
       }
-      {showNotes.map(notes => <show-notes>{notes}</show-notes>)}
+      {showNotes.map(notes => <show-notes>{notes}</show-notes>) orNull}
       {stillImageUrl.map(iu =>      <still-image-url>{iu}</still-image-url>) orNull}
       {thumbnailImageUrl.map(iu =>  <thumbnail-image-url>{iu}</thumbnail-image-url>) orNull}
       {embeddable.map(e =>          <embeddable>{e}</embeddable>) orNull}
