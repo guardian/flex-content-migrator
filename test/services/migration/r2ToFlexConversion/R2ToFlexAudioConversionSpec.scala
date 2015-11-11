@@ -12,7 +12,7 @@ class R2ToFlexAudioConversionSpec extends Specification  {
     def r2Json(path : String= "/migration/r2audio.json") : Map[String, Any] = {
       val filePath = getClass.getResource(path).getFile
       val fileAsString = scala.io.Source.fromFile(new File(filePath)).getLines.reduceLeft(_+_)
-      R2ToFlexCartoonConversion.jsonMap(fileAsString)
+      R2ToFlexAudioConversion.jsonMap(fileAsString)
     }
 
     lazy val parsedAudioJson = R2ToFlexAudioConversion.parseDraftData(r2Json())
@@ -98,6 +98,10 @@ class R2ToFlexAudioConversionSpec extends Specification  {
       syndicationAggregate must equalTo(Some(true))
       subscriptionDatabases must equalTo(Some(true))
       developerCommunity must equalTo(Some(true))
+    }
+    "parse show notes correctly" in {
+      val showNotes = (parsedAudioJson.xml \ "show-notes").text.toString
+      showNotes must startWith("&lt;p&gt;Family planning is notoriously one of")
     }
     "parse rights expiry correctly" in {
       val isExpired = (parsedAudioJson.xml \ "expiry" \ "rights" \ "@expired").headOption.map(_.text.toString)
