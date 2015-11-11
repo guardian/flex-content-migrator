@@ -1,10 +1,15 @@
 package services.migration.r2ToFlexConversion
 
+import java.util.concurrent.TimeUnit
 
-package services.migration.r2ToFlexConversion
+import scala.concurrent.duration.Duration
 
 import com.lambdaworks.jacks.JacksMapper
+import org.joda.time.DateTime
 import play.Logger
+import services.migration.quizbuilder._
+
+import scala.concurrent.{Await, Future}
 
 
 object R2ToFlexQuizConversion {
@@ -13,26 +18,83 @@ object R2ToFlexQuizConversion {
     JacksMapper.readValue[Map[String, Any]](json)
   }
 
-  def parseLiveData(json : Map[String, Any]) = {
-    val parsed = new R2ToFlexCartoonConversion(json, true)
+  def parseLiveData(json : Map[String, Any],  quizImporterService : QuizImporterService) = {
+    val parsed = new R2ToFlexQuizConversion(json, true, quizImporterService)
     Logger.debug(s"Produced live cartoon content XML:\n" + parsed.xml.toString())
     parsed
   }
-  def parseDraftData(json : Map[String, Any]) = {
-    val parsed = new R2ToFlexCartoonConversion(json, false)
+  def parseDraftData(json : Map[String, Any],  quizImporterService : QuizImporterService) = {
+    val parsed = new R2ToFlexQuizConversion(json, false, quizImporterService)
     Logger.debug(s"Produced draft cartoon content XML:\n" + parsed.xml.toString())
     parsed
   }
 }
 
-class R2ToFlexQuizConversion(jsonMap : Map[String, Any], parseLiveData : Boolean) extends R2ToFlexContentConversion(jsonMap, parseLiveData){
+class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
+                             parseLiveData : Boolean,
+                             quizImporterService : QuizImporterService)
+                             extends R2ToFlexContentConversion(jsonMap, parseLiveData){
 
   import scala.language.postfixOps
 
 
-  private def buildAndImportQuiz = ??? //TODO
+  private def buildAnswer(answer : Map[String, Any]) : QuizQuestionAnswer = {
+    val answerText = answer("answerText").toString //must have an answer text
+    val isCorrect = getAsString("correct", answer).map(_.toBoolean).getOrElse(false);
+    val image = None //TODO
+    val revealText = None//TODO
+    QuizQuestionAnswer(answerText, isCorrect, image, revealText)
+  }
 
-  def contentAtoms : List[(String, Boolean)] = ??? //TODO
+  private def buildQuestionsAndAnswers : List[QuizQuestion] = {
+    val questions = getAsMaps("questions", liveOrDraft)
+    questions match {
+      case Some(questions) => {
+        questions.map((question: Map[String, Any]) => {
+          val questionText = question("questionText").toString
+          val questionImage = None //TODO
+          val questionAnswers : List[QuizQuestionAnswer] = getAsMaps("answers", question).getOrElse(Nil).map(buildAnswer(_))
+          QuizQuestion(questionText, questionAnswers, questionImage)
+        })
+      }
+      case None => Nil
+    }
+  }
+
+  private def buildResultGroups : List[QuizResultGroup] = {
+    val resultGroups = getAsMaps("bands", liveOrDraft)
+    resultGroups match {
+      case Some(resultGroups) => {
+        resultGroups.map((resultGroup: Map[String, Any]) => {
+          val bandValue = resultGroup("bandValue").toString.toInt
+          val bandText = resultGroup("bandText").toString
+          val share = None //TODO
+          QuizResultGroup(bandText, bandValue, share)
+        }).toList
+      }
+      case None => Nil
+    }
+  }
+
+  private def buildAndImportQuiz = {
+
+      val title = headline.get
+      val createdAt = DateTime.now //TODO createdDate
+      val updatedAt = DateTime.now //TODO
+      val createdByUser = createdBy.get
+      val revealAnswers = getAsString("showAnswerPage").map(_.toBoolean).getOrElse(true)
+
+      Quiz( r2ContentId.get.toInt, title, createdAt, createdByUser, updatedAt, createdByUser,
+            buildQuestionsAndAnswers, buildResultGroups, revealAnswers)
+  }
+
+  def contentAtoms : List[(String, Boolean)] = {
+    val importedQuiz: Future[Option[String]] = quizImporterService.importQuiz(buildAndImportQuiz)
+    Await.result(importedQuiz, Duration(30, TimeUnit.SECONDS)) match {
+      case Some(s)  => (s, true) :: Nil //NOTE: defaulting required=true
+      case _ => Nil
+    };
+  }
 
   override lazy val xml = {
     <article story-bundle={storyBundleId orNull} cms-path={cmsPath orNull} notes={notes orNull} slug-word={slug orNull}
@@ -55,7 +117,7 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any], parseLiveData : Boolean
       {trailPictureId.map(tp => <trail-picture image-id={tp} media-id={trailPictureMediaId orNull}/>) orNull}
       {largeTrailPictureId.map(ltp => <large-trail-picture image-id={ltp} media-id={largeTrailPictureMediaId orNull}/>) orNull}
       <content-atoms>
-          <content-atom id="123" required="true"></content-atom>
+        {for (atom <- contentAtoms) yield <content-atom id={atom._1} required={atom._2.toString}/>}
       </content-atoms>
       <rights syndicationAggregate={syndicationAggregateFn orNull} subscriptionDatabases={subscriptionDatabasesFn orNull} developerCommunity={developerCommunityFn orNull}/>
       //expiry of rights and commercial expiry processing

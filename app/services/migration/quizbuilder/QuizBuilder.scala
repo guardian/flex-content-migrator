@@ -45,7 +45,8 @@ case class QuizResultGroup(title : String, minScore : Int, share : Option[String
   }
 }
 
-case class Quiz(r2QuizId : Int, title : String, createdAt : DateTime, createdBy : String, updatedAt : DateTime, updatedBy: String, questions : List[QuizQuestion], resultGroups : List[QuizResultGroup]) extends JsonModel{
+case class Quiz(r2QuizId : Int, title : String, createdAt : DateTime, createdBy : String, updatedAt : DateTime, updatedBy: String,
+                questions : List[QuizQuestion], resultGroups : List[QuizResultGroup],  revealAtEnd : Boolean = true) extends JsonModel{
 
   lazy val QuizSecret = Play.current.configuration.getString("quizbuilder.secret").get;
 
@@ -68,12 +69,8 @@ case class Quiz(r2QuizId : Int, title : String, createdAt : DateTime, createdBy 
       "createdBy" -> createdBy,
       "published" -> true,
       "quizType" -> "knowledge",  //TODO
-      "revealAtEnd" -> true, //TODO
+      "revealAtEnd" -> revealAtEnd,
       "defaultColumns" -> 1, //TODO
-      //"published"
-      //"revealAtEnd"
-      //"quizType"
-      //"defaultColumns"
       "content" -> quizContentJson
     )
   }

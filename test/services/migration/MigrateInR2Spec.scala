@@ -7,26 +7,26 @@ import model._
 import org.specs2.mock.Mockito
 import org.specs2.mutable.Specification
 import play.api.test.{Helpers, WithApplication}
-import services.migration.r2.R2VideoMigratorService
+import services.migration.r2.R2GalleryMigratorService
 
 import scala.concurrent.Future
 
 class MigrateInR2Spec extends Specification with Mockito {
 
-  def r2ServiceThrowingConnectionException : R2VideoMigratorService = {
-    val theMock = mock[R2VideoMigratorService]
+  def r2ServiceThrowingConnectionException : R2GalleryMigratorService = {
+    val theMock = mock[R2GalleryMigratorService]
     theMock.migrateContentInR2(any[Int], any[String]) answers { a : Any =>
       Future{throw new java.net.ConnectException("Connection refused")}
     }
   }
 
-  def r2ServiceBehavingWell : R2VideoMigratorService = {
-    val theMock = mock[R2VideoMigratorService]
+  def r2ServiceBehavingWell : R2GalleryMigratorService = {
+    val theMock = mock[R2GalleryMigratorService]
     theMock.migrateContentInR2(any[Int], any[String]) returns Future{(true, "video migrated in r2")}
   }
 
-  def r2ServiceFailedMigration : R2VideoMigratorService = {
-    val theMock = mock[R2VideoMigratorService]
+  def r2ServiceFailedMigration : R2GalleryMigratorService = {
+    val theMock = mock[R2GalleryMigratorService]
     theMock.migrateContentInR2(any[Int], any[String]) returns Future{(false, "could not migrate video in r2")}
   }
 

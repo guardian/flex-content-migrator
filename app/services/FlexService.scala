@@ -85,6 +85,19 @@ object FlexQuizMigrationServiceImpl  extends FlexContentMigrationService{
   }
 }
 
+object FlexAudioMigrationServiceImpl  extends FlexContentMigrationService{
+  override lazy val ConnectivityCheckUrl = FlexImportBaseUrl + "/contentmigration/audio/index";
+  private def MigrateAudioUrl = FlexImportBaseUrl + "/contentmigration/audio"
+
+  override def migrateContentXml(xmlFile: File): Future[WSResponse] = {
+    flexThrottlerFt[WSResponse] {
+      withCountIncr(Metrics.AudiosMigratedInFlex) {
+        makeAsyncCall(MigrateAudioUrl, (xmlFile, "fileData"), Map())
+      }
+    }
+  }
+}
+
 
 
 object FlexVideoIntegrationServiceImpl  extends FlexVideoIntegrationService

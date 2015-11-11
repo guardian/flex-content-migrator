@@ -14,7 +14,7 @@ abstract class R2QuizMigratorService(client : R2IntegrationAPIClient) extends R2
 
   private def loadContentWithThrottle(id : Integer) = {
     r2ThrottlerFt[SourceContent]{
-      client.loadGalleryById(id)
+      client.loadQuizById(id)
     }
   }
 
@@ -22,29 +22,29 @@ abstract class R2QuizMigratorService(client : R2IntegrationAPIClient) extends R2
 
 
   def getBatchOfContentIds(batchSize : Int, batchOffset : Int) =
-    client.getBatchOfGalleryIds(batchSize, batchOffset)
+    client.getBatchOfQuizIds(batchSize, batchOffset)
 
   def loadBatchOfContent(batchSize : Int, batchNumber : Int = 1) : Future[MigrationBatch] = {
-    def mapIdsToGalleries(ids: Future[List[Int]]) = {
-      def idsToGalleries(ids : List[Int]) = ids.map(loadContentWithThrottle(_))
+    def mapIdsToQuizzes(ids: Future[List[Int]]) = {
+      def idsToQuizzes(ids : List[Int]) = ids.map(loadContentWithThrottle(_))
 
-      ids.map{idsToGalleries(_)}.flatMap(Future.sequence(_))
+      ids.map{idsToQuizzes(_)}.flatMap(Future.sequence(_))
     }
 
     val ids = client.getBatchOfGalleryIds(batchSize, batchNumber)
-    val galleries = mapIdsToGalleries(ids)
-    galleries.map(loadedGalleries => {
-      Logger.info(s"Loaded the batch of ${batchSize} galleries from R2")
-      new MigrationBatch(loadedGalleries)
+    val quizzes = mapIdsToQuizzes(ids)
+    quizzes.map(loadedQuizzes => {
+      Logger.info(s"Loaded the batch of ${batchSize} quizzes from R2")
+      new MigrationBatch(loadedQuizzes)
     })
   }
 
-  def loadIndividualContent(galleryId : Int) : Future[SourceContent] = loadContentWithThrottle(galleryId)
+  def loadIndividualContent(quizId : Int) : Future[SourceContent] = loadContentWithThrottle(quizId)
 
 
-  def migrateContentInR2(galleryId : Int, composerId : String) : Future[(Boolean, String)] = {
+  def migrateContentInR2(quizId : Int, composerId : String) : Future[(Boolean, String)] = {
     r2ThrottlerFt[(Boolean, String)]{
-      client.migrateGalleryInR2(galleryId, composerId)
+      client.migrateQuizInR2(quizId, composerId)
     }
   }
 }

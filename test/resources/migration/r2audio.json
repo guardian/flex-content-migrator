@@ -1,0 +1,207 @@
+{
+  "draft": {
+    "audioFile": {
+      "path": "audio/1340989413458/9231/gdn.glo.120629.mh.family-planning-focus.mp3",
+      "length": 34577413
+    },
+    "durationMinutes": 35,
+    "durationSeconds": 58,
+    "source": "guardian.co.uk",
+    "showNotes": "<p>Family planning is notoriously one of the most politicised and divisive areas in development. Yet in July world leaders will descend on London for a <a href=\"http://www.dfid.gov.uk/News/Latest-news/2012/Family-planning-UK-to-host-summit-with-Gates-Foundation/\">global summit</a> to raise \"unprecedented political commitment and resources\" to increase access to family planning information, services and supplies in developing countries. </p><p>How has such a taboo topic become a worldwide priority? What is driving this renaissance of interest in family planning? How do you tackle the practical – and political – challenges of expanding access? And what is at stake in these debates? </p><p>To discuss these issues, <strong>Annie Kelly</strong> is joined in the studio by <strong>Julia Bunting</strong>, head of the UK <a href=\"http://www.dfid.gov.uk/\">Department for International Development's</a> reproductive health team, <strong>Yasmin Ahmed</strong>, senior regional director for Asia at <a href=\"http://www.mariestopes.org.uk/\">Marie Stopes International</a>, and <strong>Neil Datta</strong>, co-ordinator of the European Parliamentary Forum on Population and Development. They are joined on the phone from Bangalore by <strong>Gita Sen</strong>, professor at the Centre for Public Policy at the Indian Institute of Management. </p><p>We also hear from <strong>Sarah Boseley</strong>, the Guardian's health editor, <strong>Carmen Barrosso</strong>, western hemisphere director of the International Planned Parenthood Federation, <strong>Ney Costa</strong>, from the Brazilian NGO <a href=\"http://www.bemfam.org.br/\">Bemfam</a>, and from readers who commented on our <a href=\"http://www.guardian.co.uk/global-development/2012/jun/19/talk-point-family-planning-development\">talk point</a>.</p>",
+    "explicit": false,
+    "migrated": false,
+    "onWrongDomain": false,
+    "creationAndLastModifiedDetail": {
+      "createdOn": "2015-11-10T08:45:13.723Z",
+      "modifiedOn": "2015-11-10T08:45:13.723Z"
+    },
+    "factboxes": [],
+    "platformPictures": [],
+    "editedSlug": "global-development-podcast-family-planning",
+    "publishOnCom": false,
+    "tags": [
+      46366,
+      51642,
+      39585,
+      39847,
+      15396,
+      47881,
+      9439,
+      8798,
+      51656,
+      20642,
+      45039,
+      41130,
+      35280,
+      26907,
+      4
+    ],
+    "editorial": true,
+    "publicationDate": "2012-06-28T00:00:00.000+01:00",
+    "webPublicationDateTime": "2012-07-02T14:21:00.000+01:00",
+    "updateWebPublicationDateTimeOnLaunch": false,
+    "relatedEditorialOff": false,
+    "pages": [
+      {
+        "id": 1766235,
+        "readyToLive": false,
+        "badgesOff": false,
+        "trailText": "<p>On 11 July London is to host a global summit on family planning. Here, our panel discusses how and why such a controversial issue has become a worldwide priority, what are the political and practical challenges – and what is at stake in such debates?</p>",
+        "linkText": "Global development podcast: focus on family planning",
+        "isExternalRss": false,
+        "isBlockAds": false,
+        "defaultTrailPictureMediaId": "gu-image-456667284",
+        "defaultTrailPictureImgId": 364479522,
+        "largeTrailPictureMediaId": "gu-image-456667284",
+        "largeTrailPictureImgId": 364479522,
+        "cmsPath": {
+          "path": "/Guardian/global-development/audio/2012/jul/02/global-development-podcast-family-planning"
+        },
+        "seciton": 2587,
+        "createdBy": "Audio",
+        "lastModifiedBy": "Catherine Nelson",
+        "createdOn": "2012-06-28T12:12:22.000+01:00",
+        "modifiedOn": "2015-05-08T16:22:51.000+01:00",
+        "lastLiveTime": "2015-05-08T16:23:00.000+01:00",
+        "webPublicationTime": "2012-07-02T14:21:00.000+01:00",
+        "launchableTemplate": {
+          "displayName": "Content 6-2-4",
+          "staticName": "Content 6-2-4",
+          "location": "templates/common/content",
+          "stylesheetName": "grid/content",
+          "pageTypes": [
+            "STANDALONE_TABLE",
+            "ARTICLE",
+            "FEED_ARTICLE",
+            "AUDIO",
+            "COMPETITION",
+            "POLL",
+            "CARTOON",
+            "QUIZ"
+          ],
+          "templateCode": 290,
+          "shownInTemplateDropDown": true,
+          "coreContentAreaName": {
+            "name": "${componentName}"
+          },
+          "id": 43002
+        }
+      }
+    ],
+    "displayStoryPackage": 42306,
+    "pluckCommentable": false,
+    "pluckPremoderated": false,
+    "synchronisedWithPluck": false,
+    "externalReferences": [],
+    "expired": false,
+    "automateLinking": false,
+    "sensitive": false,
+    "blockAds": false,
+    "headline": "Global development podcast: focus on family planning",
+    "standfirst": "On 11 July London is to host a global summit on family planning. Here, our panel discusses how and why such a controversial issue has become a worldwide priority, what are the political and practical challenges – and what is at stake in such debates?",
+    "byline": "Annie Kelly, Matt Hill, Iain Chambers and Claire Provost",
+    "productionOffice": "UK",
+    "id": 392304420
+  },
+  "live": {
+    "audioFile": {
+      "path": "audio/kip/global-development/series/global-development-podcast/1340989413458/9231/gdn.glo.120629.mh.family-planning-focus.mp3",
+      "length": 34577413
+    },
+    "durationMinutes": 35,
+    "durationSeconds": 58,
+    "source": "guardian.co.uk",
+    "showNotes": "<p>Family planning is notoriously one of the most politicised and divisive areas in development. Yet in July world leaders will descend on London for a <a href=\"http://www.dfid.gov.uk/News/Latest-news/2012/Family-planning-UK-to-host-summit-with-Gates-Foundation/\">global summit</a> to raise \"unprecedented political commitment and resources\" to increase access to family planning information, services and supplies in developing countries. </p><p>How has such a taboo topic become a worldwide priority? What is driving this renaissance of interest in family planning? How do you tackle the practical – and political – challenges of expanding access? And what is at stake in these debates? </p><p>To discuss these issues, <strong>Annie Kelly</strong> is joined in the studio by <strong>Julia Bunting</strong>, head of the UK <a href=\"http://www.dfid.gov.uk/\">Department for International Development's</a> reproductive health team, <strong>Yasmin Ahmed</strong>, senior regional director for Asia at <a href=\"http://www.mariestopes.org.uk/\">Marie Stopes International</a>, and <strong>Neil Datta</strong>, co-ordinator of the European Parliamentary Forum on Population and Development. They are joined on the phone from Bangalore by <strong>Gita Sen</strong>, professor at the Centre for Public Policy at the Indian Institute of Management. </p><p>We also hear from <strong>Sarah Boseley</strong>, the Guardian's health editor, <strong>Carmen Barrosso</strong>, western hemisphere director of the International Planned Parenthood Federation, <strong>Ney Costa</strong>, from the Brazilian NGO <a href=\"http://www.bemfam.org.br/\">Bemfam</a>, and from readers who commented on our <a href=\"http://www.guardian.co.uk/global-development/2012/jun/19/talk-point-family-planning-development\">talk point</a>.</p>",
+    "explicit": false,
+    "migrated": false,
+    "onWrongDomain": false,
+    "lastLiveTime": "2015-05-08T16:23:00.000+01:00",
+    "factboxes": [],
+    "platformPictures": [],
+    "tags": [
+      46366,
+      51642,
+      39585,
+      39847,
+      15396,
+      47881,
+      9439,
+      8798,
+      51656,
+      20642,
+      45039,
+      41130,
+      35280,
+      26907,
+      4
+    ],
+    "editorial": true,
+    "publicationDate": "2012-06-28T00:00:00.000+01:00",
+    "webPublicationDateTime": "2012-07-02T14:21:00.000+01:00",
+    "updateWebPublicationDateTimeOnLaunch": false,
+    "relatedEditorialOff": false,
+    "pages": [
+      {
+        "id": 1766235,
+        "readyToLive": false,
+        "badgesOff": false,
+        "trailText": "<p>On 11 July London is to host a global summit on family planning. Here, our panel discusses how and why such a controversial issue has become a worldwide priority, what are the political and practical challenges – and what is at stake in such debates?</p>",
+        "linkText": "Global development podcast: focus on family planning",
+        "isExternalRss": false,
+        "isBlockAds": false,
+        "defaultTrailPictureMediaId": "gu-image-456667284",
+        "defaultTrailPictureImgId": 364479522,
+        "largeTrailPictureMediaId": "gu-image-456667284",
+        "largeTrailPictureImgId": 364479522,
+        "cmsPath": {
+          "path": "/Guardian/global-development/audio/2012/jul/02/global-development-podcast-family-planning"
+        },
+        "seciton": 2587,
+        "createdBy": "Audio",
+        "lastModifiedBy": "Catherine Nelson",
+        "createdOn": "2012-06-28T12:12:22.000+01:00",
+        "modifiedOn": "2015-05-08T16:22:51.000+01:00",
+        "lastLiveTime": "2015-05-08T16:23:00.000+01:00",
+        "webPublicationTime": "2012-07-02T14:21:00.000+01:00",
+        "launchableTemplate": {
+          "displayName": "Content 6-2-4",
+          "staticName": "Content 6-2-4",
+          "location": "templates/common/content",
+          "stylesheetName": "grid/content",
+          "pageTypes": [
+            "STANDALONE_TABLE",
+            "ARTICLE",
+            "FEED_ARTICLE",
+            "AUDIO",
+            "COMPETITION",
+            "POLL",
+            "CARTOON",
+            "QUIZ"
+          ],
+          "templateCode": 290,
+          "shownInTemplateDropDown": true,
+          "coreContentAreaName": {
+            "name": "${componentName}"
+          },
+          "id": 43002
+        }
+      }
+    ],
+    "displayStoryPackage": 42306,
+    "pluckCommentable": false,
+    "pluckPremoderated": false,
+    "synchronisedWithPluck": false,
+    "externalReferences": [],
+    "expired": false,
+    "automateLinking": false,
+    "sensitive": false,
+    "closingDateForCommenting": "2012-07-05T14:21:49.000+01:00",
+    "blockAds": false,
+    "headline": "Global development podcast: focus on family planning",
+    "standfirst": "On 11 July London is to host a global summit on family planning. Here, our panel discusses how and why such a controversial issue has become a worldwide priority, what are the political and practical challenges – and what is at stake in such debates?",
+    "byline": "Annie Kelly, Matt Hill, Iain Chambers and Claire Provost",
+    "productionOffice": "UK",
+    "standout": false,
+    "id": 392304420
+  }
+}

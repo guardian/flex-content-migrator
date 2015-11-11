@@ -10,7 +10,7 @@ import org.specs2.mutable.Specification
 import play.api.libs.ws.WSResponse
 import play.api.test.{Helpers, WithApplication}
 import services.FlexContentMigrationService
-import services.migration.r2.{R2GalleryMigratorService, R2VideoMigratorService}
+import services.migration.r2.R2GalleryMigratorService
 import utils.TempFileProcessorImpl
 
 import scala.concurrent.Future

@@ -7,7 +7,7 @@ import org.specs2.mutable.Specification
 import play.api.test.Helpers
 import services.migration._
 import ThrottleControl._
-import services.migration.r2.R2VideoMigratorService
+import services.migration.r2.R2GalleryMigratorService
 import scala.concurrent._
 import scala.concurrent.duration._
 
@@ -19,8 +19,8 @@ class BatchMigratorSpec extends Specification with Mockito {
 
   trait AkkaMigrationMockedBehaviour{
 
-    def mockR2VideoMigrator(batchSize: Int, batchOffset : Int) : R2VideoMigratorService = {
-      val themock = mock[R2VideoMigratorService]
+    def mockR2VideoMigrator(batchSize: Int, batchOffset : Int) : R2GalleryMigratorService = {
+      val themock = mock[R2GalleryMigratorService]
       themock.getBatchOfContentIds(batchSize, batchOffset) returns Future{(1 to batchSize).toList}
       themock.loadContentById(any[Int]) returns Future{srcVideo}
       themock.loadBatchOfContent(any[Int], any[Int]) returns Future{ MigrationBatch({for(i <- 1 to batchSize) yield srcVideo}.toList)}
@@ -71,8 +71,8 @@ class BatchMigratorSpec extends Specification with Mockito {
     val counterR2 = new AtomicInteger
     val counterFlex = new AtomicInteger
 
-    override def mockR2VideoMigrator(batchSize: Int, batchOffset : Int) : R2VideoMigratorService = {
-      val themock = mock[R2VideoMigratorService]
+    override def mockR2VideoMigrator(batchSize: Int, batchOffset : Int) : R2GalleryMigratorService = {
+      val themock = mock[R2GalleryMigratorService]
       themock.getBatchOfContentIds(batchSize, batchOffset) returns Future{(1 to batchSize).toList}
       themock.loadContentById(any[Int]) answers { m =>
         val count = counterR2.incrementAndGet()
@@ -99,8 +99,8 @@ class BatchMigratorSpec extends Specification with Mockito {
   object ThrottledR2AndFlex extends AkkaMigrationMockedBehaviour{
 
 
-    override def mockR2VideoMigrator(batchSize: Int, batchOffset : Int) : R2VideoMigratorService = {
-      val themock = mock[R2VideoMigratorService]
+    override def mockR2VideoMigrator(batchSize: Int, batchOffset : Int) : R2GalleryMigratorService = {
+      val themock = mock[R2GalleryMigratorService]
       themock.getBatchOfContentIds(batchSize, batchOffset) returns Future{(1 to batchSize).toList}
       themock.loadContentById(any[Int]) answers { m =>
         r2ThrottlerFt[SourceContent]{
@@ -127,8 +127,8 @@ class BatchMigratorSpec extends Specification with Mockito {
   object DependenciesHang extends AkkaMigrationMockedBehaviour{
     val SleepForAges = 1000 * 60 * 60 //1 hour sleep time - long enough that the akka ask will timeout and we will get responses
 
-    override def mockR2VideoMigrator(batchSize: Int, batchOffset : Int) : R2VideoMigratorService = {
-      val themock = mock[R2VideoMigratorService]
+    override def mockR2VideoMigrator(batchSize: Int, batchOffset : Int) : R2GalleryMigratorService = {
+      val themock = mock[R2GalleryMigratorService]
       themock.getBatchOfContentIds(batchSize, batchOffset) returns Future{(1 to batchSize).toList}
       themock.loadContentById(any[Int]) answers { m =>
         Thread.sleep(SleepForAges)
