@@ -101,7 +101,7 @@ class R2ToFlexAudioConversionSpec extends Specification  {
     }
     "parse show notes correctly" in {
       val showNotes = (parsedAudioJson.xml \ "show-notes").text.toString
-      showNotes must startWith("&lt;p&gt;Family planning is notoriously one of")
+      showNotes must startWith("<p>Family planning is notoriously one of")
     }
     "parse rights expiry correctly" in {
       val isExpired = (parsedAudioJson.xml \ "expiry" \ "rights" \ "@expired").headOption.map(_.text.toString)
