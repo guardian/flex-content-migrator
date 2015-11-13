@@ -44,7 +44,7 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
 
   private def explicit = getAsString("explicit").map(_.toBoolean).map(_.toString)
 
-  private def body = getAsMap("contentBody", liveOrDraft).map(getAsString("bodyText", _))
+  private def body = getAsMap("contentBody", liveOrDraft).flatMap(getAsString("bodyText", _))
 
   override lazy val xml =
     <article story-bundle={storyBundleId orNull} cms-path={cmsPath orNull} notes={notes orNull} slug-word={slug orNull}

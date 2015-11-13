@@ -92,7 +92,7 @@ class R2ToFlexArticleConversionSpec extends Specification with Mockito {
     }
     "parse body text correctly" in {
       val body = ( parsedArticleJson.xml  \ "body").text.toString
-      body must contain("<p>Citizens have votes. Newspapers do not. However, if the Guardian had a vote in the 2010 general election it would be cast enthusiastically for the Liberal Democrats.")
+      body must startWith("<p>Citizens have votes. Newspapers do not. However, if the Guardian had a vote in the 2010 general election it would be cast enthusiastically for the Liberal Democrats.")
     }
     "parse rights correctly" in {
       val syndicationAggregate  = (parsedArticleJson.xml \ "rights" \ "@syndicationAggregate").headOption.map(_.text.toString.toBoolean)
