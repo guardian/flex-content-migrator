@@ -31,20 +31,20 @@ abstract class R2ArticleMigratorService(client : R2IntegrationAPIClient) extends
       ids.map{idsToArticles(_)}.flatMap(Future.sequence(_))
     }
 
-    val ids = client.getBatchOfGalleryIds(batchSize, batchNumber)
+    val ids = client.getBatchOfArticleIds(batchSize, batchNumber)
     val audios = mapIdsToArticles(ids)
     audios.map(loadedArticles => {
-      Logger.info(s"Loaded the batch of ${batchSize} audios from R2")
+      Logger.info(s"Loaded the batch of ${batchSize} articles from R2")
       new MigrationBatch(loadedArticles)
     })
   }
 
-  def loadIndividualContent(audioId : Int) : Future[SourceContent] = loadContentWithThrottle(audioId)
+  def loadIndividualContent(articleId : Int) : Future[SourceContent] = loadContentWithThrottle(articleId)
 
 
-  def migrateContentInR2(audioId : Int, composerId : String) : Future[(Boolean, String)] = {
+  def migrateContentInR2(articleId : Int, composerId : String) : Future[(Boolean, String)] = {
     r2ThrottlerFt[(Boolean, String)]{
-      client.migrateArticleInR2(audioId, composerId)
+      client.migrateArticleInR2(articleId, composerId)
     }
   }
 }
