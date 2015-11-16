@@ -1,0 +1,109 @@
+package services.migration.r2ToFlexConversion
+
+import java.io.File
+
+import org.specs2.mock.Mockito
+import org.specs2.mutable.Specification
+import services.migration.quizbuilder.{Quiz, QuizImporterService}
+
+import scala.concurrent.Future
+
+class R2ToFlexArticleConversionSpec extends Specification with Mockito {
+
+
+  "R2ToFlexArticleConversion" should {
+    def r2Json(path : String= "/migration/r2article.json") : Map[String, Any] = {
+      val filePath = getClass.getResource(path).getFile
+      val fileAsString = scala.io.Source.fromFile(new File(filePath)).getLines.reduceLeft(_+_)
+      R2ToFlexArticleConversion.jsonMap(fileAsString)
+    }
+    
+    lazy val parsedArticleJson = R2ToFlexArticleConversion.parseDraftData(r2Json())
+
+    "accept R2 json" in {
+      parsedArticleJson mustNotEqual null
+    }
+    "produce xml with article tag" in {
+      val xml = parsedArticleJson.xml
+      xml.isEmpty must equalTo(false)
+      xml.toString must startWith("<article")
+      xml.toString must endWith("</article>")
+    }
+    "parse page ID correctly" in {
+      val r2PageId =  parsedArticleJson.xml \ "originalR2PageId"
+      r2PageId.text.toString must equalTo("1393464")
+    }
+    "parse content ID correctly" in {
+      val r2ContentId =  parsedArticleJson.xml \ "originalR2ContentId"
+      r2ContentId.text.toString must equalTo("362083268")
+    }
+    "parse cms path correctly" in {
+      val cmsPath = parsedArticleJson.xml \ "@cms-path"
+      cmsPath.text.toString must equalTo("commentisfree/2010/apr/30/the-liberal-moment-has-come")
+    }
+    "parse web publication time correctly" in {
+      val webPubTime = parsedArticleJson.xml \ "@web-publication-date"
+      webPubTime.text.toString must equalTo("2010-04-30T18:43:35.000+01:00")
+    }
+    "parse created-date correctly" in {
+      val createdDate = parsedArticleJson.xml \ "@created-date"
+      createdDate.text.toString must equalTo("2010-04-30T18:43:31.000+01:00")
+    }
+    "parse modified-date correctly" in {
+      val createdDate = parsedArticleJson.xml \ "@modified-date"
+      createdDate.text.toString must equalTo("2010-05-04T16:03:01.000+01:00")
+    }
+    "parse created-user correctly" in {
+      val expiry = parsedArticleJson.xml \ "@created-user"
+      expiry.text.toString must equalTo("OSD Feed")
+    }
+    "parse tags correctly" in {
+      val tags = (parsedArticleJson.xml \ "tags" \ "tag").map(t => t \ "@id").map(_.text.toString)
+      tags.size must equalTo (16)
+      tags must contain("37290")
+      tags must contain("19801")
+      tags must contain("16674")
+      tags must contain("16600")
+      tags must contain("35858")
+      tags must contain("10692")
+      tags must contain("9243")
+      tags must contain("9374")
+      tags must contain("19987")
+      tags must contain("15082")
+      tags must contain("19966")
+      tags must contain("11396")
+      tags must contain("22736")
+      tags must contain("8791")
+      tags must contain("26903")
+      tags must contain("2")
+
+    }
+    "parse headline correctly" in {
+      val headline = ( parsedArticleJson.xml  \ "headline").text.toString
+      headline must equalTo("General election 2010: The liberal moment has come")
+    }
+    "parse linktext correctly" in {
+      val linkText = ( parsedArticleJson.xml  \ "linktext").text.toString
+      linkText must contain("General election 2010: The liberal moment has come")
+    }
+    "parse trail text correctly" in {
+      val trailtext = ( parsedArticleJson.xml  \ "trail").text.toString
+      trailtext must contain("<p><strong>Editorial:</strong> If the Guardian had a vote it would be cast enthusiastically for the Liberal Democrats.")
+    }
+    "parse body text correctly" in {
+      val body = ( parsedArticleJson.xml  \ "body").text.toString
+      body must startWith("<p>Citizens have votes. Newspapers do not. However, if the Guardian had a vote in the 2010 general election it would be cast enthusiastically for the Liberal Democrats.")
+    }
+    "parse rights correctly" in {
+      val syndicationAggregate  = (parsedArticleJson.xml \ "rights" \ "@syndicationAggregate").headOption.map(_.text.toString.toBoolean)
+      val subscriptionDatabases = (parsedArticleJson.xml \ "rights" \ "@subscriptionDatabases").headOption.map(_.text.toString.toBoolean)
+      val developerCommunity    = (parsedArticleJson.xml \ "rights" \ "@developerCommunity").headOption.map(_.text.toString.toBoolean)
+      syndicationAggregate must equalTo(Some(true))
+      subscriptionDatabases must equalTo(Some(true))
+      developerCommunity must equalTo(Some(true))
+    }
+  }
+
+
+
+}

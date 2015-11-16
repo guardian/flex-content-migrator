@@ -31,7 +31,7 @@ abstract class R2AudioMigratorService(client : R2IntegrationAPIClient) extends R
       ids.map{idsToAudios(_)}.flatMap(Future.sequence(_))
     }
 
-    val ids = client.getBatchOfGalleryIds(batchSize, batchNumber)
+    val ids = client.getBatchOfAudioIds(batchSize, batchNumber)
     val audios = mapIdsToAudios(ids)
     audios.map(loadedAudios => {
       Logger.info(s"Loaded the batch of ${batchSize} audios from R2")
