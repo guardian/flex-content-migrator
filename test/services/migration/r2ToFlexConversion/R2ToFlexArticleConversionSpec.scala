@@ -90,6 +90,10 @@ class R2ToFlexArticleConversionSpec extends Specification with Mockito {
       val trailtext = ( parsedArticleJson.xml  \ "trail").text.toString
       trailtext must contain("<p><strong>Editorial:</strong> If the Guardian had a vote it would be cast enthusiastically for the Liberal Democrats.")
     }
+    "parse pageNumber" in {
+      val pageNumber = ( parsedArticleJson.xml  \ "@on-page").text.toString
+      pageNumber must equalTo("38")
+    }
     "parse body text correctly" in {
       val body = ( parsedArticleJson.xml  \ "body").text.toString
       body must startWith("<p>Citizens have votes. Newspapers do not. However, if the Guardian had a vote in the 2010 general election it would be cast enthusiastically for the Liberal Democrats.")
