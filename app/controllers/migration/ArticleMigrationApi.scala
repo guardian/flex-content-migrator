@@ -48,7 +48,12 @@ class ArticleMigrationApi(migrator : Migrator, reporter : MigrationReport, flex 
   }
 
   private def reportSingleArticle(audio : MigratedContent) = {
-    Ok(reporter.reportSingleContent(audio))
+    try{
+      Ok(reporter.reportSingleContent(audio))
+    }
+    catch{
+      case e: Exception => InternalServerError(e)
+    }
   }
 
   private def reportMigratedBatch(batch : MigratedBatch) = {
