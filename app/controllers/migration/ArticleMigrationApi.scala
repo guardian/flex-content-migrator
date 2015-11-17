@@ -52,7 +52,10 @@ class ArticleMigrationApi(migrator : Migrator, reporter : MigrationReport, flex 
       Ok(reporter.reportSingleContent(audio))
     }
     catch{
-      case e: Exception => InternalServerError(e)
+      case e: Exception => {
+        Logger.error(e.toString, e)
+        InternalServerError(s"Failed to migrate article: ${e}")
+      }
     }
   }
 
