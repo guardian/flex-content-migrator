@@ -48,14 +48,14 @@ trait Migrator{
     migrateBatch(batchSize, batchOffset)
   }
 
-  def migrateIndividualContent(contentId : Int) : Future[MigratedContent] = {
+  def migrateIndividualContent(contentId : Int) : Future[ContentMigrationResult] = {
     val loaded = migrationBehaviour.contentLoader.loadContentById(contentId)
     val transformed = loaded.map(migrationBehaviour.contentTransform(_))
     val inFlex = transformed.flatMap(migrationBehaviour.pushToFlex(_))
     val inR2 = inFlex.flatMap(migrationBehaviour.closeContentInSource(_))
     inR2.map{ _ match {
       case result : MigratedContent => result
-      case unknown : Any => throw new RuntimeException(s"Migration failed for content ${contentId} : ${unknown}")
+      case unknown : Any => throw new RuntimeException(s"Migration failed for content ${contentId} : ${unknown}") //TODO: MigrationFailedContent?
     }}
 
   }

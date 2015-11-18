@@ -4,14 +4,50 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>R2 To Flex Article Migrator</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>
+            function migrateArticleAjax(articleId){
+                $.ajax({
+                  url: "/migrate/article/json/" + articleId,
+                  type: "POST"
+                }).done(function(data) {
+                  displayResults(data);
+                }).fail(function(data){
+                    displayErrorResults(data);
+                });
+            }
+
+            function clearPreviousResults(){
+
+            }
+            function displayResults(data){
+                alert("display results " + data)
+            }
+            function displayErrorResults(data){
+                alert("display error results " + data)
+            }
+
+            function migrateArticle(){
+                var articleId = $("#articleid").val();
+                clearPreviousResults();
+                migrateArticleAjax(articleId);
+            }
+
+        </script>
     </head>
     <body>
         <h1>R2 To Flex Article Migrator (@stage)</h1>
 
-        <h2>R2 Article Id</h2>
-        <ul>
-            TODO
-        </ul>
+        <div id="articlemigration">
+            R2 Article Id
+            <input  type="text" name="articleid" id="articleid">
+            <button type="button" onclick="migrateArticle()">Migrate to flex</button>
+
+            <div id="articlemigration_results">
+
+            </div>
+        </div>
 
 
         <h2>Contact</h2>

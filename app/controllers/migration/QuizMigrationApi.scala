@@ -3,8 +3,8 @@ package controllers.migration
 import model._
 import play.api.Logger
 import play.api.mvc.{Action, Result, Controller}
-import services.{FlexQuizMigrationServiceImpl, FlexCartoonMigrationServiceImpl, FlexContentMigrationService}
-import services.migration.{QuizMigrator, CartoonMigrator, Migrator}
+import services.{FlexQuizMigrationServiceImpl, FlexContentMigrationService}
+import services.migration.{QuizMigrator, Migrator}
 
 import scala.concurrent.Future
 
@@ -47,7 +47,7 @@ class QuizMigrationApi(migrator : Migrator, reporter : MigrationReport, flex : F
   }
   }
 
-  private def reportSingleQuiz(quiz : MigratedContent) = {
+  private def reportSingleQuiz(quiz : ContentMigrationResult) = {
     Ok(reporter.reportSingleContent(quiz))
   }
 
