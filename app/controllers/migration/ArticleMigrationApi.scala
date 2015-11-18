@@ -1,10 +1,15 @@
 package controllers.migration
 
+import controllers.Application._
 import model._
+import org.apache.commons.lang3.exception.ExceptionUtils
 import play.api.Logger
 import play.api.mvc.{Action, Result, Controller}
 import services.{FlexArticleMigrationServiceImpl, FlexContentMigrationService}
 import services.migration.{ArticleMigrator, Migrator}
+import play.api.mvc._
+import play.api.libs.json._
+import play.api.libs.functional.syntax._
 
 import scala.concurrent.Future
 
@@ -39,16 +44,70 @@ class ArticleMigrationApi(migrator : Migrator, reporter : MigrationReport, flex 
   }
   }
 
-  def migrateArticle(audioId : Int) =  Action.async{ block => {
-    Logger.debug(s"migrateArticle ${audioId}")
+  def articlePage = Action {
+    Ok(views.html.article(stageOpt.getOrElse("local")))
+  }
+
+  def migrateArticleJson(articleId : Int) = Action.async{ block => {
+    Logger.debug(s"migrateArticleJson ${articleId}")
     withMigrationPermission{ () =>
-      migrator.migrateIndividualContent(audioId).map(reportSingleArticle(_))
+      migrator.migrateIndividualContent(articleId).map(getJsonMigratedContent(_)).
+        recover{
+          case e : Throwable => getJsonError(articleId, e)
+        }
     }
   }
   }
 
-  private def reportSingleArticle(audio : MigratedContent) = {
-    Ok(reporter.reportSingleContent(audio))
+  def migrateArticle(articleId : Int) =  Action.async{ block => {
+    Logger.debug(s"migrateArticle ${articleId}")
+    withMigrationPermission{ () =>
+      migrator.migrateIndividualContent(articleId).map(reportSingleArticle(_)).
+        recover{
+          case e : Throwable => InternalServerError(s"Failed to migrate article: ${e}")
+        }
+    }
+  }
+  }
+
+  private def getJsonError(id : Int, e : Throwable) : Result = {
+    val result = MigrationFailedContent(id, ExceptionUtils.getStackTrace(e))
+    getJsonMigratedContent(result)
+  }
+
+  implicit val failedWrites: Writes[MigrationFailedContent] = (
+    (JsPath \ "id").write[Int] and
+    (JsPath \ "reason").write[String]
+  )(unlift(MigrationFailedContent.unapply))
+
+  implicit val succesWrites: Writes[MigratedContent] = (
+    (JsPath \ "id").write[Int] and
+    (JsPath \ "composerId").write[String]
+  )(unlift(MigratedContent.unapply))
+
+  private def getJsonMigratedContent(result : ContentMigrationResult) : Result = {
+
+    result match {
+      case failed : MigrationFailedContent => {
+        InternalServerError(Json.toJson(failed))
+      }
+      case success : MigratedContent => {
+        Ok(Json.toJson(success))
+      }
+    }
+
+  }
+
+  private def reportSingleArticle(article : ContentMigrationResult) = {
+    try{
+      Ok(reporter.reportSingleContent(article))
+    }
+    catch{
+      case e: Exception => {
+        Logger.error(e.toString, e)
+        InternalServerError(s"Failed to migrate article: ${e}")
+      }
+    }
   }
 
   private def reportMigratedBatch(batch : MigratedBatch) = {

@@ -5,6 +5,7 @@ import scala.xml.Elem
 
 object R2CMSPathCleaner{
   val UnwatedPrefixes = List("/Guardian/", "/Saferjobs/")
+  //val UnwatedPrefixes = List("/Guardian/", "/Saferjobs/", "/Gmgpensions/", "/Kable/", "/Public/", "/Smarthealthcare/")
 
   def cleanPath(r2Path : String): String = {
     def cleanUnwantedPrefix(path : String, prefix:String) = if(path.startsWith(prefix)) path.replace(prefix, "") else path

@@ -46,11 +46,13 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
 
   private def body = getAsMap("contentBody", liveOrDraft).flatMap(getAsString("bodyText", _))
 
+
   override lazy val xml =
     <article story-bundle={storyBundleId orNull} cms-path={cmsPath orNull} notes={notes orNull} slug-word={slug orNull}
            uk-only={ukOnly orNull} explicit={explicit orNull} expiry-date={scheduledExpiry orNull}
            created-date={createdDate orNull} created-user={createdBy orNull} modified-date={modifiedDate orNull}
-           web-publication-date={webPublicationDate orNull}>
+           web-publication-date={webPublicationDate orNull}
+           on-page={pageNumber orNull}>
 
       <tags>{for(tag <- tags) yield <tag id={tag}/> }</tags>
       {r2PageId.map( pageId =>          <originalR2PageId>{pageId}</originalR2PageId>) orNull}

@@ -42,13 +42,24 @@ class AudioMigrationApi(migrator : Migrator, reporter : MigrationReport, flex : 
   def migrateAudio(audioId : Int) =  Action.async{ block => {
     Logger.debug(s"migrateAudio ${audioId}")
     withMigrationPermission{ () =>
-      migrator.migrateIndividualContent(audioId).map(reportSingleAudio(_))
+        migrator.migrateIndividualContent(audioId).map(reportSingleAudio(_)).
+          recover{
+            case e : Throwable => InternalServerError(s"Failed to migrate audio: ${e}")
+          }
     }
   }
   }
 
-  private def reportSingleAudio(audio : MigratedContent) = {
-    Ok(reporter.reportSingleContent(audio))
+  private def reportSingleAudio(audio : ContentMigrationResult) = {
+    try{
+      Ok(reporter.reportSingleContent(audio))
+    }
+    catch{
+      case e: Exception => {
+        Logger.error(e.toString, e)
+        InternalServerError(s"Failed to migrate audio: ${e}")
+      }
+    }
   }
 
   private def reportMigratedBatch(batch : MigratedBatch) = {

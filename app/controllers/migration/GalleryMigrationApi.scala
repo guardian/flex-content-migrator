@@ -47,7 +47,7 @@ class GalleryMigrationApi(migrator : Migrator, reporter : MigrationReport, flex 
   }
   }
 
-  private def reportSingleGallery(gallery : MigratedContent) = {
+  private def reportSingleGallery(gallery : ContentMigrationResult) = {
     Ok(reporter.reportSingleContent(gallery))
   }
 

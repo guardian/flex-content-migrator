@@ -47,7 +47,7 @@ class CartoonMigrationApi(migrator : Migrator, reporter : MigrationReport, flex 
   }
   }
 
-  private def reportSingleCartoon(cartoon : MigratedContent) = {
+  private def reportSingleCartoon(cartoon : ContentMigrationResult) = {
     Ok(reporter.reportSingleContent(cartoon))
   }
 

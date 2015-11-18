@@ -46,7 +46,7 @@ class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
   private def audioSource = getAsString("source")
 
   private def getFormatFromFile(path : String) =
-    if(path.endsWith(".mp3")) "audio/mpeg"
+    if(path.endsWith(".mp3")) "audio/mp3"
     else throw new IllegalArgumentException(s"Unrecognised extension ${path}")
 
 
@@ -71,13 +71,14 @@ class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
   private def syndicateEncodings = getAsString("syndicateEncodings").map(_.toBoolean)
 
   private def explicit = getAsString("explicit").map(_.toBoolean).map(_.toString)
+  private def clean = getAsString("clean").map(_.toBoolean).map(_.toString)
 
   private def showNotes = getAsString("showNotes")
 
 
   override lazy val xml = {
     <audio story-bundle={storyBundleId orNull} cms-path={cmsPath orNull} notes={notes orNull} slug-word={slug orNull}
-           uk-only={ukOnly orNull} explicit={explicit orNull} expiry-date={scheduledExpiry orNull}
+           uk-only={ukOnly orNull} explicit={explicit orNull} clean={clean orNull} expiry-date={scheduledExpiry orNull}
            created-date={createdDate orNull} created-user={createdBy orNull} modified-date={modifiedDate orNull}
            web-publication-date={webPublicationDate orNull}>
 

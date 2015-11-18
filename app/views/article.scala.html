@@ -1,0 +1,121 @@
+@(stage : String)
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>R2 To Flex Article Migrator</title>
+        <style>
+            body{
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+            .success {
+                color: green;
+            }
+            .failed {
+                color: red;
+            }
+
+            .results{
+                border:1px solid #000000;
+                width: 100%;
+                height: 30%;
+                overflow:scroll;
+                margin-top: 20px;
+            }
+
+            #articlemigration{
+                margin-top: 100px;
+            }
+
+            #loadingDiv{
+                content: url("/assets/images/spinner.gif");
+                width: 40px;
+                height: 40px;
+                position: fixed;
+                top: 20%;
+                left: 50%;
+            }
+        </style>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>
+            $(document).ready(function (){
+               var $loading = $('#loadingDiv').hide();
+               $(document)
+                 .ajaxStart(function () {
+                    //ajax request went so show the loading image
+                     $loading.show();
+                     $('#migrate').attr("disabled", true);
+                 })
+               .ajaxStop(function () {
+                   //got response so hide the loading image
+                    $loading.hide();
+                    $('#migrate').attr("disabled", false);
+                });
+            })
+
+            function migrateArticleAjax(articleId){
+                $.ajax({
+                  url: "/migrate/article/json/" + articleId,
+                  type: "POST"
+                }).done(function(data) {
+                    displayResults(data.responseJSON);
+                }).fail(function(data){
+                    displayErrorResults(data.responseJSON);
+                });
+            }
+
+            function clearPreviousResults(){
+                $('#articleid').html("");
+            }
+            function displayResults(data){
+                console.log(data)
+                var id = data.id
+                var composerId = data.composerId
+                var message = "Migrated article " + id + "<br><br>Composer ID: " + composerId
+                $('#articlemigration_results').html("<span class=\"success\">" + message + "</span>");
+            }
+            function displayErrorResults(data){
+                console.log(data)
+                var id = data.id
+                var reason = data.reason.replace("\n", '<br />')
+                var message = "Could not migrate article with ID " + id + "<br><br>Detail:<br> " + reason
+                $('#articlemigration_results').html("<span class=\"failed\">" + message + "</span>");
+            }
+
+            function migrateArticle(){
+                var articleId = $("#articleid").val();
+                if(isNaN(articleId) || articleId.length==0){
+                    alert("The R2 id '" + articleId + "' is not valid");
+                }
+                else{
+                    clearPreviousResults();
+                    migrateArticleAjax(articleId);
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>R2 To Flex Article Migrator (@stage)</h1>
+
+        <div id="articlemigration">
+            R2 Article ID:
+            <input  type="text" name="articleid" id="articleid">
+            <button type="button" onclick="migrateArticle()" id="migrate">Migrate to flex</button>
+
+            <div id="articlemigration_results" class="results">
+
+            </div>
+        </div>
+        <div id="loadingDiv">
+            Loading loading loading
+        </div>
+
+
+        <h2>Contact</h2>
+
+        <p><a href="mailto:robert.rees@@theguardian.com" rel="contact">Development team</a></p>
+    </body>
+</html>
