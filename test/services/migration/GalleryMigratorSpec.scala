@@ -4,7 +4,7 @@ import java.io.File
 import java.util.concurrent.TimeUnit._
 
 import akka.util.Timeout
-import model.{MigratedBatch, MigratedContent, SourceContent}
+import model.{ContentMigrationResult, MigratedBatch, MigratedContent, SourceContent}
 import org.specs2.mock.Mockito
 import org.specs2.mutable.Specification
 import play.api.libs.ws.WSResponse
@@ -57,7 +57,7 @@ class GalleryMigratorSpec extends Specification with Mockito {
   "GalleryMigrator migrateSingleGallery" should {
     "load, transform and then migrate a single gallery" in new WithApplication{
       val migratedGalleryFuture = migrator.migrateIndividualContent(1)
-      val migratedGallery = Helpers.await[MigratedContent](migratedGalleryFuture)
+      val migratedGallery = Helpers.await[ContentMigrationResult](migratedGalleryFuture)
       migratedGallery.wasSuccess must equalTo(true)
     }
   }
