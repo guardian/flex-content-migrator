@@ -46,10 +46,12 @@
                  .ajaxStart(function () {
                     //ajax request went so show the loading image
                      $loading.show();
+                     $('#migrate').attr("disabled", true);
                  })
                .ajaxStop(function () {
                    //got response so hide the loading image
                     $loading.hide();
+                    $('#migrate').attr("disabled", false);
                 });
             })
 
@@ -96,7 +98,7 @@
         <div id="articlemigration">
             R2 Article ID:
             <input  type="text" name="articleid" id="articleid">
-            <button type="button" onclick="migrateArticle()">Migrate to flex</button>
+            <button type="button" onclick="migrateArticle()" id="migrate">Migrate to flex</button>
 
             <div id="articlemigration_results" class="results">
 
