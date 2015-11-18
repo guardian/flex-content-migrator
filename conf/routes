@@ -4,6 +4,7 @@
 
 GET         /                              controllers.Application.index
 GET         /version                       controllers.Application.version
+GET         /assets/*file                   controllers.Assets.at(path="/public", file)
 
 GET         /check/gallery                 controllers.migration.GalleryMigrationApi.checkFlexConnection
 POST        /migrate/gallery               controllers.migration.GalleryMigrationApi.migrateBatch(batchSize: Option[Int] ?=None, batchNumber : Option[Int] ?=None)
