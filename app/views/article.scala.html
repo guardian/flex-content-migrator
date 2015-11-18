@@ -30,8 +30,8 @@
 
             #loadingDiv{
                 content: url("/assets/images/spinner.gif");
-                width: 100px;
-                height: 100px;
+                width: 40px;
+                height: 40px;
                 position: fixed;
                 top: 20%;
                 left: 50%;
@@ -79,15 +79,20 @@
             function displayErrorResults(data){
                 console.log(data)
                 var id = data.id
-                var reason = data.reason
+                var reason = data.reason.replace("\n", '<br />')
                 var message = "Could not migrate article with ID " + id + "<br><br>Detail:<br> " + reason
                 $('#articlemigration_results').html("<span class=\"failed\">" + message + "</span>");
             }
 
             function migrateArticle(){
                 var articleId = $("#articleid").val();
-                clearPreviousResults();
-                migrateArticleAjax(articleId);
+                if(isNaN(articleId) || articleId.length==0){
+                    alert("The R2 id '" + articleId + "' is not valid");
+                }
+                else{
+                    clearPreviousResults();
+                    migrateArticleAjax(articleId);
+                }
             }
 
         </script>
