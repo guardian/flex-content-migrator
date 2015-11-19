@@ -60,7 +60,7 @@
                   url: "/migrate/article/json/" + articleId,
                   type: "POST"
                 }).done(function(data) {
-                    displayResults(data.responseJSON);
+                    displayResults(data);
                 }).fail(function(data){
                     displayErrorResults(data.responseJSON);
                 });
@@ -70,16 +70,16 @@
                 $('#articleid').html("");
             }
             function displayResults(data){
-                console.log(data)
-                var id = data.id
-                var composerId = data.composerId
-                var message = "Migrated article " + id + "<br><br>Composer ID: " + composerId
+                console.log(data);
+                var id = data.id;
+                var composerId = data.composerId;
+                var message = "Migrated article " + id + "<br><br>Composer ID: " + composerId;
                 $('#articlemigration_results').html("<span class=\"success\">" + message + "</span>");
             }
             function displayErrorResults(data){
-                console.log(data)
-                var id = data.id
-                var reason = data.reason.replace("\n", '<br />')
+                console.log(data);
+                var id = data.id;
+                var reason = data.reason.replace("\n", '<br />');
                 var message = "Could not migrate article with ID " + id + "<br><br>Detail:<br> " + reason
                 $('#articlemigration_results').html("<span class=\"failed\">" + message + "</span>");
             }
