@@ -2,6 +2,7 @@ package services.migration
 
 
 import model._
+import org.apache.commons.lang3.exception.ExceptionUtils
 import play.Logger
 import services.migration.batch.AkkaBatchMigrator
 import services.migration.r2.R2MigrationService
@@ -55,7 +56,10 @@ trait Migrator{
     val inR2 = inFlex.flatMap(migrationBehaviour.closeContentInSource(_))
     inR2.map{ _ match {
       case result : MigratedContent => result
-      case unknown : Any => throw new RuntimeException(s"Migration failed for content ${contentId} : ${unknown}") //TODO: MigrationFailedContent?
+      case unknown : Any => {
+        throw new RuntimeException(s"Migration failed for content ${contentId} : ${unknown}")
+      }
+
     }}
 
   }

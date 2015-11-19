@@ -1,5 +1,6 @@
 package controllers.migration
 
+import com.fasterxml.jackson.core.JsonParseException
 import controllers.Application._
 import model._
 import org.apache.commons.lang3.exception.ExceptionUtils
@@ -70,8 +71,18 @@ class ArticleMigrationApi(migrator : Migrator, reporter : MigrationReport, flex 
   }
   }
 
+  private def getUsefulErrorMessageFromThrowable(e : Throwable) : String = {
+    val stackTrace = ExceptionUtils.getStackTrace(e)
+    e match {
+      case e : JsonParseException => s"Could not load (or parse) the article from R2\n\n ${stackTrace}"
+      case e : java.net.ConnectException => s"Could not connect to one of the systems (${e.getMessage})\n\n${stackTrace}}"
+      case e : Throwable => s"An exception was thrown at some point in the process.\n\n ${stackTrace}"
+
+    }
+  }
+
   private def getJsonError(id : Int, e : Throwable) : Result = {
-    val result = MigrationFailedContent(id, ExceptionUtils.getStackTrace(e))
+    val result = MigrationFailedContent(id, getUsefulErrorMessageFromThrowable(e))
     getJsonMigratedContent(result)
   }
 
