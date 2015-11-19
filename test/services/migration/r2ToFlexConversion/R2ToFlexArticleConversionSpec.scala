@@ -106,7 +106,16 @@ class R2ToFlexArticleConversionSpec extends Specification with Mockito {
       subscriptionDatabases must equalTo(Some(true))
       developerCommunity must equalTo(Some(true))
     }
+    "second article" in {
+      val xml = R2ToFlexArticleConversion.parseDraftData(r2Json("/migration/r2article2.json")).xml
+      (xml \ "@enable-comments").text.toString must equalTo("true")
+      (xml \ "@premoderation").text.toString must equalTo("false")
+      (xml \ "@comment-expiry-date").text.toString must equalTo("200809141935")
+      (xml \ "@issue-date").text.toString must equalTo("20080911")
+    }
   }
+
+
 
 
 
