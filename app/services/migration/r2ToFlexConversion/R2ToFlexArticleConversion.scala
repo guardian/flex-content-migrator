@@ -1,5 +1,7 @@
 package services.migration.r2ToFlexConversion
 
+import java.text.SimpleDateFormat
+
 import com.lambdaworks.jacks.JacksMapper
 import play.Logger
 
@@ -27,6 +29,9 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
 
   import scala.language.postfixOps
 
+  protected val dateFormatterXml = new SimpleDateFormat("yyyyMMdd");
+  protected val dateTimeFormatterXml = new SimpleDateFormat("yyyyMMddHHmm");
+
   override lazy val live = getFacetFromMap("live")
 
   override lazy val draft = getFacetFromMap("draft")
@@ -46,13 +51,26 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
 
   private def body = getAsMap("contentBody", liveOrDraft).flatMap(getAsString("bodyText", _))
 
+  private def enableComments = getAsString("pluckCommentable")
+
+  private def commentCloseDate = getAsString("closingDateForCommenting").map( s => javax.xml.bind.DatatypeConverter.parseDateTime(s).getTime).
+                                  map(dateTimeFormatterXml.format _ )
+
+  private def premoderation = getAsString("pluckPremoderated")
+
+  private def productionOffice = getAsString("productionOffice")
+
+  private def issueDate = getAsString("publicationDate").map( s => javax.xml.bind.DatatypeConverter.parseDateTime(s).getTime).
+                            map(dateFormatterXml.format _ )
 
   override lazy val xml =
     <article story-bundle={storyBundleId orNull} cms-path={cmsPath orNull} notes={notes orNull} slug-word={slug orNull}
            uk-only={ukOnly orNull} explicit={explicit orNull} expiry-date={scheduledExpiry orNull}
            created-date={createdDate orNull} created-user={createdBy orNull} modified-date={modifiedDate orNull}
            web-publication-date={webPublicationDate orNull}
-           on-page={pageNumber orNull}>
+           on-page={pageNumber orNull} enable-comments={enableComments orNull} premoderation={premoderation orNull}
+           comment-expiry-date={commentCloseDate orNull} production-office={productionOffice orNull}
+           issue-date={issueDate orNull}>
 
       <tags>{for(tag <- tags) yield <tag id={tag}/> }</tags>
       {r2PageId.map( pageId =>          <originalR2PageId>{pageId}</originalR2PageId>) orNull}
