@@ -53,15 +53,13 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
 
   private def enableComments = getAsString("pluckCommentable")
 
-  private def commentCloseDate = getAsString("closingDateForCommenting").map( s => javax.xml.bind.DatatypeConverter.parseDateTime(s).getTime).
-                                  map(dateTimeFormatterXml.format _ )
+  private def commentCloseDate = getAsString("closingDateForCommenting")
 
   private def premoderation = getAsString("pluckPremoderated")
 
   private def productionOffice = getAsString("productionOffice")
 
-  private def issueDate = getAsString("publicationDate").map( s => javax.xml.bind.DatatypeConverter.parseDateTime(s).getTime).
-                            map(dateFormatterXml.format _ )
+  private def issueDate = getAsString("publicationDate")
 
   override lazy val xml =
     <article story-bundle={storyBundleId orNull} cms-path={cmsPath orNull} notes={notes orNull} slug-word={slug orNull}

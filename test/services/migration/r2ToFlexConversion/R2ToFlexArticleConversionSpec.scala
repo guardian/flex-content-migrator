@@ -110,8 +110,8 @@ class R2ToFlexArticleConversionSpec extends Specification with Mockito {
       val xml = R2ToFlexArticleConversion.parseDraftData(r2Json("/migration/r2article2.json")).xml
       (xml \ "@enable-comments").text.toString must equalTo("true")
       (xml \ "@premoderation").text.toString must equalTo("false")
-      (xml \ "@comment-expiry-date").text.toString must equalTo("200809141935")
-      (xml \ "@issue-date").text.toString must equalTo("20080911")
+      (xml \ "@comment-expiry-date").text.toString must equalTo("2008-09-14T19:35:01.000+01:00")
+      (xml \ "@issue-date").text.toString must equalTo("2008-09-11T00:00:00.000+01:00")
     }
   }
 
