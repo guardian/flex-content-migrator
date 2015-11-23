@@ -296,10 +296,10 @@
     "editedSlug": "rockumentaries",
     "publishOnCom": false,
     "tags": [
-      8804,
-      22609,
-      26910,
-      4
+      {"id":8804},
+      {"id":22609},
+      {"id":26910},
+      {"id":4}
     ],
     "editorial": true,
     "publicationDate": "2008-04-12T00:00:00.000+01:00",
@@ -657,10 +657,10 @@
     "factboxes": [],
     "platformPictures": [],
     "tags": [
-      8804,
-      22609,
-      26910,
-      4
+      {"id":8804},
+      {"id":22609},
+      {"id":26910},
+      {"id":4}
     ],
     "editorial": true,
     "publicationDate": "2008-04-12T00:00:00.000+01:00",

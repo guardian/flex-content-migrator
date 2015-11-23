@@ -426,10 +426,10 @@
     "platformPictures": [],
     "publishOnCom": false,
     "tags": [
-      9234,
-      8783,
-      26904,
-      4
+      {"id":9234},
+      {"id":8783},
+      {"id":26904},
+      {"id":4}
     ],
     "editorial": true,
     "publicationDate": "2007-07-27T00:00:00.000+01:00",
@@ -814,10 +814,10 @@
     "factboxes": [],
     "platformPictures": [],
     "tags": [
-      9234,
-      8783,
-      26904,
-      4
+      {"id":9234},
+      {"id":8783},
+      {"id":26904},
+      {"id":4}
     ],
     "editorial": true,
     "publicationDate": "2007-07-27T00:00:00.000+01:00",

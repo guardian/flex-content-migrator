@@ -4,9 +4,6 @@ import java.io.File
 
 import org.specs2.mock.Mockito
 import org.specs2.mutable.Specification
-import services.migration.quizbuilder.{Quiz, QuizImporterService}
-
-import scala.concurrent.Future
 
 class R2ToFlexArticleConversionSpec extends Specification with Mockito {
 
@@ -112,6 +109,8 @@ class R2ToFlexArticleConversionSpec extends Specification with Mockito {
       (xml \ "@premoderation").text.toString must equalTo("false")
       (xml \ "@comment-expiry-date").text.toString must equalTo("2008-09-14T19:35:01.000+01:00")
       (xml \ "@issue-date").text.toString must equalTo("2008-09-11T00:00:00.000+01:00")
+      (xml \ "@book-code").text.toString must equalTo("gdn")
+      (xml \ "@section-code").text.toString must equalTo("fam")
     }
   }
 

@@ -29,10 +29,10 @@
     "publishOnCom": false,
     "storyBundleId": "8587259",
     "tags": [
-      8958,
-      4,
-      33407,
-      26906
+      {"id":8958},
+      {"id":4},
+      {"id":33407},
+      {"id":26906}
     ],
     "editorial": true,
     "publicationDate": "2007-11-12T00:00:00.000Z",
@@ -114,10 +114,10 @@
     "factboxes": [],
     "platformPictures": [],
     "tags": [
-      8958,
-      4,
-      33407,
-      26906
+      {"id":8958},
+      {"id":4},
+      {"id":33407},
+      {"id":26906}
     ],
     "editorial": true,
     "publicationDate": "2007-11-12T00:00:00.000Z",
