@@ -117,6 +117,13 @@ class R2ToFlexArticleConversionSpec extends Specification with Mockito {
         r2Json("/migration/r2article_inbodyElements.json")).xml) must
           throwA(new UnsupportedOperationException("The article contains embedded elements - this is not yet supported"))
     }
+    "article with picture" in {
+      val xml = R2ToFlexArticleConversion.parseDraftData(r2Json("/migration/r2article_withPicture.json")).xml
+      (xml \ "main-picture" \ "@media-id").text.toString must equalTo("gu-image-338491299")
+      (xml \ "main-picture" \ "@image-id").text.toString must equalTo("338444726")
+      (xml \ "large-picture" \ "@media-id").text.toString must equalTo("gu-image-338491300") //TODO: is this correct?
+      (xml \ "large-picture" \ "@image-id").text.toString must equalTo("338443928")
+    }
   }
 
 
