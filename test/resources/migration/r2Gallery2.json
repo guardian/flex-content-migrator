@@ -1060,11 +1060,11 @@
     "platformPictures": [],
     "publishOnCom": false,
     "tags": [
-      12501,
-      13141,
-      29638,
-      26904,
-      4
+      {"id":12501},
+      {"id":13141},
+      {"id":29638},
+      {"id":26904},
+      {"id":4}
     ],
     "editorial": true,
     "publicationDate": "2007-08-14T00:00:00.000+01:00",
@@ -2181,11 +2181,11 @@
     "factboxes": [],
     "platformPictures": [],
     "tags": [
-      12501,
-      13141,
-      29638,
-      26904,
-      4
+      {"id":12501},
+      {"id":13141},
+      {"id":29638},
+      {"id":26904},
+      {"id":4}
     ],
     "editorial": true,
     "publicationDate": "2007-08-14T00:00:00.000+01:00",

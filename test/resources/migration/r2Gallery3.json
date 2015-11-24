@@ -683,12 +683,12 @@
     "editedSlug": "mars-images-space-exploration",
     "publishOnCom": false,
     "tags": [
-      23704,
-      35222,
-      35462,
-      9444,
-      26904,
-      4
+      {"id":23704},
+      {"id":35222},
+      {"id":35462},
+      {"id":9444},
+      {"id":26904},
+      {"id":4}
     ],
     "editorial": true,
     "publicationDate": "2010-03-21T00:00:00.000Z",
@@ -1470,12 +1470,12 @@
     "factboxes": [],
     "platformPictures": [],
     "tags": [
-      23704,
-      35222,
-      35462,
-      9444,
-      26904,
-      4
+      {"id":23704},
+      {"id":35222},
+      {"id":35462},
+      {"id":9444},
+      {"id":26904},
+      {"id":4}
     ],
     "editorial": true,
     "publicationDate": "2010-03-21T00:00:00.000Z",

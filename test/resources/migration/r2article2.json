@@ -21,16 +21,76 @@
     "editedSlug": "equality.tradeunions",
     "publishOnCom": false,
     "tags": [
-      10528,
-      17019,
-      9184,
-      20040,
-      8798,
-      8791,
-      19796,
-      15555,
-      26903,
-      4
+      {
+        "id": 28706,
+        "type": "Series"
+      },
+      {
+        "id": 43906,
+        "type": "Keyword"
+      },
+      {
+        "id": 23727,
+        "type": "Keyword"
+      },
+      {
+        "id": 36242,
+        "type": "Keyword"
+      },
+      {
+        "id": 9683,
+        "type": "Keyword"
+      },
+      {
+        "id": 31822,
+        "type": "Keyword"
+      },
+      {
+        "id": 22609,
+        "type": "Keyword"
+      },
+      {
+        "id": 27768,
+        "type": "Keyword"
+      },
+      {
+        "id": 8857,
+        "type": "Keyword"
+      },
+      {
+        "id": 35150,
+        "type": "Contributor"
+      },
+      {
+        "id": 20401,
+        "type": "Tone"
+      },
+      {
+        "id": 28491,
+        "type": "Tone"
+      },
+      {
+        "id": 16647,
+        "newspaperMetaMappedName": "gdn.fam",
+        "type": "Newspaper Book Section"
+      },
+      {
+        "id": 16589,
+        "newspaperMetaMappedName": "gdn.fam",
+        "type": "Newspaper Book"
+      },
+      {
+        "id": 26903,
+        "type": "Content Type"
+      },
+      {
+        "id": 2,
+        "type": "Publication"
+      },
+      {
+        "id": 4,
+        "type": "Publication"
+      }
     ],
     "editorial": true,
     "publicationDate": "2008-09-11T00:00:00.000+01:00",
@@ -102,16 +162,76 @@
     "factboxes": [],
     "platformPictures": [],
     "tags": [
-      10528,
-      17019,
-      9184,
-      20040,
-      8798,
-      8791,
-      19796,
-      15555,
-      26903,
-      4
+      {
+        "id": 28706,
+        "type": "Series"
+      },
+      {
+        "id": 43906,
+        "type": "Keyword"
+      },
+      {
+        "id": 23727,
+        "type": "Keyword"
+      },
+      {
+        "id": 36242,
+        "type": "Keyword"
+      },
+      {
+        "id": 9683,
+        "type": "Keyword"
+      },
+      {
+        "id": 31822,
+        "type": "Keyword"
+      },
+      {
+        "id": 22609,
+        "type": "Keyword"
+      },
+      {
+        "id": 27768,
+        "type": "Keyword"
+      },
+      {
+        "id": 8857,
+        "type": "Keyword"
+      },
+      {
+        "id": 35150,
+        "type": "Contributor"
+      },
+      {
+        "id": 20401,
+        "type": "Tone"
+      },
+      {
+        "id": 28491,
+        "type": "Tone"
+      },
+      {
+        "id": 16647,
+        "newspaperMetaMappedName": "gdn.fam",
+        "type": "Newspaper Book Section"
+      },
+      {
+        "id": 16589,
+        "newspaperMetaMappedName": "gdn.fam",
+        "type": "Newspaper Book"
+      },
+      {
+        "id": 26903,
+        "type": "Content Type"
+      },
+      {
+        "id": 2,
+        "type": "Publication"
+      },
+      {
+        "id": 4,
+        "type": "Publication"
+      }
     ],
     "editorial": true,
     "publicationDate": "2008-09-11T00:00:00.000+01:00",

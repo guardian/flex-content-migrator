@@ -87,7 +87,7 @@ abstract class R2ToFlexContentConversion(jsonMap : Map[String, Any], parseLiveDa
   protected def standfirst = getAsString("standfirst")
 
   protected def tags : List[String] = {
-    getAs[List[Any]]("tags").getOrElse(Nil).map(_.toString)
+    getAsMaps("tags", liveOrDraft).getOrElse(Nil).flatMap(m => getAsString("id", m))
   }
 
   protected def thumbnailImageUrl = getAsString("thumbnailImageUrl")

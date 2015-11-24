@@ -29,6 +29,11 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
 
   import scala.language.postfixOps
 
+
+  def getInBodyElements = {
+    getAsMap("contentBody", liveOrDraft).flatMap( getAsMaps("inBodyElements", _)).toList.flatten
+  }
+
   protected val dateFormatterXml = new SimpleDateFormat("yyyyMMdd");
   protected val dateTimeFormatterXml = new SimpleDateFormat("yyyyMMddHHmm");
 
@@ -53,24 +58,42 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
 
   private def enableComments = getAsString("pluckCommentable")
 
-  private def commentCloseDate = getAsString("closingDateForCommenting").map( s => javax.xml.bind.DatatypeConverter.parseDateTime(s).getTime).
-                                  map(dateTimeFormatterXml.format _ )
+  private def commentCloseDate = getAsString("closingDateForCommenting")
 
   private def premoderation = getAsString("pluckPremoderated")
 
   private def productionOffice = getAsString("productionOffice")
 
-  private def issueDate = getAsString("publicationDate").map( s => javax.xml.bind.DatatypeConverter.parseDateTime(s).getTime).
-                            map(dateFormatterXml.format _ )
+  private def issueDate = getAsString("publicationDate")
+
+  private def getBookSectionToken : Option[(String, String)] = {
+    val tokens = getAsMaps("tags", liveOrDraft).getOrElse(Nil).flatMap(_.get("newspaperMetaMappedName")).map(_.toString).toSet
+    if(tokens.size>1) throw new IllegalStateException(s">1 newspaper book section token : ${tokens}")
+    else{
+      val splitToken = tokens.headOption.map(_.split("\\.").toList)
+      splitToken match {
+        case None => None
+        case Some(book :: section :: Nil) => Some((book, section))
+        case Some(other) => throw new IllegalStateException(s"Unexpected tag token type: ${other}")
+      }
+    }
+  }
+
+  private def bookCode = getBookSectionToken.map(_._1)
+
+  private def sectionCode = getBookSectionToken.map(_._2)
 
   override lazy val xml =
+    if(getInBodyElements.size>0) throw new UnsupportedOperationException("The article contains embedded elements - this is not yet supported")
+    else
     <article story-bundle={storyBundleId orNull} cms-path={cmsPath orNull} notes={notes orNull} slug-word={slug orNull}
            uk-only={ukOnly orNull} explicit={explicit orNull} expiry-date={scheduledExpiry orNull}
            created-date={createdDate orNull} created-user={createdBy orNull} modified-date={modifiedDate orNull}
            web-publication-date={webPublicationDate orNull}
            on-page={pageNumber orNull} enable-comments={enableComments orNull} premoderation={premoderation orNull}
            comment-expiry-date={commentCloseDate orNull} production-office={productionOffice orNull}
-           issue-date={issueDate orNull}>
+           issue-date={issueDate orNull}
+           book-code={bookCode orNull} section-code={sectionCode orNull} >
 
       <tags>{for(tag <- tags) yield <tag id={tag}/> }</tags>
       {r2PageId.map( pageId =>          <originalR2PageId>{pageId}</originalR2PageId>) orNull}
