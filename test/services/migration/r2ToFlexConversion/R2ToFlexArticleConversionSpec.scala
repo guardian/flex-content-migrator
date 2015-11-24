@@ -112,6 +112,11 @@ class R2ToFlexArticleConversionSpec extends Specification with Mockito {
       (xml \ "@book-code").text.toString must equalTo("gdn")
       (xml \ "@section-code").text.toString must equalTo("fam")
     }
+    "article with embed" in {
+      (R2ToFlexArticleConversion.parseDraftData(
+        r2Json("/migration/r2article_inbodyElements.json")).xml) must
+          throwA(new UnsupportedOperationException("The article contains embedded elements - this is not yet supported"))
+    }
   }
 
 

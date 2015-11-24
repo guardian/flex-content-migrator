@@ -29,6 +29,11 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
 
   import scala.language.postfixOps
 
+
+  def getInBodyElements = {
+    getAsMap("contentBody", liveOrDraft).flatMap( getAsMaps("inBodyElements", _)).toList.flatten
+  }
+
   protected val dateFormatterXml = new SimpleDateFormat("yyyyMMdd");
   protected val dateTimeFormatterXml = new SimpleDateFormat("yyyyMMddHHmm");
 
@@ -79,6 +84,8 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
   private def sectionCode = getBookSectionToken.map(_._2)
 
   override lazy val xml =
+    if(getInBodyElements.size>0) throw new UnsupportedOperationException("The article contains embedded elements - this is not yet supported")
+    else
     <article story-bundle={storyBundleId orNull} cms-path={cmsPath orNull} notes={notes orNull} slug-word={slug orNull}
            uk-only={ukOnly orNull} explicit={explicit orNull} expiry-date={scheduledExpiry orNull}
            created-date={createdDate orNull} created-user={createdBy orNull} modified-date={modifiedDate orNull}
