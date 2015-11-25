@@ -126,7 +126,6 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
       {largeTrailPictureId.map(ltp =>     <large-trail-picture image-id={ltp} media-id={largeTrailPictureMediaId orNull} />) orNull}
       {body.map{b => <body>{b}</body>} orNull}
       {mainPicture.map{pic => <main-picture media-id={pic.get("mediaId") orNull} image-id={pic.get("id") orNull}/>} orNull}
-      {largePicture.map{pic => <large-picture media-id={pic.get("mediaId") orNull} image-id={pic.get("id") orNull}/>} orNull}
       {if(!associatedPictures.isEmpty)
       <pictures>
         {associatedPictures.map{pic => {
