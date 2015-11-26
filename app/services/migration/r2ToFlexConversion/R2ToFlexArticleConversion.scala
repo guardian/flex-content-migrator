@@ -66,6 +66,21 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
 
   private def issueDate = getAsString("publicationDate")
 
+
+  private def starRating : Option[String] = {
+    val stars = getAsString("starRating")
+    stars.map(_.toUpperCase.trim) match {
+      case None=> None
+      case Some("FIVE_STARS")   => Some("5")
+      case Some("FOUR_STARS")   => Some("4")
+      case Some("THREE_STARS")  => Some("3")
+      case Some("TWO_STARS")    => Some("2")
+      case Some("ONE_STAR")     => Some("1")
+      case Some("ZERO_STAR")    => Some("0")
+      case _ => throw new IllegalStateException(s"Cannot map the star rating: ${stars}")
+    }
+  }
+
   private def getBookSectionToken : Option[(String, String)] = {
     val tokens = getAsMaps("tags", liveOrDraft).getOrElse(Nil).flatMap(_.get("newspaperMetaMappedName")).map(_.toString).toSet
     if(tokens.size>1) None
@@ -108,7 +123,8 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
            on-page={pageNumber orNull} enable-comments={enableComments orNull} premoderation={premoderation orNull}
            comment-expiry-date={commentCloseDate orNull} production-office={productionOffice orNull}
            issue-date={issueDate orNull}
-           book-code={bookCode orNull} section-code={sectionCode orNull} >
+           book-code={bookCode orNull} section-code={sectionCode orNull}
+           star-rating={starRating orNull}>
 
       <tags>{for(tag <- tags) yield <tag id={tag}/> }</tags>
       {r2PageId.map( pageId =>          <originalR2PageId>{pageId}</originalR2PageId>) orNull}
