@@ -111,6 +111,7 @@ class R2ToFlexArticleConversionSpec extends Specification with Mockito {
       (xml \ "@issue-date").text.toString must equalTo("2008-09-11T00:00:00.000+01:00")
       (xml \ "@book-code").text.toString must equalTo("gdn")
       (xml \ "@section-code").text.toString must equalTo("fam")
+      (xml \ "@star-rating").text.toString must equalTo("3")
     }
     "article with embed" in {
       (R2ToFlexArticleConversion.parseDraftData(

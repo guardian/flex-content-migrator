@@ -145,6 +145,7 @@
     "headline": "Inequality commission",
     "standfirst": "Joel Edwards, whose organisation says homosexuality is morally wrong, is an equality commissioner. He should be fired",
     "byline": "David Hencke",
+    "starRating": "THREE_STARS",
     "id": 337526188
   },
   "live": {
@@ -287,6 +288,7 @@
     "standfirst": "Joel Edwards, whose organisation says homosexuality is morally wrong, is an equality commissioner. He should be fired",
     "byline": "David Hencke",
     "productionOffice": "UK",
+    "starRating": "THREE_STARS",
     "id": 337526188
   }
 }
