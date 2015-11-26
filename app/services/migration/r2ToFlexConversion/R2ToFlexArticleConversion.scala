@@ -68,7 +68,7 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
 
   private def getBookSectionToken : Option[(String, String)] = {
     val tokens = getAsMaps("tags", liveOrDraft).getOrElse(Nil).flatMap(_.get("newspaperMetaMappedName")).map(_.toString).toSet
-    if(tokens.size>1) throw new IllegalStateException(s">1 newspaper book section token : ${tokens}")
+    if(tokens.size>1) None
     else{
       val splitToken = tokens.headOption.map(_.split("\\.").toList)
       splitToken match {
@@ -77,6 +77,21 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
         case Some(other) => throw new IllegalStateException(s"Unexpected tag token type: ${other}")
       }
     }
+  }
+
+  private def largePicture : Option[Map[String, String]] = {
+    getAsMap("largePicture", liveOrDraft).map( pic => {
+        val id  = getAsMap("image", pic).flatMap(_.get("id")).map(_.toString) //image id
+        val mediaId   = getAsString("id", pic).map("gu-image-" + _) //picture ID is the media Id)
+        (id.map("id" -> _) ++ mediaId.map("mediaId" -> _)).toMap
+    })
+  }
+  private def mainPicture : Option[Map[String, String]] = {
+    getAsMap("picture", liveOrDraft).map( pic => {
+      val id  = getAsMap("image", pic).flatMap(_.get("id")).map(_.toString) //image id
+      val mediaId   = getAsString("id", pic).map("gu-image-" + _) //picture ID is the media Id)
+      (id.map("id" -> _) ++ mediaId.map("mediaId" -> _)).toMap
+    })
   }
 
   private def bookCode = getBookSectionToken.map(_._1)
@@ -110,6 +125,7 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
       {trailPictureId.map(tp =>     <trail-picture image-id={tp} media-id={trailPictureMediaId orNull} />) orNull}
       {largeTrailPictureId.map(ltp =>     <large-trail-picture image-id={ltp} media-id={largeTrailPictureMediaId orNull} />) orNull}
       {body.map{b => <body>{b}</body>} orNull}
+      {mainPicture.map{pic => <main-picture media-id={pic.get("mediaId") orNull} image-id={pic.get("id") orNull}/>} orNull}
       {if(!associatedPictures.isEmpty)
       <pictures>
         {associatedPictures.map{pic => {
@@ -121,6 +137,7 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
         }
       </pictures>
       }
+
       <rights syndicationAggregate={syndicationAggregateFn orNull} subscriptionDatabases={subscriptionDatabasesFn orNull} developerCommunity={developerCommunityFn orNull} />
       {
       val rightsExpiry = getRightsExpiry
