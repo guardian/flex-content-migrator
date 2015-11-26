@@ -68,7 +68,7 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
 
   private def getBookSectionToken : Option[(String, String)] = {
     val tokens = getAsMaps("tags", liveOrDraft).getOrElse(Nil).flatMap(_.get("newspaperMetaMappedName")).map(_.toString).toSet
-    if(tokens.size>1) throw new IllegalStateException(s">1 newspaper book section token : ${tokens}")
+    if(tokens.size>1) None
     else{
       val splitToken = tokens.headOption.map(_.split("\\.").toList)
       splitToken match {
