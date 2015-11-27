@@ -26,7 +26,7 @@ class QuizImporterService extends AsyncCallerWithMultipartData{
       val wasSuccess = statusCode == 200 && statusText == "Success"
       if(wasSuccess) Some(QuizIdProcessor(id))
       else{
-        Logger.debug(s"Failed to create content atom for R2 quiz ${quiz.r2QuizId}: ${statusCode} ${statusText}")
+        Logger.debug(s"Failed to create content atom for R2 quiz ${quiz.r2QuizId}: ${statusCode} ${statusText}\n ${quiz.getJson}")
         None
       }
     }
