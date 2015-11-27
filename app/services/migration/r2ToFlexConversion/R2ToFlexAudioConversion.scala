@@ -46,7 +46,7 @@ class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
   private def audioSource = getAsString("source")
 
   private def getFormatFromFile(path : String) =
-    if(path.endsWith(".mp3")) "audio/mp3"
+    if(path.toLowerCase.endsWith(".mp3")) "audio/mp3"
     else throw new IllegalArgumentException(s"Unrecognised extension ${path}")
 
 
