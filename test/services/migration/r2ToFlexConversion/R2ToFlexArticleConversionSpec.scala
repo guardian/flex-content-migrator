@@ -122,6 +122,8 @@ class R2ToFlexArticleConversionSpec extends Specification with Mockito {
       val xml = R2ToFlexArticleConversion.parseDraftData(r2Json("/migration/r2article_withPicture.json")).xml
       (xml \ "main-picture" \ "@media-id").text.toString must equalTo("gu-image-338491299")
       (xml \ "main-picture" \ "@image-id").text.toString must equalTo("338444726")
+      (xml \ "main-picture" \ "caption").text.toString must equalTo("Outer caption")
+      (xml \ "main-picture" \ "altText").text.toString must equalTo("Outer alt")
     }
   }
 

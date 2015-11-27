@@ -8,16 +8,16 @@
       "closeAllTagsCleaner": {}
     },
     "picture": {
-      "caption": "All content taken from It's Never Too Late to Play Piano by Pam Wedgwood © 2006 by Faber Music Ltd.",
-      "altText": "Basic piano 2",
+      "caption": "Outer caption",
+      "altText": "Outer alt",
       "image": {
         "$type": "image",
         "id": 338444726,
         "url": "http://image.guim.co.uk//sys-images/Guardian/Pix/pictures/2008/10/9/1223566785632/basic1.jpg",
         "mimeType": "image/jpeg",
-        "caption": "All content taken from It's Never Too Late to Play Piano by Pam Wedgwood © 2006 by Faber Music Ltd.",
-        "source": "Guardian",
-        "altText": "Basic piano 2",
+        "caption": "Inner caption",
+        "source": "Inner src",
+        "altText": "Innter alt",
         "width": 460,
         "height": 276,
         "uploadDate": "2008-10-09T00:00:00.000+01:00",
@@ -32,7 +32,7 @@
           }
         }
       },
-      "credit": "Guardian",
+      "credit": "Outer credit",
       "id": 338491299
     },
     "largePicture": {
@@ -168,16 +168,16 @@
   },
   "live": {
     "picture": {
-      "caption": "All content taken from It's Never Too Late to Play Piano by Pam Wedgwood © 2006 by Faber Music Ltd.",
-      "altText": "Basic piano 2",
+      "caption": "Outer caption",
+      "altText": "Outer alt",
       "image": {
         "$type": "image",
         "id": 338444726,
         "url": "http://image.guim.co.uk//sys-images/Guardian/Pix/pictures/2008/10/9/1223566785632/basic1.jpg",
         "mimeType": "image/jpeg",
-        "caption": "All content taken from It's Never Too Late to Play Piano by Pam Wedgwood © 2006 by Faber Music Ltd.",
-        "source": "Guardian",
-        "altText": "Basic piano 2",
+        "caption": "Inner caption",
+        "source": "Inner source",
+        "altText": "Inner alt",
         "width": 460,
         "height": 276,
         "uploadDate": "2008-10-09T00:00:00.000+01:00",
@@ -192,7 +192,7 @@
           }
         }
       },
-      "credit": "Guardian",
+      "credit": "Outer credit",
       "id": 338491299
     },
     "largePicture": {

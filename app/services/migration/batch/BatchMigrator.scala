@@ -218,8 +218,14 @@ protected[batch] class AkkaBatchMigratorOrchestrator(migrationBehaviour : Migrat
 
 protected[batch] abstract class AkkaBatchMigratorHelper(batchId : String, orchestrator : ActorRef) extends Actor {
 
-  def sendErrorMsg(r2VideoId : Int, msg : String, resultsListener : ActorRef) = {
-    Logger.error(s"Migration error: videoId:${r2VideoId} msg:${msg}")
+  def sendErrorMsg(r2VideoId : Int, msg : String, resultsListener : ActorRef, error : Option[Exception] = None) = {
+    error match {
+      case Some(e) => {
+        Logger.error("Error occured", e)
+      }
+      case _ => //do nothing
+    }
+    Logger.error(s"Migration error: contentId:${r2VideoId} msg:${msg}")
     orchestrator ! MigrationErrorResultMsg(batchId, r2VideoId, msg, resultsListener)
   }
 }
@@ -239,11 +245,11 @@ protected[batch] class AkkaBatchMigratorR2Loader(r2MigrationService : R2Migratio
       loadedVideo.map(srcVideo =>
         nextInChain ! TransformContentMsg(batchId, srcVideo, resultsListener)
       ).recover{
-        case e: Exception => sendErrorMsg(loadVideoR2.contentId, "Failed to load video from r2: " + e.toString, resultsListener)
+        case e: Exception => sendErrorMsg(loadVideoR2.contentId, "Failed to load content from r2: " + e.toString, resultsListener, Some(e))
       }
     }
     catch{
-      case e : Exception => sendErrorMsg(loadVideoR2.contentId, "Failed to load video from r2: " + e.toString, resultsListener)
+      case e : Exception => sendErrorMsg(loadVideoR2.contentId, "Failed to load content from r2: " + e.toString, resultsListener, Some(e))
     }
   }
 }
@@ -262,7 +268,7 @@ protected[batch] class AkkaBatchMigratorTransformer(transformR2ToFlex : Transfor
       nextInChain ! PushContentToFlexMsg(batchId, transformedVideo, resultsListener)
     }
     catch{
-      case e : Exception => sendErrorMsg(transform.source.id, "Failed to transform video:" + e.toString, resultsListener)
+      case e : Exception => sendErrorMsg(transform.source.id, "Failed to transform content:" + e.toString, resultsListener, Some(e))
     }
   }
 
@@ -288,11 +294,11 @@ protected[batch] class AkkaBatchMigratorPushToFlex(pushToFlex : PushToFlex, batc
           sendErrorMsg(migrate.content.sourceContent.id, MigrationFailedContent.failedToPushToFlex(videoInFlex.response), resultsListener)
         }
       ).recover{
-        case e: Exception => sendErrorMsg(migrate.content.sourceContent.id, s"Failed to push content into flex: ${e.toString}", resultsListener)
+        case e: Exception => sendErrorMsg(migrate.content.sourceContent.id, s"Failed to push content into flex: ${e.toString}", resultsListener, Some(e))
       }
     }
     catch{
-      case e : Exception => sendErrorMsg(migrate.content.sourceContent.id, s"Failed to push content into flex: ${e.toString}", resultsListener)
+      case e : Exception => sendErrorMsg(migrate.content.sourceContent.id, s"Failed to push content into flex: ${e.toString}", resultsListener, Some(e))
     }
   }
 
@@ -316,11 +322,11 @@ protected[batch] class AkkaBatchMigratorMigrateInR2(migrateVideoInR2 : MigrateCo
           case problem: MigrationFailedContent => sendErrorMsg(migrate.content.id, s"Failed to migrate content in R2 : ${problem.reason}", resultsListener)
         }
       }.recover{
-        case e: Exception => sendErrorMsg(migrate.content.id, s"Failed to migrate content in R2: ${e.toString}", resultsListener)
+        case e: Exception => sendErrorMsg(migrate.content.id, s"Failed to migrate content in R2: ${e.toString}", resultsListener, Some(e))
       }
     }
     catch{
-      case e : Exception => sendErrorMsg(migrate.content.id, s"Failed to migrate content in R2: ${e.toString}", resultsListener)
+      case e : Exception => sendErrorMsg(migrate.content.id, s"Failed to migrate content in R2: ${e.toString}", resultsListener, Some(e))
     }
   }
 
