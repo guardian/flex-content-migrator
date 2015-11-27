@@ -96,16 +96,47 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
 
   private def largePicture : Option[Map[String, String]] = {
     getAsMap("largePicture", liveOrDraft).map( pic => {
+      def getFromRootOrPictureOrImage(field : String) =
+        getAsString(field) match {
+          case Some(x) => Some(x) //root
+          case None =>
+            getAsString (field, pic) match {
+              case Some (x) => Some (x)   //picture
+              case None => getAsMap ("image", pic).flatMap (_.get (field) ).map (_.toString)  //image
+            }
+        }
+
         val id  = getAsMap("image", pic).flatMap(_.get("id")).map(_.toString) //image id
         val mediaId   = getAsString("id", pic).map("gu-image-" + _) //picture ID is the media Id)
-        (id.map("id" -> _) ++ mediaId.map("mediaId" -> _)).toMap
+        ( id.map("id" -> _) ++ mediaId.map("mediaId" -> _) ++
+          getFromRootOrPictureOrImage("caption").map(caption => ("caption" -> caption)) ++
+          getFromRootOrPictureOrImage("altText").map(altText => ("altText" -> altText)) ++
+          getFromRootOrPictureOrImage("credit").map(comments => ("credit" -> comments)) ++
+          getFromRootOrPictureOrImage("creditPrefix").map(comments => ("creditPrefix" -> comments))
+        ).toMap[String,String]
     })
   }
   private def mainPicture : Option[Map[String, String]] = {
     getAsMap("picture", liveOrDraft).map( pic => {
+      def getFromRootOrPictureOrImage(field : String) =
+        getAsString(field) match {
+          case Some(x) => Some(x) //root
+          case None =>
+            getAsString (field, pic) match {
+              case Some (x) => Some (x)   //picture
+              case None => getAsMap ("image", pic).flatMap (_.get (field) ).map (_.toString)  //image
+            }
+        }
+
       val id  = getAsMap("image", pic).flatMap(_.get("id")).map(_.toString) //image id
       val mediaId   = getAsString("id", pic).map("gu-image-" + _) //picture ID is the media Id)
-      (id.map("id" -> _) ++ mediaId.map("mediaId" -> _)).toMap
+
+        (   id.map("id" -> _) ++ mediaId.map("mediaId" -> _) ++
+            getFromRootOrPictureOrImage("caption").map(caption => ("caption" -> caption)) ++
+            getFromRootOrPictureOrImage("altText").map(altText => ("altText" -> altText)) ++
+            getFromRootOrPictureOrImage("credit").map(credit => ("credit" -> credit)) ++
+            getFromRootOrPictureOrImage("creditPrefix").map(prefix => ("creditPrefix" -> prefix))
+        ).toMap[String,String]
     })
   }
 
