@@ -92,7 +92,7 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
     val importedQuiz: Future[Option[String]] = quizImporterService.importQuiz(buildAndImportQuiz)
     Await.result(importedQuiz, Duration(30, TimeUnit.SECONDS)) match {
       case Some(s)  => (s, true) :: Nil //NOTE: defaulting required=true
-      case _ => Nil
+      case _ => throw new IllegalStateException(s"Could not create content atoms for quiz")
     };
   }
 

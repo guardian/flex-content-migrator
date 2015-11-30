@@ -470,13 +470,16 @@
                 "chgrp -R flex-content-migrator /home/flex-content-migrator\n",
 
                 "stage=$(echo ", { "Ref": "Stage" }, "| tr '[:upper:]' '[:lower:]')\n",
+                "echo stage=$stage\n",
                 "sed -i \\\n",
                 "    -e 's,@STAGE@,'$stage',g' \\\n",
                 "    /etc/init/flex-content-migrator.conf\n",
+
                 "quizImportSecret=$(echo ", { "Ref": "QuizBuilderImportSecret" }, ")\n",
+                "echo quizImportSecret=$quizImportSecret\n",
                 "sed -i \\\n",
                 "    -e 's,@quizbuilder.secret@,'$quizImportSecret',g' \\\n",
-                "    /home/flex-content-migrator/flex-content-migrator/conf/application.conf\n",
+                "    /etc/init/flex-content-migrator.conf\n",
 
                 "start flex-content-migrator\n"
               ]
