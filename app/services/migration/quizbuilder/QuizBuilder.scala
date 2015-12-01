@@ -2,7 +2,6 @@ package services.migration.quizbuilder
 
 import org.joda.time.DateTime
 import play.api.Play
-import play.api.libs.json.JsObject
 import play.api.libs.json._
 
 trait JsonModel {
@@ -21,6 +20,7 @@ case class QuizQuestion(text : String, answers : List[QuizQuestionAnswer], image
   override def getJson: JsObject = {
     Json.obj(
       "questionText" -> text,
+      "assets" -> JsArray(), //TODO
       "answers" -> answers.map(_.getJson)
     )
   }
@@ -31,7 +31,8 @@ case class QuizQuestionAnswer(text : String, isCorrect : Boolean, image : Option
       "answerText" -> text,
       "correct" -> isCorrect,
       "image" -> image.map(_.getJson),
-      "revealText" -> revealText.map(_.toString)
+      "revealText" -> revealText.map(_.toString),
+      "assets" -> JsArray() //TODO
     )
   }
 }
