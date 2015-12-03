@@ -168,8 +168,9 @@ protected[migration] class R2IntegrationAPIClient {
   }
 
 
-  protected[migration] def getBatchOfArticleIds(batchSize : Int, batchNumber : Int) : Future[List[Int]] = {
-    WS.url(requestArticlesToMigrate(batchSize, batchNumber)).get().map{response =>
+  protected[migration] def getBatchOfArticleIds(batchSize : Int, batchNumber : Int, tagIds : Option[String]) : Future[List[Int]] = {
+    Logger.debug(s"Loading articles : batchSize=${batchSize} batchNumber=${batchNumber} tagIds=${tagIds}")
+    WS.url(requestArticlesToMigrate(batchSize, batchNumber, tagIds)).get().map{response =>
       (response.json \ "elementsOnCurrentPage").as[List[Int]]
     }
   }
@@ -225,6 +226,9 @@ protected[migration] class R2IntegrationAPIClient {
 
   private def pageNumber(offset : Int) = s"pageNumber=${offset}"
 
+  private def tags(tagIds : Option[String]) =
+    tagIds.map("&tagIds=" + _).getOrElse("")
+
   private def r2ContentId(id : Int) = s"r2ContentId=${id}"
 
   private def composerId(id : String) = s"composerId=${id}"
@@ -242,8 +246,8 @@ protected[migration] class R2IntegrationAPIClient {
   private def requestAudiosToMigrate(size : Int, offset : Int) =
     s"${AudiosToMigrateUrl}?${pageSize(size)}&${pageNumber(offset)}"
 
-  private def requestArticlesToMigrate(size : Int, offset : Int) =
-    s"${ArticlesToMigrateUrl}?${pageSize(size)}&${pageNumber(offset)}"
+  private def requestArticlesToMigrate(size : Int, offset : Int, tagIds : Option[String]) =
+    s"${ArticlesToMigrateUrl}?${pageSize(size)}&${pageNumber(offset)}${tags(tagIds)}"
 
   private def requestContentMigrated(r2ContentIdInt : Int, composerIdSt : String) =
     s"${ContentMigratedUrl}?${r2ContentId(r2ContentIdInt)}&${composerId(composerIdSt)}"
@@ -255,7 +259,7 @@ trait R2MigrationService{
 
   def loadContentById(id : Integer) : Future[SourceContent]
 
-  def loadBatchOfContent(batchSize : Int, batchNumber : Int = 1) : Future[MigrationBatch]
+  def loadBatchOfContent(batchSize : Int, batchNumber : Int = 1, tagIds : Option[String] = None) : Future[MigrationBatch]
 
   def getBatchOfContentIds(batchSize : Int, batchOffset : Int) : Future[List[Int]]
 

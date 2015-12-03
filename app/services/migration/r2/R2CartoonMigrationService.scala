@@ -24,12 +24,13 @@ abstract class R2CartoonMigratorService(client : R2IntegrationAPIClient) extends
   def getBatchOfContentIds(batchSize : Int, batchOffset : Int) =
     client.getBatchOfCartoonIds(batchSize, batchOffset)
 
-  def loadBatchOfContent(batchSize : Int, batchNumber : Int = 1) : Future[MigrationBatch] = {
+  def loadBatchOfContent(batchSize : Int, batchNumber : Int = 1, tagIds : Option[String] = None) : Future[MigrationBatch] = {
     def mapIdsToCartoons(ids: Future[List[Int]]) = {
       def idsToCartoons(ids : List[Int]) = ids.map(loadContentWithThrottle(_))
 
       ids.map{idsToCartoons(_)}.flatMap(Future.sequence(_))
     }
+    if(tagIds.isDefined) throw new UnsupportedOperationException("Tag specific migration not supported for cartoons")
 
     val ids = client.getBatchOfCartoonIds(batchSize, batchNumber)
     val cartoons = mapIdsToCartoons(ids)

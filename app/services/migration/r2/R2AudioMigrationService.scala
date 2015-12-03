@@ -24,12 +24,15 @@ abstract class R2AudioMigratorService(client : R2IntegrationAPIClient) extends R
   def getBatchOfContentIds(batchSize : Int, batchOffset : Int) =
     client.getBatchOfAudioIds(batchSize, batchOffset)
 
-  def loadBatchOfContent(batchSize : Int, batchNumber : Int = 1) : Future[MigrationBatch] = {
+
+  def loadBatchOfContent(batchSize : Int, batchNumber : Int = 1, tagIds : Option[String]) : Future[MigrationBatch] = {
     def mapIdsToAudios(ids: Future[List[Int]]) = {
       def idsToAudios(ids : List[Int]) = ids.map(loadContentWithThrottle(_))
 
       ids.map{idsToAudios(_)}.flatMap(Future.sequence(_))
     }
+
+    if(tagIds.isDefined) throw new UnsupportedOperationException("Tag specific migration not supported for audios")
 
     val ids = client.getBatchOfAudioIds(batchSize, batchNumber)
     val audios = mapIdsToAudios(ids)

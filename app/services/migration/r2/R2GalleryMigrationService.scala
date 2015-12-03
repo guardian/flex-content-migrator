@@ -24,12 +24,14 @@ abstract class R2GalleryMigratorService(client : R2IntegrationAPIClient) extends
   def getBatchOfContentIds(batchSize : Int, batchOffset : Int) =
     client.getBatchOfGalleryIds(batchSize, batchOffset)
 
-  def loadBatchOfContent(batchSize : Int, batchNumber : Int = 1) : Future[MigrationBatch] = {
+  def loadBatchOfContent(batchSize : Int, batchNumber : Int = 1, tagIds : Option[String] = None) : Future[MigrationBatch] = {
     def mapIdsToGalleries(ids: Future[List[Int]]) = {
       def idsToGalleries(ids : List[Int]) = ids.map(loadContentWithThrottle(_))
 
       ids.map{idsToGalleries(_)}.flatMap(Future.sequence(_))
     }
+
+    if(tagIds.isDefined) throw new UnsupportedOperationException("Tag specific migration not supported for galleries")
 
     val ids = client.getBatchOfGalleryIds(batchSize, batchNumber)
     val galleries = mapIdsToGalleries(ids)
