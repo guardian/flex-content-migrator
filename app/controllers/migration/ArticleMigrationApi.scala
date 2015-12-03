@@ -6,6 +6,7 @@ import model._
 import org.apache.commons.lang3.exception.ExceptionUtils
 import play.api.Logger
 import play.api.mvc.{Action, Result, Controller}
+import services.aws.Monitors._
 import services.{FlexArticleMigrationServiceImpl, FlexContentMigrationService}
 import services.migration.{ArticleMigrator, Migrator}
 import play.api.mvc._
@@ -37,13 +38,20 @@ class ArticleMigrationApi(migrator : Migrator, reporter : MigrationReport, flex 
     flex.doConnectivityCheck.map(response => Ok(response))
   }}
 
-  def migrateBatch(batchSize : Option[Int], batchNumber : Option[Int] ) = Action.async{ block => {
+  def migrateBatch(batchSize : Option[Int], batchNumber : Option[Int]) = Action.async{ block => {
     Logger.debug(s"migrateBatch ${batchSize} ${batchNumber}")
+
     withMigrationPermission{ () =>
-      migrator.migrateBatchOfContent(batchSize, batchNumber).map(reportMigratedBatch(_))
+
+      doNotOverloadSubsystems[Future[Result]]{ () =>
+
+        migrator.migrateBatchOfContent(batchSize, batchNumber).map(reportMigratedBatch(_))
+
+      }
     }
-  }
-  }
+
+
+  }}
 
   def articlePage = Action {
     Ok(views.html.article(stageOpt.getOrElse("local")))
