@@ -75,12 +75,15 @@ class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
 
   private def showNotes = getAsString("showNotes")
 
+  private def productionOffice = getAsString("productionOffice")
+
 
   override lazy val xml = {
     <audio story-bundle={storyBundleId orNull} cms-path={cmsPath orNull} notes={notes orNull} slug-word={slug orNull}
            uk-only={ukOnly orNull} explicit={explicit orNull} clean={clean orNull} expiry-date={scheduledExpiry orNull}
            created-date={createdDate orNull} created-user={createdBy orNull} modified-date={modifiedDate orNull}
-           web-publication-date={webPublicationDate orNull}>
+           web-publication-date={webPublicationDate orNull}
+           production-office={productionOffice orNull}>
 
       <tags>{for(tag <- tags) yield <tag id={tag}/> }</tags>
       {r2PageId.map( pageId =>          <originalR2PageId>{pageId}</originalR2PageId>) orNull}

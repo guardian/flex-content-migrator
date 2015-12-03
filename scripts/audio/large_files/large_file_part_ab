@@ -1,0 +1,5002 @@
+#!/usr/bin/env bash
+
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/337939105"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/337946295"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/337946953"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/337956969"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/337964883"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/337988962"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/337990684"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/337995981"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338004722"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338006632"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338008605"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338024595"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338072601"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338076288"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338087381"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338096032"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338105870"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338115984"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338125120"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338125468"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338141128"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338146179"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338146641"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338150615"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338151610"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338157159"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338173844"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338174515"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338188647"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338200951"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338211350"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338215407"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338216970"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338217935"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338230204"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338232195"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338243228"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338260089"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338269812"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338309515"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338309798"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338324764"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338340301"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338342194"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338349349"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338368402"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338368431"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338368582"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338382893"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338389412"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338390636"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338398943"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338399383"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338412197"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338421398"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338429484"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338430215"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338434519"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338440744"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338442176"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338455838"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338466248"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338466564"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338482467"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338491136"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338491810"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338523798"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338525941"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338544703"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338547972"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338564336"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338564935"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338580240"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338580267"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338580596"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338594763"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338594863"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338599864"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338607131"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338607341"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338607480"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338610398"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338615465"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338622532"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338650848"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338660141"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338663002"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338663821"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338664261"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338677089"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338677810"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338681386"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338695624"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338701374"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338710863"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338720497"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338722820"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338730229"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338730784"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338773900"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338773932"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338782507"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338788404"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338794227"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338814830"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338815823"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338843486"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338845971"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338859402"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338866921"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338870937"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338874896"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338881241"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338888763"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338897298"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338907462"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338910468"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338922134"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338926761"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338932715"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338946504"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338973251"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/338974026"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339020542"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339028582"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339041057"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339045946"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339056488"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339062598"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339063465"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339087977"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339095216"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339096094"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339096464"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339099506"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339110763"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339110989"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339125700"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339155925"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339168582"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339169498"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339171886"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339182446"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339190012"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339201292"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339201957"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339207597"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339257568"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339278244"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339294864"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339295219"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339298627"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339303507"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339304456"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339305326"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339314029"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339314133"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339325797"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339345569"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339357529"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339365922"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339369987"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339377266"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339390928"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339406026"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339418899"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339420987"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339432710"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339448986"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339451426"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339460050"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339505194"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339525169"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339542914"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339557621"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339559347"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339565937"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339574184"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339583018"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339591177"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339599737"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339600623"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339602125"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339609550"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339621075"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339624897"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339635735"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339645326"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339655651"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339657798"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339665008"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339667701"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339671732"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339677756"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339686911"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339696414"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339698388"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339738294"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339749449"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339761812"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339776070"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339777461"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339788439"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339794541"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339805561"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339806885"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339815130"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339824131"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339827970"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339831966"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339833228"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339841677"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339845492"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339858025"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339870880"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339885132"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339887700"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339892734"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339904727"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339913306"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339917301"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339922626"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339933598"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339971645"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/339981177"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340006966"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340030357"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340032620"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340042349"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340054120"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340054542"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340063074"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340074034"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340080697"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340089208"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340095041"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340101470"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340113393"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340136310"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340153051"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340154221"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340154960"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340166906"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340174968"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340220037"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340230627"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340244712"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340248030"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340265732"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340267566"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340281682"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340282610"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340286078"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340294941"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340297761"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340309229"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340313413"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340315984"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340317811"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340321516"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340340337"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340351717"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340362878"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340364491"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340364686"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340373659"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340377396"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340384787"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340384826"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340395602"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340402397"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340410914"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340419745"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340419763"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340425145"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340455306"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340464530"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340477934"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340492387"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340500416"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340510671"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340510893"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340511995"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340537426"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340540641"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340550344"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340557938"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340561200"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340566014"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340579148"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340581526"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340586234"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340604839"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340623939"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340626902"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340630928"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340640060"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340645825"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340652459"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340654712"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340672930"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340673113"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340675583"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340724852"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340725773"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340725975"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340726169"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340726665"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340727098"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340743937"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340753841"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340763587"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340764104"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340764322"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340764463"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340768095"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340770948"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340794308"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340794315"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340794668"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340805248"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340805250"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340805252"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340805286"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340821473"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340829364"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340853305"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340866195"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340866527"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340866675"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340876105"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340876806"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340877657"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340878009"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340882836"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340882991"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340883393"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340885278"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340905967"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340906135"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340930988"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340981202"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340985220"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/340992748"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341010219"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341011718"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341020957"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341025771"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341034843"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341035115"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341051958"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341054170"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341057066"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341070160"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341072305"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341082875"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341094320"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341160329"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341190725"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341199566"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341317263"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341328639"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341363598"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341370472"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341387520"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341400101"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341416099"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341416182"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341417009"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341417126"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341417367"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341417707"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341429319"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341429394"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341456515"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341465250"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341478333"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341478380"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341494697"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341506824"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341510982"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341518203"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341533418"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341533421"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341567944"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341571208"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341632268"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341653903"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341678718"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341678721"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341678724"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341715707"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341717916"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341732816"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341736206"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341748395"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341751982"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341791990"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341802398"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341810836"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341824684"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341826617"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341829491"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341854176"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341874844"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341881592"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341891702"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341943074"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341956619"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341957160"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341988240"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/341989342"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342000082"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342019205"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342023238"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342036306"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342050042"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342051594"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342063927"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342065787"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342065995"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342072037"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342107526"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342109722"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342127657"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342148559"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342160542"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342168868"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342186703"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342189871"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342201149"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342206597"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342217271"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342236781"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342239488"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342242733"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342252276"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342263453"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342314304"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342328946"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342340802"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342361957"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342422169"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342439521"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342444217"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342446178"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342470292"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342486788"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342521493"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342522261"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342524147"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342542887"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342569413"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342586733"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342591651"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342591705"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342591883"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342649910"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342655598"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342658681"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342660243"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342673726"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342674281"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342683061"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342694271"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342700293"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342714483"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342734329"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342748332"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342751314"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342754425"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342770990"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342774834"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342784622"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342800091"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342826341"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342834379"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342837600"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342858294"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342862785"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342871311"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342871820"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342875460"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342876094"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342884175"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342891672"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342893652"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342893780"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342894185"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342894398"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342894513"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342896092"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342958548"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342959677"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342994958"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/342999685"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343021259"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343029101"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343029579"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343042481"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343045966"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343060146"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343061238"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343080002"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343086018"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343087409"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343096849"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343098883"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343099807"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343103686"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343114520"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343116266"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343123741"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343141813"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343163412"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343175053"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343178088"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343178476"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343183824"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343202025"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343205751"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343210913"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343212208"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343216990"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343222919"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343240393"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343286102"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343298358"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343329048"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343338560"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343342807"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343377834"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343381387"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343389147"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343393305"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343408657"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343408821"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343447549"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343466054"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343473103"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343477375"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343503660"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343511462"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343526245"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343529504"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343545266"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343545366"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343566368"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343566670"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343634949"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343638985"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343660813"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343677097"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343690052"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343690062"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343692246"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343712921"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343721405"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343731318"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343754910"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343779900"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343785382"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343797750"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343815168"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343830721"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343833601"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343837895"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343845669"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343847950"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343855698"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343883795"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343902984"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343907460"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343917793"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/343992401"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344023662"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344026339"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344047839"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344070947"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344093498"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344114795"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344125717"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344126681"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344130741"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344139559"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344149660"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344151352"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344152958"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344177280"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344192371"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344192714"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344192891"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344197336"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344209963"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344210302"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344226851"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344231627"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344234617"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344254141"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344254235"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344261655"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344263966"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344318908"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344345537"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344366648"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344373632"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344385895"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344401216"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344404910"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344424036"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344425471"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344425999"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344445856"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344461006"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344480111"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344493387"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344498936"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344499667"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344502514"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344515022"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344524707"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344526763"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344536284"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344579475"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344630156"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344656645"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344657774"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344665150"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344682270"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344695503"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344729567"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344733665"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344748237"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344763668"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344781083"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344786639"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344799114"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344804527"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344811961"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344830907"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344838124"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344838634"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344861090"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344923637"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344927428"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344951626"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344961174"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344966890"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344979984"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/344983363"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345014282"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345017318"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345033173"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345049203"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345050467"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345071098"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345076531"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345080629"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345085681"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345087787"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345093988"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345102598"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345129596"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345138523"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345142140"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345151972"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345167379"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345175651"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345231287"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345251696"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345260501"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345276056"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345284746"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345296330"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345305509"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345328301"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345333666"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345337532"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345338680"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345348785"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345350484"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345396419"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345401293"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345401838"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345416682"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345424334"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345426188"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345429163"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345433138"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345455989"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345462212"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345463375"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345465976"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345472667"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345475777"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345476979"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345484486"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345487157"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345488926"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345493626"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345494122"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345495984"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345497708"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345509784"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345549075"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345549610"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345561990"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345562017"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345562752"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345571024"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345591170"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345594939"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345597292"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345612110"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345614668"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345615107"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345624014"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345627317"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345630616"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345631912"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345642954"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345644372"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345664122"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345667781"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345668204"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345669319"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345670204"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345670545"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345685776"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345695872"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345702614"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345725288"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345732173"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345734453"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345734974"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345743352"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345758146"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345770107"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345772027"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345792840"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345870036"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345870039"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345870075"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345879570"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345904243"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345931632"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345937874"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345940686"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345942492"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345965391"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/345968346"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346009763"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346028170"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346055702"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346057617"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346058601"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346062374"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346084761"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346084843"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346086787"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346087346"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346087703"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346095013"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346175082"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346179917"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346185318"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346190015"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346206528"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346223339"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346224389"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346255832"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346256751"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346273573"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346286594"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346295953"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346339761"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346348519"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346350627"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346355946"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346356883"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346359428"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346365373"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346365779"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346384865"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346385304"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346387412"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346400865"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346407789"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346411191"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346430375"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346432928"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346435398"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346444308"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346505287"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346515159"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346517345"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346526524"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346534680"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346554031"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346571648"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346589607"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346591407"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346596207"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346616819"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346644383"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346676214"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346689925"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346713694"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346715795"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346715855"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346723488"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346735896"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346736735"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346738459"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346753806"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346831565"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346833906"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346838186"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346848235"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346852868"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346865716"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346871943"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346872602"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346882500"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346904519"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346906705"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346908085"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346930372"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346952732"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/346965869"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347000535"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347020132"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347020818"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347021092"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347026093"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347035445"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347043184"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347044006"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347063526"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347105082"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347171607"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347172261"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347196169"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347199030"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347202808"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347211148"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347228073"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347228620"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347241904"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347253704"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347270616"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347289545"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347295972"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347308391"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347321528"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347348549"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347354979"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347356647"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347358161"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347360896"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347362083"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347365439"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347366372"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347369151"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347374531"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347386930"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347401518"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347406866"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347410689"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347420874"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347442383"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347444622"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347504145"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347505821"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347522317"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347535933"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347542355"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347552685"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347580921"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347592047"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347607023"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347611050"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347621960"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347644892"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347646058"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347655008"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347687381"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347712521"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347721250"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347727725"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347746332"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347777929"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347793184"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347793414"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347793415"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347793770"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347794008"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347794288"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347798836"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347815151"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347840446"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347854716"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347862279"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347862349"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347880343"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347893575"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347902548"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347910625"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347920405"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347934524"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347947255"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347961460"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347962902"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347963243"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/347970561"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348003552"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348004259"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348005319"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348028313"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348028999"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348029243"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348034289"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348058621"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348060370"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348061052"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348068840"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348086356"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348087419"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348094756"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348127419"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348140120"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348160866"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348177437"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348177470"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348178707"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348209062"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348230299"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348232603"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348239194"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348241148"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348242021"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348244747"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348264842"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348279488"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348290516"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348295215"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348311707"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348339714"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348366577"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348367838"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348371862"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348376164"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348377982"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348384027"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348385908"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348397344"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348415312"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348428936"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348435558"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348447916"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348447972"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348448792"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348448902"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348451295"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348451735"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348451861"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348451952"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348452246"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348453412"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348470409"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348524533"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348530043"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348582067"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348588708"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348600622"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348603293"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348604068"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348604644"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348612971"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348622143"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348638433"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348684284"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348702384"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348710166"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348736660"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348738485"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348743566"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348749314"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348758729"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348768227"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348780270"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348782663"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348800877"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348868274"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348921378"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348941959"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348944740"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348946780"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348947149"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348957894"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348970997"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/348986950"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349009740"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349022069"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349027489"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349029870"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349046016"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349057093"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349059403"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349064337"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349067673"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349081387"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349096412"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349100441"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349109373"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349112409"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349165744"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349167456"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349178447"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349214323"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349227846"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349233940"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349234677"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349241138"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349245164"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349249947"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349251173"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349257663"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349267287"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349287004"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349288654"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349305702"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349312648"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349323985"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349328712"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349342229"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349342494"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349353923"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349366561"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349366995"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349379417"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349383817"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349393961"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349401718"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349407515"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349441364"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349480608"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349491627"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349533205"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349543433"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349549208"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349564959"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349594200"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349596510"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349602399"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349619060"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349638062"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349640420"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349660645"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349668181"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349672590"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349674790"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349677693"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349680788"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349694888"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349717108"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349727855"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349755094"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349761353"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349762238"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349817015"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349835204"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349860951"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349861137"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349861282"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349861416"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349874481"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349889058"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349889806"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349901295"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349901383"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349908249"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349937988"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349942835"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349949679"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349955593"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349959620"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349965438"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349965583"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349968842"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349992415"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/349997504"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350008566"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350038222"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350055694"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350059009"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350067797"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350076075"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350082032"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350085063"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350100513"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350104471"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350105765"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350105848"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350107114"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350107293"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350107552"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350108819"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350119470"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350163019"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350170366"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350227710"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350229767"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350265257"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350270475"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350282548"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350318580"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350349970"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350353210"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350369693"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350377578"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350390198"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350424699"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350443852"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350447071"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350473169"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350473703"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350481178"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350535709"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350535957"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350573454"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350592782"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350592877"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350599182"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350630021"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350636656"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350643308"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350643367"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350677091"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350679110"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350694814"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350697968"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350698590"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350718699"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350720324"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350728709"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350729576"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350738702"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350781036"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350827075"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350827190"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350828623"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350829261"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350838862"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350857401"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350875559"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350881495"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350888788"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350910093"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350914943"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350925196"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350928516"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350960487"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350976809"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350994915"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/350999125"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351001440"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351004739"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351009465"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351025389"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351026483"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351028148"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351040069"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351073505"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351116913"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351118674"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351121959"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351136914"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351154481"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351169605"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351173087"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351174019"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351191710"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351194912"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351219473"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351220132"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351220850"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351230382"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351231696"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351252309"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351254179"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351254918"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351267095"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351303959"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351317378"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351324622"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351327273"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351327428"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351332134"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351397204"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351397798"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351398200"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351408602"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351408642"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351409389"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351448745"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351462603"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351487353"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351497403"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351497537"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351498422"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351501245"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351512866"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351513908"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351514133"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351515438"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351516758"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351524728"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351526825"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351549253"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351551529"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351575326"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351575722"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351575724"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351589085"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351606729"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351607545"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351607618"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351607833"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351609647"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351610317"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351621263"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351621342"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351621766"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351621805"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351622121"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351646001"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351656955"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351657413"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351711148"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351711319"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351749308"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351758373"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351775146"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351785776"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351794415"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351812721"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351813126"
+echo 
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351813317"
+echo
+sleep 3
+
+curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/audio/351813449"
