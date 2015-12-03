@@ -1,0 +1,30 @@
+Migrating 100 articles 
+Article 355926947 migrated successfully: 56572970e4b0d1c309bdaa61
+Article 4531108 migrated successfully: 56572977e4b0e0f1bc2621d8
+Article 4562075 migrated successfully: 56572981e4b0e0f1bc2621d9
+Article 5329682 migrated successfully: 56572988e4b031a227883e75
+Article 4234816 migrated successfully: 5657298de4b0e0f1bc2621db
+Article 5098906 migrated successfully: 56572992e4b0d1c309bdaa62
+Article 330369634 migrated successfully: 56572997e4b0d1c309bdaa64
+Article 332276819 migrated successfully: 5657299fe4b0e0f1bc2621dc
+Article 329601844 migrated successfully: 565729a4e4b031a227883e76
+Article 333308078 migrated successfully: 565729a8e4b0d1c309bdaa65
+Article 4735622 migrated successfully: 565729aee4b031a227883e77
+Article 4985410 migrated successfully: 565729bae4b031a227883e78
+Article 332049827 migrated successfully: 565729bfe4b0e0f1bc2621de
+Article 335929612 migrated successfully: 565729c4e4b0d1c309bdaa66
+Article 329501411 migrated successfully: 565729cde4b0d1c309bdaa68
+Article 331475059 migrated successfully: 565729d2e4b031a227883e79
+Article 4058459 migrated successfully: 565729d6e4b0d1c309bdaa69
+Failed to migrate article: java.lang.RuntimeException: Migration failed for content 377770433 : MigrationFailedContent(377770433,Could not migrate in R2 as it failed in Flex : ERROR:Could not identify newspaper book / section / publication: following tag ids List(2, 4)|Could not identify newspaper book / section / publication: following tag ids List(2, 4))
+Article 5127008 migrated successfully: 565729dfe4b0d1c309bdaa6a
+Article 4042239 migrated successfully: 565729e4e4b0e0f1bc2621e1
+Failed to migrate article: java.lang.RuntimeException: Migration failed for content 374666315 : MigrationFailedContent(374666315,Could not migrate in R2 as it failed in Flex : ERROR:Could not identify newspaper book / section / publication: following tag ids List(2, 4)|Could not identify newspaper book / section / publication: following tag ids List(2, 4))
+Article 5355220 migrated successfully: 565729eee4b0e0f1bc2621e3
+Article 4571219 migrated successfully: 565729f2e4b0e0f1bc2621e5
+Article 5205392 migrated successfully: 565729f7e4b0e0f1bc2621e6
+Failed to migrate article: java.lang.RuntimeException: Migration failed for content 366769552 : MigrationFailedContent(366769552,Could not migrate in R2 as it failed in Flex : ERROR:Could not identify newspaper book / section / publication: following tag ids List(2, 4)|Could not identify newspaper book / section / publication: following tag ids List(2, 4))
+Article 4487144 migrated successfully: 565729ffe4b0e0f1bc2621e7
+Article 336567005 migrated successfully: 56572a04e4b031a227883e7a
+Article 4968057 migrated successfully: 56572a09e4b031a227883e7b
+Article 3937207 migrated successfully: 56572a0de4b0d1c309bdaa6b
