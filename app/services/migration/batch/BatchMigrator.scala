@@ -206,12 +206,12 @@ protected[batch] class AkkaBatchMigratorOrchestrator(migrationBehaviour : Migrat
   private def startMigration(resultsListener : ActorRef) = {
     //TODO: prevent future start requests coming in!
     Logger.debug(s"startMigration")
-    val videoIds: Future[List[Int]] = migrationBehaviour.contentLoader.getBatchOfContentIds(size, batchNumber)
-    videoIds.onSuccess[Unit]{
+    val contentIds: Future[List[Int]] = migrationBehaviour.contentLoader.getBatchOfContentIds(size, batchNumber, tagIds)
+    contentIds.onSuccess[Unit]{
       case ids : List[Int] => idsInCurrentBatch = ids
     }
-    videoIds.map{_.map{ r2VideoId =>
-      actorR2Loader ! LoadContentR2Msg(batchId, r2VideoId, resultsListener)
+    contentIds.map{_.map{ r2ContentId =>
+      actorR2Loader ! LoadContentR2Msg(batchId, r2ContentId, resultsListener)
     }}
   }
 }

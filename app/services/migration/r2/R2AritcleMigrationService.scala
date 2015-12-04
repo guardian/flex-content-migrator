@@ -20,10 +20,8 @@ abstract class R2ArticleMigratorService(client : R2IntegrationAPIClient) extends
 
   def loadContentById(id : Integer) = loadContentWithThrottle(id)
 
-  def getBatchOfContentIds(batchSize : Int, batchOffset : Int) =
-    getBatchOfContentIds(batchSize, batchOffset, None)
 
-  def getBatchOfContentIds(batchSize : Int, batchOffset : Int, tagIds : Option[String]) =
+  override def getBatchOfContentIds(batchSize : Int, batchOffset : Int, tagIds : Option[String]) =
     client.getBatchOfArticleIds(batchSize, batchOffset, tagIds)
 
 
