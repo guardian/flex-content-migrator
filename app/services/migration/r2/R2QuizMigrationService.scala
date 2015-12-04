@@ -20,14 +20,9 @@ abstract class R2QuizMigratorService(client : R2IntegrationAPIClient) extends R2
 
   def loadContentById(id : Integer) = loadContentWithThrottle(id)
 
-
-  def getBatchOfContentIds(batchSize : Int, batchOffset : Int) =
-    client.getBatchOfQuizIds(batchSize, batchOffset)
-
   def getBatchOfContentIds(batchSize : Int, batchOffset : Int, tagIds : Option[String] = None) ={
-    getBatchOfContentIds(batchSize, batchOffset, tagIds)
+    client.getBatchOfQuizIds(batchSize, batchOffset, tagIds)
   }
-
 
   def loadBatchOfContent(batchSize : Int, batchNumber : Int = 1, tagIds : Option[String] = None) : Future[MigrationBatch] = {
     def mapIdsToQuizzes(ids: Future[List[Int]]) = {
