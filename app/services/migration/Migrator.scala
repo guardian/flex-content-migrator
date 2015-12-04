@@ -22,7 +22,6 @@ protected[migration] trait MigrationBehaviour{
   val pushToFlex : PushToFlex
   val closeContentInSource : MigrateContentInR2
 
-
 }
 
 
@@ -43,10 +42,10 @@ trait Migrator{
     }
   }
 
-  def migrateBatchOfContent(size : Option[Int], batchNumber : Option[Int]) : Future[MigratedBatch] = {
+  def migrateBatchOfContent(size : Option[Int], batchNumber : Option[Int], tagIds : Option[String] = None) : Future[MigratedBatch] = {
     val batchSize = getBatchSize(size)
     val batchOffset = batchNumber.getOrElse(1)
-    migrateBatch(batchSize, batchOffset)
+    migrateBatch(batchSize, batchOffset, tagIds)
   }
 
   def migrateIndividualContent(contentId : Int) : Future[ContentMigrationResult] = {

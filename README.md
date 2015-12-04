@@ -86,6 +86,6 @@ code: `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/a
 
 ####Batch
 
-local: `curl -X POST "http://localhost:9100/migrate/article?batchNumber=${batchNumber}&batchSize=${batchSize}"`
+local: `curl -X POST "http://localhost:9100/migrate/article?batchNumber=${batchNumber}&batchSize=${batchSize}&tagIds=${tagId1,tagId2}"`
 
-code:   `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/article?batchNumber=${batchNumber}&batchSize=${batchSize}"`
+code:   `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/article?batchNumber=${batchNumber}&batchSize=${batchSize}&tagIds=${tagId1,tagId2}"`

@@ -20,18 +20,18 @@ abstract class R2QuizMigratorService(client : R2IntegrationAPIClient) extends R2
 
   def loadContentById(id : Integer) = loadContentWithThrottle(id)
 
+  def getBatchOfContentIds(batchSize : Int, batchOffset : Int, tagIds : Option[String] = None) ={
+    client.getBatchOfQuizIds(batchSize, batchOffset, tagIds)
+  }
 
-  def getBatchOfContentIds(batchSize : Int, batchOffset : Int) =
-    client.getBatchOfQuizIds(batchSize, batchOffset)
-
-  def loadBatchOfContent(batchSize : Int, batchNumber : Int = 1) : Future[MigrationBatch] = {
+  def loadBatchOfContent(batchSize : Int, batchNumber : Int = 1, tagIds : Option[String] = None) : Future[MigrationBatch] = {
     def mapIdsToQuizzes(ids: Future[List[Int]]) = {
       def idsToQuizzes(ids : List[Int]) = ids.map(loadContentWithThrottle(_))
 
       ids.map{idsToQuizzes(_)}.flatMap(Future.sequence(_))
     }
 
-    val ids = client.getBatchOfGalleryIds(batchSize, batchNumber)
+    val ids = client.getBatchOfGalleryIds(batchSize, batchNumber, tagIds)
     val quizzes = mapIdsToQuizzes(ids)
     quizzes.map(loadedQuizzes => {
       Logger.info(s"Loaded the batch of ${batchSize} quizzes from R2")

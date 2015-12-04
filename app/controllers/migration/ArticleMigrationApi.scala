@@ -38,19 +38,17 @@ class ArticleMigrationApi(migrator : Migrator, reporter : MigrationReport, flex 
     flex.doConnectivityCheck.map(response => Ok(response))
   }}
 
-  def migrateBatch(batchSize : Option[Int], batchNumber : Option[Int]) = Action.async{ block => {
-    Logger.debug(s"migrateBatch ${batchSize} ${batchNumber}")
+  def migrateBatch(batchSize : Option[Int], batchNumber : Option[Int], tagIds : Option[String] ) = Action.async{ block => {
+    Logger.debug(s"migrateBatch ${batchSize} ${batchNumber} ${tagIds}")
 
     withMigrationPermission{ () =>
 
       doNotOverloadSubsystems[Future[Result]]{ () =>
 
-        migrator.migrateBatchOfContent(batchSize, batchNumber).map(reportMigratedBatch(_))
+        migrator.migrateBatchOfContent(batchSize, batchNumber, tagIds).map(reportMigratedBatch(_))
 
       }
     }
-
-
   }}
 
   def articlePage = Action {

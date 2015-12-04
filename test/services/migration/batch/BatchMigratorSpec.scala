@@ -3,6 +3,7 @@ package services.migration.batch
 import java.util.concurrent.atomic.AtomicInteger
 import model._
 import org.specs2.mock.Mockito
+import org.mockito.Matchers.{eq => eqTo, _}
 import org.specs2.mutable.Specification
 import play.api.test.Helpers
 import services.migration._
@@ -21,9 +22,9 @@ class BatchMigratorSpec extends Specification with Mockito {
 
     def mockR2VideoMigrator(batchSize: Int, batchOffset : Int) : R2GalleryMigratorService = {
       val themock = mock[R2GalleryMigratorService]
-      themock.getBatchOfContentIds(batchSize, batchOffset) returns Future{(1 to batchSize).toList}
+      themock.getBatchOfContentIds(eqTo(batchSize), eqTo(batchOffset), any[Option[String]]) returns Future{(1 to batchSize).toList}
       themock.loadContentById(any[Int]) returns Future{srcVideo}
-      themock.loadBatchOfContent(any[Int], any[Int]) returns Future{ MigrationBatch({for(i <- 1 to batchSize) yield srcVideo}.toList)}
+      themock.loadBatchOfContent(any[Int], any[Int], any[Option[String]]) returns Future{ MigrationBatch({for(i <- 1 to batchSize) yield srcVideo}.toList)}
       themock
     }
 
@@ -73,13 +74,13 @@ class BatchMigratorSpec extends Specification with Mockito {
 
     override def mockR2VideoMigrator(batchSize: Int, batchOffset : Int) : R2GalleryMigratorService = {
       val themock = mock[R2GalleryMigratorService]
-      themock.getBatchOfContentIds(batchSize, batchOffset) returns Future{(1 to batchSize).toList}
+      themock.getBatchOfContentIds(eqTo(batchSize), eqTo(batchOffset), any[Option[String]]) returns Future{(1 to batchSize).toList}
       themock.loadContentById(any[Int]) answers { m =>
         val count = counterR2.incrementAndGet()
         if(count%2==0) throw new RuntimeException("Something went BANG!")
         Future{srcVideo}
       }
-      themock.loadBatchOfContent(any[Int], any[Int]) returns Future{ MigrationBatch({for(i <- 1 to batchSize) yield srcVideo}.toList)}
+      themock.loadBatchOfContent(any[Int], any[Int], any[Option[String]]) returns Future{ MigrationBatch({for(i <- 1 to batchSize) yield srcVideo}.toList)}
       themock
     }
 
@@ -101,7 +102,7 @@ class BatchMigratorSpec extends Specification with Mockito {
 
     override def mockR2VideoMigrator(batchSize: Int, batchOffset : Int) : R2GalleryMigratorService = {
       val themock = mock[R2GalleryMigratorService]
-      themock.getBatchOfContentIds(batchSize, batchOffset) returns Future{(1 to batchSize).toList}
+      themock.getBatchOfContentIds(batchSize, batchOffset, any[Option[String]]) returns Future{(1 to batchSize).toList}
       themock.loadContentById(any[Int]) answers { m =>
         r2ThrottlerFt[SourceContent]{
           Future{srcVideo}
@@ -129,7 +130,7 @@ class BatchMigratorSpec extends Specification with Mockito {
 
     override def mockR2VideoMigrator(batchSize: Int, batchOffset : Int) : R2GalleryMigratorService = {
       val themock = mock[R2GalleryMigratorService]
-      themock.getBatchOfContentIds(batchSize, batchOffset) returns Future{(1 to batchSize).toList}
+      themock.getBatchOfContentIds(batchSize, batchOffset, any[Option[String]]) returns Future{(1 to batchSize).toList}
       themock.loadContentById(any[Int]) answers { m =>
         Thread.sleep(SleepForAges)
         Future{srcVideo}

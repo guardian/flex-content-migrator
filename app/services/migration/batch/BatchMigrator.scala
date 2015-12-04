@@ -17,13 +17,13 @@ import scala.concurrent.duration._
 
 protected[migration] trait BatchMigrator{
   def migrateBatch(migrationBehaviour : MigrationBehaviour)
-                  (size: Int, batchNumber : Int ): Future[MigratedBatch]
+                  (size: Int, batchNumber : Int, tagIds : Option[String] = None ): Future[MigratedBatch]
 
 }
 
 protected[migration] object SimpleBatchMigrator extends BatchMigrator{
   override def migrateBatch(migrationBehaviour : MigrationBehaviour)
-                           (size: Int, batchNumber: Int): Future[MigratedBatch] = {
+                           (size: Int, batchNumber: Int, tagIds : Option[String] = None): Future[MigratedBatch] = {
     import play.api.libs.concurrent.Execution.Implicits._
 
     def pushVideosInFlex(batch : MigrationBatch) : Future[Seq[ContentInFlex]]= {
@@ -34,7 +34,7 @@ protected[migration] object SimpleBatchMigrator extends BatchMigrator{
       Future.sequence(videosInFlex.map(video => migrationBehaviour.closeContentInSource(video)))
 
 
-    val sourceVideos = migrationBehaviour.contentLoader.loadBatchOfContent(size, batchNumber)
+    val sourceVideos = migrationBehaviour.contentLoader.loadBatchOfContent(size, batchNumber, tagIds)
     val videosInFlex = sourceVideos.flatMap(pushVideosInFlex(_))
     val videosInR2 = videosInFlex.flatMap(vids => migrateVideosInR2(vids))
     videosInR2.map{ results => {
@@ -51,7 +51,7 @@ protected[migration] object AkkaBatchMigrator extends BatchMigrator{
 
 
   def migrateBatch(migrationBehaviour : MigrationBehaviour)
-                   (size : Int, batchNumber : Int ): Future[MigratedBatch] = {
+                   (size : Int, batchNumber : Int, tagIds : Option[String] ): Future[MigratedBatch] = {
     import AkkaBatchMigratorMessages._
     import akka.pattern.ask
     import scala.language.postfixOps
@@ -59,7 +59,7 @@ protected[migration] object AkkaBatchMigrator extends BatchMigrator{
     def batchMigrationOrchestrator(id: String, system : ActorSystem) = {
       system.actorOf( Props(classOf[AkkaBatchMigratorOrchestrator],
                             migrationBehaviour,
-                            id, size, batchNumber))
+                            id, size, batchNumber, tagIds))
     }
 
     withActorSystem{ (id : String , system : ActorSystem) => {
@@ -126,7 +126,7 @@ protected[batch] object AkkaBatchMigratorMessages{
 
 
 protected[batch] class AkkaBatchMigratorOrchestrator(migrationBehaviour : MigrationBehaviour,
-                                    batchId : String, size  : Int, batchNumber : Int) extends Actor {
+                                    batchId : String, size  : Int, batchNumber : Int, tagIds : Option[String]) extends Actor {
 
 
   import AkkaBatchMigratorMessages._
@@ -206,12 +206,12 @@ protected[batch] class AkkaBatchMigratorOrchestrator(migrationBehaviour : Migrat
   private def startMigration(resultsListener : ActorRef) = {
     //TODO: prevent future start requests coming in!
     Logger.debug(s"startMigration")
-    val videoIds: Future[List[Int]] = migrationBehaviour.contentLoader.getBatchOfContentIds(size, batchNumber)
-    videoIds.onSuccess[Unit]{
+    val contentIds: Future[List[Int]] = migrationBehaviour.contentLoader.getBatchOfContentIds(size, batchNumber, tagIds)
+    contentIds.onSuccess[Unit]{
       case ids : List[Int] => idsInCurrentBatch = ids
     }
-    videoIds.map{_.map{ r2VideoId =>
-      actorR2Loader ! LoadContentR2Msg(batchId, r2VideoId, resultsListener)
+    contentIds.map{_.map{ r2ContentId =>
+      actorR2Loader ! LoadContentR2Msg(batchId, r2ContentId, resultsListener)
     }}
   }
 }

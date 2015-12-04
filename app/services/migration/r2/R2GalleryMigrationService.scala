@@ -21,17 +21,17 @@ abstract class R2GalleryMigratorService(client : R2IntegrationAPIClient) extends
   def loadContentById(id : Integer) = loadContentWithThrottle(id)
 
 
-  def getBatchOfContentIds(batchSize : Int, batchOffset : Int) =
-    client.getBatchOfGalleryIds(batchSize, batchOffset)
+  def getBatchOfContentIds(batchSize : Int, batchOffset : Int, tagIds : Option[String] = None) =
+    client.getBatchOfGalleryIds(batchSize, batchOffset, tagIds)
 
-  def loadBatchOfContent(batchSize : Int, batchNumber : Int = 1) : Future[MigrationBatch] = {
+  def loadBatchOfContent(batchSize : Int, batchNumber : Int = 1, tagIds : Option[String] = None) : Future[MigrationBatch] = {
     def mapIdsToGalleries(ids: Future[List[Int]]) = {
       def idsToGalleries(ids : List[Int]) = ids.map(loadContentWithThrottle(_))
 
       ids.map{idsToGalleries(_)}.flatMap(Future.sequence(_))
     }
 
-    val ids = client.getBatchOfGalleryIds(batchSize, batchNumber)
+    val ids = client.getBatchOfGalleryIds(batchSize, batchNumber, tagIds)
     val galleries = mapIdsToGalleries(ids)
     galleries.map(loadedGalleries => {
       Logger.info(s"Loaded the batch of ${batchSize} galleries from R2")
