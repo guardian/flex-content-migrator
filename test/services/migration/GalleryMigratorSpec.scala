@@ -44,7 +44,7 @@ class GalleryMigratorSpec extends Specification with Mockito {
   private def migrator : Migrator = {
     val r2GalleryMigrator = mock[R2GalleryMigratorService]
     r2GalleryMigrator.loadContentById(any[Int]) returns Future{galleries.head}
-    r2GalleryMigrator.getBatchOfContentIds(any[Int], any[Int]) returns Future{(1 to NumberOfGalleries).toList}
+    r2GalleryMigrator.getBatchOfContentIds(any[Int], any[Int], any[Option[String]]) returns Future{(1 to NumberOfGalleries).toList}
     r2GalleryMigrator.migrateContentInR2(any[Int], any[String]) returns Future{(true, "gallery migrated in r2")}
 
     val flexGalleryMigrationService = mock[FlexContentMigrationService]
