@@ -2,6 +2,11 @@ package services.migration.r2ToFlexConversion
 
 import com.lambdaworks.jacks.JacksMapper
 import play.Logger
+import play.api.libs.ws.{WSResponse, WS}
+
+import scala.concurrent.Future
+import scala.concurrent._
+import scala.concurrent.duration._
 
 
 object R2ToFlexAudioConversion {
@@ -52,20 +57,49 @@ class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
 
   private def mapFilePath(path : String) = "http://static.guim.co.uk/" + path
 
-  private def getSizeInBytes(sizeInBytes : Any) : String = {
+  private def checkSizeInBytes(sizeInBytes : Any) : String = {
     val sizeStr = sizeInBytes.toString
     if(sizeStr.toInt<10000)
       throw new IllegalStateException(s"encoding size is suspiciously small: ${sizeStr}")
     sizeStr
   }
 
+  private def getSizeInBytesFromFile(file : String): String = {
+    import scala.concurrent.ExecutionContext.Implicits.global
+    import play.api.Play.current
+    val response = WS.url(file).withFollowRedirects(true).head().map(resp => {
+      Logger.debug(s"File size check: ${resp.status} ${resp.statusText} ")
+      resp.header("Content-Length")
+    }).map(_.get)
+
+    val size = Await.result(response, 180 seconds)
+    Logger.info(s"File size check result: file = ${file} size = ${size}")
+    size
+  }
+
   private def encodings : List[Map[String, String]] = {
-    val encodings = getAs[Map[String, Any]]("audioFile", liveOrDraft)
-    encodings.map(e => {
-                          e.get("path").map(p => "url" -> mapFilePath(p.toString)) ++
-                          e.get("length").map("sizeInBytes" -> getSizeInBytes(_)) ++
-                          e.get("path").map(p => "format" -> getFormatFromFile(p.toString))
-                        }.toMap).toList
+    val encodings: Option[Map[String, Any]] = getAs[Map[String, Any]]("audioFile", liveOrDraft)
+
+    def getEncodingValue(encoding : Map[String, Any]): Map[String, String] = {
+      val path = encoding.get("path").map(s => mapFilePath(s.toString))
+      val format = path.map(getFormatFromFile(_))
+      val size =
+        if(parseLiveData){
+          path.map(getSizeInBytesFromFile _ ).map(checkSizeInBytes _ )
+        }
+        else{
+          encoding.get("length").map(_.toString)
+        }
+
+      val map =
+        for(path <- path; format <- format; sizeFromPath <- size) yield
+        {
+          Map("url" -> path, "sizeInBytes" -> sizeFromPath, "format" -> format)
+        }
+      map.get
+    }
+
+    encodings.map(getEncodingValue(_)).toList
   }
 
   private def stillImageUrl = getAsString("stillImageUrl")
