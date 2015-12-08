@@ -60,7 +60,7 @@ class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
   private def checkSizeInBytes(sizeInBytes : Any) : String = {
     val sizeStr = sizeInBytes.toString
     if(sizeStr.toInt<10000)
-      throw new IllegalStateException(s"encoding size is suspiciously small: ${sizeStr}")
+      throw new IllegalStateException(s"encoding file size is suspiciously small: ${sizeStr}")
     sizeStr
   }
 
@@ -85,10 +85,10 @@ class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
       val format = path.map(getFormatFromFile(_))
       val size =
         if(parseLiveData){
-          path.map(getSizeInBytesFromFile _ ).map(checkSizeInBytes _ )
+          path.map(getSizeInBytesFromFile _ ).map(checkSizeInBytes _ ) //checks the file exists and has a sensible size
         }
         else{
-          encoding.get("length").map(_.toString)
+          encoding.get("length").map(_.toString) //for draft just trust the value from R2
         }
 
       val map =
