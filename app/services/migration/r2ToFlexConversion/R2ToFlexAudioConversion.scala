@@ -52,12 +52,20 @@ class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
 
   private def mapFilePath(path : String) = "http://static.guim.co.uk/" + path
 
+  private def getSizeInBytes(sizeInBytes : Any) : String = {
+    val sizeStr = sizeInBytes.toString
+    if(sizeStr.toInt<10000)
+      throw new IllegalStateException(s"encoding size is suspiciously small: ${sizeStr}")
+    sizeStr
+  }
+
   private def encodings : List[Map[String, String]] = {
     val encodings = getAs[Map[String, Any]]("audioFile", liveOrDraft)
-    encodings.map(e => {    e.get("path").map(p => "url" -> mapFilePath(p.toString)) ++
-                            e.get("length").map("sizeInBytes" -> _.toString) ++
-                            e.get("path").map(p => "format" -> getFormatFromFile(p.toString))
-                          }.toMap).toList
+    encodings.map(e => {
+                          e.get("path").map(p => "url" -> mapFilePath(p.toString)) ++
+                          e.get("length").map("sizeInBytes" -> getSizeInBytes(_)) ++
+                          e.get("path").map(p => "format" -> getFormatFromFile(p.toString))
+                        }.toMap).toList
   }
 
   private def stillImageUrl = getAsString("stillImageUrl")
@@ -100,7 +108,7 @@ class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
       {encodings.map{ enc => {
       <encoding>
         {enc.get("format").map(f =>      <format>{f}</format>) orNull}
-        {enc.get("url").map(u =>     <audio-file-url size-in-bytes={enc.get("sizeInBytes") orNull}>{u}</audio-file-url>) orNull}
+        {enc.get("url").map(u =>     <audio-file-url size-in-bytes={enc.get("sizeInBytes").get}>{u}</audio-file-url>) orNull}
         {getAs[Int]("durationMinutes").map(m =>  <minutes>{m}</minutes>) orNull}
         {getAs[Int]("durationSeconds").map(s =>  <seconds>{s}</seconds>) orNull}
       </encoding>
