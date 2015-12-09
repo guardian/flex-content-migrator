@@ -30,6 +30,8 @@ object R2ToFlexAudioConversion {
 class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolean)
   extends R2ToFlexContentConversion(jsonMap, parseLiveData){
 
+  val MinimumSizeInBytes = 10000
+
   import scala.language.postfixOps
 
   override lazy val live = getFacetFromMap("live")
@@ -59,22 +61,34 @@ class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
 
   private def checkSizeInBytes(sizeInBytes : Any, path : Option[String]) : String = {
     val sizeStr = sizeInBytes.toString
-    if(sizeStr.toInt<10000)
+    if(sizeStr.toInt<MinimumSizeInBytes)
       throw new IllegalStateException(s"encoding file size is suspiciously small: ${sizeStr} ${path.getOrElse("")}")
     sizeStr
   }
 
-  private def getSizeInBytesFromFile(file : String): String = {
-    import scala.concurrent.ExecutionContext.Implicits.global
-    import play.api.Play.current
-    val response = WS.url(file).withFollowRedirects(true).head().map(resp => {
-      Logger.debug(s"File size check: ${resp.status} ${resp.statusText} ")
-      resp.header("Content-Length")
-    }).map(_.get)
+  private def getSizeInBytesFromFile(r2Length: Option[String], file : String): String = {
+    val calculateSizeFromFile =
+      try {
+        r2Length.isEmpty || r2Length.get.toInt < MinimumSizeInBytes
+      } catch {
+        case e : Exception => true
+      }
 
-    val size = Await.result(response, 60 seconds)
-    Logger.info(s"File size check result: file = ${file} size = ${size}")
-    size
+    if(calculateSizeFromFile){
+      import scala.concurrent.ExecutionContext.Implicits.global
+      import play.api.Play.current
+      val response = WS.url(file).withFollowRedirects(true).head().map(resp => {
+        Logger.debug(s"File size check: ${resp.status} ${resp.statusText} ")
+        resp.header("Content-Length")
+      }).map(_.get)
+
+      val size = Await.result(response, 60 seconds)
+      Logger.info(s"File size check result: file = ${file} size = ${size}")
+      size
+    }
+    else r2Length.get
+
+
   }
 
   private def encodings : List[Map[String, String]] = {
@@ -83,12 +97,13 @@ class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
     def getEncodingValue(encoding : Map[String, Any]): Map[String, String] = {
       val path = encoding.get("path").map(s => mapFilePath(s.toString))
       val format = path.map(getFormatFromFile(_))
+      val r2Length = encoding.get("length").map(_.toString) //for draft just trust the value from R2
       val size =
         if(parseLiveData){
-          path.map(getSizeInBytesFromFile _ ).map(checkSizeInBytes( _, path )) //checks the file exists and has a sensible size
+          path.map(getSizeInBytesFromFile(r2Length, _) ).map(checkSizeInBytes( _, path )) //checks the file exists and has a sensible size
         }
         else{
-          encoding.get("length").map(_.toString) //for draft just trust the value from R2
+          r2Length //for draft just trust the value from R2
         }
 
       val map =
