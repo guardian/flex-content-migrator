@@ -2,7 +2,7 @@
 echo off
 
 #PROD
-PREFIX="http://flexcontentmigrator.gutools.co.uk/migrate/cartoon"
+PREFIX="http://flexcontentmigrator.gutools.co.uk/migrate/audio"
 
 read -p "Press [Enter] key to start PROD migration..."
 
@@ -24,19 +24,19 @@ echo "Results in $OUTPUT_PATH"
 
  for i in `seq 1 $NUMBER_OF_BATCHES`;
         do
-	    RANDOM_NUMBER=$(( ( RANDOM % 1000 )  + 1 ))
+	    RANDOM_NUMBER=$(( ( RANDOM % 100 )  + 1 ))
 	    URL="$PREFIX?batchSize=$BATCH_SIZE&batchNumber=$RANDOM_NUMBER"
           
-		echo migrating batch $i with $BATCH_SIZE videos
+		echo migrating batch $i with $BATCH_SIZE content items : $URL
             BATCH_RESULTS=$OUTPUT_PATH/batch$i.txt
             curl -X POST $URL > $BATCH_RESULTS
             echo "results for batch $i in $BATCH_RESULTS"
-            sleep 1
+            sleep 0.3
         done    
 
 
 #Analyse the files to see if any had failures
-EXPECTED_BATCH_RESULT="Batch Success Galleries = $BATCH_SIZE, Failed Galleries = 0"
+EXPECTED_BATCH_RESULT="Batch Success Audios = $BATCH_SIZE, Failed Audios = 0"
 echo ""
 echo "Problem batches..."
 
