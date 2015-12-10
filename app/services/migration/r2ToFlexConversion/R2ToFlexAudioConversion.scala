@@ -53,7 +53,10 @@ class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
   private def audioSource = getAsString("source")
 
   private def getFormatFromFile(path : String) =
-    if(path.toLowerCase.endsWith(".mp3")) "audio/mpeg"
+    if( path.toLowerCase.endsWith(".mp3") ||
+        path.toLowerCase.endsWith(".m4a")){
+      "audio/mpeg"
+    }
     else throw new IllegalArgumentException(s"Unrecognised extension ${path}")
 
 
@@ -79,6 +82,9 @@ class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
       import play.api.Play.current
       val response = WS.url(file).withFollowRedirects(true).head().map(resp => {
         Logger.debug(s"File size check: ${resp.status} ${resp.statusText} ")
+        if(resp.status!=200){
+          Logger.warn(s"Could not determine file size ${file} : response status ${resp.status}")
+        }
         resp.header("Content-Length")
       }).map(_.get)
 
