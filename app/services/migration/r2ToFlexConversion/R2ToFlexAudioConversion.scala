@@ -2,6 +2,11 @@ package services.migration.r2ToFlexConversion
 
 import com.lambdaworks.jacks.JacksMapper
 import play.Logger
+import play.api.libs.ws.{WSResponse, WS}
+
+import scala.concurrent.Future
+import scala.concurrent._
+import scala.concurrent.duration._
 
 
 object R2ToFlexAudioConversion {
@@ -25,6 +30,8 @@ object R2ToFlexAudioConversion {
 class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolean)
   extends R2ToFlexContentConversion(jsonMap, parseLiveData){
 
+  val MinimumSizeInBytes = 10000
+
   import scala.language.postfixOps
 
   override lazy val live = getFacetFromMap("live")
@@ -46,18 +53,74 @@ class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
   private def audioSource = getAsString("source")
 
   private def getFormatFromFile(path : String) =
-    if(path.toLowerCase.endsWith(".mp3")) "audio/mpeg"
+    if( path.toLowerCase.endsWith(".mp3") ||
+        path.toLowerCase.endsWith(".m4a")){
+      "audio/mpeg"
+    }
     else throw new IllegalArgumentException(s"Unrecognised extension ${path}")
 
 
   private def mapFilePath(path : String) = "http://static.guim.co.uk/" + path
 
+  private def checkSizeInBytes(sizeInBytes : Any, path : Option[String]) : String = {
+    val sizeStr = sizeInBytes.toString
+    if(sizeStr.toInt<MinimumSizeInBytes)
+      throw new IllegalStateException(s"encoding file size is suspiciously small: ${sizeStr} ${path.getOrElse("")}")
+    sizeStr
+  }
+
+  private def getSizeInBytesFromFile(r2Length: Option[String], file : String): String = {
+    val calculateSizeFromFile =
+      try {
+        r2Length.isEmpty || r2Length.get.toInt < MinimumSizeInBytes
+      } catch {
+        case e : Exception => true
+      }
+
+    if(calculateSizeFromFile){
+      import scala.concurrent.ExecutionContext.Implicits.global
+      import play.api.Play.current
+      val response = WS.url(file).withFollowRedirects(true).head().map(resp => {
+        Logger.debug(s"File size check: ${resp.status} ${resp.statusText} ")
+        if(resp.status!=200){
+          Logger.warn(s"Could not determine file size ${file} : response status ${resp.status}")
+        }
+        resp.header("Content-Length")
+      }).map(_.get)
+
+      val size = Await.result(response, 60 seconds)
+      Logger.info(s"File size check result: file = ${file} size = ${size}")
+      size
+    }
+    else r2Length.get
+
+
+  }
+
   private def encodings : List[Map[String, String]] = {
-    val encodings = getAs[Map[String, Any]]("audioFile", liveOrDraft)
-    encodings.map(e => {    e.get("path").map(p => "url" -> mapFilePath(p.toString)) ++
-                            e.get("length").map("sizeInBytes" -> _.toString) ++
-                            e.get("path").map(p => "format" -> getFormatFromFile(p.toString))
-                          }.toMap).toList
+    val encodings: Option[Map[String, Any]] = getAs[Map[String, Any]]("audioFile", liveOrDraft)
+
+    def getEncodingValue(encoding : Map[String, Any]): Map[String, String] = {
+      val path = encoding.get("path").map(s => mapFilePath(s.toString))
+      val format = path.map(getFormatFromFile(_))
+      val r2Length = encoding.get("length").map(_.toString) //for draft just trust the value from R2
+      val size =
+        if(parseLiveData){
+          path.map(getSizeInBytesFromFile(r2Length, _) ).map(checkSizeInBytes( _, path )) //checks the file exists and has a sensible size
+        }
+        else{
+          r2Length //for draft just trust the value from R2
+        }
+
+      val map =
+        for(path <- path; format <- format; sizeFromPath <- size) yield
+        {
+          Map("url" -> path, "sizeInBytes" -> sizeFromPath, "format" -> format)
+        }
+      map.get
+    }
+
+    encodings.map(getEncodingValue(_)).toList
   }
 
   private def stillImageUrl = getAsString("stillImageUrl")
@@ -100,7 +163,7 @@ class R2ToFlexAudioConversion(jsonMap : Map[String, Any], parseLiveData : Boolea
       {encodings.map{ enc => {
       <encoding>
         {enc.get("format").map(f =>      <format>{f}</format>) orNull}
-        {enc.get("url").map(u =>     <audio-file-url size-in-bytes={enc.get("sizeInBytes") orNull}>{u}</audio-file-url>) orNull}
+        {enc.get("url").map(u =>     <audio-file-url size-in-bytes={enc.get("sizeInBytes").get}>{u}</audio-file-url>) orNull}
         {getAs[Int]("durationMinutes").map(m =>  <minutes>{m}</minutes>) orNull}
         {getAs[Int]("durationSeconds").map(s =>  <seconds>{s}</seconds>) orNull}
       </encoding>
