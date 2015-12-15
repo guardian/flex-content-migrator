@@ -492,12 +492,12 @@
 
                 "awsSqsKeyId=$(echo ", { "Ref": "AwsSqsKeyId" }, ")\n",
                 "sed -i \\\n",
-                "    -e 's,@aws.sqs.awskeyid@,'awsSqsKeyId',g' \\\n",
+                "    -e 's,@aws.sqs.awskeyid@,'$awsSqsKeyId',g' \\\n",
                 "    /etc/init/flex-content-migrator.conf\n",
 
                 "awsSqsSecret=$(echo ", { "Ref": "AwsSqsSecret" }, ")\n",
                 "sed -i \\\n",
-                "    -e 's,@aws.sqs.secret@,'awsSqsSecret',g' \\\n",
+                "    -e 's,@aws.sqs.secret@,'$awsSqsSecret',g' \\\n",
                 "    /etc/init/flex-content-migrator.conf\n",
 
                 "start flex-content-migrator\n"
