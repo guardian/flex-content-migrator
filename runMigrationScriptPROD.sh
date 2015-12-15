@@ -11,7 +11,7 @@ BATCH_SIZE=5
 NUMBER_OF_BATCHES=1000
 
 
-URL="$PREFIX?batchSize=$BATCH_SIZE&batchNumber=5"
+URL="$PREFIX?batchSize=$BATCH_SIZE"
 echo "Migrating content to $URL"
 
 TIMESTAMP="$(date +"%s")"
@@ -24,7 +24,7 @@ echo "Results in $OUTPUT_PATH"
 
  for i in `seq 1 $NUMBER_OF_BATCHES`;
         do
-            echo migrating batch $i with $BATCH_SIZE videos
+            echo migrating batch $i with $BATCH_SIZE content items : $URL
             BATCH_RESULTS=$OUTPUT_PATH/batch$i.txt
             curl -X POST $URL > $BATCH_RESULTS
             echo "results for batch $i in $BATCH_RESULTS"
