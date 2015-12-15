@@ -47,8 +47,8 @@ object ThrottleControl extends ThrottleControl{
 
   def throttle(rate : Rate = defaultRate) = new Throttle(system, rate)
 
-  private val flexThrottle = throttle(1 msgsPer 1.second) //slowly does it with Flex or we will flood the R2 queues with events
-  private val r2Throttle = throttle(4 msgsPer 1.second)   //r2 should be a bit quicker than flex: avoid too much time half migrated
+  private val flexThrottle = throttle(10 msgsPer 1.second)
+  private val r2Throttle = throttle(20 msgsPer 1.second)
 
   def flexThrottler[T] = throttler[T](flexThrottle) _
   def r2Throttler[T] = throttler[T](r2Throttle) _
