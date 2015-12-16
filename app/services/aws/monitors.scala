@@ -71,7 +71,7 @@ class SqsQueueMonitor(  sqsEndpoint : String,
                         awsSecretKey : String) extends MigrationDependencyMonitor {
 
   val MaxDepth = 200
-  val HangBackTime = 2000;
+  val HangBackTime = 10000;
 
   private lazy val sqsClient = {
     val awsCredentials = new BasicAWSCredentials(awsAccessKey, awsSecretKey)

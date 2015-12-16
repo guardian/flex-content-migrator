@@ -6,8 +6,7 @@ echo off
 
 BATCH_SIZE=7                    # NO BIGGER THAN 30
 NUMBER_OF_BATCHES=2000
-TAGIDS=52066
-
+TAGIDS=25510
 
 PREFIX="http://flexcontentmigrator.gutools.co.uk/migrate/article?tagIds=$TAGIDS&batchSize=$BATCH_SIZE"
 
