@@ -32,7 +32,7 @@ object DoNotOverload{
     }
 
   def apply[R](monitors : List[MigrationDependencyMonitor])(fn : () => R) : R = {
-    Logger.info(s"Checking monitors to ensure we are not overloading the sub systems...")
+    Logger.info(s"Checking monitors ${monitors} to ensure we are not overloading the sub systems...")
     pauseIfAnyOverloaded(monitors)
     errorIfAnyOverloaded(monitors)
     Logger.info(s"...monitor check complete")
@@ -87,8 +87,9 @@ class SqsQueueMonitor(  sqsEndpoint : String,
 
   def getQueueDepth : Int = {
     val attributeResult = sqsClient.getQueueAttributes(queueUrl, List("ApproximateNumberOfMessages"))
+    Logger.debug(s"${resourceName} ${attributeResult}")
     val value = attributeResult.getAttributes.get("ApproximateNumberOfMessages")
-    Logger.debug(s"${resourceName} queue depth is ${value}")
+    Logger.info(s"${resourceName} queue depth is ${value}")
     value.toInt
   }
 
