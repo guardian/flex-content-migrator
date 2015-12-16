@@ -4,23 +4,16 @@ echo off
 
 #PROD
 
-<<<<<<< HEAD
-BATCH_SIZE=5
-NUMBER_OF_BATCHES=2000
-TAGIDS=123
-=======
-BATCH_SIZE=7
+BATCH_SIZE=7                    # NO BIGGER THAN 30
 NUMBER_OF_BATCHES=2000
 TAGIDS=52066
->>>>>>> a243b8557c33421a8d3551e437988019d06e476e
+RANDOM_FACTOR=10                #Increase this value to migrate more randomly
 
 PREFIX="http://flexcontentmigrator.gutools.co.uk/migrate/article?tagIds=$TAGIDS&batchSize=$BATCH_SIZE"
 
-read -p "Press [Enter] key to start PROD migration..."
 
+read -p "Press [Enter] key to start **PROD** migration (random sequence)..."
 
-BATCH_SIZE=5
-NUMBER_OF_BATCHES=2000
 
 echo "Migrating content to $PREFIX"
 
