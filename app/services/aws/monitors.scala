@@ -32,8 +32,10 @@ object DoNotOverload{
     }
 
   def apply[R](monitors : List[MigrationDependencyMonitor])(fn : () => R) : R = {
+    Logger.info(s"Checking monitors to ensure we are not overloading the sub systems...")
     pauseIfAnyOverloaded(monitors)
     errorIfAnyOverloaded(monitors)
+    Logger.info(s"...monitor check complete")
     fn()
   }
 }
@@ -68,8 +70,8 @@ class SqsQueueMonitor(  sqsEndpoint : String,
                         awsAccessKey : String,
                         awsSecretKey : String) extends MigrationDependencyMonitor {
 
-  val MaxDepth = 100
-  val HangBackTime = 1000;
+  val MaxDepth = 200
+  val HangBackTime = 2000;
 
   private lazy val sqsClient = {
     val awsCredentials = new BasicAWSCredentials(awsAccessKey, awsSecretKey)
