@@ -64,7 +64,17 @@
     "QuizBuilderImportSecret": {
       "Description": "The importSecret for the ten-four quizbuilder",
       "Type": "String",
-      "Default": "AWS_REPLACE_ME"
+      "Default": "REPLACE_ME"
+    },
+    "AwsSqsKeyId": {
+      "Description": "The key id for the R2 SQS queue (for monitoring)",
+      "Type": "String",
+      "Default": "REPLACE_ME"
+    },
+    "AwsSqsSecret": {
+      "Description": "The secret for the R2 SQS queue (for monitoring)",
+      "Type": "String",
+      "Default": "REPLACE_ME"
     }
   },
   "Resources": {
@@ -476,9 +486,18 @@
                 "    /etc/init/flex-content-migrator.conf\n",
 
                 "quizImportSecret=$(echo ", { "Ref": "QuizBuilderImportSecret" }, ")\n",
-                "echo quizImportSecret=$quizImportSecret\n",
                 "sed -i \\\n",
                 "    -e 's,@quizbuilder.secret@,'$quizImportSecret',g' \\\n",
+                "    /etc/init/flex-content-migrator.conf\n",
+
+                "awsSqsKeyId=$(echo ", { "Ref": "AwsSqsKeyId" }, ")\n",
+                "sed -i \\\n",
+                "    -e 's,@aws.sqs.awskeyid@,'$awsSqsKeyId',g' \\\n",
+                "    /etc/init/flex-content-migrator.conf\n",
+
+                "awsSqsSecret=$(echo ", { "Ref": "AwsSqsSecret" }, ")\n",
+                "sed -i \\\n",
+                "    -e 's,@aws.sqs.secret@,'$awsSqsSecret',g' \\\n",
                 "    /etc/init/flex-content-migrator.conf\n",
 
                 "start flex-content-migrator\n"
