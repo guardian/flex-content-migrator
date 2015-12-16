@@ -4,9 +4,15 @@ echo off
 
 #PROD
 
+<<<<<<< HEAD
 BATCH_SIZE=5
 NUMBER_OF_BATCHES=2000
 TAGIDS=123
+=======
+BATCH_SIZE=7
+NUMBER_OF_BATCHES=2000
+TAGIDS=52066
+>>>>>>> a243b8557c33421a8d3551e437988019d06e476e
 
 PREFIX="http://flexcontentmigrator.gutools.co.uk/migrate/article?tagIds=$TAGIDS&batchSize=$BATCH_SIZE"
 
@@ -28,7 +34,7 @@ echo "Results in $OUTPUT_PATH"
 
  for i in `seq 1 $NUMBER_OF_BATCHES`;
         do
-	    RANDOM_NUMBER=$(( ( RANDOM % 100 )  + 1 ))
+	    RANDOM_NUMBER=$(( ( RANDOM % 5 )  + 1 ))
 	    URL="$PREFIX&batchNumber=$RANDOM_NUMBER"
             
             echo migrating batch $i with $BATCH_SIZE content items : $URL
