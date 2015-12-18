@@ -42,12 +42,17 @@ class ArticleMigrationApi(migrator : Migrator, reporter : MigrationReport, flex 
     Logger.debug(s"migrateBatch ${batchSize} ${batchNumber} ${tagIds}")
 
     withMigrationPermission{ () =>
+      try{
+        doNotOverloadSubsystems[Future[Result]]{ () =>
 
-      doNotOverloadSubsystems[Future[Result]]{ () =>
+          migrator.migrateBatchOfContent(batchSize, batchNumber, tagIds).map(reportMigratedBatch(_))
 
-        migrator.migrateBatchOfContent(batchSize, batchNumber, tagIds).map(reportMigratedBatch(_))
-
+        }
       }
+      catch{
+        case e: Exception => Future{InternalServerError(e.toString)}
+      }
+
     }
   }}
 
