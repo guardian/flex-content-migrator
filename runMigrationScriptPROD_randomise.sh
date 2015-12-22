@@ -18,9 +18,8 @@ read -p "Press [Enter] key to start **PROD** migration (random sequence)..."
 echo "Migrating content to $PREFIX"
 
 TIMESTAMP="$(date +"%s")"
-OUTPUT_PATH=~/migrationOutput/$TIMESTAMP
-mkdir ~/migrationOutput
-mkdir $OUTPUT_PATH
+OUTPUT_PATH=~/.migration/output/PROD/$TIMESTAMP
+mkdir -p $OUTPUT_PATH
 echo "Results in $OUTPUT_PATH"
 
 #Perform the migration batches and collect the results
