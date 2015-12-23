@@ -4,24 +4,19 @@ echo off
 
 #PROD
 
-BATCH_SIZE=7                    # NO BIGGER THAN 30
-NUMBER_OF_BATCHES=2000
-TAGIDS=25510
+BATCH_SIZE=${BATCH_SIZE:-7}                      # NO BIGGER THAN 30
+NUMBER_OF_BATCHES=${NUMBER_OF_BATCHES:-200}
+TAGIDS=${TAGIDS:-6964}
 
 PREFIX="http://flexcontentmigrator.gutools.co.uk/migrate/article?tagIds=$TAGIDS&batchSize=$BATCH_SIZE"
 
 read -p "Press [Enter] key to start **PROD** migration (straight sequence)..."
 
-
-BATCH_SIZE=5
-NUMBER_OF_BATCHES=2000
-
 echo "Migrating content to $PREFIX"
 
 TIMESTAMP="$(date +"%s")"
-OUTPUT_PATH=./migrationOutput/$TIMESTAMP
-mkdir ./migrationOutput
-mkdir $OUTPUT_PATH
+OUTPUT_PATH=~/.migration/output/PROD/$TIMESTAMP
+mkdir -p $OUTPUT_PATH
 echo "Results in $OUTPUT_PATH"
 
 #Perform the migration batches and collect the results
@@ -34,7 +29,7 @@ echo "Results in $OUTPUT_PATH"
             curl -X POST $URL > $BATCH_RESULTS
             echo "results for batch $i in $BATCH_RESULTS"
             sleep 0.5
-        done    
+        done
 
 
 #Analyse the files to see if any had failures
@@ -43,5 +38,3 @@ echo ""
 echo "Problem batches..."
 
 grep -L "$EXPECTED_BATCH_RESULT" $OUTPUT_PATH/batch*.txt
-
- 
