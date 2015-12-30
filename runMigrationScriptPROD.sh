@@ -4,9 +4,10 @@ echo off
 
 #PROD
 
-BATCH_SIZE=${BATCH_SIZE:-7}                      # NO BIGGER THAN 30
+BATCH_SIZE=${BATCH_SIZE:-30}                      # NO BIGGER THAN 30
 NUMBER_OF_BATCHES=${NUMBER_OF_BATCHES:-200}
 TAGIDS=${TAGIDS:-6964}
+SLEEP_TIME=${SLEEP_TIME:-1}
 
 PREFIX="http://flexcontentmigrator.gutools.co.uk/migrate/article?tagIds=$TAGIDS&batchSize=$BATCH_SIZE"
 
@@ -28,7 +29,7 @@ echo "Results in $OUTPUT_PATH"
             BATCH_RESULTS=$OUTPUT_PATH/batch$i.txt
             curl -X POST $URL > $BATCH_RESULTS
             echo "results for batch $i in $BATCH_RESULTS"
-            sleep 0.5
+            sleep $SLEEP_TIME
         done
 
 

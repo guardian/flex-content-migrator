@@ -4,7 +4,7 @@ echo off
 
 #PROD
 
-BATCH_SIZE=${BATCH_SIZE:-15}                    # NO BIGGER THAN 30
+BATCH_SIZE=${BATCH_SIZE:-30}                    # NO BIGGER THAN 30
 NUMBER_OF_BATCHES=${NUMBER_OF_BATCHES:-200}
 TAGIDS=${TAGIDS:-6964}  #MARKET FORCES
 RANDOM_FACTOR=${RANDOM_FACTOR:-5}                #Increase this value to migrate more randomly
