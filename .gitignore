@@ -26,3 +26,7 @@ target
 # Play
 logs
 RUNNING_PID
+
+# Python
+.ve
+*.pyc
