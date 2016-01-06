@@ -56,13 +56,13 @@ prod:   `curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/article?
 
 ####Multi Batch
 
-There are two scripts that will both run a set number of batches (a multi batch) on your machine.
+There are three scripts that will both run a set number of batches (a multi batch) on your machine.
 
-`runMigrationScriptPROD_randomise.sh`     : runs a set number of batches in a random sequence
-`runMigrationScriptPROD.sh`               : runs a set number of batches in straight sequence
+`runMigrationScriptPROD_randomise.sh`           : runs a set number of batches in a random sequence to avoid retry error cases. 
+`runMigrationScriptPROD_restartableSequence.sh` : runs a set number of batches in straight sequence. Avoids getting stuck on errors by not retrying the same content twice. It can pick up near where it left of or it can start again from the beginging
+`runMigrationScriptPROD.sh`                     : deprecated, replaced by runMigrationScriptPROD_restartableSequence.sh as it can retry failed content indefinately and get stuck
 
-The random sequence is useful if there is some content that will not migrate - it avoids repeatedly re-trying the same content
-Both of these script files log their output to a directory ./migrationOutput
+These script files log their output to a directory ~./migrationOutput
 
 
 ### To Resync R2 

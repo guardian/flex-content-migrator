@@ -4,16 +4,16 @@ echo off
 
 #PROD
 
-BATCH_SIZE=${BATCH_SIZE:-30}                    # NO BIGGER THAN 30
+BATCH_SIZE=${BATCH_SIZE:-15}                    # NO BIGGER THAN 30
 NUMBER_OF_BATCHES=${NUMBER_OF_BATCHES:-200}
-TAGIDS=${TAGIDS:-6964}  #MARKET FORCES
-RANDOM_FACTOR=${RANDOM_FACTOR:-5}                #Increase this value to migrate more randomly
+#TAGIDS=${TAGIDS:-6964}  #MARKET FORCES
+RANDOM_FACTOR=${RANDOM_FACTOR:-200}                #Increase this value to migrate more randomly
 SLEEP_TIME=${SLEEP_TIME:-1}
 MIN_BATCH_NUMBER=${MIN_BATCH_NUMBER:-1}
 
-PREFIX="http://flexcontentmigrator.gutools.co.uk/migrate/article?tagIds=$TAGIDS&batchSize=$BATCH_SIZE"
+PREFIX="http://flexcontentmigrator.gutools.co.uk/migrate/article?batchSize=$BATCH_SIZE"
 
-
+echo PARMS: BATCH_SIZE=$BATCH_SIZE NUMBER_OF_BATCHES=$NUMBER_OF_BATCHES RANDOM_FACTOR=$RANDOM_FACTOR SLEEP_TIME=$SLEEP_TIME MIN_BATCH_NUMBER=$MIN_BATCH_NUMBER
 read -p "Press [Enter] key to start **PROD** migration (random sequence)..."
 
 
