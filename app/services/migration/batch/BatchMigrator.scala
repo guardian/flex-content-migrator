@@ -34,7 +34,7 @@ protected[migration] object SimpleBatchMigrator extends BatchMigrator{
       Future.sequence(contentInFlex.map(video => migrationBehaviour.closeContentInSource(video)))
 
 
-    val sourceContent = migrationBehaviour.contentLoader.loadBatchOfContent(params.batchSize, params.batchNumber, params.tagIds, params.withIdsHigherThan)
+    val sourceContent = migrationBehaviour.contentLoader.loadBatchOfContent(params)
     val videosInFlex = sourceContent.flatMap(pushContentInFlex(_))
     val videosInR2 = videosInFlex.flatMap(migrateContentsInR2(_))
     videosInR2.map{ results => {
@@ -203,7 +203,7 @@ protected[batch] class AkkaBatchMigratorOrchestrator(migrationBehaviour : Migrat
   private def startMigration(resultsListener : ActorRef) = {
     //TODO: prevent future start requests coming in!
     Logger.debug(s"startMigration")
-    val contentIds: Future[List[Int]] = migrationBehaviour.contentLoader.getBatchOfContentIds(params.batchSize, params.batchNumber, params.tagIds, params.withIdsHigherThan)
+    val contentIds: Future[List[Int]] = migrationBehaviour.contentLoader.getBatchOfContentIds(params)
     contentIds.onSuccess[Unit]{
       case ids : List[Int] => idsInCurrentBatch = ids
     }
