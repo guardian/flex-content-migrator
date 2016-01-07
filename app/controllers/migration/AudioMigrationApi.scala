@@ -4,7 +4,7 @@ import model._
 import play.api.Logger
 import play.api.mvc.{Action, Result, Controller}
 import services.{FlexAudioMigrationServiceImpl, FlexContentMigrationService}
-import services.migration.{AudioMigrator, Migrator}
+import services.migration.{MigrationBatchParams, AudioMigrator, Migrator}
 
 import scala.concurrent.Future
 
@@ -34,7 +34,7 @@ class AudioMigrationApi(migrator : Migrator, reporter : MigrationReport, flex : 
   def migrateBatch(batchSize : Option[Int], batchNumber : Option[Int] ) = Action.async{ block => {
     Logger.debug(s"migrateBatch ${batchSize} ${batchNumber}")
     withMigrationPermission{ () =>
-      migrator.migrateBatchOfContent(batchSize, batchNumber).map(reportMigratedBatch(_))
+      migrator.migrateBatchOfContent(MigrationBatchParams(batchSize, batchNumber)).map(reportMigratedBatch(_))
     }
   }
   }

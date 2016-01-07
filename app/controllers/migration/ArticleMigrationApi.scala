@@ -8,8 +8,7 @@ import play.api.Logger
 import play.api.mvc.{Action, Result, Controller}
 import services.aws.Monitors._
 import services.{FlexArticleMigrationServiceImpl, FlexContentMigrationService}
-import services.migration.{ArticleMigrator, Migrator}
-import play.api.mvc._
+import services.migration.{MigrationBatchParams, ArticleMigrator, Migrator}
 import play.api.libs.json._
 import play.api.libs.functional.syntax._
 
@@ -38,14 +37,14 @@ class ArticleMigrationApi(migrator : Migrator, reporter : MigrationReport, flex 
     flex.doConnectivityCheck.map(response => Ok(response))
   }}
 
-  def migrateBatch(batchSize : Option[Int], batchNumber : Option[Int], tagIds : Option[String] ) = Action.async{ block => {
-    Logger.debug(s"migrateBatch ${batchSize} ${batchNumber} ${tagIds}")
+  def migrateBatch(batchSize : Option[Int], batchNumber : Option[Int], tagIds : Option[String], withIdsHigherThan : Option[Int] ) = Action.async{ block => {
+    Logger.debug(s"migrateBatch ${batchSize} ${batchNumber} ${tagIds} ${withIdsHigherThan}")
 
     withMigrationPermission{ () =>
       try{
         doNotOverloadSubsystems[Future[Result]]{ () =>
 
-          migrator.migrateBatchOfContent(batchSize, batchNumber, tagIds).map(reportMigratedBatch(_))
+          migrator.migrateBatchOfContent(MigrationBatchParams(batchSize, batchNumber, tagIds, withIdsHigherThan)).map(reportMigratedBatch(_))
 
         }
       }
@@ -173,7 +172,13 @@ object ArticleMigrationTextReport extends MigrationReport{
   override def reportMigratedBatch(batch : MigratedBatch) = {
     def batchFailureReport =
       s"Details:\n${reportSuccesses(batch.migrated)}\n\n${batch.failed.map(reportFailure(_) + "\n\n").mkString("\n")}"
-    
-    s"Batch Success Articles = ${batch.migrated.size}, Failed Articles = ${batch.failed.size} \n${batchFailureReport}"
+    def highestIdAttempted =
+      (batch.migrated.map(_.id) ++ batch.failed.map(_.id)).max
+
+    s"""
+       |Batch Success Articles = ${batch.migrated.size}, Failed Articles = ${batch.failed.size}\n
+       |Highest Attempted Id: ${highestIdAttempted}\n
+       |${batchFailureReport}
+     """.stripMargin
   }
 }
