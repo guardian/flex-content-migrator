@@ -27,7 +27,7 @@ bootstrapHighestAttemptedId(){
         echo "Warm start";
         # Bootstrap by CURLing the most recent article we manged to migrate in R2, we will start from there.
         # This means we might retry a (small) number of previously failed articles at startup.
-        LastMigrated=$(curl "http://cms.guprod.gnl/tools/newspaperintegration/migration/last-migrated?content-type=article")
+        LastMigrated=$(curl "http://cms.guprod.gnl/tools/newspaperintegration/migration/last-migrated?contentType=article")
         echo "Highest Attempted Id: $LastMigrated" > temp.txt
         setHighestAttemptedIdFromTempFile
     }
