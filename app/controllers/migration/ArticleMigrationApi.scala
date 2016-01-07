@@ -45,7 +45,7 @@ class ArticleMigrationApi(migrator : Migrator, reporter : MigrationReport, flex 
       try{
         doNotOverloadSubsystems[Future[Result]]{ () =>
 
-          migrator.migrateBatchOfContent(batchSize, batchNumber, tagIds).map(reportMigratedBatch(_))
+          migrator.migrateBatchOfContent(batchSize, batchNumber, tagIds, withIdsHigherThan).map(reportMigratedBatch(_))
 
         }
       }
@@ -174,7 +174,7 @@ object ArticleMigrationTextReport extends MigrationReport{
     def batchFailureReport =
       s"Details:\n${reportSuccesses(batch.migrated)}\n\n${batch.failed.map(reportFailure(_) + "\n\n").mkString("\n")}"
     def highestIdAttempted =
-      (batch.migrated.map(_.id) :: batch.failed.map(_.id) :: Nil).max
+      (batch.migrated.map(_.id) ++ batch.failed.map(_.id)).max
 
     s"""
        |Batch Success Articles = ${batch.migrated.size}, Failed Articles = ${batch.failed.size}\n

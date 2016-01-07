@@ -21,17 +21,17 @@ abstract class R2CartoonMigratorService(client : R2IntegrationAPIClient) extends
   def loadContentById(id : Integer) = loadContentWithThrottle(id)
 
 
-  def getBatchOfContentIds(batchSize : Int, batchOffset : Int, tagIds : Option[String] = None) =
-    client.getBatchOfCartoonIds(batchSize, batchOffset, tagIds)
+  def getBatchOfContentIds(batchSize : Int, batchOffset : Int, tagIds : Option[String] = None, idsHigherThan : Option[Int] = None) =
+    client.getBatchOfCartoonIds(batchSize, batchOffset, tagIds, idsHigherThan)
 
-  def loadBatchOfContent(batchSize : Int, batchNumber : Int = 1, tagIds : Option[String] = None) : Future[MigrationBatch] = {
+  def loadBatchOfContent(batchSize : Int, batchNumber : Int = 1, tagIds : Option[String] = None, idsHigherThan : Option[Int] = None) : Future[MigrationBatch] = {
     def mapIdsToCartoons(ids: Future[List[Int]]) = {
       def idsToCartoons(ids : List[Int]) = ids.map(loadContentWithThrottle(_))
 
       ids.map{idsToCartoons(_)}.flatMap(Future.sequence(_))
     }
 
-    val ids = client.getBatchOfCartoonIds(batchSize, batchNumber, tagIds)
+    val ids = client.getBatchOfCartoonIds(batchSize, batchNumber, tagIds, idsHigherThan)
     val cartoons = mapIdsToCartoons(ids)
     cartoons.map(loadedCartoons => {
       Logger.info(s"Loaded the batch of ${batchSize} cartoons from R2")

@@ -42,10 +42,10 @@ trait Migrator{
     }
   }
 
-  def migrateBatchOfContent(size : Option[Int], batchNumber : Option[Int], tagIds : Option[String] = None) : Future[MigratedBatch] = {
+  def migrateBatchOfContent(size : Option[Int], batchNumber : Option[Int], tagIds : Option[String] = None, withIdsHigherThan : Option[Int] = None) : Future[MigratedBatch] = {
     val batchSize = getBatchSize(size)
     val batchOffset = batchNumber.getOrElse(1)
-    migrateBatch(batchSize, batchOffset, tagIds)
+    migrateBatch(batchSize, batchOffset, tagIds, withIdsHigherThan)
   }
 
   def migrateIndividualContent(contentId : Int) : Future[ContentMigrationResult] = {

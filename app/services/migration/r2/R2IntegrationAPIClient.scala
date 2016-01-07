@@ -143,38 +143,42 @@ protected[migration] class R2IntegrationAPIClient {
   
 
 
-  protected[migration] def getBatchOfGalleryIds(batchSize : Int, batchNumber : Int, tagIds : Option[String]=None) : Future[List[Int]] = {
+  protected[migration] def getBatchOfGalleryIds(batchSize : Int, batchNumber : Int, tagIds : Option[String]=None, idHigherThan : Option[Int] = None) : Future[List[Int]] = {
     if(tagIds.isDefined) throw new UnsupportedOperationException("Specific tagId migration not supported for galleries")
+    if(idHigherThan.isDefined) throw new UnsupportedOperationException("idHigherThan is not supported for galleries")
     WS.url(requestGalleriesToMigrate(batchSize, batchNumber)).get().map{response =>
       (response.json \ "elementsOnCurrentPage").as[List[Int]]
     }
   }
 
-  protected[migration] def getBatchOfCartoonIds(batchSize : Int, batchNumber : Int, tagIds : Option[String]=None) : Future[List[Int]] = {
+  protected[migration] def getBatchOfCartoonIds(batchSize : Int, batchNumber : Int, tagIds : Option[String]=None, idHigherThan : Option[Int] = None ) : Future[List[Int]] = {
     if(tagIds.isDefined) throw new UnsupportedOperationException("Specific tagId migration not supported for cartoons")
+    if(idHigherThan.isDefined) throw new UnsupportedOperationException("idHigherThan is not supported for cartoons")
     WS.url(requestCartoonsToMigrate(batchSize, batchNumber)).get().map{response =>
       (response.json \ "elementsOnCurrentPage").as[List[Int]]
     }
   }
 
-  protected[migration] def getBatchOfQuizIds(batchSize : Int, batchNumber : Int, tagIds : Option[String]=None) : Future[List[Int]] = {
+  protected[migration] def getBatchOfQuizIds(batchSize : Int, batchNumber : Int, tagIds : Option[String]=None, idHigherThan : Option[Int] = None) : Future[List[Int]] = {
     if(tagIds.isDefined) throw new UnsupportedOperationException("Specific tagId migration not supported for quizzes")
+    if(idHigherThan.isDefined) throw new UnsupportedOperationException("idHigherThan is not supported for quizzes")
     WS.url(requestQuizzesToMigrate(batchSize, batchNumber)).get().map{response =>
       (response.json \ "elementsOnCurrentPage").as[List[Int]]
     }
   }
 
-  protected[migration] def getBatchOfAudioIds(batchSize : Int, batchNumber : Int, tagIds : Option[String]=None) : Future[List[Int]] = {
+  protected[migration] def getBatchOfAudioIds(batchSize : Int, batchNumber : Int, tagIds : Option[String]=None, idHigherThan : Option[Int] = None) : Future[List[Int]] = {
     if(tagIds.isDefined) throw new UnsupportedOperationException("Specific tagId migration not supported for audios")
+    if(idHigherThan.isDefined) throw new UnsupportedOperationException("idHigherThan is not supported for audios")
     WS.url(requestAudiosToMigrate(batchSize, batchNumber)).get().map{response =>
       (response.json \ "elementsOnCurrentPage").as[List[Int]]
     }
   }
 
 
-  protected[migration] def getBatchOfArticleIds(batchSize : Int, batchNumber : Int, tagIds : Option[String]) : Future[List[Int]] = {
-    Logger.debug(s"Loading articles : batchSize=${batchSize} batchNumber=${batchNumber} tagIds=${tagIds}")
-    WS.url(requestArticlesToMigrate(batchSize, batchNumber, tagIds)).get().map{response =>
+  protected[migration] def getBatchOfArticleIds(batchSize : Int, batchNumber : Int, tagIds : Option[String], withIdsHigherThan : Option[Int]) : Future[List[Int]] = {
+    Logger.debug(s"Loading articles : batchSize=${batchSize} batchNumber=${batchNumber} tagIds=${tagIds} withIdsHigherThan]${withIdsHigherThan}")
+    WS.url(requestArticlesToMigrate(batchSize, batchNumber, tagIds, withIdsHigherThan)).get().map{response =>
       (response.json \ "elementsOnCurrentPage").as[List[Int]]
     }
   }
@@ -230,8 +234,9 @@ protected[migration] class R2IntegrationAPIClient {
 
   private def pageNumber(offset : Int) = s"pageNumber=${offset}"
 
-  private def tags(tagIds : Option[String]) =
-    tagIds.map("&tagIds=" + _).getOrElse("")
+  private def idHigherThan(idHigherThan : Option[Int]) = idHigherThan.map("&idHigherThan=" + _).getOrElse("")
+
+  private def tags(tagIds : Option[String]) = tagIds.map("&tagIds=" + _).getOrElse("")
 
   private def r2ContentId(id : Int) = s"r2ContentId=${id}"
 
@@ -250,8 +255,8 @@ protected[migration] class R2IntegrationAPIClient {
   private def requestAudiosToMigrate(size : Int, offset : Int) =
     s"${AudiosToMigrateUrl}?${pageSize(size)}&${pageNumber(offset)}"
 
-  private def requestArticlesToMigrate(size : Int, offset : Int, tagIds : Option[String]) =
-    s"${ArticlesToMigrateUrl}?${pageSize(size)}&${pageNumber(offset)}${tags(tagIds)}"
+  private def requestArticlesToMigrate(size : Int, offset : Int, tagIds : Option[String], withIdsHigherThan : Option[Int]) =
+    s"${ArticlesToMigrateUrl}?${pageSize(size)}&${pageNumber(offset)}${tags(tagIds)}${idHigherThan(withIdsHigherThan)}"
 
   private def requestContentMigrated(r2ContentIdInt : Int, composerIdSt : String) =
     s"${ContentMigratedUrl}?${r2ContentId(r2ContentIdInt)}&${composerId(composerIdSt)}"
@@ -263,8 +268,8 @@ trait R2MigrationService{
 
   def loadContentById(id : Integer) : Future[SourceContent]
 
-  def loadBatchOfContent(batchSize : Int, batchNumber : Int = 1, tagIds : Option[String]) : Future[MigrationBatch]
-  def getBatchOfContentIds(batchSize : Int, batchOffset : Int, tagIds : Option[String]) : Future[List[Int]]
+  def loadBatchOfContent(batchSize : Int, batchNumber : Int = 1, tagIds : Option[String], withIdsHigherThan : Option[Int]) : Future[MigrationBatch]
+  def getBatchOfContentIds(batchSize : Int, batchOffset : Int, tagIds : Option[String], withIdsHigherThan : Option[Int]) : Future[List[Int]]
 
   def migrateContentInR2(contentId : Int, composerId : String) : Future[(Boolean, String)]
 
