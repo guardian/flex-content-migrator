@@ -33,9 +33,9 @@ abstract class R2ArticleMigratorService(client : R2IntegrationAPIClient) extends
     }
 
     val ids = client.getBatchOfArticleIds(params)
-    val audios = mapIdsToArticles(ids)
-    audios.map(loadedArticles => {
-      Logger.info(s"Loaded the batch of ${params.batchSize} articles from R2")
+    val articles = mapIdsToArticles(ids)
+    articles.map(loadedArticles => {
+      Logger.info(s"Loaded the batch of ${params.batchSize} articles from R2 ${params}")
       new MigrationBatch(loadedArticles)
     })
   }
