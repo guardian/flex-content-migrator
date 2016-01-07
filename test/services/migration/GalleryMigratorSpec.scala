@@ -65,7 +65,7 @@ class GalleryMigratorSpec extends Specification with Mockito {
 
   "GalleryMigrator migrateBatch" should {
     "load, transform and then migrate gallery data for all galleries" in new WithApplication{
-      val migratedBatchFuture = migrator.migrateBatchOfContent(Some(NumberOfGalleries), None)
+      val migratedBatchFuture = migrator.migrateBatchOfContent(MigrationBatchParams(Some(NumberOfGalleries), None))
       val migratedBatch = Helpers.await[MigratedBatch](migratedBatchFuture)
       migratedBatch.migrated.size must equalTo(GalleriesToMigrate.size)
       migratedBatch.failed.size must equalTo(0)

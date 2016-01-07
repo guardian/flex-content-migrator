@@ -58,9 +58,9 @@ class BatchMigratorSpec extends Specification with Mockito {
         override val closeContentInSource = mockMigrateVideoInR2
       }
     }
-
+    import MigrationBatchParams._
     def doAkkaBatchMigration(batchSize : Int, batchOffset : Int) : Future[MigratedBatch] =
-      AkkaBatchMigrator.migrateBatch( buildBehaviour(batchSize, batchOffset))(batchSize, batchOffset)
+      AkkaBatchMigrator.migrateBatch( buildBehaviour(batchSize, batchOffset))(MigrationBatchParams(Some(batchSize), Some(batchOffset)))
 
 
   }
@@ -174,7 +174,7 @@ class BatchMigratorSpec extends Specification with Mockito {
 
   "SimpleBatchMigrator" should {
     def doSimpleBatchMigration(batchSize : Int, batchOffset : Int) =
-      SimpleBatchMigrator.migrateBatch( AllBehaveWell.buildBehaviour(batchSize, batchOffset))(batchSize, batchOffset)
+      SimpleBatchMigrator.migrateBatch( AllBehaveWell.buildBehaviour(batchSize, batchOffset))(MigrationBatchParams(Some(batchSize), Some(batchOffset)))
 
     "migrate a batch of 10 and get a result" in {
       val batchSize = 10

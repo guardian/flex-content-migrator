@@ -2,7 +2,6 @@ package services.migration
 
 
 import model._
-import org.apache.commons.lang3.exception.ExceptionUtils
 import play.Logger
 import services.migration.batch.AkkaBatchMigrator
 import services.migration.r2.R2MigrationService
@@ -29,24 +28,11 @@ trait Migrator{
   protected val migrationBehaviour : MigrationBehaviour
   protected val migrateBatch = AkkaBatchMigrator.migrateBatch(migrationBehaviour) _
 
-
-  import Migrator._
   import play.api.libs.concurrent.Execution.Implicits._
 
-  private def getBatchSize(size : Option[Int]): Int = {
-    val batchSize = size.getOrElse(DefaultMigrationBatchSize)
-    if(batchSize<=MaxMigrationBatchSize) batchSize
-    else{
-      Logger.warn(s"Cannot migrate a batch bigger than ${MaxMigrationBatchSize}, migrating ${MaxMigrationBatchSize} only")
-      MaxMigrationBatchSize
-    }
-  }
 
-  def migrateBatchOfContent(size : Option[Int], batchNumber : Option[Int], tagIds : Option[String] = None, withIdsHigherThan : Option[Int] = None) : Future[MigratedBatch] = {
-    val batchSize = getBatchSize(size)
-    val batchOffset = batchNumber.getOrElse(1)
-    migrateBatch(batchSize, batchOffset, tagIds, withIdsHigherThan)
-  }
+  def migrateBatchOfContent(params : MigrationBatchParams) : Future[MigratedBatch] = migrateBatch(params)
+
 
   def migrateIndividualContent(contentId : Int) : Future[ContentMigrationResult] = {
     val loaded = migrationBehaviour.contentLoader.loadContentById(contentId)

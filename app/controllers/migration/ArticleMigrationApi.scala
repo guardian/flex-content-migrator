@@ -8,8 +8,7 @@ import play.api.Logger
 import play.api.mvc.{Action, Result, Controller}
 import services.aws.Monitors._
 import services.{FlexArticleMigrationServiceImpl, FlexContentMigrationService}
-import services.migration.{ArticleMigrator, Migrator}
-import play.api.mvc._
+import services.migration.{MigrationBatchParams, ArticleMigrator, Migrator}
 import play.api.libs.json._
 import play.api.libs.functional.syntax._
 
@@ -45,7 +44,7 @@ class ArticleMigrationApi(migrator : Migrator, reporter : MigrationReport, flex 
       try{
         doNotOverloadSubsystems[Future[Result]]{ () =>
 
-          migrator.migrateBatchOfContent(batchSize, batchNumber, tagIds, withIdsHigherThan).map(reportMigratedBatch(_))
+          migrator.migrateBatchOfContent(MigrationBatchParams(batchSize, batchNumber, tagIds, withIdsHigherThan)).map(reportMigratedBatch(_))
 
         }
       }
