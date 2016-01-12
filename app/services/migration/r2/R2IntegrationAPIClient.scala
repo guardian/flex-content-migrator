@@ -178,7 +178,7 @@ protected[migration] class R2IntegrationAPIClient {
 
 
   protected[migration] def getBatchOfArticleIds(params : MigrationBatchParams) : Future[List[Int]] = {
-    Logger.info(s"Loading articles : batchSize=${params.batchSize} batchNumber=${params.batchNumber} tagIds=${params.tagIds} withIdsHigherThan]${params.withIdsHigherThan}")
+    Logger.info(s"Loading articles : batchSize=${params.batchSize} batchNumber=${params.batchNumber} tagIds=${params.tagIds} withIdsHigherThan ${params.withIdsHigherThan}")
     WS.url(requestArticlesToMigrate(params.batchSize, params.batchNumber, params.tagIds, params.withIdsHigherThan)).get().map{response =>
       (response.json \ "elementsOnCurrentPage").as[List[Int]]
     }
