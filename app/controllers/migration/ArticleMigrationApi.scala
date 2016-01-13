@@ -6,9 +6,9 @@ import model._
 import org.apache.commons.lang3.exception.ExceptionUtils
 import play.api.Logger
 import play.api.mvc.{Action, Result, Controller}
+import services.aws.Monitors._
 import services.{FlexArticleMigrationServiceImpl, FlexContentMigrationService}
-import services.migration.{ArticleMigrator, Migrator}
-import play.api.mvc._
+import services.migration.{MigrationBatchParams, ArticleMigrator, Migrator}
 import play.api.libs.json._
 import play.api.libs.functional.syntax._
 
@@ -37,13 +37,23 @@ class ArticleMigrationApi(migrator : Migrator, reporter : MigrationReport, flex 
     flex.doConnectivityCheck.map(response => Ok(response))
   }}
 
-  def migrateBatch(batchSize : Option[Int], batchNumber : Option[Int] ) = Action.async{ block => {
-    Logger.debug(s"migrateBatch ${batchSize} ${batchNumber}")
+  def migrateBatch(batchSize : Option[Int], batchNumber : Option[Int], tagIds : Option[String], withIdsHigherThan : Option[Int] ) = Action.async{ block => {
+    Logger.debug(s"migrateBatch ${batchSize} ${batchNumber} ${tagIds} ${withIdsHigherThan}")
+
     withMigrationPermission{ () =>
-      migrator.migrateBatchOfContent(batchSize, batchNumber).map(reportMigratedBatch(_))
+      try{
+        doNotOverloadSubsystems[Future[Result]]{ () =>
+
+          migrator.migrateBatchOfContent(MigrationBatchParams(batchSize, batchNumber, tagIds, withIdsHigherThan)).map(reportMigratedBatch(_))
+
+        }
+      }
+      catch{
+        case e: Exception => Future{InternalServerError(e.toString)}
+      }
+
     }
-  }
-  }
+  }}
 
   def articlePage = Action {
     Ok(views.html.article(stageOpt.getOrElse("local")))
@@ -162,7 +172,13 @@ object ArticleMigrationTextReport extends MigrationReport{
   override def reportMigratedBatch(batch : MigratedBatch) = {
     def batchFailureReport =
       s"Details:\n${reportSuccesses(batch.migrated)}\n\n${batch.failed.map(reportFailure(_) + "\n\n").mkString("\n")}"
-    
-    s"Batch Success Articles = ${batch.migrated.size}, Failed Articles = ${batch.failed.size} \n${batchFailureReport}"
+    def highestIdAttempted =
+      (batch.migrated.map(_.id) ++ batch.failed.map(_.id)).max
+
+    s"""
+       |Batch Success Articles = ${batch.migrated.size}, Failed Articles = ${batch.failed.size}\n
+       |Highest Attempted Id: ${highestIdAttempted}\n
+       |${batchFailureReport}
+     """.stripMargin
   }
 }

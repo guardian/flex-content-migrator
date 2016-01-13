@@ -3,6 +3,7 @@ package services.migration.r2ToFlexConversion
 import java.io.File
 
 import org.specs2.mutable.Specification
+import play.api.test.WithApplication
 
 class R2ToFlexAudioConversionSpec extends Specification  {
 
@@ -17,44 +18,44 @@ class R2ToFlexAudioConversionSpec extends Specification  {
 
     lazy val parsedAudioJson = R2ToFlexAudioConversion.parseDraftData(r2Json())
 
-    "accept R2 json" in {
+    "accept R2 json" in new WithApplication {
       parsedAudioJson mustNotEqual null
     }
-    "produce xml with picture tag" in {
+    "produce xml with picture tag" in new WithApplication {
       val xml = parsedAudioJson.xml
       xml.isEmpty must equalTo(false)
       xml.toString must startWith("<audio")
       xml.toString must endWith("</audio>")
     }
-    "parse page ID correctly" in {
+    "parse page ID correctly" in new WithApplication {
       val r2PageId =  parsedAudioJson.xml \ "originalR2PageId"
       r2PageId.text.toString must equalTo("1766235")
     }
-    "parse content ID correctly" in {
+    "parse content ID correctly" in new WithApplication {
       val r2ContentId =  parsedAudioJson.xml \ "originalR2ContentId"
       r2ContentId.text.toString must equalTo("392304420")
     }
-    "parse cms path correctly" in {
+    "parse cms path correctly" in new WithApplication {
       val cmsPath = parsedAudioJson.xml \ "@cms-path"
       cmsPath.text.toString must equalTo("global-development/audio/2012/jul/02/global-development-podcast-family-planning")
     }
-    "parse web publication time correctly" in {
+    "parse web publication time correctly" in new WithApplication {
       val webPubTime = parsedAudioJson.xml \ "@web-publication-date"
       webPubTime.text.toString must equalTo("2012-07-02T14:21:00.000+01:00")
     }
-    "parse created-date correctly" in {
+    "parse created-date correctly" in new WithApplication {
       val createdDate = parsedAudioJson.xml \ "@created-date"
       createdDate.text.toString must equalTo("2012-06-28T12:12:22.000+01:00")
     }
-    "parse modified-date correctly" in {
+    "parse modified-date correctly" in new WithApplication {
       val createdDate = parsedAudioJson.xml \ "@modified-date"
       createdDate.text.toString must equalTo("2015-05-08T16:22:51.000+01:00")
     }
-    "parse created-user correctly" in {
+    "parse created-user correctly" in new WithApplication {
       val expiry = parsedAudioJson.xml \ "@created-user"
       expiry.text.toString must equalTo("Audio")
     }
-    "parse tags correctly" in {
+    "parse tags correctly" in new WithApplication {
       val tags = (parsedAudioJson.xml \ "tags" \ "tag").map(t => t \ "@id").map(_.text.toString)
       tags.size must equalTo (15)
       tags must contain("46366")
@@ -74,24 +75,24 @@ class R2ToFlexAudioConversionSpec extends Specification  {
       tags must contain("26907")
       tags must contain("4")
     }
-    "parse headline correctly" in {
+    "parse headline correctly" in new WithApplication {
       val headline = ( parsedAudioJson.xml  \ "headline").text.toString
       headline must equalTo("Global development podcast: focus on family planning")
     }
-    "parse linktext correctly" in {
+    "parse linktext correctly" in new WithApplication {
       val linkText = ( parsedAudioJson.xml  \ "linktext").text.toString
       linkText must contain("Global development podcast: focus on family planning")
     }
-    "parse trail text correctly" in {
+    "parse trail text correctly" in new WithApplication {
       val xml = parsedAudioJson.xml
       val trailtext = ( parsedAudioJson.xml  \ "trail").text.toString
       trailtext must contain("<p>On 11 July London is to host a global summit on family planning.")
     }
-    "parse trail picture correctly" in {
+    "parse trail picture correctly" in new WithApplication {
       val draftTrailPicture = parsedAudioJson.xml \ "trail-picture"
       draftTrailPicture.toString must equalTo("<trail-picture image-id=\"364479522\" media-id=\"gu-image-456667284\"/>")
     }
-    "parse rights correctly" in {
+    "parse rights correctly" in new WithApplication {
       val syndicationAggregate  = (parsedAudioJson.xml \ "rights" \ "@syndicationAggregate").headOption.map(_.text.toString.toBoolean)
       val subscriptionDatabases = (parsedAudioJson.xml \ "rights" \ "@subscriptionDatabases").headOption.map(_.text.toString.toBoolean)
       val developerCommunity    = (parsedAudioJson.xml \ "rights" \ "@developerCommunity").headOption.map(_.text.toString.toBoolean)
@@ -99,18 +100,18 @@ class R2ToFlexAudioConversionSpec extends Specification  {
       subscriptionDatabases must equalTo(Some(true))
       developerCommunity must equalTo(Some(true))
     }
-    "parse show notes correctly" in {
+    "parse show notes correctly" in new WithApplication {
       val showNotes = (parsedAudioJson.xml \ "show-notes").text.toString
       showNotes must startWith("<p>Family planning is notoriously one of")
     }
-    "parse rights expiry correctly" in {
+    "parse rights expiry correctly" in new WithApplication {
       val isExpired = (parsedAudioJson.xml \ "expiry" \ "rights" \ "@expired").headOption.map(_.text.toString)
       val expiredAt = (parsedAudioJson.xml \ "expiry" \ "rights" \ "@expiredAt").headOption.map(_.text.toString)
       val scheduledExpiry = (parsedAudioJson.xml \ "expiry" \ "rights" \ "@scheduledExpiry").headOption.map(_.text.toString)
       isExpired must equalTo(None)
       scheduledExpiry must equalTo(None)
     }
-    "parse commercial expiry correctly" in {
+    "parse commercial expiry correctly" in new WithApplication {
       val isExpired = (parsedAudioJson.xml \ "expiry" \ "commercial" \ "@expired").headOption.map(_.text.toString)
       val expiredAt = (parsedAudioJson.xml \ "expiry" \ "commercial" \ "@expiredAt").headOption.map(_.text.toString)
       val scheduledExpiry = (parsedAudioJson.xml \ "expiry" \ "commercial" \ "@scheduledExpiry").headOption.map(_.text.toString)

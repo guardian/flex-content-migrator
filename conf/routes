@@ -24,7 +24,7 @@ POST        /migrate/audio/:audio_id         controllers.migration.AudioMigratio
 
 GET         /article                         controllers.migration.ArticleMigrationApi.articlePage
 GET         /check/article                   controllers.migration.ArticleMigrationApi.checkFlexConnection
-POST        /migrate/article                 controllers.migration.ArticleMigrationApi.migrateBatch(batchSize: Option[Int] ?=None, batchNumber : Option[Int] ?=None)
+POST        /migrate/article                 controllers.migration.ArticleMigrationApi.migrateBatch(batchSize: Option[Int] ?=None, batchNumber : Option[Int] ?=None, tagIds : Option[String] ?=None, withIdsHigherThan : Option[Int] ?=None)
 POST        /migrate/article/:article_id     controllers.migration.ArticleMigrationApi.migrateArticle(article_id : Int)
 POST        /migrate/article/json/:article_id     controllers.migration.ArticleMigrationApi.migrateArticleJson(article_id : Int)
 

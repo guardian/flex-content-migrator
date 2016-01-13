@@ -17,26 +17,26 @@ import scala.concurrent.duration._
 
 protected[migration] trait BatchMigrator{
   def migrateBatch(migrationBehaviour : MigrationBehaviour)
-                  (size: Int, batchNumber : Int ): Future[MigratedBatch]
+                  (params : MigrationBatchParams): Future[MigratedBatch]
 
 }
 
 protected[migration] object SimpleBatchMigrator extends BatchMigrator{
   override def migrateBatch(migrationBehaviour : MigrationBehaviour)
-                           (size: Int, batchNumber: Int): Future[MigratedBatch] = {
+                           (params : MigrationBatchParams): Future[MigratedBatch] = {
     import play.api.libs.concurrent.Execution.Implicits._
 
-    def pushVideosInFlex(batch : MigrationBatch) : Future[Seq[ContentInFlex]]= {
+    def pushContentInFlex(batch : MigrationBatch) : Future[Seq[ContentInFlex]]= {
       Future.sequence(batch.sourceContent.map(migrationBehaviour.contentTransform(_)).map(migrationBehaviour.pushToFlex(_)))
     }
 
-    def migrateVideosInR2(videosInFlex : Seq[ContentInFlex] ) =
-      Future.sequence(videosInFlex.map(video => migrationBehaviour.closeContentInSource(video)))
+    def migrateContentsInR2(contentInFlex : Seq[ContentInFlex] ) =
+      Future.sequence(contentInFlex.map(video => migrationBehaviour.closeContentInSource(video)))
 
 
-    val sourceVideos = migrationBehaviour.contentLoader.loadBatchOfContent(size, batchNumber)
-    val videosInFlex = sourceVideos.flatMap(pushVideosInFlex(_))
-    val videosInR2 = videosInFlex.flatMap(vids => migrateVideosInR2(vids))
+    val sourceContent = migrationBehaviour.contentLoader.loadBatchOfContent(params)
+    val videosInFlex = sourceContent.flatMap(pushContentInFlex(_))
+    val videosInR2 = videosInFlex.flatMap(migrateContentsInR2(_))
     videosInR2.map{ results => {
         val resultsSplit = MigrateContentInR2.splitResults(results)
         MigratedBatch(resultsSplit._1, resultsSplit._2)
@@ -51,7 +51,7 @@ protected[migration] object AkkaBatchMigrator extends BatchMigrator{
 
 
   def migrateBatch(migrationBehaviour : MigrationBehaviour)
-                   (size : Int, batchNumber : Int ): Future[MigratedBatch] = {
+                   (params : MigrationBatchParams ): Future[MigratedBatch] = {
     import AkkaBatchMigratorMessages._
     import akka.pattern.ask
     import scala.language.postfixOps
@@ -59,7 +59,7 @@ protected[migration] object AkkaBatchMigrator extends BatchMigrator{
     def batchMigrationOrchestrator(id: String, system : ActorSystem) = {
       system.actorOf( Props(classOf[AkkaBatchMigratorOrchestrator],
                             migrationBehaviour,
-                            id, size, batchNumber))
+                            id, params))
     }
 
     withActorSystem{ (id : String , system : ActorSystem) => {
@@ -76,7 +76,6 @@ protected[migration] object AkkaBatchMigrator extends BatchMigrator{
 
   }
 
-
   private def withActorSystem(fn : (String, ActorSystem) => Future[MigratedBatch]) : Future[MigratedBatch] = {
     import scala.concurrent.ExecutionContext.Implicits.global
     val id = migrationBatchId
@@ -88,7 +87,6 @@ protected[migration] object AkkaBatchMigrator extends BatchMigrator{
     })
     future
   }
-
 
 
   private def actorSystem(id : String) = {
@@ -116,7 +114,7 @@ protected[batch] object AkkaBatchMigratorMessages{
     def isSuccess : Boolean
     def listener : ActorRef
   }
-  case class MigratedVideoResultMsg(batchId : String, video : MigratedContent, listener : ActorRef) extends MigrationResult(video.id){
+  case class MigratedContentResultMsg(batchId : String, content : MigratedContent, listener : ActorRef) extends MigrationResult(content.id){
     def isSuccess = true
   }
   case class MigrationErrorResultMsg(batchId : String, override val r2Id : Int, error: String, listener : ActorRef) extends MigrationResult(r2Id){
@@ -125,8 +123,7 @@ protected[batch] object AkkaBatchMigratorMessages{
 }
 
 
-protected[batch] class AkkaBatchMigratorOrchestrator(migrationBehaviour : MigrationBehaviour,
-                                    batchId : String, size  : Int, batchNumber : Int) extends Actor {
+protected[batch] class AkkaBatchMigratorOrchestrator(migrationBehaviour : MigrationBehaviour, batchId : String, params : MigrationBatchParams) extends Actor {
 
 
   import AkkaBatchMigratorMessages._
@@ -154,7 +151,7 @@ protected[batch] class AkkaBatchMigratorOrchestrator(migrationBehaviour : Migrat
 
 
 
-  private def percDone = (results.size * 100 ) / size
+  private def percDone = (results.size * 100 ) / params.batchSize
 
 
   override def receive: Receive = {
@@ -179,10 +176,10 @@ protected[batch] class AkkaBatchMigratorOrchestrator(migrationBehaviour : Migrat
   }
 
   private def sendClientResultsNow(resultsListener : ActorRef): Unit ={
-    val successVideos = results.filter(_.isSuccess).map(_.asInstanceOf[MigratedVideoResultMsg]).map(_.video)
+    val successVideos = results.filter(_.isSuccess).map(_.asInstanceOf[MigratedContentResultMsg]).map(_.content)
     val failedVideos = results.filterNot(_.isSuccess).map(_.asInstanceOf[MigrationErrorResultMsg]).map(errorMsg =>
       MigrationFailedContent(errorMsg.r2Id, errorMsg.error))
-    if(results.size == size){
+    if(results.size == params.batchSize){
       Logger.debug(s"sending complete results to  ${resultsListener} : ${successVideos.size} success and ${failedVideos.size} failed")
       resultsListener ! MigratedBatch(successVideos, failedVideos)
     }
@@ -199,19 +196,19 @@ protected[batch] class AkkaBatchMigratorOrchestrator(migrationBehaviour : Migrat
 
 
   private def sendClientResultsIfDone(resultsListener : ActorRef){
-    if(results.size == size) sendClientResultsNow(resultsListener)
+    if(results.size == params.batchSize) sendClientResultsNow(resultsListener)
   }
 
 
   private def startMigration(resultsListener : ActorRef) = {
     //TODO: prevent future start requests coming in!
     Logger.debug(s"startMigration")
-    val videoIds: Future[List[Int]] = migrationBehaviour.contentLoader.getBatchOfContentIds(size, batchNumber)
-    videoIds.onSuccess[Unit]{
+    val contentIds: Future[List[Int]] = migrationBehaviour.contentLoader.getBatchOfContentIds(params)
+    contentIds.onSuccess[Unit]{
       case ids : List[Int] => idsInCurrentBatch = ids
     }
-    videoIds.map{_.map{ r2VideoId =>
-      actorR2Loader ! LoadContentR2Msg(batchId, r2VideoId, resultsListener)
+    contentIds.map{_.map{ r2ContentId =>
+      actorR2Loader ! LoadContentR2Msg(batchId, r2ContentId, resultsListener)
     }}
   }
 }
@@ -237,19 +234,19 @@ protected[batch] class AkkaBatchMigratorR2Loader(r2MigrationService : R2Migratio
     case loadVideoMsg: LoadContentR2Msg => loadR2Content(loadVideoMsg, loadVideoMsg.resultsListener)
   }
 
-  private def loadR2Content(loadVideoR2 : LoadContentR2Msg, resultsListener : ActorRef){
-    Logger.debug(s"loadR2Content ${loadVideoR2.contentId}")
+  private def loadR2Content(loadContentR2 : LoadContentR2Msg, resultsListener : ActorRef){
+    Logger.debug(s"loadR2Content ${loadContentR2.contentId}")
     try{
-      val loadedVideo =
-        r2MigrationService.loadContentById(loadVideoR2.contentId)
-      loadedVideo.map(srcVideo =>
-        nextInChain ! TransformContentMsg(batchId, srcVideo, resultsListener)
+      val loadedContent =
+        r2MigrationService.loadContentById(loadContentR2.contentId)
+      loadedContent.map(srcContent =>
+        nextInChain ! TransformContentMsg(batchId, srcContent, resultsListener)
       ).recover{
-        case e: Exception => sendErrorMsg(loadVideoR2.contentId, "Failed to load content from r2: " + e.toString, resultsListener, Some(e))
+        case e: Exception => sendErrorMsg(loadContentR2.contentId, "Failed to load content from r2: " + e.toString, resultsListener, Some(e))
       }
     }
     catch{
-      case e : Exception => sendErrorMsg(loadVideoR2.contentId, "Failed to load content from r2: " + e.toString, resultsListener, Some(e))
+      case e : Exception => sendErrorMsg(loadContentR2.contentId, "Failed to load content from r2: " + e.toString, resultsListener, Some(e))
     }
   }
 }
@@ -317,7 +314,7 @@ protected[batch] class AkkaBatchMigratorMigrateInR2(migrateVideoInR2 : MigrateCo
       migrateVideoInR2(migrate.content).map{ result =>
         result match {
           case ok: MigratedContent => {
-            orchestrator ! MigratedVideoResultMsg(batchId, ok, resultsListener)
+            orchestrator ! MigratedContentResultMsg(batchId, ok, resultsListener)
           }
           case problem: MigrationFailedContent => sendErrorMsg(migrate.content.id, s"Failed to migrate content in R2 : ${problem.reason}", resultsListener)
         }

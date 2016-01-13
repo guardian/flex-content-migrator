@@ -2,7 +2,7 @@ package services.migration.r2
 
 import model.{MigrationBatch, SourceContent}
 import play.Logger
-import services.migration.ThrottleControl
+import services.migration.{MigrationBatchParams, ThrottleControl}
 
 import scala.concurrent.Future
 
@@ -20,21 +20,21 @@ abstract class R2QuizMigratorService(client : R2IntegrationAPIClient) extends R2
 
   def loadContentById(id : Integer) = loadContentWithThrottle(id)
 
+  def getBatchOfContentIds(params : MigrationBatchParams) ={
+    client.getBatchOfQuizIds(params)
+  }
 
-  def getBatchOfContentIds(batchSize : Int, batchOffset : Int) =
-    client.getBatchOfQuizIds(batchSize, batchOffset)
-
-  def loadBatchOfContent(batchSize : Int, batchNumber : Int = 1) : Future[MigrationBatch] = {
+  def loadBatchOfContent(params : MigrationBatchParams) : Future[MigrationBatch] = {
     def mapIdsToQuizzes(ids: Future[List[Int]]) = {
       def idsToQuizzes(ids : List[Int]) = ids.map(loadContentWithThrottle(_))
 
       ids.map{idsToQuizzes(_)}.flatMap(Future.sequence(_))
     }
 
-    val ids = client.getBatchOfGalleryIds(batchSize, batchNumber)
+    val ids = client.getBatchOfGalleryIds(params)
     val quizzes = mapIdsToQuizzes(ids)
     quizzes.map(loadedQuizzes => {
-      Logger.info(s"Loaded the batch of ${batchSize} quizzes from R2")
+      Logger.info(s"Loaded the batch of ${params.batchSize} quizzes from R2")
       new MigrationBatch(loadedQuizzes)
     })
   }

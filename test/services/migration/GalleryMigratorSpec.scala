@@ -44,7 +44,7 @@ class GalleryMigratorSpec extends Specification with Mockito {
   private def migrator : Migrator = {
     val r2GalleryMigrator = mock[R2GalleryMigratorService]
     r2GalleryMigrator.loadContentById(any[Int]) returns Future{galleries.head}
-    r2GalleryMigrator.getBatchOfContentIds(any[Int], any[Int]) returns Future{(1 to NumberOfGalleries).toList}
+    r2GalleryMigrator.getBatchOfContentIds(any[MigrationBatchParams]) returns Future{(1 to NumberOfGalleries).toList}
     r2GalleryMigrator.migrateContentInR2(any[Int], any[String]) returns Future{(true, "gallery migrated in r2")}
 
     val flexGalleryMigrationService = mock[FlexContentMigrationService]
@@ -65,7 +65,7 @@ class GalleryMigratorSpec extends Specification with Mockito {
 
   "GalleryMigrator migrateBatch" should {
     "load, transform and then migrate gallery data for all galleries" in new WithApplication{
-      val migratedBatchFuture = migrator.migrateBatchOfContent(Some(NumberOfGalleries), None)
+      val migratedBatchFuture = migrator.migrateBatchOfContent(MigrationBatchParams(Some(NumberOfGalleries), None))
       val migratedBatch = Helpers.await[MigratedBatch](migratedBatchFuture)
       migratedBatch.migrated.size must equalTo(GalleriesToMigrate.size)
       migratedBatch.failed.size must equalTo(0)

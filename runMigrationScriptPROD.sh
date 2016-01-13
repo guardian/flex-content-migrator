@@ -1,42 +1,41 @@
 #!/bin/bash
 echo off
 
+
 #PROD
-PREFIX="http://flexcontentmigrator.gutools.co.uk/migrate/cartoon"
 
-read -p "Press [Enter] key to start PROD migration..."
+BATCH_SIZE=${BATCH_SIZE:-30}                      # NO BIGGER THAN 30
+NUMBER_OF_BATCHES=${NUMBER_OF_BATCHES:-200}
+TAGIDS=${TAGIDS:-6964}
+SLEEP_TIME=${SLEEP_TIME:-1}
 
+PREFIX="http://flexcontentmigrator.gutools.co.uk/migrate/article?tagIds=$TAGIDS&batchSize=$BATCH_SIZE"
 
-BATCH_SIZE=5
-NUMBER_OF_BATCHES=1000
+read -p "Press [Enter] key to start **PROD** migration (straight sequence)..."
 
-
-URL="$PREFIX?batchSize=$BATCH_SIZE&batchNumber=5"
-echo "Migrating content to $URL"
+echo "Migrating content to $PREFIX"
 
 TIMESTAMP="$(date +"%s")"
-OUTPUT_PATH=./migrationOutput/$TIMESTAMP
-mkdir ./migrationOutput
-mkdir $OUTPUT_PATH
+OUTPUT_PATH=~/.migration/output/PROD/$TIMESTAMP
+mkdir -p $OUTPUT_PATH
 echo "Results in $OUTPUT_PATH"
 
 #Perform the migration batches and collect the results
 
  for i in `seq 1 $NUMBER_OF_BATCHES`;
         do
-            echo migrating batch $i with $BATCH_SIZE videos
+	        URL="$PREFIX&batchNumber=1"
+            echo migrating batch $i with $BATCH_SIZE content items : $URL
             BATCH_RESULTS=$OUTPUT_PATH/batch$i.txt
             curl -X POST $URL > $BATCH_RESULTS
             echo "results for batch $i in $BATCH_RESULTS"
-            sleep 2
-        done    
+            sleep $SLEEP_TIME
+        done
 
 
 #Analyse the files to see if any had failures
-EXPECTED_BATCH_RESULT="Batch Success Galleries = $BATCH_SIZE, Failed Galleries = 0"
+EXPECTED_BATCH_RESULT="Batch Success Articles = $BATCH_SIZE, Failed Articles = 0"
 echo ""
 echo "Problem batches..."
 
 grep -L "$EXPECTED_BATCH_RESULT" $OUTPUT_PATH/batch*.txt
-
- 

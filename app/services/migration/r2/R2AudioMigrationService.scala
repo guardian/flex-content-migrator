@@ -2,7 +2,7 @@ package services.migration.r2
 
 import model.{MigrationBatch, SourceContent}
 import play.Logger
-import services.migration.ThrottleControl
+import services.migration.{MigrationBatchParams, ThrottleControl}
 
 import scala.concurrent.Future
 
@@ -21,20 +21,21 @@ abstract class R2AudioMigratorService(client : R2IntegrationAPIClient) extends R
   def loadContentById(id : Integer) = loadContentWithThrottle(id)
 
 
-  def getBatchOfContentIds(batchSize : Int, batchOffset : Int) =
-    client.getBatchOfAudioIds(batchSize, batchOffset)
+  def getBatchOfContentIds(params : MigrationBatchParams) = {
 
-  def loadBatchOfContent(batchSize : Int, batchNumber : Int = 1) : Future[MigrationBatch] = {
+    client.getBatchOfAudioIds(params)
+  }
+
+  def loadBatchOfContent(params : MigrationBatchParams) : Future[MigrationBatch] = {
     def mapIdsToAudios(ids: Future[List[Int]]) = {
       def idsToAudios(ids : List[Int]) = ids.map(loadContentWithThrottle(_))
 
       ids.map{idsToAudios(_)}.flatMap(Future.sequence(_))
     }
-
-    val ids = client.getBatchOfAudioIds(batchSize, batchNumber)
+    val ids = client.getBatchOfAudioIds(params)
     val audios = mapIdsToAudios(ids)
     audios.map(loadedAudios => {
-      Logger.info(s"Loaded the batch of ${batchSize} audios from R2")
+      Logger.info(s"Loaded the batch of ${params.batchSize} audios from R2")
       new MigrationBatch(loadedAudios)
     })
   }
