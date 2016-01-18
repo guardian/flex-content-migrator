@@ -21,6 +21,7 @@ case class QuizQuestion(text : String, answers : List[QuizQuestionAnswer], image
     Json.obj(
       "questionText" -> text,
       "assets" -> JsArray(), //TODO
+      "buckets" -> JsArray(), //TODO
       "answers" -> answers.map(_.getJson)
     )
   }
@@ -69,6 +70,7 @@ case class Quiz(r2QuizId : Int, title : String, createdAt : DateTime, createdBy 
       "createdAt" -> createdAt.getMillis.toString,
       "createdBy" -> createdBy,
       "published" -> true,
+      "publishedAt" -> createdAt.getMillis.toString, //TODO
       "quizType" -> "knowledge",  //TODO
       "revealAtEnd" -> revealAtEnd,
       "defaultColumns" -> 1, //TODO
