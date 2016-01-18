@@ -7,9 +7,17 @@ object R2CMSPathCleaner{
   val UnwatedPrefixes = List("/Guardian/", "/Saferjobs/")
   //val UnwatedPrefixes = List("/Guardian/", "/Saferjobs/", "/Gmgpensions/", "/Kable/", "/Public/", "/Smarthealthcare/")
 
+  val ForbiddenPrefixes = List("/Gmgpensions/")
+
   def cleanPath(r2Path : String): String = {
     def cleanUnwantedPrefix(path : String, prefix:String) = if(path.startsWith(prefix)) path.replace(prefix, "") else path
-    UnwatedPrefixes.foldLeft(r2Path)(cleanUnwantedPrefix(_,_))
+    val isForbiddenPrefix = ForbiddenPrefixes.foldLeft(false)((isForbidden : Boolean, forbidden : String) => isForbidden || r2Path.toLowerCase.startsWith(forbidden.toLowerCase))
+    if(isForbiddenPrefix){
+      throw new IllegalStateException(s"Forbidden prefix: ${r2Path}")
+    }
+    else{
+      UnwatedPrefixes.foldLeft(r2Path)(cleanUnwantedPrefix(_,_))
+    }
   }
 
 }
