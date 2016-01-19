@@ -30,8 +30,7 @@ case class QuizQuestionAnswer(text : String, isCorrect : Boolean, image : Option
   override def getJson: JsObject = {
     Json.obj(
       "answerText" -> text,
-      "correct" -> isCorrect,
-      "image" -> image.map(_.getJson),
+      "weight" -> (if(isCorrect) 1 else 0),
       "revealText" -> revealText.map(_.toString),
       "assets" -> JsArray() //TODO
     )
@@ -53,11 +52,13 @@ case class Quiz(r2QuizId : Int, title : String, createdAt : DateTime, createdBy 
   lazy val QuizSecret = Play.current.configuration.getString("quizbuilder.secret").get;
 
 
+
+
   private def quizContentJson: JsObject = {
     import play.api.libs.json._
     Json.obj(
       "questions" -> questions.map(_.getJson),
-      "resultGroups" -> resultGroups.map(_.getJson)
+      "resultGroups" -> Json.obj("groups" -> resultGroups.map(_.getJson))
     )
   }
 
@@ -71,8 +72,10 @@ case class Quiz(r2QuizId : Int, title : String, createdAt : DateTime, createdBy 
       "createdBy" -> createdBy,
       "published" -> true,
       "publishedAt" -> createdAt.getMillis.toString, //TODO
+      "revision" -> 1,
       "quizType" -> "knowledge",  //TODO
       "revealAtEnd" -> revealAtEnd,
+      "quizType" -> "knowledge",  //TODO
       "defaultColumns" -> 1, //TODO
       "content" -> quizContentJson
     )
