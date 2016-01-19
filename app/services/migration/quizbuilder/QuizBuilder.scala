@@ -37,11 +37,12 @@ case class QuizQuestionAnswer(text : String, isCorrect : Boolean, image : Option
   }
 }
 case class QuizResultGroup(title : String, minScore : Int, share : Option[String] = None) extends JsonModel{
+  val shareString = share.getOrElse("some share") //TODO
   override def getJson: JsObject = {
     Json.obj(
       "title" -> title,
       "minScore" -> minScore,
-      "share" -> share.map(_.toString)
+      "share" -> shareString
     )
   }
 }
@@ -75,7 +76,6 @@ case class Quiz(r2QuizId : Int, title : String, createdAt : DateTime, createdBy 
       "revision" -> 1,
       "quizType" -> "knowledge",  //TODO
       "revealAtEnd" -> revealAtEnd,
-      "quizType" -> "knowledge",  //TODO
       "defaultColumns" -> 1, //TODO
       "content" -> quizContentJson
     )
