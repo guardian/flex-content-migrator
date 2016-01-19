@@ -21,8 +21,6 @@ class QuizImporterService extends AsyncCallerWithMultipartData{
     import scala.concurrent.ExecutionContext.Implicits.global
     WS.url(ImportUrl).post(quiz.getJson).map{response =>
       try{
-        System.out.println(s"Quiz builder request: ${quiz.getJson}") //TODO
-        System.out.println(s"Quiz builder response: ${response.status} ${response.statusText} ${response.body}") //TODO
         Logger.debug(s"Quiz builder request: ${quiz.getJson}")
         Logger.debug(s"Quiz builder response: ${response.status} ${response.statusText} ${response.body}")
 
@@ -30,7 +28,7 @@ class QuizImporterService extends AsyncCallerWithMultipartData{
         val statusText = (response.json \ "statusText").as[String]
         val id = (response.json \ "id").as[String]
         val wasSuccess = statusCode == 200 && statusText == "Success"
-        if(wasSuccess) Some(QuizIdProcessor(id))
+        if(wasSuccess) Some(id)
         else{
           Logger.debug(s"Failed to create content atom for R2 quiz ${quiz.r2QuizId}: ${statusCode} ${statusText}\n ${quiz.getJson}")
           None
@@ -51,7 +49,3 @@ class QuizImporterService extends AsyncCallerWithMultipartData{
 object QuizImporterServiceImpl extends QuizImporterService
 
 
-
-object QuizIdProcessor{
-  def apply(s : String) = s"quizzes/${s}"
-}

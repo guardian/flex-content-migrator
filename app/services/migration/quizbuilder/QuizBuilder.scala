@@ -30,7 +30,7 @@ case class QuizQuestionAnswer(text : String, isCorrect : Boolean, image : Option
   override def getJson: JsObject = {
     Json.obj(
       "answerText" -> text,
-      "weight" -> (if(isCorrect) 1 else 0),
+      "correct" -> isCorrect,
       "revealText" -> revealText.map(_.toString),
       "assets" -> JsArray() //TODO
     )

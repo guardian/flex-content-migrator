@@ -117,7 +117,7 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
       {trailPictureId.map(tp => <trail-picture image-id={tp} media-id={trailPictureMediaId orNull}/>) orNull}
       {largeTrailPictureId.map(ltp => <large-trail-picture image-id={ltp} media-id={largeTrailPictureMediaId orNull}/>) orNull}
       <content-atoms>
-        {for (atom <- contentAtoms) yield <content-atom id={atom._1} required={atom._2.toString}/>}
+        {for (atom <- contentAtoms) yield <content-atom id={atom._1} required={atom._2.toString} title={headline orNull}/>}
       </content-atoms>
       <rights syndicationAggregate={syndicationAggregateFn orNull} subscriptionDatabases={subscriptionDatabasesFn orNull} developerCommunity={developerCommunityFn orNull}/>
       //expiry of rights and commercial expiry processing
