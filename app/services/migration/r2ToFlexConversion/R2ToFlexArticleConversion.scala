@@ -144,9 +144,40 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
 
   private def sectionCode = getBookSectionToken.map(_._2)
 
+  private def embeds: List[Map[String, Any]] = getAsMaps("inBodyElements", getAsMap("contentBody", liveOrDraft).get).getOrElse(Nil)
+
+  private def getEmbedOffset(embedMap : Map[String, Any]) = embedMap("inBodyDelegate").asInstanceOf[Map[String, Any]]("characterOffset").toString
+
+  private def getEmbedPicture(embedMap : Map[String, Any]) : Map[String, String] = {
+      def getFromRootOrPictureOrImage(field : String) =
+        getAsString(field) match {
+          case Some(x) => Some(x) //root
+          case None =>
+            getAsString (field, embedMap) match {
+              case Some (x) => Some (x)   //picture
+              case None => getAsMap ("image", embedMap).flatMap (_.get (field) ).map (_.toString)  //image
+            }
+        }
+      val id  = getAsMap("image", embedMap).flatMap(_.get("id")).map(_.toString) //image id
+      val mediaId   = getAsString("id", embedMap).map("gu-image-" + _) //picture ID is the media Id)
+
+      (
+        id.map("id" -> _) ++ mediaId.map("mediaId" -> _) ++
+        getFromRootOrPictureOrImage("caption").map(caption => ("caption" -> caption)) ++
+        getFromRootOrPictureOrImage("altText").map(altText => ("altText" -> altText)) ++
+        getFromRootOrPictureOrImage("credit").map(credit => ("credit" -> credit)) ++
+        getFromRootOrPictureOrImage("creditPrefix").map(prefix => ("creditPrefix" -> prefix))
+      ).toMap[String,String]
+  }
+
+  private def pictureEmbeds : List[Map[String,String]] = {
+    embeds.map{embed =>
+      Map("offset" -> getEmbedOffset(embed)) ++
+        getEmbedPicture(getAsMap("inBodyPicture", embed).getOrElse(Map[String, Any]()))
+    }
+  }
+
   override lazy val xml =
-    if(getInBodyElements.size>0) throw new UnsupportedOperationException("The article contains embedded elements - this is not yet supported")
-    else
     <article story-bundle={storyBundleId orNull} cms-path={cmsPath orNull} notes={notes orNull} slug-word={slug orNull}
            uk-only={ukOnly orNull} explicit={explicit orNull} expiry-date={scheduledExpiry orNull}
            created-date={createdDate orNull} created-user={createdBy orNull} modified-date={modifiedDate orNull}
@@ -190,8 +221,19 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
       }}
         }
       </pictures>
-      }
-
+      }{if (!pictureEmbeds.isEmpty)
+      <embeds>
+        {pictureEmbeds.map(picEmbed =>
+        <embed offset={picEmbed.get("offset") orNull}>
+          <picture media-id={picEmbed.get("mediaId") orNull} image-id={picEmbed.get("id") orNull}>
+            {picEmbed.get("caption").map { v => <caption>{v}</caption>} orNull}
+            {picEmbed.get("altText").map { v => <altText>{v}</altText>} orNull}
+            {picEmbed.get("credit").map { v => <credit>{v}</credit>} orNull}
+            {picEmbed.get("creditPrefix").map { v => <creditPrefix>{v}</creditPrefix>} orNull}
+          </picture>
+        </embed>
+      )}
+      </embeds>}
       <rights syndicationAggregate={syndicationAggregateFn orNull} subscriptionDatabases={subscriptionDatabasesFn orNull} developerCommunity={developerCommunityFn orNull} />
       {
       val rightsExpiry = getRightsExpiry
