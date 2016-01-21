@@ -113,11 +113,6 @@ class R2ToFlexArticleConversionSpec extends Specification with Mockito {
       (xml \ "@section-code").text.toString must equalTo("fam")
       (xml \ "@star-rating").text.toString must equalTo("3")
     }
-    "article with embed" in {
-      (R2ToFlexArticleConversion.parseDraftData(
-        r2Json("/migration/r2article_inbodyElements.json")).xml) must
-          throwA(new UnsupportedOperationException("The article contains embedded elements - this is not yet supported"))
-    }
     "article with picture" in {
       val xml = R2ToFlexArticleConversion.parseDraftData(r2Json("/migration/r2article_withPicture.json")).xml
       (xml \ "main-picture" \ "@media-id").text.toString must equalTo("gu-image-338491299")
@@ -125,6 +120,20 @@ class R2ToFlexArticleConversionSpec extends Specification with Mockito {
       (xml \ "main-picture" \ "caption").text.toString must equalTo("Outer caption")
       (xml \ "main-picture" \ "altText").text.toString must equalTo("Outer alt")
     }
+    "article with embed" in {
+      val xml = R2ToFlexArticleConversion.parseLiveData(r2Json("/migration/r2article_inbodyElements.json")).xml
+      val embeds = (xml \ "embeds" \ "embed")
+      embeds.size must equalTo(14)
+      (embeds(0) \ "@offset").text must equalTo("75")
+      (embeds(1) \ "@offset").text must equalTo("715")
+
+      (embeds(0) \ "picture" \ "@image-id").text must equalTo("399237243")
+      (embeds(0) \ "picture" \ "@media-id").text must equalTo("gu-image-399326373")
+      (embeds(0) \ "picture" \ "altText").text must equalTo("Marcelline Soton Akouegninou, Benin, clothes shop")
+      (embeds(0) \ "picture" \ "caption").text must equalTo("Marcelline Soton Akouegninou, Benin, clothes shop Photograph: Care International")
+
+    }
+
   }
 
 
