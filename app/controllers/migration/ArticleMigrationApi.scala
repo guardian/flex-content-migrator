@@ -154,7 +154,7 @@ object ArticleMigrationTextReport extends MigrationReport{
         |-----------------""".stripMargin
 
   private def reportSuccesses(migrated : Seq[MigratedContent]) =
-    migrated.sorted.map(migrated => s"${migrated.id} -> ${migrated.composerId}").mkString("\n")
+    migrated.sortBy(_.id).map(migrated => s"${migrated.id} -> ${migrated.composerId}").mkString("\n")
 
 
   def reportSingleContent(audio : ContentMigrationResult) : String = {
@@ -171,7 +171,7 @@ object ArticleMigrationTextReport extends MigrationReport{
 
   override def reportMigratedBatch(batch : MigratedBatch) = {
     def batchFailureReport =
-      s"Details:\n${reportSuccesses(batch.migrated)}\n\n${batch.failed.sorted.map(reportFailure(_) + "\n\n").mkString("\n")}"
+      s"Details:\n${reportSuccesses(batch.migrated)}\n\n${batch.failed.sortBy(_.id).map(reportFailure(_) + "\n\n").mkString("\n")}"
     def highestIdAttempted =
       (batch.migrated.map(_.id) ++ batch.failed.map(_.id)).max
 
