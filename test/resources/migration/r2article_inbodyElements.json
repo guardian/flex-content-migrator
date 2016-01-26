@@ -101,6 +101,20 @@
             "characterOffset": 8161
           },
           "id": 197921
+        },
+        {
+          "inBodyVideoDelegate": {
+            "videoPageId": 1844787,
+            "videoPagePath": {
+              "path": "/Guardian/politics/video/2012/dec/19/andrew-mitchell-cctv-plebgate-incident-video"
+            },
+            "caption": "Andrew Mitchell insists CCTV clears him over Plebgate"
+          },
+          "inBodyDelegate": {
+            "characterOffset": 197925
+          },
+          "link": {},
+          "id": 203805
         }
       ],
       "bodyBlocks": [],
@@ -757,6 +771,20 @@
             "linkUrl": ""
           },
           "id": 197921
+        },
+        {
+          "inBodyVideoDelegate": {
+            "videoPageId": 1844787,
+            "videoPagePath": {
+              "path": "/Guardian/politics/video/2012/dec/19/andrew-mitchell-cctv-plebgate-incident-video"
+            },
+            "caption": "Andrew Mitchell insists CCTV clears him over Plebgate"
+          },
+          "inBodyDelegate": {
+            "characterOffset": 197925
+          },
+          "link": {},
+          "id": 203805
         }
       ],
       "bodyBlocks": [],
