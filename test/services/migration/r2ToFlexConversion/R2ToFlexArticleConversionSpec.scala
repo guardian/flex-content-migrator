@@ -123,7 +123,8 @@ class R2ToFlexArticleConversionSpec extends Specification with Mockito {
     "article with embed" in {
       val xml = R2ToFlexArticleConversion.parseLiveData(r2Json("/migration/r2article_inbodyElements.json")).xml
       val embeds = (xml \ "embeds" \ "embed")
-      embeds.size must equalTo(14)
+      embeds.size must equalTo(15)
+      //check the pictures
       (embeds(0) \ "@offset").text must equalTo("75")
       (embeds(1) \ "@offset").text must equalTo("715")
 
@@ -131,6 +132,11 @@ class R2ToFlexArticleConversionSpec extends Specification with Mockito {
       (embeds(0) \ "picture" \ "@media-id").text must equalTo("gu-image-399326373")
       (embeds(0) \ "picture" \ "altText").text must equalTo("Marcelline Soton Akouegninou, Benin, clothes shop")
       (embeds(0) \ "picture" \ "caption").text must equalTo("Marcelline Soton Akouegninou, Benin, clothes shop Photograph: Care International")
+
+      //check the videos
+      (embeds(14) \ "@offset").text must equalTo("197925")
+      (embeds(14) \ "videopage" \ "@pageid").text must equalTo("1844787")
+      (embeds(14) \ "videopage" \ "@caption").text must equalTo("Andrew Mitchell insists CCTV clears him over Plebgate")
 
     }
 
