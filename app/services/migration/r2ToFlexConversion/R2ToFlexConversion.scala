@@ -99,23 +99,32 @@ abstract class R2ToFlexContentConversion(jsonMap : Map[String, Any], parseLiveDa
 
     def removeDuplSection1(tags : List[String]) =
       if(tags.contains("16657") && tags.contains("20853")) tags.filterNot(_ == "20853") else tags
-
     def removeDuplSection2(tags : List[String]) =
       if(tags.contains("16649") && tags.contains("16756")) tags.filterNot(_ == "16649") else tags
-
     def removeDuplSection3(tags : List[String]) =
       if(tags.contains("16802") && tags.contains("20855")) tags.filterNot(_ == "16802") else tags
-
     def removeDuplSection4(tags : List[String]) =
       if(tags.contains("16636") && tags.contains("16756")) tags.filterNot(_ == "16636") else tags
-
     def removeDuplSection5(tags : List[String]) =
       if(tags.contains("16590") && tags.contains("16593")) tags.filterNot(_ == "16590") else tags
-
+    def removeDuplSection6(tags : List[String]) =
+      if(tags.contains("16606") && tags.contains("16727")) tags.filterNot(_ == "16727") else tags
+    def removeDuplSection7(tags : List[String]) =
+      if(tags.contains("16649") && tags.contains("16635")) tags.filterNot(_ == "16635") else tags
+    def removeDuplSection8(tags : List[String]) =
+      if(tags.contains("16649") && tags.contains("16635")) tags.filterNot(_ == "16635") else tags
+    def removeDuplSection9(tags : List[String]) =
+      if(tags.contains("16649") && tags.contains("16636")) tags.filterNot(_ == "16636") else tags
+    def removeDuplSection10(tags : List[String]) =
+      if(tags.contains("16649") && tags.contains("16763")) tags.filterNot(_ == "16763") else tags
+    def removeDuplSection11(tags : List[String]) =
+      if(tags.contains("16649") && tags.contains("16767")) tags.filterNot(_ == "16649") else tags
     def removeAllDupes =
       removeDuplSection1 _ compose removeDuplSection2 compose
             removeDuplSection3 compose removeDuplSection4 compose
-              removeDuplSection5
+              removeDuplSection5 compose removeDuplSection6 compose
+                removeDuplSection7 compose removeDuplSection8 compose
+                  removeDuplSection9 compose removeDuplSection10 compose removeDuplSection11
 
     removeAllDupes(tags)
   }
