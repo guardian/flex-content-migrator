@@ -785,6 +785,17 @@
           },
           "link": {},
           "id": 203805
+        },
+        {
+          "embeddedObject": "<iframe src=\"https://embed.spotify.com/?uri=spotify:user:guardianmusic:playlist:5UjtqTKfbsDy9u0LEIWjGU\"width=\"460\"height=\"540\"frameborder=\"0\"allowtransparency=\"true\"></iframe>",
+          "caption": "Listen on Spotify to 60 years' worth of hits. Please note! The Beatles would take the slot for 1963, with From Me To You, but the Beatles aren't on Spotify.",
+          "inBodyDelegate": {
+            "characterOffset": 203809
+          },
+          "link": {
+            "linkUrl": ""
+          },
+          "id": 174654
         }
       ],
       "bodyBlocks": [],
