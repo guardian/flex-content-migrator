@@ -123,7 +123,7 @@ class R2ToFlexArticleConversionSpec extends Specification with Mockito {
     "article with embed" in {
       val xml = R2ToFlexArticleConversion.parseLiveData(r2Json("/migration/r2article_inbodyElements.json")).xml
       val embeds = (xml \ "embeds" \ "embed")
-      embeds.size must equalTo(15)
+      embeds.size must equalTo(16)
       //check the pictures
       (embeds(0) \ "@offset").text must equalTo("75")
       (embeds(1) \ "@offset").text must equalTo("715")
@@ -137,6 +137,10 @@ class R2ToFlexArticleConversionSpec extends Specification with Mockito {
       (embeds(14) \ "@offset").text must equalTo("197925")
       (embeds(14) \ "videopage" \ "@pageid").text must equalTo("1844787")
       (embeds(14) \ "videopage" \ "@caption").text must equalTo("Andrew Mitchell insists CCTV clears him over Plebgate")
+
+      (embeds(15) \ "@offset").text must equalTo("203809")
+      (embeds(15) \ "objectembed" \ "@caption").text must equalTo("Listen on Spotify to 60 years' worth of hits. Please note! The Beatles would take the slot for 1963, with From Me To You, but the Beatles aren't on Spotify.")
+      (embeds(15) \ "objectembed").text must startWith("<iframe src=")
 
     }
 

@@ -111,8 +111,6 @@ abstract class R2ToFlexContentConversion(jsonMap : Map[String, Any], parseLiveDa
       if(tags.contains("16606") && tags.contains("16727")) tags.filterNot(_ == "16727") else tags
     def removeDuplSection7(tags : List[String]) =
       if(tags.contains("16649") && tags.contains("16635")) tags.filterNot(_ == "16635") else tags
-    def removeDuplSection8(tags : List[String]) =
-      if(tags.contains("16649") && tags.contains("16635")) tags.filterNot(_ == "16635") else tags
     def removeDuplSection9(tags : List[String]) =
       if(tags.contains("16649") && tags.contains("16636")) tags.filterNot(_ == "16636") else tags
     def removeDuplSection10(tags : List[String]) =
@@ -123,8 +121,8 @@ abstract class R2ToFlexContentConversion(jsonMap : Map[String, Any], parseLiveDa
       removeDuplSection1 _ compose removeDuplSection2 compose
             removeDuplSection3 compose removeDuplSection4 compose
               removeDuplSection5 compose removeDuplSection6 compose
-                removeDuplSection7 compose removeDuplSection8 compose
-                  removeDuplSection9 compose removeDuplSection10 compose removeDuplSection11
+                removeDuplSection7 compose removeDuplSection9 compose
+                  removeDuplSection10 compose removeDuplSection11
 
     removeAllDupes(tags)
   }

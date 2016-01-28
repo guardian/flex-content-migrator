@@ -175,6 +175,7 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
     embedMap.get("caption").map("caption" -> _.toString).toMap
   }
 
+
   private def pictureEmbeds : List[Map[String,String]] = {
     for(embed <- embeds;
         picMap <- getAsMap("inBodyPicture", embed)
@@ -190,6 +191,16 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
     ) yield {
       val offset = getEmbedOffset(embed)
       Map[String, String]("offset" -> offset.toString) ++ getEmbedVid(vidMap)
+    }
+  }
+
+  private def objectEmbeds : List[Map[String,String]] = {
+    for(embed <- embeds;
+        objHtml <- getAsString("embeddedObject", embed)
+    ) yield {
+      val offset = getEmbedOffset(embed)
+      val caption = getAsString("caption", embed).map("caption" -> _).toMap
+      Map[String, String]("offset" -> offset.toString, "html" -> objHtml) ++ caption
     }
   }
 
@@ -237,7 +248,7 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
       }}
         }
       </pictures>
-      }{if (!pictureEmbeds.isEmpty || !videoEmbeds.isEmpty)
+      }{if (!pictureEmbeds.isEmpty || !videoEmbeds.isEmpty || !objectEmbeds.isEmpty)
       <embeds>
         {pictureEmbeds.map(picEmbed =>
         <embed offset={picEmbed.get("offset") orNull}>
@@ -254,6 +265,11 @@ class R2ToFlexArticleConversion(jsonMap : Map[String, Any], parseLiveData : Bool
            <videopage pageid={vidEmbed.get("pageid") orNull} caption={vidEmbed.get("caption") orNull}/>
          </embed>
        )}
+       {objectEmbeds.map(objectEmbed =>
+        <embed offset={objectEmbed.get("offset") orNull}>
+          <objectembed caption={objectEmbed.get("caption") orNull}>{objectEmbed.get("html") orNull}</objectembed>)
+        </embed>)
+        }
       </embeds>}
       <rights syndicationAggregate={syndicationAggregateFn orNull} subscriptionDatabases={subscriptionDatabasesFn orNull} developerCommunity={developerCommunityFn orNull} />
       {
