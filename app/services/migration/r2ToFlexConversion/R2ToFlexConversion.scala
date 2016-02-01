@@ -124,7 +124,7 @@ abstract class R2ToFlexContentConversion(jsonMap : Map[String, Any], parseLiveDa
                 removeDuplSection7 compose removeDuplSection9 compose
                   removeDuplSection10 compose removeDuplSection11
 
-    removeAllDupes(tags)
+    removeAllDupes(tags).toSet.toList
   }
 
   protected def thumbnailImageUrl = getAsString("thumbnailImageUrl")
