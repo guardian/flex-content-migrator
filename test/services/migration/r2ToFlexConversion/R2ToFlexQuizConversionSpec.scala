@@ -19,6 +19,7 @@ class R2ToFlexQuizConversionSpec extends Specification with Mockito {
     }
   }
 
+
   "R2ToFlexQuizConversion" should {
     def r2Json(path : String= "/migration/r2quiz.json") : Map[String, Any] = {
       val filePath = getClass.getResource(path).getFile
@@ -101,7 +102,7 @@ class R2ToFlexQuizConversionSpec extends Specification with Mockito {
       val draftTrailPicture = parsedQuizJson.xml \ "trail-picture"
       draftTrailPicture.toString must equalTo("<trail-picture image-id=\"329948829\" media-id=\"gu-image-335558971\"/>")
 
-      val liveTrailPictureMissingMediaId = R2ToFlexGalleryConversion.parseLiveData(r2Json()).xml \ "trail-picture"
+      val liveTrailPictureMissingMediaId = R2ToFlexQuizConversion.parseLiveData(r2Json(), mockQuizImporterService).xml \ "trail-picture"
       liveTrailPictureMissingMediaId.toString must equalTo("<trail-picture image-id=\"329948829\" media-id=\"gu-image-335558971\"/>")
     }
     "parse rights correctly" in {

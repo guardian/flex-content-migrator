@@ -32,37 +32,9 @@ trait FlexContentMigrationService extends FlexAdminApiService{
 }
 
 
-
-object FlexGalleryMigrationServiceImpl  extends FlexContentMigrationService{
-  override lazy val ConnectivityCheckUrl = FlexImportBaseUrl + "/contentmigration/gallery/index";
-  private def MigrateGalleryUrl = FlexImportBaseUrl + "/contentmigration/gallery"
-
-  override def migrateContentXml(xmlFile: File): Future[WSResponse] = {
-    flexThrottlerFt[WSResponse] {
-      withCountIncr(Metrics.GalleriesMigratedInFlex) {
-        makeAsyncCall(MigrateGalleryUrl, (xmlFile, "fileData"), Map())
-      }
-    }
-  }
-}
-
-object FlexCartoonMigrationServiceImpl  extends FlexContentMigrationService{
-  override lazy val ConnectivityCheckUrl = FlexImportBaseUrl + "/contentmigration/picture/index";
-  private def MigrateCartoonUrl = FlexImportBaseUrl + "/contentmigration/picture"
-
-  override def migrateContentXml(xmlFile: File): Future[WSResponse] = {
-    flexThrottlerFt[WSResponse] {
-      withCountIncr(Metrics.CartoonsMigratedInFlex) {
-        makeAsyncCall(MigrateCartoonUrl, (xmlFile, "fileData"), Map())
-      }
-    }
-  }
-}
-
-
 object FlexQuizMigrationServiceImpl  extends FlexContentMigrationService{
   override lazy val ConnectivityCheckUrl = FlexImportBaseUrl + "/contentmigration/article/index";
-  private def MigrateQuizInArticleUrl = FlexImportBaseUrl + "/contentmigration/article"
+  private def MigrateQuizInArticleUrl = FlexImportBaseUrl + "/contentmigration/article" //NOTE: quizzes get imported as ARTICLES
 
   override def migrateContentXml(xmlFile: File): Future[WSResponse] = {
     flexThrottlerFt[WSResponse] {
@@ -72,31 +44,4 @@ object FlexQuizMigrationServiceImpl  extends FlexContentMigrationService{
     }
   }
 }
-
-object FlexAudioMigrationServiceImpl  extends FlexContentMigrationService{
-  override lazy val ConnectivityCheckUrl = FlexImportBaseUrl + "/contentmigration/audio/index";
-  private def MigrateAudioUrl = FlexImportBaseUrl + "/contentmigration/audio"
-
-  override def migrateContentXml(xmlFile: File): Future[WSResponse] = {
-    flexThrottlerFt[WSResponse] {
-      withCountIncr(Metrics.AudiosMigratedInFlex) {
-        makeAsyncCall(MigrateAudioUrl, (xmlFile, "fileData"), Map())
-      }
-    }
-  }
-}
-
-object FlexArticleMigrationServiceImpl  extends FlexContentMigrationService{
-  override lazy val ConnectivityCheckUrl = FlexImportBaseUrl + "/contentmigration/article/index";
-  private def MigrateArticleUrl = FlexImportBaseUrl + "/contentmigration/article"
-
-  override def migrateContentXml(xmlFile: File): Future[WSResponse] = {
-    flexThrottlerFt[WSResponse] {
-      withCountIncr(Metrics.ArticlesMigratedInFlex) {
-        makeAsyncCall(MigrateArticleUrl, (xmlFile, "fileData"), Map())
-      }
-    }
-  }
-}
-
 

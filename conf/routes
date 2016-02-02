@@ -6,27 +6,11 @@ GET         /                              controllers.Application.index
 GET         /version                       controllers.Application.version
 GET         /assets/*file                   controllers.Assets.at(path="/public", file)
 
-GET         /check/gallery                 controllers.migration.GalleryMigrationApi.checkFlexConnection
-POST        /migrate/gallery               controllers.migration.GalleryMigrationApi.migrateBatch(batchSize: Option[Int] ?=None, batchNumber : Option[Int] ?=None)
-POST        /migrate/gallery/:gallery_id   controllers.migration.GalleryMigrationApi.migrateGallery(gallery_id : Int)
-
-GET         /check/cartoon                 controllers.migration.CartoonMigrationApi.checkFlexConnection
-POST        /migrate/cartoon               controllers.migration.CartoonMigrationApi.migrateBatch(batchSize: Option[Int] ?=None, batchNumber : Option[Int] ?=None)
-POST        /migrate/cartoon/:cartoon_id   controllers.migration.CartoonMigrationApi.migrateCartoon(cartoon_id : Int)
 
 GET         /check/quiz                     controllers.migration.QuizMigrationApi.checkFlexConnection
 POST        /migrate/quiz                   controllers.migration.QuizMigrationApi.migrateBatch(batchSize: Option[Int] ?=None, batchNumber : Option[Int] ?=None)
 POST        /migrate/quiz/:quiz_id          controllers.migration.QuizMigrationApi.migrateQuiz(quiz_id : Int)
 
-GET         /check/audio                     controllers.migration.AudioMigrationApi.checkFlexConnection
-POST        /migrate/audio                   controllers.migration.AudioMigrationApi.migrateBatch(batchSize: Option[Int] ?=None, batchNumber : Option[Int] ?=None)
-POST        /migrate/audio/:audio_id         controllers.migration.AudioMigrationApi.migrateAudio(audio_id : Int)
-
-GET         /article                         controllers.migration.ArticleMigrationApi.articlePage
-GET         /check/article                   controllers.migration.ArticleMigrationApi.checkFlexConnection
-POST        /migrate/article                 controllers.migration.ArticleMigrationApi.migrateBatch(batchSize: Option[Int] ?=None, batchNumber : Option[Int] ?=None, tagIds : Option[String] ?=None, withIdsHigherThan : Option[Int] ?=None)
-POST        /migrate/article/:article_id     controllers.migration.ArticleMigrationApi.migrateArticle(article_id : Int)
-POST        /migrate/article/json/:article_id     controllers.migration.ArticleMigrationApi.migrateArticleJson(article_id : Int)
 
 GET         /management/healthcheck        controllers.Application.healthcheck
 # Map static resources from the /public folder to the /assets URL path
