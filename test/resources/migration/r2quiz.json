@@ -375,7 +375,33 @@
     "questions": [
       {
         "questionText": "Before embarking on Shine a Light, Martin Scorsese famously directed the made-for-TV Bob Dylan documentary, No Direction Home. Which other \"rockumentary\" featuring the venerable Mr Zimmerman has he directed?",
-        "picture": {},
+        "picture": {
+          "altText": "Helen Mirren",
+          "image": {
+            "$type": "image",
+            "id": 330755672,
+            "url": "http://static.guimcode.co.uk/sys-images/Media/Pix/pictures/2007/09/17/mirren84.jpg",
+            "mimeType": "image/jpeg",
+            "source": "Getty",
+            "altText": "Helen Mirren",
+            "photographer": "Kevin Winter",
+            "width": 140,
+            "height": 84,
+            "uploadDate": "2007-09-17T10:10:27.000+01:00",
+            "group": {
+              "$type": "image_group",
+              "name": "pictures",
+              "legacySection": {
+                "$type": "legacy_section",
+                "name": "Pix",
+                "displayName": "Pix",
+                "siteName": "Media"
+              }
+            }
+          },
+          "credit": "Kevin Winter/Getty",
+          "id": 350879457
+        },
         "answers": [
           {
             "answerText": "King of Comedy",
@@ -385,6 +411,33 @@
           {
             "answerText": "The Last Waltz",
             "correct": true,
+            "picture": {
+              "altText": "Helen Mirren2",
+              "image": {
+                "$type": "image",
+                "id": 330755672,
+                "url": "http://static.guimcode.co.uk/sys-images/Media/Pix/pictures/2007/09/17/mirren85.jpg",
+                "mimeType": "image/jpeg",
+                "source": "Getty",
+                "altText": "Helen Mirren",
+                "photographer": "Kevin Winter",
+                "width": 140,
+                "height": 84,
+                "uploadDate": "2007-09-17T10:10:27.000+01:00",
+                "group": {
+                  "$type": "image_group",
+                  "name": "pictures",
+                  "legacySection": {
+                    "$type": "legacy_section",
+                    "name": "Pix",
+                    "displayName": "Pix",
+                    "siteName": "Media"
+                  }
+                }
+              },
+              "credit": "Kevin Winter/Getty",
+              "id": 350879458
+            },
             "id": 772
           },
           {
