@@ -13,31 +13,15 @@ import play.api.Play.current
 
 object Metrics {
 
-  val GalleriesMigratedInFlex = new CountMetric("galleriesMigratedInFlex")
-  val GalleriesMigratedInR2 = new CountMetric("galleriesMigratedInR2")
-  val CartoonsMigratedInFlex = new CountMetric("cartoonsMigratedInFlex")
-  val CartoonsMigratedInR2 = new CountMetric("cartoonsMigratedInR2")
-  val QuizzesMigratedInR2 = new CountMetric("quizzesMigratedInR2")
   val QuizzesMigratedInFlex = new CountMetric("quizzesMigratedInFlex")
+  val QuizzesMigratedInR2 = new CountMetric("quizzesMigratedInR2")
   val QuizzesMigratedInQuizBuilder = new CountMetric("quizzesMigratedInQuizBuilder")
-  val AudiosMigratedInR2 = new CountMetric("audiosMigratedInR2")
-  val AudiosMigratedInFlex = new CountMetric("audiosMigratedInFlex")
-  val ArticlesMigratedInR2 = new CountMetric("articlesMigratedInR2")
-  val ArticlesMigratedInFlex = new CountMetric("articlesMigratedInFlex")
 
 
   val all = List(
-    GalleriesMigratedInFlex,
-    GalleriesMigratedInR2,
-    CartoonsMigratedInFlex,
-    CartoonsMigratedInR2,
     QuizzesMigratedInR2,
     QuizzesMigratedInFlex,
-    QuizzesMigratedInQuizBuilder,
-    AudiosMigratedInR2,
-    AudiosMigratedInFlex,
-    ArticlesMigratedInR2,
-    ArticlesMigratedInFlex
+    QuizzesMigratedInQuizBuilder
   )
 
   private val reporter = new CloudWatchReporter(all)

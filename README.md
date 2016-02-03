@@ -25,44 +25,20 @@ R2 content requiring re-sync:   `curl cms.guprod.gnl/tools/newspaperintegration/
 
 ## Migrations
 
+### To Migrate Quizzes Into Flex
 
-### To Migrate Articles Into Flex
+Single
 
-####Cherry-Pick (single article)
+local: `curl -X POST "http://localhost:9100/migrate/quiz/${quizId}"`
 
-local: `curl -X POST "http://localhost:9100/migrate/article/${articleId}"`
+code: `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/quiz/${quizId}"`
 
-code: `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/article/${articleId}"`
+Batch
 
-prod: `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/article/${articleId}"`
+local: `curl -X POST "http://localhost:9100/migrate/quiz?batchNumber=${batchNumber}&batchSize=${batchSize}"`
 
-You can also cherry-pick using the browser:
+code:   `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/quiz?batchNumber=${batchNumber}&batchSize=${batchSize}"`
 
-local:  http://localhost:9100/article
-
-code:   http://flexcontentmigrator.code.dev-gutools.co.uk/article
-
-prod:   http://flexcontentmigrator.gutools.co.uk/article
-
-####Single Batch
-
-!It is highly recommended that batches should be no bigger than 30!
-
-local: `curl -X POST "http://localhost:9100/migrate/article?batchNumber=${batchNumber}&batchSize=${batchSize}&tagIds=${tagId1,tagId2}"`
-
-code:   `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/article?batchNumber=${batchNumber}&batchSize=${batchSize}&tagIds=${tagId1,tagId2}"`
-
-prod:   `curl -X POST "http://flexcontentmigrator.gutools.co.uk/migrate/article?batchNumber=${batchNumber}&batchSize=${batchSize}&tagIds=${tagId1,tagId2}"`
-
-####Multi Batch
-
-There are three scripts that will both run a set number of batches (a multi batch) on your machine.
-
-`runMigrationScriptPROD_randomise.sh`           : runs a set number of batches in a random sequence to avoid retry error cases. 
-`runMigrationScriptPROD_restartableSequence.sh` : runs a set number of batches in straight sequence. Avoids getting stuck on errors by not retrying the same content twice. It can pick up near where it left of or it can start again from the beginging
-`runMigrationScriptPROD.sh`                     : deprecated, replaced by runMigrationScriptPROD_restartableSequence.sh as it can retry failed content indefinately and get stuck
-
-These script files log their output to a directory ~./migrationOutput
 
 
 ### To Resync R2 
@@ -86,64 +62,9 @@ curl -I -X POST "localhost:8080/contentReSync/${flexContentId}"`
 sleep 0.5
 ```
 
-### Previous Migrations
-
-#### To Migrate Galleries Into Flex
-
-Single
-
-local: `curl -X POST "http://localhost:9100/migrate/gallery/${galleryId}"`
-
-code: `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/gallery/${galleryId}"`
-
-Batch
-
-local: `curl -X POST "http://localhost:9100/migrate/gallery?batchNumber=${batchNumber}&batchSize=${batchSize}"`
-
-code: `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/gallery?batchNumber=${batchNumber}&batchSize=${batchSize}"`
 
 
-#### To Migrate Cartoons Into Flex
-
-Single
-
-local: `curl -X POST "http://localhost:9100/migrate/cartoon/${cartoonId}"`
-
-code: `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/cartoon/${cartoonId}"`
-
-Batch
-
-local: `curl -X POST "http://localhost:9100/migrate/cartoon?batchNumber=${batchNumber}&batchSize=${batchSize}"`
-
-code:   `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/cartoon?batchNumber=${batchNumber}&batchSize=${batchSize}"`
 
 
-#### To Migrate Quizzes Into Flex
 
-Single
-
-local: `curl -X POST "http://localhost:9100/migrate/quiz/${quizId}"`
-
-code: `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/quiz/${quizId}"`
-
-Batch
-
-local: `curl -X POST "http://localhost:9100/migrate/quiz?batchNumber=${batchNumber}&batchSize=${batchSize}"`
-
-code:   `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/quiz?batchNumber=${batchNumber}&batchSize=${batchSize}"`
-
-
-#### To Migrate Audios Into Flex
-
-Single
-
-local: `curl -X POST "http://localhost:9100/migrate/audio/${audio}"`
-
-code: `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/audio/${audioId}"`
-
-Batch
-
-local: `curl -X POST "http://localhost:9100/migrate/audio?batchNumber=${batchNumber}&batchSize=${batchSize}"`
-
-code:   `curl -X POST "http://flexcontentmigrator.code.dev-gutools.co.uk/migrate/audio?batchNumber=${batchNumber}&batchSize=${batchSize}"`
 

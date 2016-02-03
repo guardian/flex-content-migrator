@@ -31,7 +31,7 @@ abstract class R2QuizMigratorService(client : R2IntegrationAPIClient) extends R2
       ids.map{idsToQuizzes(_)}.flatMap(Future.sequence(_))
     }
 
-    val ids = client.getBatchOfGalleryIds(params)
+    val ids = client.getBatchOfQuizIds(params)
     val quizzes = mapIdsToQuizzes(ids)
     quizzes.map(loadedQuizzes => {
       Logger.info(s"Loaded the batch of ${params.batchSize} quizzes from R2")

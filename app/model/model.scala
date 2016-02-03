@@ -11,24 +11,11 @@ case class MigrationBatch(sourceContent : Seq[SourceContent]){
   val started = System.currentTimeMillis()
 }
 
+
+
 abstract class TransformedContent(val sourceContent : SourceContent){
   val json :  Map[String, Any]
   val liveData : R2ToFlexContentConversion
-}
-
-case class TransformedVideo(override val sourceContent : SourceContent) extends TransformedContent(sourceContent){
-  override val json = R2ToFlexVideoConversion.jsonMap(sourceContent.json)
-  override val liveData = R2ToFlexVideoConversion.parseLiveData(json) //NOTE: using live data for migration
-}
-
-case class TransformedGallery(override val sourceContent : SourceContent) extends TransformedContent(sourceContent){
-  override val json = R2ToFlexGalleryConversion.jsonMap(sourceContent.json)
-  override val liveData = R2ToFlexGalleryConversion.parseLiveData(json) //NOTE: using live data for migration
-}
-
-case class TransformedCartoon(override val sourceContent : SourceContent) extends TransformedContent(sourceContent){
-  override val json = R2ToFlexCartoonConversion.jsonMap(sourceContent.json)
-  override val liveData = R2ToFlexCartoonConversion.parseLiveData(json) //NOTE: using live data for migration
 }
 
 
@@ -37,16 +24,7 @@ case class TransformedQuiz(override val sourceContent : SourceContent) extends T
   override val liveData = R2ToFlexQuizConversion.parseLiveData(json, QuizImporterServiceImpl) //NOTE: using live data for migration
 }
 
-case class TransformedAudio(override val sourceContent : SourceContent) extends TransformedContent(sourceContent){
-  override val json = R2ToFlexAudioConversion.jsonMap(sourceContent.json)
-  override val liveData = R2ToFlexAudioConversion.parseLiveData(json) //NOTE: using live data for migration
-}
 
-
-case class TransformedArticle(override val sourceContent : SourceContent) extends TransformedContent(sourceContent){
-  override val json = R2ToFlexArticleConversion.jsonMap(sourceContent.json)
-  override val liveData = R2ToFlexArticleConversion.parseLiveData(json) //NOTE: using live data for migration
-}
 
 case class ContentInFlex(id : Int, response : WSResponse){
   val wasSuccess = {

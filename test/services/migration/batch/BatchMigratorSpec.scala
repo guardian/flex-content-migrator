@@ -8,7 +8,7 @@ import org.specs2.mutable.Specification
 import play.api.test.Helpers
 import services.migration._
 import ThrottleControl._
-import services.migration.r2.R2GalleryMigratorService
+import services.migration.r2.R2QuizMigratorService
 import scala.concurrent._
 import scala.concurrent.duration._
 
@@ -20,8 +20,8 @@ class BatchMigratorSpec extends Specification with Mockito {
 
   trait AkkaMigrationMockedBehaviour{
 
-    def mockR2VideoMigrator(batchSize: Int, batchOffset : Int) : R2GalleryMigratorService = {
-      val themock = mock[R2GalleryMigratorService]
+    def mockR2QuizMigrator(batchSize: Int, batchOffset : Int) : R2QuizMigratorService = {
+      val themock = mock[R2QuizMigratorService]
       themock.getBatchOfContentIds(any[MigrationBatchParams]) returns Future{(1 to batchSize).toList}
       themock.loadContentById(any[Int]) returns Future{srcVideo}
       themock.loadBatchOfContent(any[MigrationBatchParams]) returns Future{ MigrationBatch({for(i <- 1 to batchSize) yield srcVideo}.toList)}
@@ -32,12 +32,12 @@ class BatchMigratorSpec extends Specification with Mockito {
       val migratedVideo = mock[ContentInFlex]
       migratedVideo.wasSuccess returns true;
       val themock = mock[PushToFlex]
-      themock.apply(any[TransformedVideo]) returns Future{migratedVideo}
+      themock.apply(any[TransformedQuiz]) returns Future{migratedVideo}
       themock
     }
 
     def mockTransformR2ToFlex : TransformR2ToFlex = {
-      val mockTransformedVideo = mock[TransformedVideo]
+      val mockTransformedVideo = mock[TransformedQuiz]
       mockTransformedVideo.sourceContent returns srcVideo
       val themock = mock[TransformR2ToFlex]
       themock.apply(any[SourceContent]) returns mockTransformedVideo
@@ -54,7 +54,7 @@ class BatchMigratorSpec extends Specification with Mockito {
       new MigrationBehaviour(){
         override val contentTransform = mockTransformR2ToFlex
         override val pushToFlex = mockPushToFlex
-        override val contentLoader = mockR2VideoMigrator(batchSize, batchOffset)
+        override val contentLoader = mockR2QuizMigrator(batchSize, batchOffset)
         override val closeContentInSource = mockMigrateVideoInR2
       }
     }
@@ -72,8 +72,8 @@ class BatchMigratorSpec extends Specification with Mockito {
     val counterR2 = new AtomicInteger
     val counterFlex = new AtomicInteger
 
-    override def mockR2VideoMigrator(batchSize: Int, batchOffset : Int) : R2GalleryMigratorService = {
-      val themock = mock[R2GalleryMigratorService]
+    override def mockR2QuizMigrator(batchSize: Int, batchOffset : Int) : R2QuizMigratorService = {
+      val themock = mock[R2QuizMigratorService]
       themock.getBatchOfContentIds(any[MigrationBatchParams]) returns Future{(1 to batchSize).toList}
       themock.loadContentById(any[Int]) answers { m =>
         val count = counterR2.incrementAndGet()
@@ -88,7 +88,7 @@ class BatchMigratorSpec extends Specification with Mockito {
       val migratedVideo = mock[ContentInFlex]
       migratedVideo.wasSuccess returns true;
       val themock = mock[PushToFlex]
-      themock.apply(any[TransformedVideo]) answers { m =>
+      themock.apply(any[TransformedQuiz]) answers { m =>
         val count = counterFlex.incrementAndGet()
         if(count%2==0) throw new RuntimeException("Something went BANG!")
         Future{migratedVideo}
@@ -100,8 +100,8 @@ class BatchMigratorSpec extends Specification with Mockito {
   object ThrottledR2AndFlex extends AkkaMigrationMockedBehaviour{
 
 
-    override def mockR2VideoMigrator(batchSize: Int, batchOffset : Int) : R2GalleryMigratorService = {
-      val themock = mock[R2GalleryMigratorService]
+    override def mockR2QuizMigrator(batchSize: Int, batchOffset : Int) : R2QuizMigratorService = {
+      val themock = mock[R2QuizMigratorService]
       themock.getBatchOfContentIds(any[MigrationBatchParams]) returns Future{(1 to batchSize).toList}
       themock.loadContentById(any[Int]) answers { m =>
         r2ThrottlerFt[SourceContent]{
@@ -116,7 +116,7 @@ class BatchMigratorSpec extends Specification with Mockito {
       val migratedVideo = mock[ContentInFlex]
       migratedVideo.wasSuccess returns true;
       val themock = mock[PushToFlex]
-      themock.apply(any[TransformedVideo]) answers { m =>
+      themock.apply(any[TransformedQuiz]) answers { m =>
         flexThrottlerFt[ContentInFlex]{
           Future{migratedVideo}
         }
@@ -128,8 +128,8 @@ class BatchMigratorSpec extends Specification with Mockito {
   object DependenciesHang extends AkkaMigrationMockedBehaviour{
     val SleepForAges = 1000 * 60 * 60 //1 hour sleep time - long enough that the akka ask will timeout and we will get responses
 
-    override def mockR2VideoMigrator(batchSize: Int, batchOffset : Int) : R2GalleryMigratorService = {
-      val themock = mock[R2GalleryMigratorService]
+    override def mockR2QuizMigrator(batchSize: Int, batchOffset : Int) : R2QuizMigratorService = {
+      val themock = mock[R2QuizMigratorService]
       themock.getBatchOfContentIds(any[MigrationBatchParams]) returns Future{(1 to batchSize).toList}
       themock.loadContentById(any[Int]) answers { m =>
         Thread.sleep(SleepForAges)
@@ -143,7 +143,7 @@ class BatchMigratorSpec extends Specification with Mockito {
       val migratedVideo = mock[ContentInFlex]
       migratedVideo.wasSuccess returns true;
       val themock = mock[PushToFlex]
-      themock.apply(any[TransformedVideo]) answers { m =>
+      themock.apply(any[TransformedQuiz]) answers { m =>
         Thread.sleep(SleepForAges)
         Future{migratedVideo}
       }
