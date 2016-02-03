@@ -76,8 +76,7 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
     }
   }
 
-  private def buildAndImportQuiz = {
-
+  def buildQuiz = {
       val title = headline.get
       val createdAt = createdDate.map(new DateTime(_)).getOrElse(DateTime.now)
       val updatedAt = modifiedDate.map(new DateTime(_)).getOrElse(DateTime.now)
@@ -89,7 +88,7 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
   }
 
   def contentAtoms : List[(String, Boolean)] = {
-    val importedQuiz: Future[Option[String]] = quizImporterService.importQuiz(buildAndImportQuiz)
+    val importedQuiz: Future[Option[String]] = quizImporterService.importQuiz(buildQuiz)
     Await.result(importedQuiz, Duration(30, TimeUnit.SECONDS)) match {
       case Some(s)  => (s, true) :: Nil //NOTE: defaulting required=true
       case _ => throw new IllegalStateException(s"Could not create content atoms for quiz")
