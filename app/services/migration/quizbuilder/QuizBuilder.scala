@@ -8,6 +8,7 @@ trait JsonModel {
   def getJson : JsObject
 }
 
+
 case class QuizImage(src : String, alt : String) extends JsonModel{
   override def getJson: JsObject = {
     Json.obj(
@@ -20,7 +21,7 @@ case class QuizQuestion(text : String, answers : List[QuizQuestionAnswer], image
   override def getJson: JsObject = {
     Json.obj(
       "questionText" -> text,
-      "assets" -> JsArray(), //TODO
+      "assets" -> image.toList.map(_.getJson),
       "buckets" -> JsArray(), //TODO
       "answers" -> answers.map(_.getJson)
     )
@@ -32,12 +33,12 @@ case class QuizQuestionAnswer(text : String, isCorrect : Boolean, image : Option
       "answerText" -> text,
       "correct" -> isCorrect,
       "revealText" -> revealText.map(_.toString),
-      "assets" -> JsArray() //TODO
+      "assets" -> image.toList.map(_.getJson)
     )
   }
 }
 case class QuizResultGroup(title : String, minScore : Int, share : Option[String] = None) extends JsonModel{
-  val shareString = share.getOrElse("some share") //TODO
+  val shareString = share.getOrElse(s"I took the quiz '${title}'")
   override def getJson: JsObject = {
     Json.obj(
       "title" -> title,
@@ -72,11 +73,11 @@ case class Quiz(r2QuizId : Int, title : String, createdAt : DateTime, createdBy 
       "createdAt" -> createdAt.getMillis.toString,
       "createdBy" -> createdBy,
       "published" -> true,
-      "publishedAt" -> createdAt.getMillis.toString, //TODO
+      "publishedAt" -> createdAt.getMillis.toString,
       "revision" -> 1,
-      "quizType" -> "knowledge",  //TODO
+      "quizType" -> "knowledge",  //is this the best choice?
       "revealAtEnd" -> revealAtEnd,
-      "defaultColumns" -> 1, //TODO
+      "defaultColumns" -> 1, //is this the best choice?
       "content" -> quizContentJson
     )
   }

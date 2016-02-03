@@ -79,8 +79,8 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
   private def buildAndImportQuiz = {
 
       val title = headline.get
-      val createdAt = DateTime.now //TODO createdDate
-      val updatedAt = DateTime.now //TODO
+      val createdAt = createdDate.map(new DateTime(_)).getOrElse(DateTime.now)
+      val updatedAt = modifiedDate.map(new DateTime(_)).getOrElse(DateTime.now)
       val createdByUser = createdBy.get
       val revealAnswers = getAsString("showAnswerPage").map(_.toBoolean).getOrElse(true)
 
