@@ -1,7 +1,7 @@
 package model
 
 import play.api.libs.ws.WSResponse
-import services.migration.quizbuilder.QuizImporterServiceImpl
+import services.migration.quizbuilder.{QuizImporterService, QuizImporterServiceImpl}
 import services.migration.r2ToFlexConversion._
 
 
@@ -19,9 +19,9 @@ abstract class TransformedContent(val sourceContent : SourceContent){
 }
 
 
-case class TransformedQuiz(override val sourceContent : SourceContent) extends TransformedContent(sourceContent){
+case class TransformedQuiz(override val sourceContent : SourceContent, quizImporter : QuizImporterService = QuizImporterServiceImpl) extends TransformedContent(sourceContent){
   override val json = R2ToFlexQuizConversion.jsonMap(sourceContent.json)
-  override val liveData = R2ToFlexQuizConversion.parseLiveData(json, QuizImporterServiceImpl) //NOTE: using live data for migration
+  override val liveData = R2ToFlexQuizConversion.parseLiveData(json, quizImporter) //NOTE: using live data for migration
 }
 
 

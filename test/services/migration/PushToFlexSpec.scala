@@ -34,12 +34,12 @@ class PushToFlexSpec extends Specification with Mockito {
   }
 
   def transformedQuiz = {
-    val mockSourceVideo = mock[SourceContent]
-    mockSourceVideo.id returns 123
+    val mockSourceQuiz = mock[SourceContent]
+    mockSourceQuiz.id returns 123
     val mockTransformedData = mock[R2ToFlexQuizConversion]
     val mockTransformedQuiz = mock[TransformedQuiz]
     mockTransformedData.xml returns <test>data</test>
-    mockTransformedQuiz.sourceContent returns mockSourceVideo
+    mockTransformedQuiz.sourceContent returns mockSourceQuiz
     mockTransformedQuiz.liveData returns mockTransformedData
     mockTransformedQuiz
   }

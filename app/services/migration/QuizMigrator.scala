@@ -1,6 +1,7 @@
 package services.migration
 
 import model._
+import services.migration.quizbuilder.{QuizImporterServiceImpl, QuizImporterService}
 import services.migration.r2._
 import services.{FlexQuizMigrationServiceImpl, FlexContentMigrationService}
 import utils.{TempFileProcessorImpl, TempFileProcessor}
@@ -8,10 +9,11 @@ import utils.{TempFileProcessorImpl, TempFileProcessor}
 
 protected[migration] class QuizMigrationBehaviour(    r2 : R2QuizMigratorService,
                                                       flexContentMigrationService: FlexContentMigrationService,
-                                                      tempFileProcessor : TempFileProcessor) extends  MigrationBehaviour{
+                                                      tempFileProcessor : TempFileProcessor,
+                                                      quizImporterService : QuizImporterService) extends  MigrationBehaviour{
 
   class TransformR2QuizToFlex() extends TransformR2ToFlex{
-    def apply(content : SourceContent) : TransformedContent = TransformedQuiz(content)
+    def apply(content : SourceContent) : TransformedContent = TransformedQuiz(content, quizImporterService)
   }
 
   override val contentLoader = r2
@@ -22,13 +24,14 @@ protected[migration] class QuizMigrationBehaviour(    r2 : R2QuizMigratorService
 
 protected[migration] class QuizMigrator(    r2QuizMigrator : R2QuizMigratorService,
                                             flexContentMigrationService: FlexContentMigrationService,
-                                            tempFileProcessor : TempFileProcessor) extends Migrator{
+                                            tempFileProcessor : TempFileProcessor,
+                                            quizImporterService : QuizImporterService) extends Migrator{
 
 
-  override val migrationBehaviour = new QuizMigrationBehaviour(r2QuizMigrator, flexContentMigrationService, tempFileProcessor)
+  override val migrationBehaviour = new QuizMigrationBehaviour(r2QuizMigrator, flexContentMigrationService, tempFileProcessor, quizImporterService)
 
 }
 
-object QuizMigrator extends QuizMigrator(R2QuizMigratorServiceImpl, FlexQuizMigrationServiceImpl, TempFileProcessorImpl){}
+object QuizMigrator extends QuizMigrator(R2QuizMigratorServiceImpl, FlexQuizMigrationServiceImpl, TempFileProcessorImpl, QuizImporterServiceImpl){}
 
 

@@ -53,22 +53,42 @@ class QuizMigratorSpec extends Specification with Mockito {
 
   private def migrator : Migrator = {
     val r2QuizMigrator = mock[R2QuizMigratorService]
-    r2QuizMigrator.loadContentById(any[Int]) returns Future{quizzes.head}
+    r2QuizMigrator.loadContentById(any[Int]) returns Future{
+      quizzes.head
+    }
     r2QuizMigrator.getBatchOfContentIds(any[MigrationBatchParams]) returns Future{(1 to NumberOfQuizzes).toList}
-    r2QuizMigrator.migrateContentInR2(any[Int], any[String]) returns Future{(true, "quiz migrated in r2")}
+    r2QuizMigrator.migrateContentInR2(any[Int], any[String]) returns Future{
+      (true, "quiz migrated in r2")
+    }
 
     val flexQuizMigrationService = mock[FlexContentMigrationService]
-    flexQuizMigrationService.migrateContentXml(any[File]) returns Future{mockWSResponse(ExpectedResponseImportQuiz)}
+    flexQuizMigrationService.migrateContentXml(any[File]) returns Future{
+      mockWSResponse(ExpectedResponseImportQuiz)
+    }
 
-    new QuizMigrator(r2QuizMigrator, flexQuizMigrationService, TempFileProcessorImpl)
+    val quizImporterServiceMock = mock[QuizImporterService]
+    quizImporterServiceMock.importQuiz(any[Quiz]) returns Future{
+      Some(QuizId)
+    }
+
+    new QuizMigrator(r2QuizMigrator, flexQuizMigrationService, TempFileProcessorImpl, quizImporterServiceMock)
   }
-  implicit val timeout = Timeout(30, SECONDS)
+  implicit val timeout = Timeout(40, SECONDS)
 
   "QuizMigrator migrateSingleQuiz" should {
     "load, transform and then migrate a single quiz" in new WithApplication{
       val migratedQuizFuture = migrator.migrateIndividualContent(1)
       val migratedQuiz = Helpers.await[ContentMigrationResult](migratedQuizFuture)
       migratedQuiz.wasSuccess must equalTo(true)
+    }
+  }
+
+  "QuizMigrator migrateBatch" should {
+    "load, transform and then migrate quiz data for all quizzes in the batch" in new WithApplication{
+      val migratedBatchFuture = migrator.migrateBatchOfContent(MigrationBatchParams(Some(NumberOfQuizzes), None))
+      val migratedBatch = Helpers.await[MigratedBatch](migratedBatchFuture)
+      migratedBatch.migrated.size must equalTo(QuizzesToMigrate.size)
+      migratedBatch.failed.size must equalTo(0)
     }
   }
   
