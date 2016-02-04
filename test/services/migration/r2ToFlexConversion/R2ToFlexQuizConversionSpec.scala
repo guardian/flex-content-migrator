@@ -28,6 +28,24 @@ class R2ToFlexQuizConversionSpec extends Specification with Mockito {
     }
     
     lazy val parsedQuizJson = R2ToFlexQuizConversion.parseDraftData(r2Json(), mockQuizImporterService)
+    "Build the quiz model correctly" in {
+      val quiz = new R2ToFlexQuizConversion(r2Json(), true, mockQuizImporterService).buildQuiz
+
+
+      quiz.createdAt.getYear must equalTo(2008)
+      val firstQuestion = quiz.questions.head
+      firstQuestion.text must startWith("Before embarking on Shine")
+      firstQuestion.image.isDefined must equalTo(true)
+      firstQuestion.image.get.src must equalTo("http://static.guimcode.co.uk/sys-images/Media/Pix/pictures/2007/09/17/mirren84.jpg")
+      firstQuestion.image.get.alt must equalTo("Helen Mirren")
+
+      val firstQuestionCorrectAnswer = firstQuestion.answers.tail.head
+      firstQuestionCorrectAnswer.text must startWith("The Last Waltz")
+      firstQuestionCorrectAnswer.image.isDefined must equalTo(true)
+      firstQuestionCorrectAnswer.image.get.src must equalTo("http://static.guimcode.co.uk/sys-images/Media/Pix/pictures/2007/09/17/mirren85.jpg")
+      firstQuestionCorrectAnswer.image.get.alt must equalTo("Helen Mirren2")
+
+    }
     "Build the quiz in json and import it into the QuizImporterService" in {
       val contentAtoms = parsedQuizJson.contentAtoms
       contentAtoms.size must equalTo(1)

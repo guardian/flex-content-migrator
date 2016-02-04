@@ -41,9 +41,24 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
   private def buildAnswer(answer : Map[String, Any]) : QuizQuestionAnswer = {
     val answerText = answer("answerText").toString //must have an answer text
     val isCorrect = getAsString("correct", answer).map(_.toBoolean).getOrElse(false);
-    val image = None //TODO
+    val image = buildImage(answer)
     val revealText = None//TODO
     QuizQuestionAnswer(answerText, isCorrect, image, revealText)
+  }
+
+
+  private def buildImage(map: Map[String, Any]) = {
+    val quizImageValues = {
+      for ( picture <- getAsMap("picture", map);
+            image <- getAsMap("image", picture)
+      ) yield {
+        val url = image("url").toString
+        val imageAlt = image.get("altText").getOrElse("").toString
+        val pictureOrImageAlt = picture.get("altText").getOrElse(imageAlt).toString
+        Map("url" -> url, "alt" -> pictureOrImageAlt)
+      }
+    }
+    quizImageValues.map(values => QuizImage(values("url"), values("alt")))
   }
 
   private def buildQuestionsAndAnswers : List[QuizQuestion] = {
@@ -52,7 +67,7 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
       case Some(questions) => {
         questions.map((question: Map[String, Any]) => {
           val questionText = question("questionText").toString
-          val questionImage = None //TODO
+          val questionImage = buildImage(question)
           val questionAnswers : List[QuizQuestionAnswer] = getAsMaps("answers", question).getOrElse(Nil).map(buildAnswer(_))
           QuizQuestion(questionText, questionAnswers, questionImage)
         })
@@ -76,11 +91,10 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
     }
   }
 
-  private def buildAndImportQuiz = {
-
+  def buildQuiz = {
       val title = headline.get
-      val createdAt = DateTime.now //TODO createdDate
-      val updatedAt = DateTime.now //TODO
+      val createdAt = createdDate.map(new DateTime(_)).getOrElse(DateTime.now)
+      val updatedAt = modifiedDate.map(new DateTime(_)).getOrElse(DateTime.now)
       val createdByUser = createdBy.get
       val revealAnswers = getAsString("showAnswerPage").map(_.toBoolean).getOrElse(true)
 
@@ -89,7 +103,7 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
   }
 
   def contentAtoms : List[(String, Boolean)] = {
-    val importedQuiz: Future[Option[String]] = quizImporterService.importQuiz(buildAndImportQuiz)
+    val importedQuiz: Future[Option[String]] = quizImporterService.importQuiz(buildQuiz)
     Await.result(importedQuiz, Duration(30, TimeUnit.SECONDS)) match {
       case Some(s)  => (s, true) :: Nil //NOTE: defaulting required=true
       case _ => throw new IllegalStateException(s"Could not create content atoms for quiz")
