@@ -42,7 +42,7 @@ class R2ToFlexQuizConversionSpec extends Specification with Mockito {
       firstQuestionCorrectAnswer.text must startWith("The Last Waltz")
       firstQuestionCorrectAnswer.image.isDefined must equalTo(true)
       firstQuestionCorrectAnswer.image.get.src must equalTo("http://static.guimcode.co.uk/sys-images/Media/Pix/pictures/2007/09/17/mirren85.jpg")
-      firstQuestionCorrectAnswer.image.get.alt must equalTo("Helen Mirren")
+      firstQuestionCorrectAnswer.image.get.alt must equalTo("Helen Mirren2")
 
     }
     "Build the quiz in json and import it into the QuizImporterService" in {
