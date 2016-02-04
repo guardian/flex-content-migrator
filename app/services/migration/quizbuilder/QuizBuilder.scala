@@ -37,7 +37,7 @@ case class QuizQuestionAnswer(text : String, isCorrect : Boolean, image : Option
   }
 }
 case class QuizResultGroup(title : String, minScore : Int, share : Option[String] = None) extends JsonModel{
-  val shareString = share.getOrElse("some share") //TODO
+  val shareString = share.getOrElse(s"I took the quiz '${title}'")
   override def getJson: JsObject = {
     Json.obj(
       "title" -> title,
