@@ -20,8 +20,8 @@ case class QuizQuestion(text : String, answers : List[QuizQuestionAnswer], image
   override def getJson: JsObject = {
     Json.obj(
       "questionText" -> text,
-      "buckets" -> JsArray(), //TODO
       "assets" -> image.toList.map(_.getJson),
+      "buckets" -> JsArray(),
       "answers" -> answers.map(_.getJson)
     )
   }
