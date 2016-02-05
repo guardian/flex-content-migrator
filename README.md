@@ -6,7 +6,9 @@ This system is used to migration content from R2 in to Flex
 ## Background
 
 The remaining content type to migrate is quizzes
-Here is a useful video explaining the code, the project and some other bits
+
+Here is a useful video explaining the code, the project and some other bits:
+https://drive.google.com/a/guardian.co.uk/file/d/0B771Q-oAsK-GTERhaW1SOXNHMU0/view?usp=sharing
 
 
 ## Useful URLs
