@@ -59,26 +59,22 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
 
 
   private def buildImage(map: Map[String, Any]): Option[QuizImage] = {
-    val includeImages = false //TODO: remove this once images are importing properly
-    if(!includeImages) None
-    else {
-        for ( picture <- getAsMap("picture", map);
-              image <- getAsMap("image", picture)
-        ) yield {
+      for ( picture <- getAsMap("picture", map);
+            image <- getAsMap("image", picture)
+      ) yield {
 
-          val url = image("url").toString
-          val mimeType = image("mimeType").toString
-          val width = image.get("width").map(_.toString.toInt)
-          val height = image.get("height").map(_.toString.toInt)
+        val url = image("url").toString
+        val mimeType = image("mimeType").toString
+        val width = image.get("width").map(_.toString.toInt)
+        val height = image.get("height").map(_.toString.toInt)
 
-          val pictureOrImageAlt = {
-            val imageAlt = image.get("altText").getOrElse("").toString
-            picture.get("altText").getOrElse(imageAlt).toString
-          }
-          //TODO: secure image?
-          QuizImage(url, mimeType, pictureOrImageAlt, height, width, None)
+        val pictureOrImageAlt = {
+          val imageAlt = image.get("altText").getOrElse("").toString
+          picture.get("altText").getOrElse(imageAlt).toString
         }
-    }
+        //TODO: secure image?
+        QuizImage(url, mimeType, pictureOrImageAlt, height, width, None)
+      }
   }
 
   private def buildQuestionsAndAnswers : List[QuizQuestion] = {
@@ -131,6 +127,10 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
   }
 
   override lazy val xml = {
+    //check that the quiz is RIGHT_WRONG_ANSWERS
+    val isRightWrongAnswers = getAsString("quizType").map(_ == "RIGHT_WRONG_ANSWERS").getOrElse(false)
+    assert(isRightWrongAnswers)
+
     <article story-bundle={storyBundleId orNull} cms-path={cmsPath orNull} notes={notes orNull} slug-word={slug orNull}
              expiry-date={scheduledExpiry orNull}
              created-date={createdDate orNull} created-user={createdBy orNull} modified-date={modifiedDate orNull}

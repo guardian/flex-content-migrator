@@ -17,6 +17,12 @@ R2 content to migrate:          `curl "cms.guprod.gnl/tools/newspaperintegration
 R2 migrated content:            `curl "cms.guprod.gnl/tools/newspaperintegration/migration/recent-migrations?contentType=article&howMany=30000"`  
 R2 content requiring re-sync:   `curl cms.guprod.gnl/tools/newspaperintegration/migration/content-to-resync`
 
+
+##
+PLease resolve the following issue in the quiz builder before being able to migrate quizzes
+https://github.com/guardian/ten-four_quiz-builder/issues/414
+
+
 ## Migrations
 
 ### To Migrate Quizzes Into Flex
