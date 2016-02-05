@@ -21,6 +21,7 @@ class QuizImporterService extends AsyncCallerWithMultipartData{
     import scala.concurrent.ExecutionContext.Implicits.global
     WS.url(ImportUrl).post(quiz.getJson).map{response =>
       try{
+        System.out.println(s"Quiz builder request: ${quiz.getJson}")
         Logger.debug(s"Quiz builder request: ${quiz.getJson}")
         Logger.debug(s"Quiz builder response: ${response.status} ${response.statusText} ${response.body}")
 

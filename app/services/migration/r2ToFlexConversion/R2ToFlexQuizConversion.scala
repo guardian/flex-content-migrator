@@ -47,18 +47,34 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
   }
 
 
-  private def buildImage(map: Map[String, Any]) = {
-    val quizImageValues = {
-      for ( picture <- getAsMap("picture", map);
-            image <- getAsMap("image", picture)
-      ) yield {
-        val url = image("url").toString
-        val imageAlt = image.get("altText").getOrElse("").toString
-        val pictureOrImageAlt = picture.get("altText").getOrElse(imageAlt).toString
-        Map("url" -> url, "alt" -> pictureOrImageAlt)
+  protected override def tags : List[String] = {
+    //map the quiz content type to article (r2 model versus content atom model).
+    //Also add the quiz tone
+    val QuizToneTagId = "67673"
+    val ArticleContentTypeTagId = "26903"
+    val QuizContentTypeTagId = "26910"
+    val processedTags = ArticleContentTypeTagId :: QuizToneTagId :: super.tags.filterNot(_ == QuizContentTypeTagId)
+    processedTags.toSet.toList
+  }
+
+
+  private def buildImage(map: Map[String, Any]): Option[QuizImage] = {
+    val includeImages = false
+    if(!includeImages) None
+    else {
+      val quizImageValues = {
+        for ( picture <- getAsMap("picture", map);
+              image <- getAsMap("image", picture)
+        ) yield {
+          val url = image("url").toString
+          val imageAlt = image.get("altText").getOrElse("").toString
+          val pictureOrImageAlt = picture.get("altText").getOrElse(imageAlt).toString
+          Map("url" -> url, "alt" -> pictureOrImageAlt)
+        }
       }
+      quizImageValues.map(values => QuizImage(values("url"), values("alt")))
     }
-    quizImageValues.map(values => QuizImage(values("url"), values("alt")))
+
   }
 
   private def buildQuestionsAndAnswers : List[QuizQuestion] = {

@@ -11,7 +11,7 @@ RANDOM_FACTOR=${RANDOM_FACTOR:-200}                #Increase this value to migra
 SLEEP_TIME=${SLEEP_TIME:-1}
 MIN_BATCH_NUMBER=${MIN_BATCH_NUMBER:-1}
 
-PREFIX="http://flexcontentmigrator.gutools.co.uk/migrate/article?batchSize=$BATCH_SIZE"
+PREFIX="http://flexcontentmigrator.gutools.co.uk/migrate/quiz?batchSize=$BATCH_SIZE"
 
 echo PARMS: BATCH_SIZE=$BATCH_SIZE NUMBER_OF_BATCHES=$NUMBER_OF_BATCHES RANDOM_FACTOR=$RANDOM_FACTOR SLEEP_TIME=$SLEEP_TIME MIN_BATCH_NUMBER=$MIN_BATCH_NUMBER
 read -p "Press [Enter] key to start **PROD** migration (random sequence)..."
@@ -40,7 +40,7 @@ echo "Results in $OUTPUT_PATH"
 
 
 #Analyse the files to see if any had failures
-EXPECTED_BATCH_RESULT="Batch Success Articles = $BATCH_SIZE, Failed Articles = 0"
+EXPECTED_BATCH_RESULT="Batch Success Quizzes = $BATCH_SIZE, Failed Quizzes = 0"
 echo ""
 echo "Problem batches..."
 
