@@ -59,22 +59,26 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
 
 
   private def buildImage(map: Map[String, Any]): Option[QuizImage] = {
-    val includeImages = false
+    val includeImages = false //TODO: remove this once images are importing properly
     if(!includeImages) None
     else {
-      val quizImageValues = {
         for ( picture <- getAsMap("picture", map);
               image <- getAsMap("image", picture)
         ) yield {
-          val url = image("url").toString
-          val imageAlt = image.get("altText").getOrElse("").toString
-          val pictureOrImageAlt = picture.get("altText").getOrElse(imageAlt).toString
-          Map("url" -> url, "alt" -> pictureOrImageAlt)
-        }
-      }
-      quizImageValues.map(values => QuizImage(values("url"), values("alt")))
-    }
 
+          val url = image("url").toString
+          val mimeType = image("mimeType").toString
+          val width = image.get("width").map(_.toString.toInt)
+          val height = image.get("height").map(_.toString.toInt)
+
+          val pictureOrImageAlt = {
+            val imageAlt = image.get("altText").getOrElse("").toString
+            picture.get("altText").getOrElse(imageAlt).toString
+          }
+          //TODO: secure image?
+          QuizImage(url, mimeType, pictureOrImageAlt, height, width, None)
+        }
+    }
   }
 
   private def buildQuestionsAndAnswers : List[QuizQuestion] = {

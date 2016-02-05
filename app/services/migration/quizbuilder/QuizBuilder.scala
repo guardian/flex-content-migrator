@@ -8,11 +8,18 @@ trait JsonModel {
   def getJson : JsObject
 }
 
-case class QuizImage(src : String, alt : String) extends JsonModel{
+case class QuizImage(url : String, mimeType : String, alt : String, height: Option[Int] = None, width : Option[Int] = None, secureUrl : Option[String] = None ) extends JsonModel{
   override def getJson: JsObject = {
+    val fields = {
+        for( height <- height ; width <- width) yield(height, width)
+    }.map{case (height, width) => Json.obj("height" -> height, "width" -> width, "alt" -> alt)}
+
     Json.obj(
-      "src" -> src,
-      "alt" -> alt
+      "assetType" -> "image",
+      "fields" -> fields,
+      "mimeType" -> mimeType,
+      "url" -> url,
+      "secureUrl" -> secureUrl
     )
   }
 }
