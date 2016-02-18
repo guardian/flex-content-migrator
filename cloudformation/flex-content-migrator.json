@@ -443,7 +443,7 @@
       },
       "Properties": {
         "KeyName":{ "Ref":"KeyName" },
-        "ImageId": "ami-fe4c0889",
+        "ImageId": "ami-2257e551",
         "InstanceType": "t2.small",
         "SecurityGroups": [
           {
@@ -473,7 +473,6 @@
                   "Ref": "AWS::Region"
                 },
                 " || error_exit 'Failed to run cfn-init'\n",
-                "/opt/features/gnm-dns/install.sh\n",
                 "unzip -d /home/flex-content-migrator /home/flex-content-migrator/flex-content-migrator.zip \n",
                 "mkdir /home/flex-content-migrator/logs\n",
                 "chown -R flex-content-migrator /home/flex-content-migrator\n",
