@@ -10,16 +10,25 @@ trait JsonModel {
 
 case class QuizImage(url : String, mimeType : String, alt : String, height: Option[Int] = None, width : Option[Int] = None, secureUrl : Option[String] = None ) extends JsonModel{
   override def getJson: JsObject = {
-    val fields = {
-        for( height <- height ; width <- width) yield(height, width)
-    }.map{case (height, width) => Json.obj("height" -> height, "width" -> width, "alt" -> alt)}
-
     Json.obj(
-      "assetType" -> "image",
-      "fields" -> fields,
-      "mimeType" -> mimeType,
-      "url" -> url,
-      "secureUrl" -> secureUrl
+      "type" -> "image",
+      "data" -> Json.obj(
+        "elementType" -> "image",
+        "fields" -> Json.obj("altText" -> alt),
+        "assets" -> Json.arr(
+          Json.obj(
+            "assetType" -> "image",
+            "mimeType" -> mimeType,
+            "url" -> url,
+            "secureUrl" -> secureUrl,
+            "fields" -> Json.obj(
+              "height" -> height,
+              "width" -> width,
+              "isMaster" -> true
+            )
+          )
+        )
+      )
     )
   }
 }
