@@ -10,6 +10,9 @@ trait JsonModel {
 
 case class QuizImage(url : String, mimeType : String, alt : String, height: Option[Int] = None, width : Option[Int] = None, secureUrl : Option[String] = None ) extends JsonModel{
   override def getJson: JsObject = {
+
+    val httpsUrl = secureUrl.getOrElse(url.replace("http://", "https://"))
+
     Json.obj(
       "type" -> "image",
       "data" -> Json.obj(
@@ -20,7 +23,7 @@ case class QuizImage(url : String, mimeType : String, alt : String, height: Opti
             "assetType" -> "image",
             "mimeType" -> mimeType,
             "url" -> url,
-            "secureUrl" -> secureUrl,
+            "secureUrl" -> httpsUrl,
             "fields" -> Json.obj(
               "height" -> height,
               "width" -> width,
