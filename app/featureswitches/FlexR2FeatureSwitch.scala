@@ -10,5 +10,9 @@ object FlexR2FeatureSwitch {
 
   def allowQuizMigrationToFlex = quizCanBeInFlex
 
+  private def crosswordCanBeInFlex : Boolean = Play.current.configuration.getBoolean("feature.crosswordCanBeInFlex").get
+
+  def allowCrosswordMigrationToFlex = crosswordCanBeInFlex
+
 
 }

@@ -24,7 +24,10 @@ case class TransformedQuiz(override val sourceContent : SourceContent, quizImpor
   override val liveData = R2ToFlexQuizConversion.parseLiveData(json, quizImporter) //NOTE: using live data for migration
 }
 
-
+case class TransformedCrossword(override val sourceContent : SourceContent) extends TransformedContent(sourceContent){
+  override val json = R2ToFlexCrosswordConversion.jsonMap(sourceContent.json)
+  override val liveData = R2ToFlexCrosswordConversion.parseLiveData(json) //NOTE: using live data for migration
+}
 
 case class ContentInFlex(id : Int, response : WSResponse){
   val wasSuccess = {
