@@ -39,10 +39,10 @@ class CrosswordMigrationApi(migrator : Migrator, reporter : MigrationReport, fle
   }
   }
 
-  def migrateQuiz(quizId : Int) =  Action.async{ block => {
-    Logger.debug(s"migrateQuiz ${quizId}")
+  def migrateQuiz(crosswordId : Int) =  Action.async{ block => {
+    Logger.debug(s"Migrating  ${crosswordId}")
     withMigrationPermission{ () =>
-      migrator.migrateIndividualContent(quizId).map(reportSingleQuiz(_))
+      migrator.migrateIndividualContent(crosswordId).map(reportSingleQuiz(_))
     }
   }
   }
@@ -80,8 +80,8 @@ object CrosswordMigrationTextReport extends MigrationReport{
   def reportSingleContent(crossword : ContentMigrationResult) : String = {
 
     if(crossword.wasSuccess) {
-      val migratedQuiz = crossword.asInstanceOf[MigratedContent]
-      s"Quiz ${migratedQuiz.id} migrated successfully: ${migratedQuiz.composerId}"
+      val migratedCrossword = crossword.asInstanceOf[MigratedContent]
+      s"Quiz ${migratedCrossword.id} migrated successfully: ${migratedCrossword.composerId}"
     }
     else {
       val failed = crossword.asInstanceOf[MigrationFailedContent]
@@ -93,6 +93,6 @@ object CrosswordMigrationTextReport extends MigrationReport{
     def batchFailureReport =
       s"Details:\n${reportSuccesses(batch.migrated)}\n\n${batch.failed.map(reportFailure(_) + "\n\n").mkString("\n")}"
     
-    s"Batch Success Crosswords = ${batch.migrated.size}, Failed Crosswords = ${batch.failed.size} \n${batchFailureReport}"
+    s"Batch Successful Crosswords = ${batch.migrated.size}, Failed Crosswords = ${batch.failed.size} \n${batchFailureReport}"
   }
 }
