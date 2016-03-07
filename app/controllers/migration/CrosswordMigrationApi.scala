@@ -19,7 +19,7 @@ class CrosswordMigrationApi(migrator : Migrator, reporter : MigrationReport, fle
   private def withMigrationPermission(migration : () => Future[Result]) : Future[Result] = {
     import featureswitches.FlexR2FeatureSwitch._
     if(!allowCrosswordMigrationToFlex){
-      val msg = "Attempt to migrate quiz to flex: this feature is forbidden"
+      val msg = "Attempt to migrate crossword to flex: this feature is forbidden"
       Logger.error(msg)
       Future{InternalServerError(msg)}
     }
@@ -39,16 +39,16 @@ class CrosswordMigrationApi(migrator : Migrator, reporter : MigrationReport, fle
   }
   }
 
-  def migrateQuiz(crosswordId : Int) =  Action.async{ block => {
+  def migrateCrossword(crosswordId : Int) =  Action.async{ block => {
     Logger.debug(s"Migrating  ${crosswordId}")
     withMigrationPermission{ () =>
-      migrator.migrateIndividualContent(crosswordId).map(reportSingleQuiz(_))
+      migrator.migrateIndividualContent(crosswordId).map(reportSingleCrossword(_))
     }
   }
   }
 
-  private def reportSingleQuiz(quiz : ContentMigrationResult) = {
-    Ok(reporter.reportSingleContent(quiz))
+  private def reportSingleCrossword(crossword : ContentMigrationResult) = {
+    Ok(reporter.reportSingleContent(crossword))
   }
 
   private def reportMigratedBatch(batch : MigratedBatch) = {
@@ -66,8 +66,8 @@ object CrosswordMigrationTextReport extends MigrationReport{
   }
 
   private def reportFailure(migratedCrossword : MigrationFailedContent) =
-    s"""---Failed Quiz---
-        |Failed Quiz ID: ${migratedCrossword.id}
+    s"""---Failed Crossword---
+        |Failed Crossword ID: ${migratedCrossword.id}
         |Reason:
         |${getTruncatedReason(migratedCrossword.reason)}
         |
@@ -81,7 +81,7 @@ object CrosswordMigrationTextReport extends MigrationReport{
 
     if(crossword.wasSuccess) {
       val migratedCrossword = crossword.asInstanceOf[MigratedContent]
-      s"Quiz ${migratedCrossword.id} migrated successfully: ${migratedCrossword.composerId}"
+      s"Crossword ${migratedCrossword.id} migrated successfully: ${migratedCrossword.composerId}"
     }
     else {
       val failed = crossword.asInstanceOf[MigrationFailedContent]
