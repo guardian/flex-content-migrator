@@ -13,7 +13,7 @@ POST        /migrate/quiz/:quiz_id          controllers.migration.QuizMigrationA
 
 GET         /check/crossword                controllers.migration.CrosswordMigrationApi.checkFlexConnection
 POST        /migrate/crossword              controllers.migration.CrosswordMigrationApi.migrateBatch(batchSize: Option[Int] ?=None, batchNumber : Option[Int] ?=None)
-POST        /migrate/crossword/:quiz_id     controllers.migration.CrosswordMigrationApi.migrateQuiz(quiz_id : Int)
+POST        /migrate/crossword/:quiz_id     controllers.migration.CrosswordMigrationApi.migrateCrossword(quiz_id : Int)
 
 
 GET         /management/healthcheck        controllers.Application.healthcheck
