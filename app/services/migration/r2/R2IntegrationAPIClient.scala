@@ -24,6 +24,12 @@ protected[migration] class R2IntegrationAPIClient {
     R2BaseUrl + s"/tools/newspaperintegration/migration/quiz/${id}"
 
 
+  private def CrosswordsToMigrateUrl =
+    R2BaseUrl + "/tools/newspaperintegration/migration/crosswords-to-migrate"
+
+  private def GetCrosswordInJsonUrl(id : Int) =
+    R2BaseUrl + s"/tools/newspaperintegration/migration/crossword/${id}"
+
   private def ContentMigratedUrl =
     R2BaseUrl + "/tools/newspaperintegration/migration/migratecontent"
 
@@ -34,6 +40,8 @@ protected[migration] class R2IntegrationAPIClient {
     WS.url(GetQuizInJsonUrl(id)).get()
 
 
+  private def getCrosswordInJson(id : Int) =
+    WS.url(GetCrosswordInJsonUrl(id)).get()
 
   private def migrateContentInR2(r2ContentId : Int, composerId : String) = {
     WS.url(requestContentMigrated(r2ContentId, composerId)).get().map { response => {
@@ -64,8 +72,27 @@ protected[migration] class R2IntegrationAPIClient {
     }
   }
 
+  protected[migration] def migrateCrosswordInR2(r2CrosswordId : Int, composerId : String) = {
+    migrateContentInR2(r2CrosswordId, composerId).map{ result => {
+      if(result._1){
+        import Metrics._
+        CrosswordsMigratedInR2.increment
+      }
+      result
+    }
+    }
+  }
+
 
   protected[migration] def getBatchOfQuizIds(params : MigrationBatchParams) : Future[List[Int]] = {
+    if(params.tagIds.isDefined) throw new UnsupportedOperationException("Specific tagId migration not supported for quizzes")
+    if(params.withIdsHigherThan.isDefined) throw new UnsupportedOperationException("idHigherThan is not supported for quizzes")
+    WS.url(requestQuizzesToMigrate(params.batchSize, params.batchNumber)).get().map{response =>
+      (response.json \ "elementsOnCurrentPage").as[List[Int]]
+    }
+  }
+
+  protected[migration] def getBatchOfCrosswordIds(params : MigrationBatchParams) : Future[List[Int]] = {
     if(params.tagIds.isDefined) throw new UnsupportedOperationException("Specific tagId migration not supported for quizzes")
     if(params.withIdsHigherThan.isDefined) throw new UnsupportedOperationException("idHigherThan is not supported for quizzes")
     WS.url(requestQuizzesToMigrate(params.batchSize, params.batchNumber)).get().map{response =>
@@ -92,6 +119,12 @@ protected[migration] class R2IntegrationAPIClient {
     })
   }
 
+  protected[migration] def loadCrosswordById(id : Int) : Future[SourceContent] = {
+    getCrosswordInJson(id).map(response => {
+      Logger.debug(s"Loaded crossword ${id} from R2")
+      new SourceContent(id, response.body)
+    })
+  }
 
   private def pageSize(size : Int) = s"pageSize=${size}"
 

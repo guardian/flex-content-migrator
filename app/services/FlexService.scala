@@ -45,3 +45,16 @@ object FlexQuizMigrationServiceImpl  extends FlexContentMigrationService{
   }
 }
 
+
+object FlexCrosswordMigrationServiceImpl  extends FlexContentMigrationService{
+  override lazy val ConnectivityCheckUrl = FlexImportBaseUrl + "/contentmigration/crossword/index";
+  private def MigrateCrosswordUrl = FlexImportBaseUrl + "/contentmigration/crossword"
+
+  override def migrateContentXml(xmlFile: File): Future[WSResponse] = {
+    flexThrottlerFt[WSResponse] {
+      withCountIncr(Metrics.QuizzesMigratedInFlex) {
+        makeAsyncCall(MigrateCrosswordUrl, (xmlFile, "fileData"), Map())
+      }
+    }
+  }
+}
