@@ -59,13 +59,17 @@ class R2ToFlexCrosswordConversionSpec extends Specification with Mockito {
     }
     "parse tags correctly" in {
       val tags = (parsedCrosswordJson.xml \ "tags" \ "tag").map(t => t \ "@id").map(_.text.toString)
-      println(tags)
+      val types = (parsedCrosswordJson.xml \ "tags" \ "tag").map(t => t \ "@type").map(_.text.toString)
+
       tags.size must equalTo (5)
       tags must contain("35605")
       tags must contain("35623")
       tags must contain("35459")
       tags must contain("35610")
       tags must contain("2")
+      
+      types must contain("Contributor")
+      types must contain("Publication")
     }
     "parse headline correctly" in {
       val headline = ( parsedCrosswordJson.xml  \ "headline").text.toString
