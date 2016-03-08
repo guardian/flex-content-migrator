@@ -39,7 +39,7 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
 
 
   private def buildAnswer(answer : Map[String, Any]) : QuizQuestionAnswer = {
-    val answerText = answer.getOrElse("answerText", " ").toString //must have an answer text
+    val answerText = answer.get("answerText").map(_.toString) //must have an answer text
     val isCorrect = getAsString("correct", answer).map(_.toBoolean).getOrElse(false);
     val image = buildImage(answer)
     val revealText = None//TODO
