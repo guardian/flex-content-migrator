@@ -127,6 +127,13 @@ abstract class R2ToFlexContentConversion(jsonMap : Map[String, Any], parseLiveDa
     removeAllDupes(tags).toSet.toList
   }
 
+  case class FullTag(id: String, tagType: String)
+
+  protected def fullTags : List[FullTag] = {
+    getAsMaps("tags", liveOrDraft).getOrElse(Nil).map(m =>
+      new FullTag(m.getOrElse("id", "").toString, m.getOrElse("type", "").toString))
+  }
+
   protected def thumbnailImageUrl = getAsString("thumbnailImageUrl")
 
 
