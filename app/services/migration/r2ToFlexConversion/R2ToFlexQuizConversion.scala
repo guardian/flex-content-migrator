@@ -96,12 +96,19 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
     val resultGroups = getAsMaps("bands", liveOrDraft)
     resultGroups match {
       case Some(resultGroups) => {
-        resultGroups.map((resultGroup: Map[String, Any]) => {
-          val bandValue = resultGroup("bandValue").toString.toInt
-          val bandText = resultGroup("bandText").toString
-          val share = None //TODO
-          QuizResultGroup(bandText, bandValue, share)
-        }).toList
+        resultGroups.foldLeft(List[QuizResultGroup]())((list: List[QuizResultGroup], resultGroup: Map[String, Any]) => {
+          if (resultGroup.contains("bandValue") && resultGroup.contains("bandText")) {
+
+            val bandValue = resultGroup("bandValue").toString.toInt
+            val bandText = resultGroup("bandText").toString
+            val share = None //TODO
+
+            list ++ List(QuizResultGroup(bandText, bandValue, share))
+          } else {
+            list
+          }
+
+        })
       }
       case None => Nil
     }
