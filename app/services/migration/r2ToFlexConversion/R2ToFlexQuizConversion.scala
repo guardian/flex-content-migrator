@@ -59,7 +59,7 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
 
 
   private def buildImage(map: Map[String, Any]): Option[QuizImage] = {
-      for ( picture <- getAsMap("picture", map);
+      for ( picture <- if (map.contains("answerPicture")) {getAsMap("answerPicture", map)} else {getAsMap("picture", map)};
             image <- getAsMap("image", picture)
       ) yield {
 
