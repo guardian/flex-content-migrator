@@ -37,7 +37,7 @@ class R2ToFlexCrosswordConversion(jsonMap : Map[String, Any], parseLiveData : Bo
        modified-date={modifiedDate orNull}
        web-publication-date={webPublicationDate orNull}>
 
-      <tags>{for(tag <- tags) yield <tag id={tag}/> }</tags>
+      <tags>{for(tag <- fullTags) yield <tag id={tag.id} type={tag.tagType}/> }</tags>
 
       {r2PageId.map( pageId => <originalR2PageId>{pageId}</originalR2PageId>) orNull}
       {r2ContentId.map( contentId => <originalR2ContentId>{contentId}</originalR2ContentId>) orNull}
