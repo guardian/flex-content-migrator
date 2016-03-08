@@ -48,7 +48,7 @@ case class QuizQuestion(text : String, answers : List[QuizQuestionAnswer], image
 case class QuizQuestionAnswer(text : Option[String] = None, isCorrect : Boolean, image : Option[QuizImage] = None, revealText : Option[String] = None) extends JsonModel{
   override def getJson: JsObject = {
     Json.obj(
-      "answerText" -> text.getOrElse(" "),
+      "answerText" -> text.map(_.toString),
       "correct" -> isCorrect,
       "revealText" -> revealText.map(_.toString),
       "assets" -> image.toList.map(_.getJson)
