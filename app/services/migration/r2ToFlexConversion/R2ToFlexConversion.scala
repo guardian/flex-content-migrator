@@ -94,8 +94,16 @@ abstract class R2ToFlexContentConversion(jsonMap : Map[String, Any], parseLiveDa
 
   protected def standfirst = getAsString("standfirst")
 
+  val allowedPublicationTags: List[String] = List("2", "4", "5", "8")
+
+
   protected def tags : List[String] = {
-    val tags = getAsMaps("tags", liveOrDraft).getOrElse(Nil).flatMap(m => getAsString("id", m))
+    val tags = getAsMaps("tags", liveOrDraft)
+      .getOrElse(Nil)
+      .filter(t =>
+        getAsString("type", t).getOrElse("").equalsIgnoreCase("publication") &&
+          !allowedPublicationTags.contains(getAsString("id", t).getOrElse("")))
+      .flatMap(m => getAsString("id", m))
 
     def removeDuplSection1(tags : List[String]) =
       if(tags.contains("16657") && tags.contains("20853")) tags.filterNot(_ == "20853") else tags
