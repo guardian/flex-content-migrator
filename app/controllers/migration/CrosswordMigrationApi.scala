@@ -3,13 +3,13 @@ package controllers.migration
 import model._
 import play.api.Logger
 import play.api.mvc.{Action, Result, Controller}
-import services.{FlexQuizMigrationServiceImpl, FlexContentMigrationService}
+import services.{FlexCrosswordMigrationServiceImpl, FlexContentMigrationService}
 import services.migration._
 
 import scala.concurrent.Future
 
 
-object CrosswordMigrationApi extends CrosswordMigrationApi(CrosswordMigrator, CrosswordMigrationTextReport, FlexQuizMigrationServiceImpl)
+object CrosswordMigrationApi extends CrosswordMigrationApi(CrosswordMigrator, CrosswordMigrationTextReport, FlexCrosswordMigrationServiceImpl)
 
 class CrosswordMigrationApi(migrator : Migrator, reporter : MigrationReport, flex : FlexContentMigrationService) extends Controller{
 
