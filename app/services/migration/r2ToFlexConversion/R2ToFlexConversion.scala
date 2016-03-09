@@ -96,13 +96,17 @@ abstract class R2ToFlexContentConversion(jsonMap : Map[String, Any], parseLiveDa
 
   val allowedPublicationTags: List[String] = List("2", "4", "5", "8")
 
+  protected def isAllowedTag(tag: Map[String, Any]): Boolean = {
+    val isPublication = getAsString("type", tag).getOrElse("").equalsIgnoreCase("publication")
+    val isAllowed = allowedPublicationTags.contains(getAsString("id", tag).getOrElse(""))
+
+    !isPublication || isAllowed
+  }
 
   protected def tags : List[String] = {
     val tags = getAsMaps("tags", liveOrDraft)
       .getOrElse(Nil)
-      .filter(t =>
-        getAsString("type", t).getOrElse("").equalsIgnoreCase("publication") &&
-          !allowedPublicationTags.contains(getAsString("id", t).getOrElse("")))
+      .filter(isAllowedTag(_))
       .flatMap(m => getAsString("id", m))
 
     def removeDuplSection1(tags : List[String]) =
