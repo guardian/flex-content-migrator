@@ -136,10 +136,6 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
   }
 
   override lazy val xml = {
-    //check that the quiz is RIGHT_WRONG_ANSWERS
-    val isRightWrongAnswers = getAsString("quizType").map(_ == "RIGHT_WRONG_ANSWERS").getOrElse(false)
-    assert(isRightWrongAnswers)
-
     <article story-bundle={storyBundleId orNull} cms-path={cmsPath orNull} notes={notes orNull} slug-word={slug orNull}
              expiry-date={scheduledExpiry orNull}
              created-date={createdDate orNull} created-user={createdBy orNull} modified-date={modifiedDate orNull}
