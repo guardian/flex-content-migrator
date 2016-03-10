@@ -95,7 +95,7 @@ protected[migration] class R2IntegrationAPIClient {
   protected[migration] def getBatchOfCrosswordIds(params : MigrationBatchParams) : Future[List[Int]] = {
     if(params.tagIds.isDefined) throw new UnsupportedOperationException("Specific tagId migration not supported for quizzes")
     if(params.withIdsHigherThan.isDefined) throw new UnsupportedOperationException("idHigherThan is not supported for quizzes")
-    WS.url(requestQuizzesToMigrate(params.batchSize, params.batchNumber)).get().map{response =>
+    WS.url(requestCrosswordsToMigrate(params.batchSize, params.batchNumber)).get().map{response =>
       (response.json \ "elementsOnCurrentPage").as[List[Int]]
     }
   }
@@ -142,6 +142,8 @@ protected[migration] class R2IntegrationAPIClient {
   private def requestQuizzesToMigrate(size : Int, offset : Int) =
     s"${QuizzesToMigrateUrl}?${pageSize(size)}&${pageNumber(offset)}"
 
+  private def requestCrosswordsToMigrate(size : Int, offset : Int) =
+    s"${CrosswordsToMigrateUrl}?${pageSize(size)}&${pageNumber(offset)}"
 
   private def requestContentMigrated(r2ContentIdInt : Int, composerIdSt : String) =
     s"${ContentMigratedUrl}?${r2ContentId(r2ContentIdInt)}&${composerId(composerIdSt)}"
