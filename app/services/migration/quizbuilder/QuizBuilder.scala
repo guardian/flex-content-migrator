@@ -78,7 +78,11 @@ case class Quiz(r2QuizId : Int, title : String, createdAt : DateTime, createdBy 
     import play.api.libs.json._
     Json.obj(
       "questions" -> questions.map(_.getJson),
-      "personalityBuckets" -> Json.obj("groups" -> resultBuckets.map(_.getJson))
+      "personalityBuckets" -> Json.obj(
+        "buckets" -> resultBuckets.map(_.getJson),
+        "bucketDescriptionPrefix" -> "",
+        "bucketTitlePrefix" -> ""
+      )
     )
   }
 
