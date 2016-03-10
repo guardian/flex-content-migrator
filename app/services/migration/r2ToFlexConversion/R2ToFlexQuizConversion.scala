@@ -43,7 +43,9 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
     val isCorrect = getAsString("correct", answer).map(_.toBoolean).getOrElse(false);
     val image = buildImage(answer)
     val revealText = None//TODO
-    QuizQuestionAnswer(answerText, isCorrect, image, revealText)
+    val answerBucket : Option[Int] = answer.get("answerWeight").map(_.toString.toInt)
+
+    QuizQuestionAnswer(answerText, isCorrect, image, revealText, answerBucket)
   }
 
 
@@ -92,18 +94,19 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
     }
   }
 
-  private def buildResultGroups : List[QuizResultGroup] = {
-    val resultGroups = getAsMaps("bands", liveOrDraft)
-    resultGroups match {
-      case Some(resultGroups) => {
-        resultGroups.foldLeft(List[QuizResultGroup]())((list: List[QuizResultGroup], resultGroup: Map[String, Any]) => {
-          if (resultGroup.contains("bandValue") && resultGroup.contains("bandText")) {
 
-            val bandValue = resultGroup("bandValue").toString.toInt
-            val bandText = resultGroup("bandText").toString
-            val share = None //TODO
+  private def buildPersonalityBuckets: List[QuizResultBucket] = {
+    val resultBands = getAsMaps("bands", liveOrDraft)
+    resultBands match {
+      case Some(resultBuckets) => {
+        resultBuckets.foldLeft(List[QuizResultBucket]())((list: List[QuizResultBucket], resultBucket: Map[String, Any]) => {
+          if (resultBucket.contains("bandValue") && resultBucket.contains("bandText")) {
 
-            list ++ List(QuizResultGroup(bandText, bandValue, share))
+            val bucketName = resultBucket("bandValue").toString
+            val bucketDesc = resultBucket("bandText").toString
+            val id = resultBucket("bandValue").toString.toInt
+
+            list ++ List(QuizResultBucket(bucketName, bucketDesc, id))
           } else {
             list
           }
@@ -122,7 +125,7 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
       val revealAnswers = getAsString("showAnswerPage").map(_.toBoolean).getOrElse(true)
 
       Quiz( r2ContentId.get.toInt, title, createdAt, createdByUser, updatedAt, createdByUser,
-            buildQuestionsAndAnswers, buildResultGroups, revealAnswers)
+            buildQuestionsAndAnswers, buildPersonalityBuckets, revealAnswers)
   }
 
   def contentAtoms : List[(String, Boolean)] = {
@@ -134,10 +137,6 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
   }
 
   override lazy val xml = {
-    //check that the quiz is RIGHT_WRONG_ANSWERS
-    val isRightWrongAnswers = getAsString("quizType").map(_ == "RIGHT_WRONG_ANSWERS").getOrElse(false)
-    assert(isRightWrongAnswers)
-
     <article story-bundle={storyBundleId orNull} cms-path={cmsPath orNull} notes={notes orNull} slug-word={slug orNull}
              expiry-date={scheduledExpiry orNull}
              created-date={createdDate orNull} created-user={createdBy orNull} modified-date={modifiedDate orNull}
