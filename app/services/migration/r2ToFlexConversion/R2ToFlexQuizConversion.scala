@@ -43,7 +43,9 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
     val isCorrect = getAsString("correct", answer).map(_.toBoolean).getOrElse(false);
     val image = buildImage(answer)
     val revealText = None//TODO
-    QuizQuestionAnswer(answerText, isCorrect, image, revealText)
+    val answerBukcet : Option[Int] = answer.get("answerWeight").map(_.toString.toInt)
+
+    QuizQuestionAnswer(answerText, isCorrect, image, revealText, answer)
   }
 
 
@@ -85,8 +87,7 @@ class R2ToFlexQuizConversion(jsonMap : Map[String, Any],
           val questionText = question("questionText").toString
           val questionImage = buildImage(question)
           val questionAnswers : List[QuizQuestionAnswer] = getAsMaps("answers", question).getOrElse(Nil).map(buildAnswer(_))
-          val questionBucket : Option[Int] = question.get("answerWeight").map(_.toString.toInt)
-          QuizQuestion(questionText, questionAnswers, questionImage, questionBucket)
+          QuizQuestion(questionText, questionAnswers, questionImage)
         })
       }
       case None => Nil

@@ -35,7 +35,7 @@ case class QuizImage(url : String, mimeType : String, alt : String, height: Opti
     )
   }
 }
-case class QuizQuestion(text : String, answers : List[QuizQuestionAnswer], image : Option[QuizImage] = None, bucket: Option[Int] = None) extends JsonModel{
+case class QuizQuestion(text : String, answers : List[QuizQuestionAnswer], image : Option[QuizImage] = None) extends JsonModel{
   override def getJson: JsObject = {
     Json.obj(
       "questionText" -> text,
@@ -45,13 +45,14 @@ case class QuizQuestion(text : String, answers : List[QuizQuestionAnswer], image
     )
   }
 }
-case class QuizQuestionAnswer(text : Option[String] = None, isCorrect : Boolean, image : Option[QuizImage] = None, revealText : Option[String] = None) extends JsonModel{
+case class QuizQuestionAnswer(text : Option[String] = None, isCorrect : Boolean, image : Option[QuizImage] = None, revealText : Option[String] = None, bucket: Option[Int] = None) extends JsonModel{
   override def getJson: JsObject = {
     Json.obj(
       "answerText" -> text.map(_.toString),
       "correct" -> isCorrect,
       "revealText" -> revealText.map(_.toString),
-      "assets" -> image.toList.map(_.getJson)
+      "assets" -> image.toList.map(_.getJson),
+      "buckets" -> bucket.map(bucket => JsArray(Seq(JsNumber(bucket))))
     )
   }
 }
